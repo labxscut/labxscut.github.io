@@ -152,26 +152,26 @@
       margin: 12px auto 0; opacity: .5;
     }
 
-    /* ===== FEATURE GRID ===== */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
+    /* ===== OVERVIEW LIST ===== */
+    .overview-list {
+      list-style: none; padding: 0; margin: 0;
     }
-    .feature-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: all .25s;
+    .overview-list li {
+      padding: 10px 0 10px 20px;
+      border-left: 2px solid var(--blue-border);
+      margin-bottom: 8px;
+      font-size: .92rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      transition: border-color .2s;
     }
-    .feature-card:hover {
-      border-color: var(--blue-border);
-      box-shadow: 0 4px 12px rgba(43, 108, 176, .06);
+    .overview-list li:hover {
+      border-left-color: var(--accent);
     }
-    .feature-card .icon { font-size: 1.4rem; margin-bottom: 10px; }
-    .feature-card h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
-    .feature-card p { font-size: .85rem; color: var(--text-secondary); line-height: 1.6; }
+    .overview-list li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
 
     /* ===== PIPELINE ===== */
     .pipeline-flow {
@@ -388,38 +388,26 @@
     <div class="section-divider"></div>
   </div>
 
-  <div class="feature-grid">
-    <div class="feature-card reveal">
-      <div class="icon">⚡</div>
-      <h4>Fast Inference</h4>
-      <p>Pre-trained XGBoost classifier optimized for rapid enzyme prediction on large-scale protein datasets.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="icon">🧩</div>
-      <h4>Rich Features</h4>
-      <p>Combines Pse-AAC, CTD, windowed AAC, and sequence length for comprehensive sequence representation.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="icon">📦</div>
-      <h4>Easy to Use</h4>
-      <p>Both Python API and CLI available. Install via pip and start predicting in minutes.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="icon">🔬</div>
-      <h4>Bioinformatics Ready</h4>
-      <p>Built-in FASTA parsing, batch processing, and parallelized feature extraction for production workflows.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="icon">🐳</div>
-      <h4>Docker Support</h4>
-      <p>Pre-configured Docker image with Python 3.11 and all dependencies for isolated execution.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="icon">📊</div>
-      <h4>Evaluation Metrics</h4>
-      <p>Built-in classification reports, confusion matrices, and accuracy scoring for model assessment.</p>
-    </div>
-  </div>
+  <ul class="overview-list">
+    <li class="reveal">
+      <strong>Fast inference</strong> — pre-trained XGBoost classifier optimized for rapid enzyme prediction on large-scale protein datasets
+    </li>
+    <li class="reveal">
+      <strong>Rich feature extraction</strong> — combines Pse-AAC, CTD, windowed AAC, and sequence length for comprehensive sequence representation
+    </li>
+    <li class="reveal">
+      <strong>Easy to use</strong> — dual Python API and CLI interface; install via pip and start predicting in minutes
+    </li>
+    <li class="reveal">
+      <strong>Bioinformatics ready</strong> — built-in FASTA parsing, batch processing, and parallelized feature extraction for production workflows
+    </li>
+    <li class="reveal">
+      <strong>Docker support</strong> — pre-configured image with Python 3.11 and all dependencies for isolated execution
+    </li>
+    <li class="reveal">
+      <strong>Built-in evaluation</strong> — classification reports, confusion matrices, and accuracy scoring for model assessment
+    </li>
+  </ul>
 
   <h3 class="reveal">Pipeline</h3>
   <div class="pipeline-flow reveal">
