@@ -1,0 +1,5 @@
+# sxLaep documentation site
+exclude:
+  - README.md
+include:
+  - sxLaep-v2
