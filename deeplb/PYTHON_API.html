@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepLB Python API</title>
+  <link rel="stylesheet" href="./deeplb.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">DeepLB Docs</div>
+      <a href="./index.html">Home</a>
+      <a href="./PYTHON_API.html">Python API</a>
+      <a href="./R_API.html">R API</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="pill">Python Interface</div>
+      <h1>DeepLB Python API</h1>
+      <p>
+        Current Python support is compatibility-first and wraps the existing
+        shell pipeline behavior.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Package entrypoints</h2>
+      <ul>
+        <li>Package: <code>deeplb</code></li>
+        <li>Public import: <code>from deeplb import run_pipeline</code></li>
+        <li>CLI: <code>python -m deeplb</code>, optional <code>deeplb</code> command after install</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Function reference</h2>
+      <h3><code>run_pipeline(script_args=None, *, dry_run=False, check=True, capture_output=False)</code></h3>
+      <p>Thin wrapper for <code>Scripts/DeepLB_pipeline.sh</code>.</p>
+      <ul>
+        <li><code>script_args</code>: pass-through shell args</li>
+        <li><code>dry_run</code>: append <code>-d</code> if missing</li>
+        <li><code>check</code>: raise on non-zero shell exit</li>
+        <li><code>capture_output</code>: capture stdout/stderr</li>
+      </ul>
+      <p>Returns <code>subprocess.CompletedProcess[str]</code>.</p>
+      <pre><code>from deeplb import run_pipeline
+
+result = run_pipeline(
+    ["-r", "/path/to/DeepLB", "-t", "lihc", "-g", "TH", "-u", "part3", "-q", "0.1", "-k", "hyper", "-v", "1"],
+    dry_run=True,
+    check=False,
+    capture_output=True,
+)
+print(result.returncode)
+print(result.stdout)</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>CLI wrapper</h2>
+      <p><code>python -m deeplb</code> supports:</p>
+      <ul>
+        <li><code>--dry-run</code> to append <code>-d</code></li>
+        <li>Trailing arguments forwarded to <code>Scripts/DeepLB_pipeline.sh</code></li>
+      </ul>
+      <pre><code>python -m deeplb -h
+python -m deeplb -- -r /path/to/DeepLB -t lihc -g TH -u part3 -q 0.1 -k hyper -v 1
+python -m deeplb --dry-run -- -r /path/to/DeepLB -t lihc -g TH -u part3 -q 0.1 -k hyper -v 1</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Script-level Python components</h2>
+      <ul>
+        <li>Part2 mMTS: <code>Scripts/Part2.Pseudo-fragment_Generation_by_mMTS/*.py</code></li>
+        <li>Part3 training: <code>Scripts/Part3.ResTran_model_training/training.py</code></li>
+        <li>Part3 prediction: <code>Scripts/Part3.ResTran_model_training/predict_reads_source.py</code></li>
+        <li>Part3 risk: <code>Scripts/Part3.ResTran_model_training/cal_risk.py</code></li>
+      </ul>
+      <p>These are CLI-oriented and not yet stable import APIs.</p>
+    </section>
+  </main>
+</body>
+</html>

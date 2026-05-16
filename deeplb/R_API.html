@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepLB R API</title>
+  <link rel="stylesheet" href="./deeplb.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">DeepLB Docs</div>
+      <a href="./index.html">Home</a>
+      <a href="./PYTHON_API.html">Python API</a>
+      <a href="./R_API.html">R API</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <div class="pill">R Script Interfaces</div>
+      <h1>DeepLB R API</h1>
+      <p>
+        DeepLB currently exposes R functionality as script interfaces invoked with
+        <code>Rscript</code>.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Runtime model</h2>
+      <ul>
+        <li>Execute via <code>Rscript &lt;script&gt; &lt;args...&gt;</code></li>
+        <li>Arguments parsed by <code>commandArgs(trailingOnly = TRUE)</code></li>
+        <li>Orchestrated by <code>Scripts/DeepLB_pipeline.sh</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Script contracts</h2>
+      <h3><code>1.1_reformat_TCGA.R</code></h3>
+      <p>Args: <code>current_path</code>, <code>tumor_type</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.1_reformat_TCGA.R /path/to/DeepLB LIHC</code></pre>
+
+      <h3><code>1.1_prepare_sample_annotation.R</code></h3>
+      <p>Args: <code>current_path</code>, <code>meta</code>, <code>tumor</code>, <code>bgfile</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.1_prepare_sample_annotation.R /path/to/DeepLB all_WGBS_sample_metadata.xlsx LIHC background_for_train.txt</code></pre>
+
+      <h3><code>1.1_subsample_for_tumorOnly.R</code></h3>
+      <p>Args: <code>root_dir</code>, <code>tumor</code>, <code>group</code>, <code>select_number</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.1_subsample_for_tumorOnly.R /path/to/DeepLB LIHC TH 30</code></pre>
+
+      <h3><code>1.2_define_blocks_according_CancerLocator_method.R</code></h3>
+      <p>Args: <code>current_path</code>, <code>window.size</code>, <code>min.probe.number</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.2_define_blocks_according_CancerLocator_method.R /path/to/DeepLB 100 3</code></pre>
+
+      <h3><code>1.3.1_get_methylation_ratio_blocks_TCGA_paired.R</code></h3>
+      <p>Args: <code>root.dir</code>, <code>target_tumor</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R /path/to/DeepLB LIHC</code></pre>
+
+      <h3><code>1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R</code></h3>
+      <p>Args: <code>root.dir</code>, <code>target_tumor</code>, <code>group</code>, <code>select_sample</code>, <code>sampleList</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R /path/to/DeepLB LIHC TH top30 all_samples_annotation.txt</code></pre>
+
+      <h3><code>1.3.4_get_methylation_ratio_blocks_normal_plasma.R</code></h3>
+      <p>Args: <code>root.dir</code>, <code>sample_list</code></p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.3.4_get_methylation_ratio_blocks_normal_plasma.R /path/to/DeepLB background_for_train.txt</code></pre>
+
+      <h3><code>1.5_para_est_mom_mc.R</code></h3>
+      <p>Args: training table path, output directory, core count</p>
+      <pre><code>Rscript Scripts/Part1.Marker_Selection/1.5_para_est_mom_mc.R /path/to/train.tsv /path/to/out 8</code></pre>
+    </section>
+  </main>
+</body>
+</html>
