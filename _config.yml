@@ -3,3 +3,4 @@ exclude:
   - README.md
 include:
   - sxLaep-v2
+  - deeplb
