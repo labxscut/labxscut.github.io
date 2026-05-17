@@ -17,11 +17,15 @@
 			--radius: 12px;
 		}
 		body {
+			color-scheme: light;
 			margin: 0;
 			font-family: "Segoe UI", Arial, sans-serif;
 			color: var(--text);
 			background: radial-gradient(circle at top, #ecfeff 0%, var(--bg) 45%);
 			line-height: 1.6;
+		}
+		h2, p {
+			color: var(--text);
 		}
 		header.hero {
 			padding: 48px 20px 32px;
@@ -76,6 +80,13 @@
 		.card h3 {
 			margin: 0 0 6px;
 			font-size: 1.1rem;
+			overflow-wrap: anywhere;
+			word-break: break-word;
+		}
+		.section p,
+		.section li {
+			overflow-wrap: anywhere;
+			word-break: break-word;
 		}
 		.meta {
 			font-size: 0.85rem;
@@ -114,6 +125,15 @@
 			font-size: 0.8rem;
 			color: var(--muted);
 			margin-top: 8px;
+			overflow-wrap: anywhere;
+			word-break: break-word;
+		}
+		.path a {
+			display: inline-block;
+			max-width: 100%;
+			overflow-wrap: anywhere;
+			word-break: break-all;
+			word-wrap: break-word;
 		}
 		.notice {
 			background: #fffbeb;
@@ -128,7 +148,7 @@
 	<header class="hero">
 		<h1>DeepLB Scripts Documentation</h1>
 		<p>Generated documentation for all scripts under <a href="https://github.com/labxscut/DeepLB/tree/master/Scripts" target="_blank" rel="noopener">https://github.com/labxscut/DeepLB/tree/master/Scripts</a>. Designed for bioinformatics and pipeline users.</p>
-		<!-- <p>Generated at 2026-05-17 00:39.</p> -->
+		<!-- <p>Generated at 2026-05-17 10:48.</p> -->
 	</header>
 
 	<main class="container">
@@ -192,8 +212,10 @@ python -m pip install -e .</code></pre>
 <article class="card" id="DeepLB_pipeline.sh">
 	<header>
 		<h3>DeepLB_pipeline.sh</h3>
-		<div class="meta">Shell | 12269 bytes</div>
+		<div class="meta">Shell | 12357 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run DeepLB part1/2/3 pipeline steps with CLI parameters and dry-run support.
+Parameters</p></div>
 	<div class='usage'><pre><code>Usage: $0 [OPTIONS]
 Options (full names and abbreviations):
   --root_dir, -r &lt;ROOT_DIR&gt;          : Root directory of the project
@@ -220,6 +242,7 @@ Options (full names and abbreviations):
 	<details>
 		<summary>View source</summary>
 		<pre><code>#!/bin/bash
+# Summary: Run DeepLB part1/2/3 pipeline steps with CLI parameters and dry-run support.
 # Parameters
 DRY_RUN=false
 # Part1 parameters
@@ -497,14 +520,18 @@ echo &quot;DeepLB workflow completed successfully!&quot;</code></pre>
 <article class="card" id="Part1.Marker_Selection/1.1_prepare_sample_annotation.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.1_prepare_sample_annotation.R</h3>
-		<div class="meta">R | 3109 bytes</div>
+		<div class="meta">R | 3195 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Build or append all_samples_annotation.txt from metadata and sample lists.
+This file for generating all_samples_annotation.txt, while existed, new information will be appended
+Get command line arguments</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
 		<pre><code>#!/usr/bin/env Rscript
+# Summary: Build or append all_samples_annotation.txt from metadata and sample lists.
 # This file for generating all_samples_annotation.txt, while existed, new information will be appended
 # Get command line arguments
 args &lt;- commandArgs(trailingOnly = TRUE)
@@ -604,14 +631,16 @@ print(output_file)
 <article class="card" id="Part1.Marker_Selection/1.1_reformat_TCGA.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.1_reformat_TCGA.R</h3>
-		<div class="meta">R | 4645 bytes</div>
+		<div class="meta">R | 4721 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Reformat TCGA 450K methylation data and compute purity outputs.</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code>rm(list = ls())  
+		<pre><code># Summary: Reformat TCGA 450K methylation data and compute purity outputs.
+rm(list = ls())  
 #options(stringsAsFactors = F)
 args &lt;- commandArgs(trailingOnly = TRUE)  
 current_path &lt;- args[1]  # current_path = &quot;DeepLB path:/home/yinliang/PROJECT/DeepLB&quot;
@@ -710,14 +739,17 @@ for (type.short in analyze_tumor){
 <article class="card" id="Part1.Marker_Selection/1.1_subsample_for_tumorOnly.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.1_subsample_for_tumorOnly.R</h3>
-		<div class="meta">R | 1964 bytes</div>
+		<div class="meta">R | 2033 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Select tumor-only samples by purity and save lists/plots.
+select different sample by tumor purity</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code># select different sample by tumor purity
+		<pre><code># Summary: Select tumor-only samples by purity and save lists/plots.
+# select different sample by tumor purity
 rm(list = ls())  
 args &lt;- commandArgs(trailingOnly = TRUE) 
 root_dir &lt;-  args[1] 
@@ -762,14 +794,16 @@ if (group == &quot;TH&quot;){
 <article class="card" id="Part1.Marker_Selection/1.2_add_complementary_bins.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.2_add_complementary_bins.py</h3>
-		<div class="meta">Python | 8533 bytes</div>
+		<div class="meta">Python | 8599 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Add complementary genomic bins to a biomarker feature file.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>read_chrom_sizes_file(file)</code></li><li><code>class Biomarker</code></li><li><code>read_wenyuan_defined_biomarker_feature_file(file, start_column_of_genome_location)</code></li><li><code>merge_two_biomarkers(chr2biomarkers_I, chr2biomarkers_II)</code></li><li><code>make_a_bin(chr, start_coord, end_coord, num_of_addtional_columns)</code></li><li><code>complement_biomarkers(chr2biomarkers, chr2size, num_of_addtional_columns)</code></li><li><code>make_complete_chromosomes()</code></li><li><code>write_markers(chr2biomarkers, header_line, output_file)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code># Modify from Wenyuan&#x27;s version
+		<pre><code>&quot;&quot;&quot;Add complementary genomic bins to a biomarker feature file.&quot;&quot;&quot;
+# Modify from Wenyuan&#x27;s version
 # py2 to py3, change print to print()
 import sys, argparse, os
 
@@ -978,14 +1012,16 @@ print(&quot;Done.&quot;)
 <article class="card" id="Part1.Marker_Selection/1.2_define_blocks_according_CancerLocator_method.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.2_define_blocks_according_CancerLocator_method.R</h3>
-		<div class="meta">R | 4975 bytes</div>
+		<div class="meta">R | 5050 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Define CpG blocks with sliding windows and write block tables.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>find_block</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>rm(list=ls())
+		<pre><code># Summary: Define CpG blocks with sliding windows and write block tables.
+rm(list=ls())
 options(stringsAsFactors=F)
 
 ## This function define the blocks
@@ -1108,14 +1144,16 @@ write.table(block.df[,1:4], file=paste(output.dir, &quot;blocks_D&quot;, window.
 <article class="card" id="Part1.Marker_Selection/1.2_refine_blocks.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.2_refine_blocks.sh</h3>
-		<div class="meta">Shell | 544 bytes</div>
+		<div class="meta">Shell | 619 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Add complementary bins to block definitions using genome sizes.</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code>code_dir=$PWD
+		<pre><code># Summary: Add complementary bins to block definitions using genome sizes.
+code_dir=$PWD
 current_path=$1 #DeepLB path /home/yinliang/PROJECT/DeepLB
 public_dir=&quot;${current_path}/Predata/reference/&quot;
 biomarker_dir=&quot;${current_path}/Result/1.2_define_bins&quot;
@@ -1139,8 +1177,9 @@ python $code_dir/1.2_add_complementary_bins.py --chromosome_sizes_file=$public_d
 <article class="card" id="Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R</h3>
-		<div class="meta">R | 5628 bytes</div>
+		<div class="meta">R | 5715 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>for paired method</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>map_CpG_bin</code></li></ul></div>
@@ -1294,6 +1333,9 @@ for (tumor.type in c(target_tumor)) { #lihc
 }
 
 
+# Summary: Compute block methylation ratios for paired TCGA tumor/normal samples.
+
+
 </code></pre>
 	</details>
 	<div class="path">Source: <a href="https://github.com/labxscut/DeepLB/tree/master/Scripts/Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R" target="_blank" rel="noopener">https://github.com/labxscut/DeepLB/tree/master/Scripts/Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R</a></div>
@@ -1303,14 +1345,17 @@ for (tumor.type in c(target_tumor)) { #lihc
 <article class="card" id="Part1.Marker_Selection/1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R</h3>
-		<div class="meta">R | 6147 bytes</div>
+		<div class="meta">R | 6238 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Compute block methylation ratios for tumor-only samples with purity filtering.
+for tumorOnly method</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>map_CpG_bin</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code># for tumorOnly method
+		<pre><code># Summary: Compute block methylation ratios for tumor-only samples with purity filtering.
+# for tumorOnly method
 library(&quot;data.table&quot;)
 rm(list = ls())
 map_CpG_bin &lt;- function(CpG.probe, cluster.table){
@@ -1472,14 +1517,17 @@ for (tumor.type in c(target_tumor)) { #,&quot;lihc&quot;,&quot;paad&quot;
 <article class="card" id="Part1.Marker_Selection/1.3.3_extract_reads_from_normal_plasma.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.3.3_extract_reads_from_normal_plasma.sh</h3>
-		<div class="meta">Shell | 2137 bytes</div>
+		<div class="meta">Shell | 2206 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Extract methylation reads and bins from normal WGBS BAMs.
+FOR processing normal WGBS bam file</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:s:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code># FOR processing normal WGBS bam file
+		<pre><code># Summary: Extract methylation reads and bins from normal WGBS BAMs.
+# FOR processing normal WGBS bam file
 get_line(){
   sed -n &#x27;&#x27;$2&#x27;p&#x27; $1
 }
@@ -1557,14 +1605,17 @@ done
 <article class="card" id="Part1.Marker_Selection/1.3.4_get_methylation_ratio_blocks_normal_plasma.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.3.4_get_methylation_ratio_blocks_normal_plasma.R</h3>
-		<div class="meta">R | 1948 bytes</div>
+		<div class="meta">R | 2022 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Compute background plasma methylation ratios from WGBS reads.
+for normal blood sample (CUHK)</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code># for normal blood sample (CUHK)
+		<pre><code># Summary: Compute background plasma methylation ratios from WGBS reads.
+# for normal blood sample (CUHK)
 rm(list = ls())  
 
 library(data.table)
@@ -1621,14 +1672,18 @@ if (file.exists(output.file)) {
 <article class="card" id="Part1.Marker_Selection/1.4.1_gen_rand_runs_paired.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.1_gen_rand_runs_paired.py</h3>
-		<div class="meta">Python | 10821 bytes</div>
+		<div class="meta">Python | 10888 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Generate paired random-run train/test splits and load data inputs.
+
+output:train_list train_beta_matrix train_match_matrix test_list test_sample_path test_match_path</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readData(fileName)</code></li><li><code>splitData(allMethy, trainRatio)</code></li><li><code>splitData_v2(allMethy, trainSampleNames, sampleIndex2Name)</code></li><li><code>readPairedData(fileName1, fileName2)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Generate paired random-run train/test splits and load data inputs.
+
 output:train_list train_beta_matrix train_match_matrix test_list test_sample_path test_match_path
 &quot;&quot;&quot;
 import sys
@@ -1941,14 +1996,22 @@ print(&quot;done.&quot;)</code></pre>
 <article class="card" id="Part1.Marker_Selection/1.4.1_submit_paired_PH.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.1_submit_paired_PH.sh</h3>
-		<div class="meta">Shell | 2027 bytes</div>
+		<div class="meta">Shell | 2101 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Submit paired random-run generation across validation repeats.
+make dir &quot;paired_v2&quot; before running the follwing command
+An example of the partition file is below:
+run_id	test_list	train_list
+1	CTR101,CTR108,CTR110,CTR113,CTR114,CTR126,CTR129,CTR84	CTR103,CTR104,CTR106,CTR107,CTR111,CTR117,CTR118,CTR127,CTR128,CTR131,CTR132,CTR134,CTR147,CTR148,CTR149,CTR150,CTR151,CTR152,CTR153,CTR154,CTR85,CTR86,CTR97,CTR98
+2	CTR106,CTR111,CTR127,CTR147,CTR150,CTR151,CTR153,CTR98	CTR101,CTR103,CTR104,CTR107,CTR108,CTR110,CTR113,CTR114,CTR117,CTR118,CTR126,CTR128,CTR129,CTR131,CTR132,CTR134,CTR148,CTR149,CTR152,CTR154,CTR84,CTR85,CTR86,CTR97
+3	CTR103,CTR104,CTR107,CTR132,CTR134,CTR148,CTR152,CTR86	CTR101,CTR106,CTR108,CTR110,CTR111,CTR113,CTR114,CTR117,CTR118,CTR126,CTR127,CTR128,CTR129,CTR131,CTR147,CTR149,CTR150,CTR151,CTR153,CTR154,CTR84,CTR85,CTR97,CTR98</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:g:t:s:v:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code># make dir &quot;paired_v2&quot; before running the follwing command
+		<pre><code># Summary: Submit paired random-run generation across validation repeats.
+# make dir &quot;paired_v2&quot; before running the follwing command
 # An example of the partition file is below:
 #run_id	test_list	train_list
 #1	CTR101,CTR108,CTR110,CTR113,CTR114,CTR126,CTR129,CTR84	CTR103,CTR104,CTR106,CTR107,CTR111,CTR117,CTR118,CTR127,CTR128,CTR131,CTR132,CTR134,CTR147,CTR148,CTR149,CTR150,CTR151,CTR152,CTR153,CTR154,CTR85,CTR86,CTR97,CTR98
@@ -1997,16 +2060,15 @@ done
 <article class="card" id="Part1.Marker_Selection/1.4.2_gen_rand_runs_tumorOnly.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.2_gen_rand_runs_tumorOnly.py</h3>
-		<div class="meta">Python | 10048 bytes</div>
+		<div class="meta">Python | 10083 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Generate tumor-only random runs with purity filtering and data loading.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readData(fileName)</code></li><li><code>splitData(allMethy, trainRatio)</code></li><li><code>splitData_v2(allMethy, trainSampleNames, sampleIndex2Name)</code></li><li><code>readPairedData(fileName1, fileName2)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
-process tumoronly filter by purity
-&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Generate tumor-only random runs with purity filtering and data loading.&quot;&quot;&quot;
 
 import sys
 import os
@@ -2308,14 +2370,23 @@ print(&quot;done.&quot;)
 <article class="card" id="Part1.Marker_Selection/1.4.2_submit_tumorOnly_THorMH.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.2_submit_tumorOnly_THorMH.sh</h3>
-		<div class="meta">Shell | 2129 bytes</div>
+		<div class="meta">Shell | 2216 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Submit tumor-only random-run generation across repeats and purity settings.
+make dir &quot;paired_v2&quot; before running the follwing command
+An example of the partition file is below:
+run_id	test_list	train_list
+1	CTR101,CTR108,CTR110,CTR113,CTR114,CTR126,CTR129,CTR84	CTR103,CTR104,CTR106,CTR107,CTR111,CTR117,CTR118,CTR127,CTR128,CTR131,CTR132,CTR134,CTR147,CTR148,CTR149,CTR150,CTR151,CTR152,CTR153,CTR154,CTR85,CTR86,CTR97,CTR98
+2	CTR106,CTR111,CTR127,CTR147,CTR150,CTR151,CTR153,CTR98	CTR101,CTR103,CTR104,CTR107,CTR108,CTR110,CTR113,CTR114,CTR117,CTR118,CTR126,CTR128,CTR129,CTR131,CTR132,CTR134,CTR148,CTR149,CTR152,CTR154,CTR84,CTR85,CTR86,CTR97
+3	CTR103,CTR104,CTR107,CTR132,CTR134,CTR148,CTR152,CTR86	CTR101,CTR106,CTR108,CTR110,CTR111,CTR113,CTR114,CTR117,CTR118,CTR126,CTR127,CTR128,CTR129,CTR131,CTR147,CTR149,CTR150,CTR151,CTR153,CTR154,CTR84,CTR85,CTR97,CTR98
+&quot;top30&quot;</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:g:t:s:v:n:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code># make dir &quot;paired_v2&quot; before running the follwing command
+		<pre><code># Summary: Submit tumor-only random-run generation across repeats and purity settings.
+# make dir &quot;paired_v2&quot; before running the follwing command
 # An example of the partition file is below:
 #run_id	test_list	train_list
 #1	CTR101,CTR108,CTR110,CTR113,CTR114,CTR126,CTR129,CTR84	CTR103,CTR104,CTR106,CTR107,CTR111,CTR117,CTR118,CTR127,CTR128,CTR131,CTR132,CTR134,CTR147,CTR148,CTR149,CTR150,CTR151,CTR152,CTR153,CTR154,CTR85,CTR86,CTR97,CTR98
@@ -2367,14 +2438,16 @@ done
 <article class="card" id="Part1.Marker_Selection/1.5_para_est_mom_mc.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.5_para_est_mom_mc.R</h3>
-		<div class="meta">R | 2033 bytes</div>
+		<div class="meta">R | 2117 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Estimate beta distribution parameters by method of moments in parallel.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>paraEstMoM</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>library(MASS)
+		<pre><code># Summary: Estimate beta distribution parameters by method of moments in parallel.
+library(MASS)
 library(parallel)
 set.seed(2016)
 args &lt;- commandArgs(trailingOnly = T)
@@ -2443,14 +2516,17 @@ write.table(t(dist2norm), paste0(outputDir,&#x27;/dist2norm&#x27;),sep=&#x27;\t&
 <article class="card" id="Part1.Marker_Selection/1.5_submit_est.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.5_submit_est.sh</h3>
-		<div class="meta">Shell | 1542 bytes</div>
+		<div class="meta">Shell | 1607 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Submit parameter estimation jobs for each random run.
+updata 20240311</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:g:t:s:v:n:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code>#updata 20240311
+		<pre><code># Summary: Submit parameter estimation jobs for each random run.
+#updata 20240311
 get_line(){
   sed -n &#x27;&#x27;$2&#x27;p&#x27; $1
 }
@@ -2517,14 +2593,16 @@ wait &quot;${pids[@]}&quot;</code></pre>
 <article class="card" id="Part1.Marker_Selection/1.6.1_sel_markers_paired.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.1_sel_markers_paired.py</h3>
-		<div class="meta">Python | 14127 bytes</div>
+		<div class="meta">Python | 14199 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Select markers for the paired method using differential criteria.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readData(fileName, type)</code></li><li><code>readAlphas(fileName)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>import sys
+		<pre><code>&quot;&quot;&quot;Select markers for the paired method using differential criteria.&quot;&quot;&quot;
+import sys
 import os
 import re
 import numpy as np
@@ -2825,14 +2903,16 @@ elif method.startswith(&#x27;fold-change&#x27;):
 <article class="card" id="Part1.Marker_Selection/1.6.1_submit_sel_markers_paired.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.1_submit_sel_markers_paired.sh</h3>
-		<div class="meta">Shell | 1968 bytes</div>
+		<div class="meta">Shell | 2050 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run paired marker selection for thresholds and add complementary bins.</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:g:t:v:c:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
 		<pre><code>
+# Summary: Run paired marker selection for thresholds and add complementary bins.
 checkMakeDirectory(){
         echo -e &quot;checking directory: $1&quot;
         if [ ! -e &quot;$1&quot; ]; then
@@ -2898,14 +2978,16 @@ done
 <article class="card" id="Part1.Marker_Selection/1.6.2_sel_markers_tumorOnly.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.2_sel_markers_tumorOnly.py</h3>
-		<div class="meta">Python | 8379 bytes</div>
+		<div class="meta">Python | 8453 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Select markers for the tumor-only method using difference criteria.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readData(fileName, type)</code></li><li><code>readAlphas(fileName)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>import sys
+		<pre><code>&quot;&quot;&quot;Select markers for the tumor-only method using difference criteria.&quot;&quot;&quot;
+import sys
 import os
 import re
 import numpy as np
@@ -3112,14 +3194,16 @@ elif method.startswith(&#x27;mean-diff&#x27;):
 <article class="card" id="Part1.Marker_Selection/1.6.2_submit_sel_markers_tumorOnly.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.2_submit_sel_markers_tumorOnly.sh</h3>
-		<div class="meta">Shell | 2292 bytes</div>
+		<div class="meta">Shell | 2363 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run tumor-only marker selection and add complementary bins.</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:g:t:v:c:n:</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
 		<pre><code>
+# Summary: Run tumor-only marker selection and add complementary bins.
 checkMakeDirectory(){
         echo -e &quot;checking directory: $1&quot;
         if [ ! -e &quot;$1&quot; ]; then
@@ -3188,14 +3272,16 @@ done
 <article class="card" id="Part1.Marker_Selection/1.6.3_add_complementary_bins.py">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.3_add_complementary_bins.py</h3>
-		<div class="meta">Python | 8533 bytes</div>
+		<div class="meta">Python | 8599 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Add complementary genomic bins to a biomarker feature file.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>read_chrom_sizes_file(file)</code></li><li><code>class Biomarker</code></li><li><code>read_wenyuan_defined_biomarker_feature_file(file, start_column_of_genome_location)</code></li><li><code>merge_two_biomarkers(chr2biomarkers_I, chr2biomarkers_II)</code></li><li><code>make_a_bin(chr, start_coord, end_coord, num_of_addtional_columns)</code></li><li><code>complement_biomarkers(chr2biomarkers, chr2size, num_of_addtional_columns)</code></li><li><code>make_complete_chromosomes()</code></li><li><code>write_markers(chr2biomarkers, header_line, output_file)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code># Modify from Wenyuan&#x27;s version
+		<pre><code>&quot;&quot;&quot;Add complementary genomic bins to a biomarker feature file.&quot;&quot;&quot;
+# Modify from Wenyuan&#x27;s version
 # py2 to py3, change print to print()
 import sys, argparse, os
 
@@ -3409,14 +3495,19 @@ print(&quot;Done.&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_paired.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_paired.py</h3>
-		<div class="meta">Python | 6753 bytes</div>
+		<div class="meta">Python | 6819 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Prepare sample lists and DMR inputs for the paired mMTS pipeline.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readPairedData(fileName1)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Prepare sample lists and DMR inputs for the paired mMTS pipeline.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -3581,14 +3672,19 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_tumorOnly.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_tumorOnly.py</h3>
-		<div class="meta">Python | 7286 bytes</div>
+		<div class="meta">Python | 7356 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Prepare sample lists and DMR inputs for the tumor-only mMTS pipeline.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>readPairedData(fileName1)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Prepare sample lists and DMR inputs for the tumor-only mMTS pipeline.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -3757,14 +3853,19 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.1_gen_DMRref_gene_more1.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.1_gen_DMRref_gene_more1.py</h3>
-		<div class="meta">Python | 2680 bytes</div>
+		<div class="meta">Python | 2728 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Extract DMR regions into reference fasta files.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>extract_fasta_regions(input_fasta, input_bed, output_fasta)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Extract DMR regions into reference fasta files.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -3842,14 +3943,19 @@ for i in range(cohort, rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.2_generate_cpg_ref_beta.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.2_generate_cpg_ref_beta.py</h3>
-		<div class="meta">Python | 4086 bytes</div>
+		<div class="meta">Python | 4144 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Attach beta values to DMR CpG sites for training samples.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>process_cpg_sites(input_file, beta_file, output_file)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Attach beta values to DMR CpG sites for training samples.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -3955,14 +4061,19 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.3_gen_dmr_reads.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.3_gen_dmr_reads.py</h3>
-		<div class="meta">Python | 4426 bytes</div>
+		<div class="meta">Python | 4483 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Generate simulated reads from DMR reference fasta files.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>generate_read(fasta_records, output_file)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Generate simulated reads from DMR reference fasta files.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4078,14 +4189,19 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.4_simulate_methy_improve.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.4_simulate_methy_improve.py</h3>
-		<div class="meta">Python | 10548 bytes</div>
+		<div class="meta">Python | 10601 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Simulate methylation on DMR reads using beta values.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>read_beta_file(beta_file)</code></li><li><code>read_reads_file(reads_file)</code></li><li><code>initialize_methylation_dict(reads_data)</code></li><li><code>read_bed_file(bed_file)</code></li><li><code>index_beta_data(beta_data)</code></li><li><code>extract_dmr_beta_data(dmr_list, beta_index)</code></li><li><code>reform_DMR_reads(reads_methy_dict, dmr_start, dmr_end)</code></li><li><code>process_dmr_regions(dmr_list, reads_methy_dict, region_beta)</code></li><li><code>write_output_file(output_file, pos_mat, dna_base_mat, dna_methy_mat)</code></li><li><code>parse_args()</code></li><li><code>main()</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Simulate methylation on DMR reads using beta values.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4349,14 +4465,19 @@ if __name__ == &quot;__main__&quot;:
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.5_select_healthy_bam_to_train.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.5_select_healthy_bam_to_train.py</h3>
-		<div class="meta">Python | 2768 bytes</div>
+		<div class="meta">Python | 2824 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Select healthy BAM reads overlapping DMRs for training.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>input_sample(i)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Select healthy BAM reads overlapping DMRs for training.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4438,14 +4559,19 @@ for i in range(cohort,rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.6_select_bam_test_all.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.6_select_bam_test_all.py</h3>
-		<div class="meta">Python | 3765 bytes</div>
+		<div class="meta">Python | 3820 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Select test BAM reads overlapping DMRs for evaluation.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>input_sample(i)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Select test BAM reads overlapping DMRs for evaluation.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4555,14 +4681,19 @@ for i in range(cohort,rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.7_trans_to_train_read.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.7_trans_to_train_read.py</h3>
-		<div class="meta">Python | 2888 bytes</div>
+		<div class="meta">Python | 2948 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Convert simulated reads to training format and filter chrX.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>process_files(input_folder, output_folder)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Convert simulated reads to training format and filter chrX.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4643,14 +4774,19 @@ print(f&quot;Script executed in {execution_time:.2f} seconds&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.8_extract_bam_to_reads.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.8_extract_bam_to_reads.py</h3>
-		<div class="meta">Python | 6914 bytes</div>
+		<div class="meta">Python | 6979 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Extract reads and methylation strings from BAMs for train/test.
+
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>reverse_complement(read, methy)</code></li><li><code>process_line(line)</code></li><li><code>process_methylation(flag, read, methy)</code></li><li><code>input_sample(i)</code></li><li><code>process_files(input_folder, output_folder)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Extract reads and methylation strings from BAMs for train/test.
+
 Author: Yin Liang
 Date: 10/16/2024
 &quot;&quot;&quot;
@@ -4831,14 +4967,20 @@ for i in range(cohort,rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/env_module.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/env_module.py</h3>
-		<div class="meta">Python | 1927 bytes</div>
+		<div class="meta">Python | 1977 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Define paths and constants for the mMTS pipeline.
+
+Author: Yin Liang
+Date: 20250407
+define the file path of proccess</p></div>
 	
 	
 	
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Define paths and constants for the mMTS pipeline.
+
 Author: Yin Liang
 Date: 20250407
 define the file path of proccess
@@ -4889,14 +5031,20 @@ ajust_reads_to_train_dir = &quot;/2-9_ajust_to_train/&quot;</code></pre>
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline.py</h3>
-		<div class="meta">Python | 6673 bytes</div>
+		<div class="meta">Python | 6729 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run the mMTS pseudo-fragment pipeline (legacy version).
+
+a standard pipeline for generating Pseudo-fragment by mMTS
+Author: Yin Liang
+Date: 10/16/2024</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>execute_commands(commands, desc)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Run the mMTS pseudo-fragment pipeline (legacy version).
+
 a standard pipeline for generating Pseudo-fragment by mMTS
 Author: Yin Liang
 Date: 10/16/2024
@@ -5102,14 +5250,20 @@ print(f&quot;Script executed in {execution_time_minutes:.2f} minutes&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline_v1.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline_v1.py</h3>
-		<div class="meta">Python | 5111 bytes</div>
+		<div class="meta">Python | 5180 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run the mMTS pseudo-fragment pipeline with logging and step control.
+
+a standard pipeline for generating Pseudo-fragment by mMTS
+Author: Yin Liang
+Date: 3/25/2025</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>execute_command(command, desc)</code></li><li><code>execute_commands(commands, desc)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Run the mMTS pseudo-fragment pipeline with logging and step control.
+
 a standard pipeline for generating Pseudo-fragment by mMTS
 Author: Yin Liang
 Date: 3/25/2025
@@ -5250,14 +5404,16 @@ logger.info(f&quot;Script executed in {execution_time_minutes:.2f} minutes&quot;
 <article class="card" id="Part3.ResTran_model_training/ResTran.sh">
 	<header>
 		<h3>Part3.ResTran_model_training/ResTran.sh</h3>
-		<div class="meta">Shell | 1949 bytes</div>
+		<div class="meta">Shell | 2026 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Run ResTran training, prediction, and risk scoring per iteration.</p></div>
 	
 	<div class='section'><h4>Options</h4><ul><li>getopts: i:s:l:t:g:m:c:v:u</li></ul></div>
 	
 	<details>
 		<summary>View source</summary>
 		<pre><code>#!/bin/bash
+# Summary: Run ResTran training, prediction, and risk scoring per iteration.
 
 while getopts &quot;i:s:l:t:g:m:c:v:u&quot; flag
 do
@@ -5321,14 +5477,16 @@ echo &quot;All iterations completed successfully.&quot;
 <article class="card" id="Part3.ResTran_model_training/cal_risk.py">
 	<header>
 		<h3>Part3.ResTran_model_training/cal_risk.py</h3>
-		<div class="meta">Python | 1975 bytes</div>
+		<div class="meta">Python | 2027 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Compute risk scores from predicted d-scores.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>file_name(file_dir)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>import numpy as np
+		<pre><code>&quot;&quot;&quot;Compute risk scores from predicted d-scores.&quot;&quot;&quot;
+import numpy as np
 import os
 import argparse
 import env_modelue
@@ -5389,14 +5547,16 @@ if __name__ == &#x27;__main__&#x27;:
 <article class="card" id="Part3.ResTran_model_training/models.py">
 	<header>
 		<h3>Part3.ResTran_model_training/models.py</h3>
-		<div class="meta">Python | 16959 bytes</div>
+		<div class="meta">Python | 17027 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Define neural network architectures used by ResTran training.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>CNN_only()</code></li><li><code>resnet_block(input_data, filters, conv_size)</code></li><li><code>resnet1d(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.2)</code></li><li><code>DISMIR_deep()</code></li><li><code>lstm()</code></li><li><code>cnn_lstm()</code></li><li><code>class PositionalEncoding</code></li><li><code>transformer_encoder(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.1)</code></li><li><code>res_transformer(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.2)</code></li><li><code>res_lstm(input_shape=(66, 5))</code></li><li><code>cnn_transformer(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.2)</code></li><li><code>cnn_lstm_transformer(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.2)</code></li><li><code>cnn_lstm_cnn_transformer(input_shape=(66, 5), d_model=128, num_layers=6, num_heads=8, dff=512, dropout_rate=0.2)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>import numpy as np
+		<pre><code>&quot;&quot;&quot;Define neural network architectures used by ResTran training.&quot;&quot;&quot;
+import numpy as np
 import random
 import os
 import os.path
@@ -5815,14 +5975,16 @@ if __name__ == &#x27;__main__&#x27;:
 <article class="card" id="Part3.ResTran_model_training/predict_reads_source.py">
 	<header>
 		<h3>Part3.ResTran_model_training/predict_reads_source.py</h3>
-		<div class="meta">Python | 4569 bytes</div>
+		<div class="meta">Python | 4633 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Predict read-level scores using a trained ResTran model.</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>file_name(file_dir)</code></li><li><code>lstm_seq(seq, methy)</code></li><li><code>conv_onehot(seq)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>import numpy as np
+		<pre><code>&quot;&quot;&quot;Predict read-level scores using a trained ResTran model.&quot;&quot;&quot;
+import numpy as np
 import random
 import os
 import os.path
@@ -5967,14 +6129,19 @@ if __name__ == &#x27;__main__&#x27;:
 <article class="card" id="Part3.ResTran_model_training/training.py">
 	<header>
 		<h3>Part3.ResTran_model_training/training.py</h3>
-		<div class="meta">Python | 11123 bytes</div>
+		<div class="meta">Python | 11185 bytes</div>
 	</header>
+	<div class='section'><h4>Summary</h4><p>Train the ResTran model on simulated reads and save results.
+
+update:20241023
+Yin Liang; ZhanYu Liang</p></div>
 	
 	
 	<div class='section'><h4>API</h4><ul><li><code>file_name(file_dir)</code></li><li><code>data_prepare(file_dir1, file_dir2)</code></li><li><code>lstm_seq(seq, methy)</code></li><li><code>conv_onehot(seq)</code></li><li><code>make_chrom_region(chrom_0, region_0)</code></li></ul></div>
 	<details>
 		<summary>View source</summary>
-		<pre><code>&quot;&quot;&quot;
+		<pre><code>&quot;&quot;&quot;Train the ResTran model on simulated reads and save results.
+
 update:20241023
 Yin Liang; ZhanYu Liang
 &quot;&quot;&quot;
