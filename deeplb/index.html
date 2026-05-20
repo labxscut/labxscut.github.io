@@ -4,215 +4,154 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>DeepLB Scripts Documentation</title>
-	<style>
-		:root {
-			--bg: #f8fafc;
-			--card: #ffffff;
-			--text: #1e293b;
-			--muted: #475569;
-			--accent: #0f766e;
-			--accent-light: #ccfbf1;
-			--border: #e2e8f0;
-			--shadow: rgba(15, 23, 42, 0.08);
-			--radius: 12px;
-		}
-		body {
-			color-scheme: light;
-			margin: 0;
-			font-family: "Segoe UI", Arial, sans-serif;
-			color: var(--text);
-			background: radial-gradient(circle at top, #ecfeff 0%, var(--bg) 45%);
-			line-height: 1.6;
-		}
-		h2, p {
-			color: var(--text);
-		}
-		header.hero {
-			padding: 48px 20px 32px;
-			text-align: center;
-			background: linear-gradient(120deg, #0f766e 0%, #0f172a 100%);
-			color: #fff;
-		}
-		header.hero h1 {
-			margin: 0 0 12px;
-			font-size: 2.6rem;
-		}
-		header.hero p {
-			max-width: 820px;
-			margin: 0 auto;
-			color: #e2e8f0;
-		}
-		.container {
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 28px 20px 60px;
-		}
-		nav.quicklinks {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 12px;
-			justify-content: center;
-			margin: 20px 0 32px;
-		}
-		nav.quicklinks a {
-			text-decoration: none;
-			background: var(--accent-light);
-			color: var(--accent);
-			padding: 8px 14px;
-			border-radius: 999px;
-			font-weight: 600;
-		}
-		section {
-			margin-bottom: 36px;
-		}
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-			gap: 16px;
-		}
-		.card {
-			background: var(--card);
-			border: 1px solid var(--border);
-			border-radius: var(--radius);
-			padding: 18px 20px;
-			box-shadow: 0 12px 30px var(--shadow);
-		}
-		.card h3 {
-			margin: 0 0 6px;
-			font-size: 1.1rem;
-			overflow-wrap: anywhere;
-			word-break: break-word;
-		}
-		.section p,
-		.section li {
-			overflow-wrap: anywhere;
-			word-break: break-word;
-		}
-		.meta {
-			font-size: 0.85rem;
-			color: var(--muted);
-			margin-bottom: 10px;
-		}
-		.section h4 {
-			margin-bottom: 6px;
-			color: var(--accent);
-		}
-		pre {
-			background: #0f172a;
-			color: #e2e8f0;
-			padding: 12px;
-			border-radius: 10px;
-			overflow-x: auto;
-			font-size: 0.85rem;
-		}
-		code {
-			background: #e2e8f0;
-			padding: 2px 6px;
-			border-radius: 6px;
-		}
-		pre code {
-			background: transparent;
-			color: inherit;
-			padding: 0;
-		}
-		details summary {
-			cursor: pointer;
-			color: var(--accent);
-			font-weight: 600;
-			margin: 10px 0;
-		}
-		.path {
-			font-size: 0.8rem;
-			color: var(--muted);
-			margin-top: 8px;
-			overflow-wrap: anywhere;
-			word-break: break-word;
-		}
-		.path a {
-			display: inline-block;
-			max-width: 100%;
-			overflow-wrap: anywhere;
-			word-break: break-all;
-			word-wrap: break-word;
-		}
-		.notice {
-			background: #fffbeb;
-			border: 1px solid #fef3c7;
-			padding: 12px 16px;
-			border-radius: 10px;
-			color: #92400e;
-		}
-	</style>
+	<link rel="stylesheet" href="scripts_docs.css" />
 </head>
 <body>
 	<header class="hero">
-		<h1>DeepLB Scripts Documentation</h1>
-		<p>Generated documentation for all scripts under <a href="https://github.com/labxscut/DeepLB/tree/master/Scripts" target="_blank" rel="noopener">https://github.com/labxscut/DeepLB/tree/master/Scripts</a>. Designed for bioinformatics and pipeline users.</p>
-		<!-- <p>Generated at 2026-05-17 10:48.</p> -->
+		<h1>DeepLB Documentation</h1>
+		<!-- <p>Generated at 2026-05-20 11:28.</p> -->
 	</header>
 
 	<main class="container">
-		<section>
-			<div class="notice">
-				This page is auto-generated. Placeholders are marked for citation details and figures that are not available in the scripts.
-			</div>
-			<nav class="quicklinks"><a href='#Root'>Root</a> <a href='#Part1'>Part1</a> <a href='#Part2'>Part2</a> <a href='#Part3'>Part3</a></nav>
-		</section>
+		<div class="layout">
+			<aside class="sidebar" id="sidebar">
+				<div class="sidebar-header">
+					<span>Navigation</span>
+					<button class="sidebar-toggle" id="sidebarToggle" type="button" aria-expanded="true" aria-label="Toggle navigation">&lt;&lt;</button>
+				</div>
+				<div class="sidebar-content">
+					
+<div class="nav-group">
+	<div class="nav-title"><a href="#Root">root</a></div>
+	<ul>
+		<li><a href='#DeepLB_pipeline.sh'>DeepLB_pipeline.sh</a></li>
+	</ul>
+</div>
 
-		<section id="overview">
-			<h2>About DeepLB</h2>
-			<p>DeepLB is an open-source framework for early cancer detection using cfDNA methylation and sequence data. It combines marker selection, pseudo-fragment generation, and deep learning (ResTran) model training.</p>
-			<div class="grid">
-				<div class="card">
-					<h3>Marker Selection</h3>
-					<p>Multi-strategy marker selection across PH/TH/MH cohorts to build robust methylation markers.</p>
-				</div>
-				<div class="card">
-					<h3>mMTS Generator</h3>
-					<p>Builds pseudo-fragment reads to expand training data without additional sequencing cost.</p>
-				</div>
-				<div class="card">
-					<h3>ResTran Model</h3>
-					<p>Hybrid ResNet-Transformer network for fragment-level classification and cancer score prediction.</p>
-				</div>
-			</div>
-		</section>
 
-		<section id="installation">
-			<h2>Installation and Quick Start</h2>
-			<p>Suggested setup (verify against your environment):</p>
-			<pre><code>git clone https://github.com/labxscut/DeepLB.git
+<div class="nav-group">
+	<div class="nav-title"><a href="#Part1">part1</a></div>
+	<ul>
+		<li><a href='#Part1.Marker_Selection/1.1_prepare_sample_annotation.R'>1.1_prepare_sample_annotation.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.1_reformat_TCGA.R'>1.1_reformat_TCGA.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.1_subsample_for_tumorOnly.R'>1.1_subsample_for_tumorOnly.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.2_add_complementary_bins.py'>1.2_add_complementary_bins.py</a></li>
+<li><a href='#Part1.Marker_Selection/1.2_define_blocks_according_CancerLocator_method.R'>1.2_define_blocks_according_CancerLocator_method.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.2_refine_blocks.sh'>1.2_refine_blocks.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.3.1_get_methylation_ratio_blocks_TCGA_paired.R'>1.3.1_get_methylation_ratio_blocks_TCGA_paired.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R'>1.3.2_get_methylation_ratio_blocks_TCGA_tumorOnly.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.3.3_extract_reads_from_normal_plasma.sh'>1.3.3_extract_reads_from_normal_plasma.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.3.4_get_methylation_ratio_blocks_normal_plasma.R'>1.3.4_get_methylation_ratio_blocks_normal_plasma.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.4.1_gen_rand_runs_paired.py'>1.4.1_gen_rand_runs_paired.py</a></li>
+<li><a href='#Part1.Marker_Selection/1.4.1_submit_paired_PH.sh'>1.4.1_submit_paired_PH.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.4.2_gen_rand_runs_tumorOnly.py'>1.4.2_gen_rand_runs_tumorOnly.py</a></li>
+<li><a href='#Part1.Marker_Selection/1.4.2_submit_tumorOnly_THorMH.sh'>1.4.2_submit_tumorOnly_THorMH.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.5_para_est_mom_mc.R'>1.5_para_est_mom_mc.R</a></li>
+<li><a href='#Part1.Marker_Selection/1.5_submit_est.sh'>1.5_submit_est.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.6.1_sel_markers_paired.py'>1.6.1_sel_markers_paired.py</a></li>
+<li><a href='#Part1.Marker_Selection/1.6.1_submit_sel_markers_paired.sh'>1.6.1_submit_sel_markers_paired.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.6.2_sel_markers_tumorOnly.py'>1.6.2_sel_markers_tumorOnly.py</a></li>
+<li><a href='#Part1.Marker_Selection/1.6.2_submit_sel_markers_tumorOnly.sh'>1.6.2_submit_sel_markers_tumorOnly.sh</a></li>
+<li><a href='#Part1.Marker_Selection/1.6.3_add_complementary_bins.py'>1.6.3_add_complementary_bins.py</a></li>
+	</ul>
+</div>
+
+
+<div class="nav-group">
+	<div class="nav-title"><a href="#Part2">part2</a></div>
+	<ul>
+		<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_paired.py'>2.0_prepare_files_paired.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_tumorOnly.py'>2.0_prepare_files_tumorOnly.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.1_gen_DMRref_gene_more1.py'>2.1_gen_DMRref_gene_more1.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.2_generate_cpg_ref_beta.py'>2.2_generate_cpg_ref_beta.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.3_gen_dmr_reads.py'>2.3_gen_dmr_reads.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.4_simulate_methy_improve.py'>2.4_simulate_methy_improve.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.5_select_healthy_bam_to_train.py'>2.5_select_healthy_bam_to_train.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.6_select_bam_test_all.py'>2.6_select_bam_test_all.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.7_trans_to_train_read.py'>2.7_trans_to_train_read.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/2.8_extract_bam_to_reads.py'>2.8_extract_bam_to_reads.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/env_module.py'>env_module.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline.py'>mMTS-pipeline.py</a></li>
+<li><a href='#Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline_v1.py'>mMTS-pipeline_v1.py</a></li>
+	</ul>
+</div>
+
+
+<div class="nav-group">
+	<div class="nav-title"><a href="#Part3">part3</a></div>
+	<ul>
+		<li><a href='#Part3.ResTran_model_training/ResTran.sh'>ResTran.sh</a></li>
+<li><a href='#Part3.ResTran_model_training/cal_risk.py'>cal_risk.py</a></li>
+<li><a href='#Part3.ResTran_model_training/models.py'>models.py</a></li>
+<li><a href='#Part3.ResTran_model_training/predict_reads_source.py'>predict_reads_source.py</a></li>
+<li><a href='#Part3.ResTran_model_training/training.py'>training.py</a></li>
+	</ul>
+</div>
+
+				</div>
+			</aside>
+			<div class="content">
+				<section>
+					<div class="notice">
+						This page is auto-generated. Placeholders are marked for citation details and figures that are not available in the scripts.
+					</div>
+					<nav class="quicklinks"><a href='#Root'>Root</a> <a href='#Part1'>Part1</a> <a href='#Part2'>Part2</a> <a href='#Part3'>Part3</a></nav>
+				</section>
+
+				<section id="overview">
+					<h2>About DeepLB</h2>
+					<p>DeepLB is an open-source framework for early cancer detection using cfDNA methylation and sequence data. It combines marker selection, pseudo-fragment generation, and deep learning (ResTran) model training.</p>
+					<div class="grid">
+						<div class="card">
+							<h3>Marker Selection</h3>
+							<p>Multi-strategy marker selection across PH/TH/MH cohorts to build robust methylation markers.</p>
+						</div>
+						<div class="card">
+							<h3>mMTS Generator</h3>
+							<p>Builds pseudo-fragment reads to expand training data without additional sequencing cost.</p>
+						</div>
+						<div class="card">
+							<h3>ResTran Model</h3>
+							<p>Hybrid ResNet-Transformer network for fragment-level classification and cancer score prediction.</p>
+						</div>
+					</div>
+				</section>
+
+				<section id="installation">
+					<h2>Installation and Quick Start</h2>
+					<p>Suggested setup (verify against your environment):</p>
+					<pre><code>git clone https://github.com/labxscut/DeepLB.git
 cd DeepLB
 python -m pip install -e .</code></pre>
-			<p>Data layout (placeholder, adjust paths as needed):</p>
-			<pre><code>Predata/
+					<p>Data layout (placeholder, adjust paths as needed):</p>
+					<pre><code>Predata/
 	450K/
 	metadata/
 	reference/
 	tumor_purity/
 	WGBS/</code></pre>
-		</section>
+				</section>
 
-		<section id="user-guide">
-			<h2>User Guide</h2>
-			<ol>
-				<li>Part1: Run marker selection via <code>DeepLB_pipeline.sh -u part1</code>.</li>
-				<li>Part2: Generate pseudo-fragments via <code>mMTS-pipeline.py</code>.</li>
-				<li>Part3: Train and predict using <code>ResTran.sh</code>.</li>
-			</ol>
-			<p>See individual script cards below for exact options and usage.</p>
-		</section>
+				<section id="user-guide">
+					<h2>User Guide</h2>
+					<ol>
+						<li>Part1: Run marker selection via <code>DeepLB_pipeline.sh -u part1</code>.</li>
+						<li>Part2: Generate pseudo-fragments via <code>mMTS-pipeline.py</code>.</li>
+						<li>Part3: Train and predict using <code>ResTran.sh</code>.</li>
+					</ol>
+					<p>See individual script cards below for exact options and usage.</p>
+				</section>
 
-		<section id="api-docs">
-			<h2>API Documentation (Scripts)</h2>
-			
+				<section id="api-docs">
+					<h2>API Documentation (Scripts)</h2>
+					
 <section class="group" id="Root">
 	<h2>Root Scripts</h2>
 	
 <article class="card" id="DeepLB_pipeline.sh">
 	<header>
 		<h3>DeepLB_pipeline.sh</h3>
-		<div class="meta">Shell | 12357 bytes</div>
+		<div class="meta">Shell | 12343 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Run DeepLB part1/2/3 pipeline steps with CLI parameters and dry-run support.
 Parameters</p></div>
@@ -235,7 +174,7 @@ Options (full names and abbreviations):
   --generation_threshold, -q &lt;THRESHOLD&gt; : Generation threshold (selected from marker selection threshold)
   --fragment_length, -l &lt;LENGTH&gt;  : Fragment length for pseudo-fragment generation
   --meta, -x &lt;FILE&gt;               : Meta file path
-  --dry_run, -d|-n                : Enable dry-run mode
+  --dry_run, -d                   : Enable dry-run mode
   --help, -h                      : Display this help message</code></pre></div>
 	<div class='section'><h4>Options</h4><ul><li>getopts: a:b:c:dn:g:hk:l:m:n:p:q:r:s:t:u:v:w:x:</li></ul></div>
 	
@@ -246,7 +185,7 @@ Options (full names and abbreviations):
 # Parameters
 DRY_RUN=false
 # Part1 parameters
-ROOT_DIR=&quot;&quot; # /home/yinliang/PROJECT/DeepLB
+ROOT_DIR=&quot;&quot; # /path/to/DeepLB
 TUMOR=&quot;&quot; # lihc brca stad
 GROUP=&quot;&quot; # TH MH PH
 SUBSAMPLE=&quot;&quot; # TH:top30 top50 MH:sub30 sub50
@@ -285,7 +224,7 @@ usage() {
     echo &quot;  --generation_threshold, -q &lt;THRESHOLD&gt; : Generation threshold (selected from marker selection threshold)&quot;
     echo &quot;  --fragment_length, -l &lt;LENGTH&gt;  : Fragment length for pseudo-fragment generation&quot;
     echo &quot;  --meta, -x &lt;FILE&gt;               : Meta file path&quot;
-    echo &quot;  --dry_run, -d|-n                : Enable dry-run mode&quot;
+    echo &quot;  --dry_run, -d                   : Enable dry-run mode&quot;
     echo &quot;  --help, -h                      : Display this help message&quot;
     exit 1
 }
@@ -631,7 +570,7 @@ print(output_file)
 <article class="card" id="Part1.Marker_Selection/1.1_reformat_TCGA.R">
 	<header>
 		<h3>Part1.Marker_Selection/1.1_reformat_TCGA.R</h3>
-		<div class="meta">R | 4721 bytes</div>
+		<div class="meta">R | 4730 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Reformat TCGA 450K methylation data and compute purity outputs.</p></div>
 	
@@ -667,7 +606,7 @@ for (type.short in analyze_tumor){
   tumor.profile.filename &lt;- paste(output.dir, tolower(type.short), &quot;_tumor&quot;, sep=&#x27;&#x27;)
   purity.filename &lt;- paste0(purity.dir, type.short, &quot;_purity.csv&quot;)
 
-  # 检查所有文件是否存在且不为空
+  # Check that all output files exist and are non-empty
   if (file.exists(normal.index.filename) &amp;&amp; file.size(normal.index.filename) &gt; 0 &amp;&amp;
       file.exists(normal.profile.filename) &amp;&amp; file.size(normal.profile.filename) &gt; 0 &amp;&amp;
       file.exists(tumor.index.filename) &amp;&amp; file.size(tumor.index.filename) &gt; 0 &amp;&amp;
@@ -1517,7 +1456,7 @@ for (tumor.type in c(target_tumor)) { #,&quot;lihc&quot;,&quot;paad&quot;
 <article class="card" id="Part1.Marker_Selection/1.3.3_extract_reads_from_normal_plasma.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.3.3_extract_reads_from_normal_plasma.sh</h3>
-		<div class="meta">Shell | 2206 bytes</div>
+		<div class="meta">Shell | 2205 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Extract methylation reads and bins from normal WGBS BAMs.
 FOR processing normal WGBS bam file</p></div>
@@ -1546,7 +1485,7 @@ while getopts &quot;i:s:&quot; opt; do
        ;;
 	s) sample_list=&quot;$OPTARG&quot;
 	   ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+    \?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -1996,7 +1935,7 @@ print(&quot;done.&quot;)</code></pre>
 <article class="card" id="Part1.Marker_Selection/1.4.1_submit_paired_PH.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.1_submit_paired_PH.sh</h3>
-		<div class="meta">Shell | 2101 bytes</div>
+		<div class="meta">Shell | 2097 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Submit paired random-run generation across validation repeats.
 make dir &quot;paired_v2&quot; before running the follwing command
@@ -2029,7 +1968,7 @@ while getopts &quot;i:g:t:s:v:&quot; opt; do
 	   ;;
 	v) validate_time=&quot;$OPTARG&quot;
 	   ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+	\?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -2370,7 +2309,7 @@ print(&quot;done.&quot;)
 <article class="card" id="Part1.Marker_Selection/1.4.2_submit_tumorOnly_THorMH.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.4.2_submit_tumorOnly_THorMH.sh</h3>
-		<div class="meta">Shell | 2216 bytes</div>
+		<div class="meta">Shell | 2212 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Submit tumor-only random-run generation across repeats and purity settings.
 make dir &quot;paired_v2&quot; before running the follwing command
@@ -2407,7 +2346,7 @@ while getopts &quot;i:g:t:s:v:n:&quot; opt; do
 	   ;;
 	n) thre_type=&quot;$OPTARG&quot;
 	   ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+	\?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -2516,7 +2455,7 @@ write.table(t(dist2norm), paste0(outputDir,&#x27;/dist2norm&#x27;),sep=&#x27;\t&
 <article class="card" id="Part1.Marker_Selection/1.5_submit_est.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.5_submit_est.sh</h3>
-		<div class="meta">Shell | 1607 bytes</div>
+		<div class="meta">Shell | 1610 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Submit parameter estimation jobs for each random run.
 updata 20240311</p></div>
@@ -2553,7 +2492,7 @@ while getopts &quot;i:g:t:s:v:n:&quot; opt; do
                 ;;
         n) thre_type=&quot;$OPTARG&quot;
                 ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+        \?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -2903,7 +2842,7 @@ elif method.startswith(&#x27;fold-change&#x27;):
 <article class="card" id="Part1.Marker_Selection/1.6.1_submit_sel_markers_paired.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.1_submit_sel_markers_paired.sh</h3>
-		<div class="meta">Shell | 2050 bytes</div>
+		<div class="meta">Shell | 2046 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Run paired marker selection for thresholds and add complementary bins.</p></div>
 	
@@ -2932,7 +2871,7 @@ while getopts &quot;i:g:t:v:c:&quot; opt; do
 	   ;;
 	c) diff_min_list=&quot;$OPTARG&quot;
 	   ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+	\?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -3194,7 +3133,7 @@ elif method.startswith(&#x27;mean-diff&#x27;):
 <article class="card" id="Part1.Marker_Selection/1.6.2_submit_sel_markers_tumorOnly.sh">
 	<header>
 		<h3>Part1.Marker_Selection/1.6.2_submit_sel_markers_tumorOnly.sh</h3>
-		<div class="meta">Shell | 2363 bytes</div>
+		<div class="meta">Shell | 2359 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Run tumor-only marker selection and add complementary bins.</p></div>
 	
@@ -3225,7 +3164,7 @@ while getopts &quot;i:g:t:v:c:n:&quot; opt; do
 	   ;;
 	n) thre_type=&quot;$OPTARG&quot;
 	   ;;
-    \?) echo &quot;无效的选项: -$OPTARG&quot; &gt;&amp;2
+	\?) echo &quot;Invalid option: -$OPTARG&quot; &gt;&amp;2
         exit 1
        ;;
   esac
@@ -3495,7 +3434,7 @@ print(&quot;Done.&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_paired.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_paired.py</h3>
-		<div class="meta">Python | 6819 bytes</div>
+		<div class="meta">Python | 6830 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Prepare sample lists and DMR inputs for the paired mMTS pipeline.
 
@@ -3527,7 +3466,7 @@ parser = argparse.ArgumentParser(description=&#x27;Parameters for threshold/tumo
 parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumor type&#x27;) #&quot;lihc&quot; &quot;paad&quot; &quot;stad&quot; &quot;brca&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;, help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;, help=&#x27;Divide the numbers&#x27;)##&quot;TH&quot; &quot;MH&quot; &quot;PH&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;, help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;, help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-c&#x27;, &#x27;--choose&#x27;, help=&#x27;Divide the numbers&#x27;, default=&quot;freq-diff&quot;) #freq-diff mean-diff
@@ -3601,7 +3540,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
         next(m)
         for line in tqdm(m, desc=f&quot;Processing file {marker_file}&quot;, leave=False):
             info = line.rstrip().split(&quot;\t&quot;)
-            if info[1] == &quot;chrY&quot; or info[1] == &quot;chrX&quot;:#排除性染色体
+            if info[1] == &quot;chrY&quot; or info[1] == &quot;chrX&quot;:# exclude sex chromosomes
                 continue
             else:
                 if info[4] == &quot;hyper&quot;:
@@ -3672,7 +3611,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_tumorOnly.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.0_prepare_files_tumorOnly.py</h3>
-		<div class="meta">Python | 7356 bytes</div>
+		<div class="meta">Python | 7373 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Prepare sample lists and DMR inputs for the tumor-only mMTS pipeline.
 
@@ -3703,7 +3642,7 @@ parser = argparse.ArgumentParser(description=&#x27;Parameters for threshold/tumo
 parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumor type&#x27;) #&quot;lihc&quot; &quot;paad&quot; &quot;stad&quot; &quot;brca&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;, help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;, help=&#x27;Divide the numbers&#x27;)#&quot;allsample&quot; &quot; onlylow&quot; &quot;onlyhigh&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;, help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;, help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-c&#x27;, &#x27;--choose&#x27;, help=&#x27;Divide the numbers&#x27;,default=&quot;mean-diff&quot;) #freq-diff mean-diff
@@ -3777,7 +3716,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
         next(m)
         for line in tqdm(m, desc=f&quot;Processing file {marker_file}&quot;, leave=False):
             info = line.rstrip().split(&quot;\t&quot;)
-            if info[1] == &quot;chrY&quot; or info[1] == &quot;chrX&quot;:#排除性染色体
+            if info[1] == &quot;chrY&quot; or info[1] == &quot;chrX&quot;:# exclude sex chromosomes
                 continue
             else:
                 if info[4] == &quot;hyper&quot;:
@@ -3838,7 +3777,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
             for x in range(0, len(pcc)):
                 b = betavalue[x]
                 pos = pcc[x].strip(&quot;\n&quot;).split()
-                if pos[1]   == &quot;chrY&quot; or pos[1] == &quot;chrX&quot;:#排除性染色体
+                if pos[1]   == &quot;chrY&quot; or pos[1] == &quot;chrX&quot;:# exclude sex chromosomes
                     continue
                 elif b == &quot;nan&quot;:
                     continue
@@ -3853,7 +3792,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.1_gen_DMRref_gene_more1.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.1_gen_DMRref_gene_more1.py</h3>
-		<div class="meta">Python | 2728 bytes</div>
+		<div class="meta">Python | 2705 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Extract DMR regions into reference fasta files.
 
@@ -3883,7 +3822,7 @@ parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumo
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;,help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;, help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;,  help=&#x27;Divide the numbers&#x27;)#&quot;TH&quot; &quot;MH&quot; &quot;PH&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;,  help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;, help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-p&#x27;, &#x27;--purity&#x27;,  nargs=&#x27;?&#x27;, default=None,help=&#x27;for tumor purity&#x27;)
@@ -3906,10 +3845,10 @@ out_dir = root_dir + env_module.preprocess_folder + &quot;DMR_ref_fasta/&quot; +
 os.makedirs(out_dir, exist_ok=True)
 
 def extract_fasta_regions(input_fasta, input_bed, output_fasta):
-    # 读取参考基因组fasta文件
+    # Read reference genome fasta
     sequences = SeqIO.to_dict(SeqIO.parse(input_fasta, &quot;fasta&quot;))
 
-    # 打开输出fasta文件
+    # Prepare output fasta records
     output_records = []
 
     with open(input_bed, &quot;r&quot;) as bed_file:
@@ -3917,15 +3856,15 @@ def extract_fasta_regions(input_fasta, input_bed, output_fasta):
             fields = line.strip().split(&quot;\t&quot;)
             chrom = fields[0]
             start = int(fields[1])
-            end = int(fields[2]) + 1  # 增加1位碱基在后续判断CG位点
-            region_name = f&quot;{chrom}:{start}-{end}&quot;  # 使用bed文件的第一列和第二列内容作为备注
+            end = int(fields[2]) + 1  # Add 1 bp for downstream CG site check
+            region_name = f&quot;{chrom}:{start}-{end}&quot;  # Use BED chrom/start/end as record ID
 
             if chrom in sequences:
                 sequence = sequences[chrom][start:end]
                 record = SeqRecord(sequence.seq, id=region_name, description=&quot;&quot;)
                 output_records.append(record)
 
-    # 写入输出fasta文件
+    # Write output fasta
     SeqIO.write(output_records, output_fasta, &quot;fasta&quot;)
 
 for i in range(cohort, rep):
@@ -3943,7 +3882,7 @@ for i in range(cohort, rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.2_generate_cpg_ref_beta.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.2_generate_cpg_ref_beta.py</h3>
-		<div class="meta">Python | 4144 bytes</div>
+		<div class="meta">Python | 4161 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Attach beta values to DMR CpG sites for training samples.
 
@@ -3968,7 +3907,7 @@ import argparse
 import env_module
 
 def process_cpg_sites(input_file, beta_file, output_file):
-    # 读取 BED 文件，构建区间字典
+    # Read BED file and build an interval map
     bed_intervals = {}
     with open(beta_file, &quot;r&quot;) as bed:
         for line in bed:
@@ -3981,13 +3920,13 @@ def process_cpg_sites(input_file, beta_file, output_file):
             )
             bed_intervals[(chrom, start, end)] = value
 
-    # 处理输入文件中的 CpG 位点
+    # Process CpG sites in the input file
     with open(input_file, &quot;r&quot;) as cpg_file, open(output_file, &quot;w&quot;) as output:
         for line in cpg_file:
             fields = line.strip().split()
             chrom, start, end = fields[0], int(fields[1]), int(fields[2])
 
-            # 检查 CpG 位点是否在任何区间内
+            # Check whether the CpG site falls within any interval
 
             for interval, value in bed_intervals.items():
                 if chrom == interval[0] and start &gt;= interval[1] and end &lt;= interval[2]:
@@ -4000,7 +3939,7 @@ parser = argparse.ArgumentParser(description=&#x27;Parameters for threshold/tumo
 parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumor type&#x27;) #&quot;lihc&quot; &quot;paad&quot; &quot;stad&quot; &quot;brca&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;,help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;,  help=&#x27;Divide the numbers&#x27;)#&quot;allsample&quot; &quot; onlylow&quot; &quot;onlyhigh&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;, help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;, help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;, help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
@@ -4061,7 +4000,7 @@ for i in tqdm(range(cohort, rep), desc=&quot;Processing files&quot;):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.3_gen_dmr_reads.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.3_gen_dmr_reads.py</h3>
-		<div class="meta">Python | 4483 bytes</div>
+		<div class="meta">Python | 4496 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Generate simulated reads from DMR reference fasta files.
 
@@ -4091,7 +4030,7 @@ parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;,  help=&#x27;Add the tum
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;, help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;,  help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;, help=&#x27;Divide the numbers&#x27;)#&quot;allsample&quot; &quot; onlylow&quot; &quot;onlyhigh&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;,  help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;,  help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-L&#x27;, &#x27;--Length&#x27;,  help=&#x27;Divide the numbers&#x27;) #simulated parameter 3
@@ -4140,7 +4079,7 @@ def generate_read(fasta_records, output_file):
         # print(start,end,sequence)
         S = int(D * R / L)
         positions = random.sample(range(R - L - 1), S)
-        # 原：positions = [random.randint(0, 500 - L -1 ) for _ in range(S)]
+        # Original: positions = [random.randint(0, 500 - L -1 ) for _ in range(S)]
         for position in positions:
             fi_start = start + position
             fi_end = fi_start + L
@@ -4159,7 +4098,7 @@ def generate_read(fasta_records, output_file):
                 pass
             fragments[fragment_pos] = [fragment_sequence[:-1], fragment_methy[:-1]]
 
-    # 将生成的片段写入输出文件
+    # Write generated fragments to output file
     with open(output_file, &quot;w&quot;) as output_file:
         for key, value in fragments.items():
             methy = &quot;&quot;.join([str(x) for x in value[1]])
@@ -4465,7 +4404,7 @@ if __name__ == &quot;__main__&quot;:
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.5_select_healthy_bam_to_train.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.5_select_healthy_bam_to_train.py</h3>
-		<div class="meta">Python | 2824 bytes</div>
+		<div class="meta">Python | 2829 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Select healthy BAM reads overlapping DMRs for training.
 
@@ -4492,7 +4431,7 @@ parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumo
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;,  help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;,  help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;,  help=&#x27;Divide the numbers&#x27;)#
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;,  help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;,  help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-p&#x27;, &#x27;--purity&#x27;,  nargs=&#x27;?&#x27;, default=None,help=&#x27;for tumor purity&#x27;)#top30 top40 top50 bottom30 bottom40 bottom50
@@ -4559,7 +4498,7 @@ for i in range(cohort,rep):
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.6_select_bam_test_all.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.6_select_bam_test_all.py</h3>
-		<div class="meta">Python | 3820 bytes</div>
+		<div class="meta">Python | 3825 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Select test BAM reads overlapping DMRs for evaluation.
 
@@ -4586,7 +4525,7 @@ parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;,  help=&#x27;Add the tum
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;,  help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;, help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;,help=&#x27;Divide the numbers&#x27;)#
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;,  help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;, help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;, help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-p&#x27;, &#x27;--purity&#x27;,  nargs=&#x27;?&#x27;, default=None,help=&#x27;for tumor purity&#x27;) #top30 top40 top50 bottom30 bottom40 bottom50
@@ -4774,7 +4713,7 @@ print(f&quot;Script executed in {execution_time:.2f} seconds&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/2.8_extract_bam_to_reads.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/2.8_extract_bam_to_reads.py</h3>
-		<div class="meta">Python | 6979 bytes</div>
+		<div class="meta">Python | 7009 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Extract reads and methylation strings from BAMs for train/test.
 
@@ -4885,16 +4824,16 @@ def process_files(input_folder, output_folder):
 
                 total_replacements += replacements_in_file
 
-                print(f&quot;文件 &#x27;{filename}&#x27;: 替换了 {replacements_in_file} 个2&quot;)
+                print(f&quot;File &#x27;{filename}&#x27;: replaced {replacements_in_file} occurrences of 2&quot;)
 
-    print(f&quot;总共替换了 {total_replacements} 个2&quot;)
+    print(f&quot;Total replacements: {total_replacements} occurrences of 2&quot;)
 
 parser = argparse.ArgumentParser(description=&#x27;Parameters for threshold/tumor type/marker type/group/rep&#x27;)
 parser.add_argument(&#x27;-t&#x27;, &#x27;--tumor&#x27;, help=&#x27;Add the tumor type&#x27;) #&quot;lihc&quot; &quot;paad&quot; &quot;stad&quot; &quot;brca&quot;
 parser.add_argument(&#x27;-m&#x27;, &#x27;--marker&#x27;,  help=&#x27;Marker type&#x27;)#&quot;hyper&quot; &quot;hypo&quot;
 parser.add_argument(&#x27;-s&#x27;, &#x27;--threshold&#x27;, help=&#x27;Subtract the numbers&#x27;) #&quot;0.15&quot; &quot;0.25&quot;
 parser.add_argument(&#x27;-g&#x27;, &#x27;--group&#x27;,  help=&#x27;Divide the numbers&#x27;)#&quot;allsample&quot; &quot; onlylow&quot; &quot;onlyhigh&quot;
-parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) #method :&quot;paied&quot; or &quot;tumoronly&quot;,默认paired不加任何标签
+parser.add_argument(&#x27;-a&#x27;, &#x27;--approach&#x27;, help=&#x27;Divide the numbers&#x27;) # method: &quot;paired&quot; or &quot;tumoronly&quot;; default paired without extra tag
 parser.add_argument(&#x27;-r&#x27;, &#x27;--rep&#x27;,help=&#x27;Divide the numbers&#x27;) #total list num
 parser.add_argument(&#x27;-l&#x27;, &#x27;--cohort&#x27;,  help=&#x27;Divide the numbers&#x27;) #list
 parser.add_argument(&#x27;-p&#x27;, &#x27;--purity&#x27;,  nargs=&#x27;?&#x27;, default=None,help=&#x27;for tumor purity&#x27;) #top30 top40 top50 bottom30 bottom40 bottom50
@@ -5031,7 +4970,7 @@ ajust_reads_to_train_dir = &quot;/2-9_ajust_to_train/&quot;</code></pre>
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline.py</h3>
-		<div class="meta">Python | 6729 bytes</div>
+		<div class="meta">Python | 6720 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Run the mMTS pseudo-fragment pipeline (legacy version).
 
@@ -5150,7 +5089,7 @@ for script, log_prefix in steps:
         step_command = f&quot;python -u {script} -t {tumor_type} -s {threshold} -r {rep} -m {marker_type} -l {cohort} -a {method} -g {group} -D {D} -L {L} -p {purity} &gt; {log_file}&quot;
     else:
         step_command = f&quot;python -u {script} -t {tumor_type} -s {threshold} -r {rep} -m {marker_type} -l {cohort} -a {method} -g {group} -p {purity} &gt; {log_file}&quot;
-    exec(f&quot;{log_prefix} = &#x27;{step_command}&#x27;&quot;) #创建变量
+    exec(f&quot;{log_prefix} = &#x27;{step_command}&#x27;&quot;) # create variables
 
 para1 = [step1,step2,step3,step4]
 para2 = [step5,step6]
@@ -5202,10 +5141,10 @@ def execute_commands(commands, desc):
                 command_result = subprocess.Popen(command, shell=True)
                 command_result.wait()
                 print(f&quot;!! executed successfully.&quot;)
-                pbar.update(1)  # 更新进度条
+                pbar.update(1)  # update progress bar
             except subprocess.CalledProcessError as e:
                 print(f&quot;Error executing {command}: {e}&quot;)
-                pbar.update(1)  # 更新进度条
+                pbar.update(1)  # update progress bar
 
 
 #(0)prepare all needed file
@@ -5222,16 +5161,16 @@ except subprocess.CalledProcessError as e:
 
 
 
-# 创建线程池，同时执行para1和para2中的命令
+# Create a thread pool to run para1 and para2
 with ThreadPoolExecutor() as executor:
     future1 = executor.submit(execute_commands, para1, &quot;Executing para1&quot;)
     future2 = executor.submit(execute_commands, para2, &quot;Executing para2&quot;)
 
-    # 等待para1和para2中的命令执行完成
+    # Wait for para1 and para2 to finish
     future1.result()
     future2.result()
 
-# 执行para3中的命令
+# Execute para3 commands
 execute_commands(para3, &quot;Executing para3&quot;)
 
 end_time = time.time()
@@ -5250,7 +5189,7 @@ print(f&quot;Script executed in {execution_time_minutes:.2f} minutes&quot;)
 <article class="card" id="Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline_v1.py">
 	<header>
 		<h3>Part2.Pseudo-fragment_Generation_by_mMTS/mMTS-pipeline_v1.py</h3>
-		<div class="meta">Python | 5180 bytes</div>
+		<div class="meta">Python | 5196 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Run the mMTS pseudo-fragment pipeline with logging and step control.
 
@@ -5278,7 +5217,7 @@ import os
 import logging
 import env_module
 
-# 配置日志
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format=&quot;%(asctime)s - %(levelname)s - %(message)s&quot;,
@@ -5310,17 +5249,17 @@ method = args.approach
 group = args.group
 D = args.Depth
 L = args.Length
-exceptstep = set(args.values)  # 转换为集合以便快速查找
+exceptstep = set(args.values)  # Convert to set for faster lookup
 find_marker_method = args.choose
 purity = args.purity if args.purity else &quot;&quot;
 
-# 创建日志目录
+# Create log directory
 log_dir = os.path.join(env_module.root_out_dir, method, purity, f&quot;{tumor_type}-{group}&quot;, &quot;log&quot;, f&quot;{threshold}_{marker_type}&quot;)
 os.makedirs(log_dir, exist_ok=True)
 
 start_time = time.time()
 
-# 定义步骤命令
+# Define step commands
 steps = [
     (&quot;2.0_prepare_files_tumorOnly.py&quot; if method == &quot;tumorOnly&quot; else &quot;2.0_prepare_files_paired.py&quot;, &quot;step0&quot;),
     (&quot;2.1_gen_DMRref_gene_more1.py&quot;, &quot;step1&quot;),
@@ -5342,10 +5281,10 @@ for script, log_prefix in steps:
         command = f&quot;python -u {script} -t {tumor_type} -s {threshold} -r {rep} -m {marker_type} -l {cohort} -a {method} -g {group} -p {purity} &gt; {log_file}&quot;
     commands[log_prefix] = command
 
-# 过滤不需要的步骤
+# Filter steps to skip
 filtered_commands = {k: v for k, v in commands.items() if k not in exceptstep}
 
-# 执行命令
+# Execute commands
 def execute_command(command, desc):
     try:
         logger.info(f&quot;Executing: {desc} → {command}&quot;)
@@ -5365,13 +5304,13 @@ def execute_commands(commands, desc):
                 logger.error(f&quot;Error in {desc}: {e}&quot;)
                 pbar.update(1)
 
-# 执行 step0
+# Execute step0
 if &quot;step0&quot; not in exceptstep:
     execute_command(commands[&quot;step0&quot;], &quot;Step0&quot;)
 else:
     logger.info(&quot;Skipping Step0&quot;)
 
-# 并发执行 para1 和 para2
+# Run para1 and para2 in parallel
 para1 = [commands[k] for k in [&quot;step1&quot;, &quot;step2&quot;, &quot;step3&quot;, &quot;step4&quot;] if k in filtered_commands]
 para2 = [commands[k] for k in [&quot;step5&quot;, &quot;step6&quot;] if k in filtered_commands]
 
@@ -5383,7 +5322,7 @@ with ThreadPoolExecutor(max_workers=4) as executor:
     for future in as_completed(futures):
         future.result()
 
-# 串行执行 para3
+# Run para3 sequentially
 para3 = [commands[k] for k in [&quot;step7&quot;, &quot;step8&quot;] if k in filtered_commands]
 execute_commands(para3, &quot;Executing para3&quot;)
 
@@ -6129,7 +6068,7 @@ if __name__ == &#x27;__main__&#x27;:
 <article class="card" id="Part3.ResTran_model_training/training.py">
 	<header>
 		<h3>Part3.ResTran_model_training/training.py</h3>
-		<div class="meta">Python | 11185 bytes</div>
+		<div class="meta">Python | 11189 bytes</div>
 	</header>
 	<div class='section'><h4>Summary</h4><p>Train the ResTran model on simulated reads and save results.
 
@@ -6379,7 +6318,7 @@ if __name__ == &#x27;__main__&#x27;:
         tf.config.experimental.set_memory_growth(gpu, True)
     model = res_transformer()
 
-    #tf2.2代码
+    # TF 2.2 version
     #sgd = optimizers.SGD(lr=0.05, decay=1e-6, momentum=0.9, nesterov=True)
 
     #tf2.16
@@ -6414,18 +6353,39 @@ if __name__ == &#x27;__main__&#x27;:
 
 </section>
 
-		</section>
+				</section>
 
-		<section id="citation">
-			<h2>Citation</h2>
-			<pre><code>Yin Liang, Zhanyu Liang, Xiaoxin Yao, Yajie Guo, Xufeng Kong, Guangquan Zhang, Jia-Bin Wang, Kaida Ning, Yulin Liu, Tong Wang, Qingjiao Li, Li C. Xia. DeepLB: Noninvasive Early Cancer Detection via Deep Learning on Pseudo-Fragments with Methylation and Sequence Features. In press.</code></pre>
-		</section>
+				<section id="citation">
+					<h2>Citation</h2>
+					<pre><code>Yin Liang, Zhanyu Liang, Xiaoxin Yao, Yajie Guo, Xufeng Kong, Guangquan Zhang, Jia-Bin Wang, Kaida Ning, Yulin Liu, Tong Wang, Qingjiao Li, Li C. Xia. DeepLB: Noninvasive Early Cancer Detection via Deep Learning on Pseudo-Fragments with Methylation and Sequence Features. In press.</code></pre>
+				</section>
 
-		<section id="license">
-			<h2>License and Contact</h2>
-			<p>License: MIT License.</p>
-			<p>Contact: Qingjiao Li (liqj23@126.com) or Li C. Xia (lcxia@scut.edu.cn), or open an issue on GitHub.</p>
-		</section>
+				<section id="license">
+					<h2>License and Contact</h2>
+					<p>License: MIT License.</p>
+					<p>Contact: Qingjiao Li (liqj23@126.com) or Li C. Xia (lcxia@scut.edu.cn), or open an issue on GitHub.</p>
+				</section>
+			</div>
+		</div>
 	</main>
+	<script>
+		(() => {
+			const sidebar = document.getElementById("sidebar");
+			const toggle = document.getElementById("sidebarToggle");
+			if (!sidebar || !toggle) {
+				return;
+			}
+			const applyState = (isCollapsed) => {
+				sidebar.classList.toggle("collapsed", isCollapsed);
+				toggle.textContent = isCollapsed ? ">>" : "<<";
+				toggle.setAttribute("aria-expanded", String(!isCollapsed));
+			};
+			applyState(false);
+			toggle.addEventListener("click", () => {
+				const isCollapsed = sidebar.classList.contains("collapsed");
+				applyState(!isCollapsed);
+			});
+		})();
+	</script>
 </body>
 </html>
