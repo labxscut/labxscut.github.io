@@ -1,0 +1,58 @@
+---
+layout: default
+title: People
+description: "LabX roster: PI, faculty, PhD, Master's, and undergraduate researchers, plus alumni."
+---
+{% comment %}Liquid 4.0.4 (what GitHub Pages uses) has no group_by filter; iterate explicit sections.{% endcomment %}
+{% assign sections = "pi:Principal investigator,faculty:Faculty,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni and collaborators" | split: "," %}
+
+<div class="hero compact">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Team</span>
+    <h1>People</h1>
+    <p class="lede">
+      LabX is the AI-for-Science group of {{ site.data.identity.pi.name_en }}
+      ({{ site.data.identity.pi.name_zh }}) at the School of Mathematics, SCUT.
+      Members' own pages live at <span class="mono">/&lt;nick&gt;/</span>.
+      Contact details are kept in the internal roster, not on this page.
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    {% for entry in sections %}
+      {% assign kv = entry | split: ":" %}
+      {% assign group = site.data.people | where: "section", kv[0] %}
+      {% if group.size > 0 %}
+      <div class="people-group">
+        <h3>{{ kv[1] }} · {{ group | size }}</h3>
+        <div class="people-grid">
+          {% for person in group %}
+            {% if person.has_page %}
+              <a class="person" href="/{{ person.nick }}/" id="{{ person.nick }}">
+                <div class="name">{{ person.name_en }}<span class="zh">{{ person.name_zh }}</span></div>
+                <div class="meta">
+                  {{ person.role }}
+                  {%- if person.start_year %} · {{ person.start_year }}{% if person.end_year %}–{{ person.end_year }}{% endif %}{% endif %}
+                </div>
+                {% if person.github %}<div class="links"><span>@{{ person.github }}</span></div>{% endif %}
+              </a>
+            {% else %}
+              <div class="person alumni" id="{{ person.nick }}">
+                <div class="name">{{ person.name_en }}<span class="zh">{{ person.name_zh }}</span></div>
+                <div class="meta">
+                  {{ person.degree }}
+                  {%- if person.start_year %} · {{ person.start_year }}{% if person.end_year %}–{{ person.end_year }}{% endif %}{% endif %}
+                  {%- if person.affiliation %} · {{ person.affiliation }}{% endif %}
+                </div>
+                {% if person.github %}<div class="links"><a href="https://github.com/{{ person.github }}">@{{ person.github }}</a></div>{% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

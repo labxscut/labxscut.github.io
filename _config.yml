@@ -1,6 +1,21 @@
-# sxLaep documentation site
+# LabX (labxscut) site config - GitHub Pages builds this with Jekyll.
+title: LabX
+description: >-
+  LabX is an AI-for-Science group at the School of Mathematics, South China
+  University of Technology. We build machine-learning methods for genomes,
+  proteins, single cells, and clinical data.
+url: https://labxscut.github.io
+lang: en
+
+github_org: https://github.com/labxscut
+email: labx2025@gmail.com
+
+# Keep generated collections out of the published output.
 exclude:
   - README.md
-include:
-  - sxLaep-v2
-  - deeplb
+  - _generators
+
+collections:
+  people:
+    output: true
+    permalink: /:name/

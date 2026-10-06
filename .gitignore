@@ -1,0 +1,8 @@
+.*/
+
+# Generated previews are written to /tmp/labxscut-site-preview by default.
+# Keep these ignored paths for local overrides and previews from older runs.
+/_preview/
+/tmp/
+__pycache__/
+*.py[cod]

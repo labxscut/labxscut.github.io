@@ -1,0 +1,50 @@
+---
+layout: default
+title: Publications
+description: "Peer-reviewed papers from LabX, generated from the lab publication records."
+---
+{% assign years = site.data.publications | map: "year" | uniq | sort | reverse %}
+
+<div class="hero compact">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Papers</span>
+    <h1>Publications</h1>
+    <p class="lede">
+      {{ site.data.publications | size }} peer-reviewed papers from the group.
+      Tool papers link to their software; lab authors link to their people page.
+      Work that is still in preparation or under review is not listed here.
+    </p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    {% for year in years %}
+      {% assign items = site.data.publications | where: "year", year %}
+      <div class="pub-year">{{ year }}</div>
+      {% for pub in items %}
+        <article class="pub" id="{{ pub.slug }}">
+          <h3>
+            {% if pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+          </h3>
+          {% if pub.authors.size > 0 %}
+            <p class="authors">
+              {% for author in pub.authors %}
+                {% if author.nick %}<span class="me"><a href="/people/#{{ author.nick }}">{{ author.name }}</a></span>{% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </p>
+          {% endif %}
+          <div class="where">
+            <span class="venue">{{ pub.venue }}</span>
+            <span class="mono">{{ pub.year }}</span>
+            {% if pub.doi %}<a class="mono" href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a>{% endif %}
+            {% if pub.if != "" %}<span class="mono">IF {{ pub.if }}</span>{% endif %}
+            {% if pub.quartile != "" %}<span class="mono">{{ pub.quartile }}</span>{% endif %}
+            {% if pub.ccf != "" %}<span class="mono">CCF {{ pub.ccf }}</span>{% endif %}
+            {% if pub.repo != "" %}<a href="{{ pub.repo }}">code ↗</a>{% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>

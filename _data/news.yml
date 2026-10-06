@@ -1,0 +1,12 @@
+# Only verifiable entries (paper records in advisee/hc/labxManage, repo history).
+- date: "2026-05-21"
+  text: >-
+    sxSNF is published in IEEE/ACM Transactions on Computational Biology and
+    Bioinformatics (DOI 10.1109/TCBBIO.2026.3697777).
+  url: https://doi.org/10.1109/TCBBIO.2026.3697777
+- date: "2026-05-18"
+  text: sxLaep v1.0.5 released, with the API reference published on this site.
+  url: https://labxscut.github.io/sxLaep/
+- date: "2026-05-23"
+  text: DeepLB pipeline documentation is published under /deeplb/.
+  url: https://labxscut.github.io/deeplb/

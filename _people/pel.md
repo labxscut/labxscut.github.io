@@ -1,0 +1,23 @@
+---
+layout: person
+nick: pel
+title: Peng Lei
+name_en: Peng Lei
+name_zh: 彭磊
+role: Master's student
+degree: Master
+section: master
+start_year: '2025'
+end_year: ''
+status: active
+affiliation: ''
+github: penglei0501
+has_page: true
+tools: []
+papers:
+- slug: RenICAITE26MultimodalMathExpl
+  title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
+  venue: International Conference on Artificial Intelligence Technology and Education
+  year: '2026'
+  url: ''
+---

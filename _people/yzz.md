@@ -1,0 +1,18 @@
+---
+layout: person
+nick: yzz
+title: Yang Zizhen
+name_en: Yang Zizhen
+name_zh: 杨子震
+role: Undergraduate researcher
+degree: Under
+section: under
+start_year: '2023'
+end_year: ''
+status: active
+affiliation: ''
+github: ''
+has_page: true
+tools: []
+papers: []
+---

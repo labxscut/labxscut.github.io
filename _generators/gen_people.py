@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""Build the people data (_data/people.yml) and per-member pages (_people/<nick>.md)
+from the roster source of truth.
+
+Source of truth: ~/work/advisee/core/database/contact.md (roster SoT).
+Only public-safe fields are copied to the website: nick, English/Chinese name,
+degree, entry/exit year, status, generic affiliation, GitHub handle, and links
+to their tools/papers.  Contact details (email, mobile, WeChat/WeCom ids,
+leader assignments, free-text notes) are deliberately NOT published.
+
+Rule for individual pages: active members of the group (PI, SCUT faculty,
+current PhD / Master / undergraduate) get a page at /<nick>/.  Alumni and
+external collaborators are listed on /people/ only.
+
+Usage (WSL):  python3 tools/gen_people.py
+"""
+from __future__ import annotations
+
+import re
+import sys
+
+import yaml
+
+from gen_publications import REPO, load_roster
+
+OUT_DIR = REPO / "_people"
+DATA = REPO / "_data"
+PUBLICATIONS = DATA / "publications.yml"
+
+# Faculty rows that are collaborators or former visitors, not current members.
+EXTERNAL_FACULTY = {"adm", "fyl", "jdy", "lxm", "lyz", "lqj"}
+
+DEGREE_ROLE = {
+    "Faculty": "Faculty",
+    "PhD": "PhD student",
+    "Master": "Master's student",
+    "Under": "Undergraduate researcher",
+}
+
+TITLE_BY_SECTION = {
+    "pi": "Principal Investigator",
+    "faculty": "Faculty",
+    "phd": "PhD student",
+    "master": "Master's student",
+    "under": "Undergraduate researcher",
+}
+
+SCUT_AFFILIATION = {"", "n.a.", "在校", "华南理工大学"}
+
+
+def section_for(row: dict) -> str:
+    if row["nick"] == "lcx":
+        return "pi"
+    if row["status"] == "alumni" or row["nick"] in EXTERNAL_FACULTY:
+        return "alumni"
+    return {
+        "Faculty": "faculty",
+        "PhD": "phd",
+        "Master": "master",
+        "Under": "under",
+    }.get(row["degree"], "under")
+
+
+def years(row: dict) -> tuple[str, str]:
+    """'2023i' -> ('2023', '');  '2022/2025o' -> ('2022', '2025')."""
+    parts = (row["year"] or "").split("/")
+    start = re.sub(r"\D", "", parts[0]) if parts and parts[0] else ""
+    end = re.sub(r"\D", "", parts[1]) if len(parts) > 1 else ""
+    return start, end
+
+
+def tool_key_for_repo(repo: str) -> str:
+    if not repo:
+        return ""
+    name = repo.rstrip("/").split("/")[-1]
+    return {"DeepLB": "deeplb", "sxLaep": "sxLaep", "sxSNF": "sxSNF"}.get(name, "")
+
+
+def short_paper(entry: dict) -> dict:
+    return {
+        "slug": entry["slug"],
+        "title": entry["title"],
+        "venue": entry.get("venue_short") or entry["venue"],
+        "year": entry["year"],
+        "url": entry["url"],
+    }
+
+
+def main() -> int:
+    roster = load_roster()
+    pub_docs: list[dict] = []
+    if PUBLICATIONS.exists():
+        pub_docs = yaml.safe_load(PUBLICATIONS.read_text(encoding="utf-8")) or []
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    DATA.mkdir(parents=True, exist_ok=True)
+
+    people: list[dict] = []
+    pages = 0
+    for row in roster:
+        nick = row["nick"]
+        if not nick or nick in {"lab", "xyz"}:
+            continue
+        section = section_for(row)
+        papers = [short_paper(p) for p in pub_docs if nick in (p.get("lab_authors") or [])]
+        tools = sorted(
+            {tool_key_for_repo(p.get("repo", "")) for p in pub_docs if nick in (p.get("lab_authors") or [])}
+            - {""}
+        )
+        start, end = years(row)
+        has_page = (
+            section != "alumni"
+            and row["status"] == "active"
+            and (row["affiliation"].strip() in SCUT_AFFILIATION or section in {"pi", "faculty"})
+        )
+        entry = {
+            "nick": nick,
+            "title": row["name_en"] or row["name_zh"] or nick,
+            "name_en": row["name_en"],
+            "name_zh": row["name_zh"],
+            "role": TITLE_BY_SECTION.get(section, DEGREE_ROLE.get(row["degree"], row["degree"])),
+            "degree": row["degree"],
+            "section": section,
+            "start_year": start,
+            "end_year": end,
+            "status": row["status"] or "active",
+            "affiliation": "" if row["affiliation"].strip() in SCUT_AFFILIATION else row["affiliation"],
+            "github": row["github"],
+            "has_page": has_page,
+            "tools": tools,
+            "papers": papers,
+        }
+        people.append(entry)
+
+        if has_page:
+            front = {"layout": "person", **entry}
+            (OUT_DIR / f"{nick}.md").write_text(
+                "---\n" + yaml.safe_dump(front, allow_unicode=True, sort_keys=False, width=100).strip() + "\n---\n",
+                encoding="utf-8",
+            )
+            pages += 1
+
+    # Drop stale pages for people who no longer qualify for one.
+    keep = {f"{p['nick']}.md" for p in people if p["has_page"]}
+    for stale in OUT_DIR.glob("*.md"):
+        if stale.name not in keep:
+            stale.unlink()
+
+    people.sort(key=lambda p: (p["section"], p["start_year"] or "9999", p["nick"]))
+    header = (
+        "# Generated by _generators/gen_people.py - do not hand-edit.\n"
+        "# Source: advisee/core/database/contact.md (public fields only).\n"
+    )
+    (DATA / "people.yml").write_text(
+        header + yaml.safe_dump(people, allow_unicode=True, sort_keys=False, width=100),
+        encoding="utf-8",
+    )
+    print(f"people: {len(people)} roster entries, {pages} personal pages, rest listed on /people/")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

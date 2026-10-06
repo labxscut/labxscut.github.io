@@ -1,0 +1,45 @@
+# Lab identity, assembled from the lab's own records:
+#   - org profile  : github.com/labxscut ("we are an Ai4Sci lab")
+#   - roster / SoT : advisee/core/database/contact.md  (pi row: lcx)
+#   - unit facts   : advisee/core/database/org-units.yaml (scut-math)
+name: LabX
+name_zh: 华南理工大学数学学院 LabX 课题组
+tagline: AI for Science
+description: >-
+  LabX is an AI-for-Science group at the School of Mathematics, South China
+  University of Technology. We build machine-learning methods for genomes,
+  proteins, single cells, and clinical data, and we ship the results as
+  open-source tools.
+focus: >-
+  Machine learning for single-cell multi-omics, protein and enzyme function,
+  cancer genomics and liquid biopsy, and the statistics underneath them.
+
+pi:
+  nick: lcx
+  name_en: Xia Li
+  name_zh: 夏立
+  title: Principal Investigator
+  github: chaelir
+  email: lcxia@scut.edu.cn
+  scholar: https://scholar.google.com/citations?user=e1GOPw0AAAAJ
+
+affiliation:
+  unit_en: School of Mathematics
+  unit_zh: 华南理工大学数学学院
+  university_en: South China University of Technology
+  university_zh: 华南理工大学
+  address_en: >-
+    School of Mathematics, South China University of Technology (Wushan Campus),
+    Building 4, No. 381 Wushan Road, Tianhe District, Guangzhou 510640, P. R. China
+  address_zh: 广东省广州市天河区五山路381号华南理工大学数学学院
+  website: https://www2.scut.edu.cn/math/
+
+links:
+  github: https://github.com/labxscut
+  tools: /tools/
+  people: /people/
+  publications: /publications/
+
+cite: >-
+  Please cite the individual tool or paper; every tool page links to its own
+  repository and release.

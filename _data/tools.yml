@@ -1,0 +1,49 @@
+# Public, shipped tools only. Links verified 2026-10-06.
+# maintainers are roster nicks (see _data/people.yml); paper = slug in _data/publications.yml.
+- key: sxLaep
+  name: sxLaep
+  tagline: Rapid enzyme / non-enzyme prediction
+  description: >-
+    Multi-physicochemical sequence features with an XGBoost classifier, exposed
+    as both a Python API and a command line tool for batch FASTA workflows.
+  version: v1.0.5
+  language: Python
+  license: MIT
+  repo: https://github.com/labxscut/sxLaep
+  docs: https://labxscut.github.io/sxLaep/
+  tags: [XGBoost, protein sequences, pip]
+  maintainers: [myj, hxy, dhy]
+  paper: ""
+
+- key: deeplb
+  name: DeepLB
+  tagline: Deep learning for liquid biopsy
+  description: >-
+    A four-module pipeline - feature selection, methylation microarray-to-sequence
+    conversion (mMTS), ResTran classification, and cancer score estimation - for
+    early cancer detection from cfDNA methylation sequencing.
+  version: ""
+  language: Python, R
+  license: ""
+  repo: https://github.com/labxscut/DeepLB
+  docs: https://labxscut.github.io/deeplb/
+  tags: [cfDNA methylation, deep learning, cancer detection]
+  maintainers: [lyi, kxf]
+  paper: ""
+
+- key: sxSNF
+  name: sxSNF
+  tagline: Single-cell multi-modal integration
+  description: >-
+    Modality-specific similarity graphs, geometry-anchored similarity network
+    fusion, and self-supervised graph representation learning for single-cell
+    multi-omics data.
+  version: ""
+  language: Python
+  license: ""
+  repo: https://github.com/labxscut/sxSNF
+  docs: https://labxscut.github.io/sxSNF/
+  tags: [single-cell, similarity network fusion, graph learning]
+  maintainers: [dhy]
+  paper: Duan2025sxSNF
+

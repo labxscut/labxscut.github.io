@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="hero compact">
+  <div class="wrap hero-inner">
+    <p class="breadcrumb"><a href="/people/">People</a> / {{ page.nick }}</p>
+    <span class="eyebrow">{{ page.role }}{% if page.start_year %} · since {{ page.start_year }}{% endif %}</span>
+    <h1>{{ page.name_en }}{% if page.name_zh %} <em>{{ page.name_zh }}</em>{% endif %}</h1>
+    <div class="hero-actions">
+      {% if page.github %}<a class="btn btn-ghost" href="https://github.com/{{ page.github }}">github.com/{{ page.github }} ↗</a>{% endif %}
+      {% if page.affiliation %}<span class="btn btn-ghost" style="cursor:default">{{ page.affiliation }}</span>{% endif %}
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap prose">
+    {% if page.tools.size > 0 %}
+      <h2>Tools</h2>
+      <ul>
+        {% for key in page.tools %}
+          {% for tool in site.data.tools %}
+            {% if tool.key == key %}
+              <li><a href="{{ tool.docs }}">{{ tool.name }}</a> — {{ tool.tagline }}</li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if page.papers.size > 0 %}
+      <h2>Publications</h2>
+      <ul>
+        {% for paper in page.papers %}
+          <li>
+            {% if paper.url %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}
+            <span class="mono">· {{ paper.venue }} · {{ paper.year }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if page.tools.size == 0 and page.papers.size == 0 %}
+      <p>Work in progress — see the <a href="/tools/">tools</a> and
+         <a href="/publications/">publications</a> pages for the group's output.</p>
+    {% endif %}
+
+    <h2>Contact</h2>
+    <p>Reach {{ page.name_en }} through the group address
+       <a href="mailto:{{ site.email }}">{{ site.email }}</a> or via GitHub.</p>
+  </div>
+</section>
