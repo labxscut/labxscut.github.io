@@ -1,5 +1,5 @@
-# Public, shipped tools only. Links verified 2026-10-06.
-# maintainers are roster nicks (see _data/people.yml); paper = slug in _data/publications.yml.
+# Public research software and method implementations reviewed in the LabX GitHub organization.
+# papers are publication slugs in _data/publications.yml; maintainers are roster nicks.
 - key: sxLaep
   name: sxLaep
   tagline: Rapid enzyme / non-enzyme prediction
@@ -13,7 +13,7 @@
   docs: https://labxscut.github.io/sxLaep/
   tags: [XGBoost, protein sequences, pip]
   maintainers: [myj, hxy, dhy]
-  paper: ""
+  papers: []
 
 - key: deeplb
   name: DeepLB
@@ -29,7 +29,7 @@
   docs: https://labxscut.github.io/deeplb/
   tags: [cfDNA methylation, deep learning, cancer detection]
   maintainers: [lyi, kxf]
-  paper: ""
+  papers: []
 
 - key: sxSNF
   name: sxSNF
@@ -45,5 +45,122 @@
   docs: https://labxscut.github.io/sxSNF/
   tags: [single-cell, similarity network fusion, graph learning]
   maintainers: [dhy]
-  paper: Duan2025sxSNF
+  papers: [Duan2025sxSNF, DuanAPBC2025SNF]
 
+- key: sxRaep
+  name: sxRaep
+  tagline: Enzyme screening for high-throughput sequence mining
+  description: >-
+    A rapid enzyme/non-enzyme prediction workflow using physicochemical
+    sequence features and an XGBoost classifier.
+  language: Python
+  repo: https://github.com/labxscut/sxRaep
+  docs: https://github.com/labxscut/sxRaep
+  tags: [enzyme prediction, protein sequences, XGBoost]
+  maintainers: []
+  papers: []
+
+- key: sxEnzHier
+  name: sxEnzHier / EnzHire
+  tagline: Hierarchical enzyme function prediction
+  description: >-
+    ESM-derived protein embeddings and hierarchical contrastive learning for
+    enzyme functional annotation; the EnzHire service also exposes sequence
+    prediction through a web interface and API.
+  language: Python
+  repo: https://github.com/labxscut/sxEnzHier
+  docs: https://sxwebenz.scutlabx.com/
+  client: https://github.com/labxscut/sxWebEnz
+  tags: [enzyme function, protein language models, EC classification]
+  maintainers: [dhy]
+  papers: [DuanISBRA2025EnzHier]
+
+- key: sxELA
+  name: pseudoLiquid (sxELA)
+  tagline: Triplet local liquid association for single-cell pseudotime
+  description: >-
+    An R and Python workflow for identifying local changes in pairwise gene
+    associations along single-cell pseudotime.
+  language: R, Python, C++
+  repo: https://github.com/labxscut/sxELA
+  docs: https://github.com/labxscut/sxELA
+  tags: [single-cell, pseudotime, local association]
+  maintainers: []
+  papers: []
+
+- key: SPRINT
+  name: SPRINT
+  tagline: Multi-trait genetic risk prediction
+  description: >-
+    A deep-learning framework combining disease-specific SNP dosage and
+    multi-trait polygenic risk score features for disease-risk prediction.
+  language: Python
+  repo: https://github.com/labxscut/sxSPRINT
+  docs: https://github.com/labxscut/sxSPRINT
+  tags: [genetic risk, SNP, polygenic risk score]
+  maintainers: []
+  papers: []
+
+- key: DHMOC
+  name: DHMOC
+  tagline: Hierarchical learning for multi-class omics classification
+  description: >-
+    A data-driven framework that jointly learns class hierarchies and sample
+    labels for multi-class omics data.
+  language: Python
+  repo: https://github.com/labxscut/DHMOC
+  docs: https://github.com/labxscut/DHMOC
+  tags: [omics, hierarchical classification, machine learning]
+  maintainers: []
+  papers: []
+
+- key: CCNMF
+  name: CCNMF
+  tagline: Joint clonal inference from single-cell DNA and RNA
+  description: >-
+    Coupled-clone nonnegative matrix factorization for joint inference of
+    clonal structure from paired single-cell genome and transcriptome data.
+  language: R
+  repo: https://github.com/labxscut/CCNMF
+  docs: https://github.com/labxscut/CCNMF
+  tags: [single-cell, clonal inference, matrix factorization]
+  maintainers: []
+  papers: [BaiNARGB24CCNMF]
+
+- key: HCG
+  name: HCG
+  tagline: DNA-based hierarchical gastric cancer subtyping
+  description: >-
+    A hierarchical classifier integrating DNA-level molecular alterations
+    with clinical stratification for gastric cancer subtyping.
+  language: Python, R
+  repo: https://github.com/labxscut/HCG
+  docs: https://github.com/labxscut/HCG
+  tags: [gastric cancer, molecular subtyping, multi-omics]
+  maintainers: []
+  papers: [YangQB24UGESgas]
+
+- key: UGES
+  name: UGES
+  tagline: Breast cancer subtype prediction from DNA-level data
+  description: >-
+    A unified genetic and epigenetic model using hierarchical learning to
+    predict breast cancer intrinsic subtypes from DNA-level multi-omics data.
+  language: R
+  repo: https://github.com/labxscut/UGES
+  docs: https://github.com/labxscut/UGES
+  tags: [breast cancer, molecular subtyping, multi-omics]
+  maintainers: []
+  papers: [ChangTCBB2025UGESdeng]
+
+- key: CTRhythm
+  name: CTRhythm
+  tagline: Atrial fibrillation detection from single-lead ECG
+  description: >-
+    A CNN and transformer model for atrial fibrillation detection from
+    single-lead ECG rhythm data.
+  repo: https://github.com/labxscut/CTRhythm
+  docs: https://github.com/labxscut/CTRhythm
+  tags: [ECG, atrial fibrillation, deep learning]
+  maintainers: []
+  papers: [LiangBIBM24ctRhythm]

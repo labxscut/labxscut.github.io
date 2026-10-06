@@ -1,12 +1,12 @@
 ---
-title: Research
+title: Overview
 description: "Research themes at LabX."
 nav:
-  order: 3
+  order: 2
   tooltip: Research themes
 ---
 
-# Research
+# Overview
 
 We develop computational methods for biological and clinical data, with a focus
 on transparent, reproducible analysis.

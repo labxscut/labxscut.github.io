@@ -28,7 +28,8 @@
   affiliation: 哥伦比亚大学
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -36,6 +37,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: lzs
   title: Long Zhaoshen
   name_en: Long Zhaoshen
@@ -132,6 +134,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
+    status: Published
 - nick: zhh
   title: Zhang Hui
   name_en: Zhang Hui
@@ -235,7 +238,8 @@
   affiliation: 广州联通
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -243,6 +247,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: yez
   title: Ye Chaoyang
   name_en: Ye Chaoyang
@@ -279,6 +284,7 @@
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
 - nick: lyt
   title: Yang Lingfeng
   name_en: Yang Lingfeng
@@ -314,6 +320,7 @@
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
 - nick: xlh
   title: Xiao Longhui
   name_en: Xiao Longhui
@@ -349,6 +356,7 @@
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
 - nick: zhy
   title: Zhang Yuan
   name_en: Zhang Yuan
@@ -542,7 +550,8 @@
   affiliation: ''
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -550,6 +559,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: lyz
   title: Lu Yizhen
   name_en: Lu Yizhen
@@ -736,11 +746,13 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
+    status: Published
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
 - nick: nkd
   title: Kaida Ning
   name_en: Kaida Ning
@@ -754,7 +766,8 @@
   affiliation: ''
   github: ''
   has_page: true
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: WangBIBM2024sxFusion
     title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
@@ -762,17 +775,20 @@
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: wln
   title: Wan Lin
   name_en: Wan Lin
@@ -786,13 +802,15 @@
   affiliation: ''
   github: wan-amss
   has_page: true
-  tools: []
+  tools:
+  - CCNMF
   papers:
   - slug: BaiNARGB24CCNMF
     title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
     venue: NAR Genomics and Bioinformatics
-    year: ''
+    year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
+    status: Final
 - nick: wsc
   title: Wang Shaochen
   name_en: Wang Shaochen
@@ -821,7 +839,8 @@
   affiliation: ''
   github: yhxiong
   has_page: true
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -829,6 +848,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: lyi
   title: Liang Yin
   name_en: Liang Yin
@@ -842,7 +862,8 @@
   affiliation: 佛山五院
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - deeplb
   papers: []
 - nick: lzj
   title: Li Zhijian
@@ -917,7 +938,8 @@
   affiliation: ''
   github: WuMiranda
   has_page: true
-  tools: []
+  tools:
+  - sxEnzHier
   papers:
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
@@ -925,6 +947,7 @@
     venue: International Symposium on Bioinformatics Research and Applications
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
+    status: Final
 - nick: njt
   title: Ning Jingtai
   name_en: Ning Jingtai
@@ -960,6 +983,7 @@
     venue: International Conference on Artificial Intelligence Technology and Education
     year: '2026'
     url: ''
+    status: Accepted
 - nick: xhx
   title: Xu Hongxing
   name_en: Xu Hongxing
@@ -981,6 +1005,7 @@
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
 - nick: hch
   title: Han Cheng
   name_en: Han Cheng
@@ -1032,6 +1057,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
+    status: Published
 - nick: ych
   title: Yang Chunhao
   name_en: Yang Chunhao
@@ -1060,7 +1086,9 @@
   affiliation: Stanford
   github: XQBai
   has_page: false
-  tools: []
+  tools:
+  - CCNMF
+  - UGES
   papers:
   - slug: WangBIBM2024sxFusion
     title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
@@ -1068,17 +1096,20 @@
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
   - slug: BaiNARGB24CCNMF
     title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
     venue: NAR Genomics and Bioinformatics
-    year: ''
+    year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
+    status: Final
 - nick: rbz
   title: Ren Bozhen
   name_en: Ren Bozhen
@@ -1092,24 +1123,28 @@
   affiliation: ''
   github: Bren0314
   has_page: true
-  tools: []
+  tools:
+  - sxEnzHier
   papers:
   - slug: RenICAITE26MultimodalMathExpl
     title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
     venue: International Conference on Artificial Intelligence Technology and Education
     year: '2026'
     url: ''
+    status: Accepted
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
     venue: International Symposium on Bioinformatics Research and Applications
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
+    status: Final
 - nick: dhy
   title: Duan Hongyu
   name_en: Duan Hongyu
@@ -1124,6 +1159,9 @@
   github: duanHY-26
   has_page: true
   tools:
+  - UGES
+  - sxEnzHier
+  - sxLaep
   - sxSNF
   papers:
   - slug: Duan2025sxSNF
@@ -1131,18 +1169,21 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
+    status: Published
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
     venue: International Symposium on Bioinformatics Research and Applications
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
+    status: Final
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: wlp
   title: Wang Linping
   name_en: Wang Linping
@@ -1164,6 +1205,7 @@
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
 - nick: hxy
   title: Han Xinyu
   name_en: Han Xinyu
@@ -1177,7 +1219,8 @@
   affiliation: ''
   github: labxHXY
   has_page: true
-  tools: []
+  tools:
+  - sxLaep
   papers: []
 - nick: lzm
   title: Li Zhimin
@@ -1207,7 +1250,8 @@
   affiliation: ''
   github: kxf-scut
   has_page: true
-  tools: []
+  tools:
+  - deeplb
   papers: []
 - nick: sqh
   title: Shen Qihua
@@ -1253,6 +1297,9 @@
   github: chaelir
   has_page: true
   tools:
+  - CCNMF
+  - UGES
+  - sxEnzHier
   - sxSNF
   papers:
   - slug: Duan2025sxSNF
@@ -1260,49 +1307,58 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
+    status: Published
   - slug: RenICAITE26MultimodalMathExpl
     title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
     venue: International Conference on Artificial Intelligence Technology and Education
     year: '2026'
     url: ''
+    status: Accepted
   - slug: ChenICML26DataShiftRegular
     title: General Quantification of Covariate and Concept Shifts
     venue: International Conference on Machine Learning
     year: '2026'
     url: ''
+    status: Final
   - slug: WangBIBM2024sxFusion
     title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
       of low-rank representation with clustering'
     venue: IEEE International Conference on Bioinformatics and Biomedicine
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
+    status: Final
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
+    status: Final
   - slug: ChenICML25DshiftShort
     title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
     venue: ICML 2025 DataWorld Workshop
     year: '2025'
     url: https://doi.org/10.48550/arXiv.2506.12829
+    status: Accept
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
     venue: International Symposium on Bioinformatics Research and Applications
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
+    status: Final
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
   - slug: BaiNARGB24CCNMF
     title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
     venue: NAR Genomics and Bioinformatics
-    year: ''
+    year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
+    status: Final
 - nick: chb
   title: Chen Hongbo
   name_en: Chen Hongbo
@@ -1323,11 +1379,13 @@
     venue: International Conference on Machine Learning
     year: '2026'
     url: ''
+    status: Final
   - slug: ChenICML25DshiftShort
     title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
     venue: ICML 2025 DataWorld Workshop
     year: '2025'
     url: https://doi.org/10.48550/arXiv.2506.12829
+    status: Accept
 - nick: cxt
   title: Chang Xintong
   name_en: Chang Xintong
@@ -1341,7 +1399,8 @@
   affiliation: 浙江大学
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - UGES
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -1349,6 +1408,7 @@
     venue: IEEE Transactions on Computational Biology and Bioinformatics
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
+    status: Published
 - nick: liz
   title: Li Ziyan
   name_en: Li Ziyan
@@ -1362,7 +1422,8 @@
   affiliation: 就业
   github: ''
   has_page: false
-  tools: []
+  tools:
+  - sxEnzHier
   papers:
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
@@ -1370,6 +1431,7 @@
     venue: International Symposium on Bioinformatics Research and Applications
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
+    status: Final
 - nick: yzz
   title: Yang Zizhen
   name_en: Yang Zizhen
@@ -1548,7 +1610,8 @@
   affiliation: ''
   github: CirinMok
   has_page: true
-  tools: []
+  tools:
+  - sxLaep
   papers: []
 - nick: pre
   title: pre

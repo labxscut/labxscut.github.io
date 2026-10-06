@@ -3,25 +3,25 @@
 
 // colors
 [data-dark="false"] {
-  --primary: #0795d9;
-  --secondary: #7dd3fc;
-  --text: #000000;
+  --primary: #2b6cb0;
+  --secondary: #4299e1;
+  --text: #1a202c;
   --background: #ffffff;
-  --background-alt: #fafafa;
-  --light-gray: #e0e0e0;
-  --gray: #808080;
-  --dark-gray: #404040;
+  --background-alt: #f7fafc;
+  --light-gray: #e2e8f0;
+  --gray: #718096;
+  --dark-gray: #4a5568;
   --overlay: #00000020;
 }
 [data-dark="true"] {
-  --primary: #0795d9;
-  --secondary: #075985;
-  --text: #ffffff;
-  --background: #181818;
-  --background-alt: #1c1c1c;
-  --light-gray: #404040;
-  --gray: #808080;
-  --dark-gray: #b0b0b0;
+  --primary: #63b3ed;
+  --secondary: #90cdf4;
+  --text: #e8eef5;
+  --background: #0f1720;
+  --background-alt: #131c26;
+  --light-gray: #23303d;
+  --gray: #74838f;
+  --dark-gray: #a8b6c4;
   --overlay: #ffffff10;
 }
 

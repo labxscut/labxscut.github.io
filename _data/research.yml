@@ -7,7 +7,7 @@
     using geometry-anchored similarity network fusion and self-supervised graph
     learning.
   keywords: [single-cell, multi-omics, graph learning, SNF]
-  tools: [sxSNF]
+  tools: [sxSNF, sxELA]
 
 - key: protein
   title: Protein and enzyme function prediction
@@ -16,7 +16,7 @@
     Sequence-based prediction of enzyme function, from rapid binary enzyme
     screening to hierarchical EC-class assignment and contrastive embeddings.
   keywords: [enzyme, EC number, sequence features, XGBoost]
-  tools: [sxLaep]
+  tools: [sxLaep, sxRaep, sxEnzHier]
 
 - key: cancer
   title: Cancer genomics and liquid biopsy
@@ -25,7 +25,7 @@
     Deep learning on cfDNA methylation sequencing and tumour methylation arrays
     to detect tumour-derived fragments and score cancer risk from a blood draw.
   keywords: [cfDNA, methylation, deep learning, early detection]
-  tools: [deeplb]
+  tools: [deeplb, HCG, UGES]
 
 - key: methods
   title: Statistical and machine-learning methodology
@@ -34,5 +34,4 @@
     The statistics behind the tools: distribution shift, estimable learning
     bounds, local genetic association, and survival learning across databases.
   keywords: [distribution shift, learning bounds, local association, survival]
-  tools: []
-
+  tools: [DHMOC, CCNMF, CTRhythm, SPRINT]

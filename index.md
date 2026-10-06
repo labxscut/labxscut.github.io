@@ -31,7 +31,7 @@ single cells, and clinical data, and share our research as open-source tools.
 
 We build software to make our methods and research workflows reusable.
 
-{% for tool in site.data.tools %}
+{% for tool in site.data.tools limit:3 %}
 ### [{{ tool.name }}]({{ tool.docs }})
 
 {{ tool.tagline }}. {{ tool.description }}
@@ -50,3 +50,32 @@ We build software to make our methods and research workflows reusable.
 
 {% include button.html text="All tools" link="tools/" icon="fa-solid fa-arrow-right" %}
 {% include button.html text="Publications" link="publications/" icon="fa-solid fa-arrow-right" %}
+
+<!-- section break -->
+
+## Activities
+
+{% if site.data.activities.size > 0 %}
+{% for activity in site.data.activities limit:3 %}
+- **{{ activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
+{% endfor %}
+{% else %}
+No activities have been posted yet.
+{% endif %}
+
+{% include button.html text="All activities" link="activities/" icon="fa-solid fa-arrow-right" %}
+
+<!-- section break -->
+
+## Blog
+
+{% assign recent_posts = site.posts | sort: "date" | reverse %}
+{% if recent_posts.size > 0 %}
+{% for post in recent_posts limit:3 %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
+{% endfor %}
+{% else %}
+No blog posts have been published yet.
+{% endif %}
+
+{% include button.html text="Read the blog" link="blog/" icon="fa-solid fa-arrow-right" %}

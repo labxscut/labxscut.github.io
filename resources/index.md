@@ -1,9 +1,6 @@
 ---
 title: Resources
 description: "LabX identity, affiliation, and contact information."
-nav:
-  order: 7
-  tooltip: Lab information
 ---
 
 # Lab information
@@ -21,5 +18,5 @@ nav:
 ## Contact
 
 General inquiries: [{{ site.links.email }}](mailto:{{ site.links.email }})  
-Principal investigator: [{{ site.data.identity.pi.name_en }}](/{{ site.data.identity.pi.nick }}/)  
+Principal investigator: [{{ site.data.identity.pi.name_en }}](/people/{{ site.data.identity.pi.nick }}/)  
 [{{ site.data.identity.affiliation.website }}]({{ site.data.identity.affiliation.website }}) · [GitHub organization]({{ site.data.identity.links.github }})

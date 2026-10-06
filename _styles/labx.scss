@@ -58,9 +58,74 @@
   margin-bottom: 0.4em;
 }
 
+.labx-footer-contact {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: center;
+  margin: 0 auto 1rem;
+  max-width: 52rem;
+  text-align: center;
+}
+
+.labx-footer-contact span {
+  color: var(--dark-gray);
+}
+
+.labx-profile-card {
+  padding: 1.25rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--rounded);
+  background: var(--background-alt);
+}
+
+.labx-profile-aside {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.labx-profile-aside p {
+  margin: 0.35rem 0;
+}
+
+.labx-profile-main > section {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.labx-tool,
+.labx-paper {
+  padding: 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--rounded);
+  background: var(--background-alt);
+}
+
+.labx-tool h2,
+.labx-paper h3 {
+  margin-top: 0;
+}
+
+.labx-tool-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+.labx-status {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--light-gray);
+  font-size: 0.85em;
+}
+
 @media (max-width: 700px) {
   .labx-profile {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .labx-profile-aside {
+    position: static;
   }
 }

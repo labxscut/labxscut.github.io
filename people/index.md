@@ -2,7 +2,7 @@
 title: People
 description: "The LabX research team at South China University of Technology."
 nav:
-  order: 2
+  order: 3
   tooltip: Meet the team
 ---
 
@@ -21,7 +21,7 @@ pages link from current members' names. Contact details are not published here.
 ## {{ pair[1] }}
 
 {% for person in group %}
-{% if person.has_page %}[**{{ person.name_en }}**](/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.start_year %} ({{ person.start_year }}{% if person.end_year %}–{{ person.end_year }}{% endif %}){% endif %}{% if person.affiliation %} · {{ person.affiliation }}{% endif %}{% if person.github %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
+{% if person.has_page %}[**{{ person.name_en }}**](/people/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh != "" %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.start_year != "" %} ({{ person.start_year }}{% if person.end_year != "" %}–{{ person.end_year }}{% endif %}){% endif %}{% if person.affiliation != "" %} · {{ person.affiliation }}{% endif %}{% if person.github != "" %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
 
 {% endfor %}
   {% endif %}
