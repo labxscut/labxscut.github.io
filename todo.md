@@ -10,25 +10,31 @@ filling out biographies or other optional details.
 
 - Repository: `D:\work\labxscut\labxscut.github.io`
 - Branch: `main`
-- `main` and `origin/main` are at `5d1571c` (`docs: add deployment handoff
-  checklist`); the working tree is clean.
+- The deployed site revision is `6c75a12` (`fix: emit section spacing max as
+  CSS`).
 - GitHub Pages uses the legacy `main:/` source. A push to `main` triggers the
   Pages build/deploy.
-- Pages run [#29](https://github.com/labxscut/labxscut.github.io/actions/runs/37490903077)
-  for commit `5d1571c` failed. It includes site changes from `6bf7e61` and
-  this private handoff file.
-- The new failure is in `_styles/section.scss:5`: the Pages runtime uses
-  Sass 3.7, which interprets CSS `max()` as its Sass numeric function and
-  rejects the `calc()` argument. A local compatibility fix now emits `max()`
-  as CSS with Sass `unquote`; it has not yet been pushed or tested remotely.
+- Pages run [#30](https://github.com/labxscut/labxscut.github.io/actions/runs/37492378758)
+  for commit `6c75a12` completed successfully, including both build and deploy.
+- Public HTTP checks returned 200 for `/`, `/team/`, and `/team/lcx/`.
+  `/people/` returns the expected redirect page pointing to `/team/`.
+- A live-page check found one visual asset issue: Pages left the template's
+  `file_read | google_fonts` filters unevaluated and emitted a broken
+  `_styles/-theme.scss` font URL. A direct Google Fonts URL is now in
+  `_includes/fonts.html`; this last polish fix is not yet deployed.
+- Release `v2026.10.07` was created from deployed commit `6c75a12` and is
+  published at
+  https://github.com/labxscut/labxscut.github.io/releases/tag/v2026.10.07.
+  The older `v2026.10.06` tag was not moved.
 - The latest remote Pages run is `37484144252` (run 28), failed at
   `b98b127`. Its first failure was a Liquid syntax error in the old
   `publications/index.md`, caused by a `where_exp` condition. The replacement
-  `5publications/index.md` uses Liquid loops and is included in local commit
-  `6bf7e61`.
+  `5publications/index.md` uses Liquid loops. Run 29 then exposed the legacy
+  Sass `max(calc(...))` incompatibility; commit `6c75a12` fixed it using
+  `unquote`.
 - No local Jekyll build was possible in the current Windows environment:
-  `ruby` and `bundle` are not available on `PATH`.
-- No successful build or deployment of commit `6bf7e61` has been confirmed.
+  `ruby` and `bundle` are not available on `PATH`; the remote Pages build is
+  the authoritative validation.
 
 ## Work completed
 
@@ -52,17 +58,11 @@ filling out biographies or other optional details.
 
 ## Immediate next steps
 
-1. Commit and push the pending `_styles/section.scss` compatibility fix and
-   this updated handoff, then inspect the resulting Pages run. If it fails,
-   fix the first actual error only and repeat until build and deploy both
-   succeed.
-2. After a successful deployment, verify `https://labxscut.github.io/`,
-   `/team/`, `/publications/`, and `/tools/`, and check that `/people/`
-   redirects to `/team/`.
-3. Only after deployment is healthy, resume the outstanding release request.
-   Tag `v2026.10.06` already exists at `ae844361`; do not move it. The GitHub
-   Release object was not present at the last check, so use a new, agreed
-   release tag if publishing a release is still desired.
+1. Commit and push the pending font-URL fix and this handoff update. Confirm the
+   new Pages build and deploy succeed.
+2. Recheck `/team/` for the direct font URL and verify the main routes again.
+3. After that, avoid optional profile-content work until requested; the user
+   prioritizes a running site over fully populated profiles.
 
 ## Known constraints
 
@@ -72,6 +72,8 @@ filling out biographies or other optional details.
   compatible with the actual Pages runtime, avoid compound `where_exp`
   predicates, and avoid Sass `max()`/`min()` numeric functions with CSS
   `calc()` expressions.
-- Do not claim the site is live until the Pages build and deploy both succeed
-  and the public URL is checked.
-- Do not add optional profile content before the deployment blocker is cleared.
+- Pages is live and verified at the public URLs above. The deployment blockers
+  from the earlier attempts (Liquid `where_exp` parsing and Sass 3.7 CSS
+  `max(calc(...))` parsing) are fixed in the deployed revision.
+- The font URL fix is pending validation and deployment.
+- Keep the restraint on optional profile content.
