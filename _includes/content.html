@@ -30,7 +30,9 @@
       data-dark="{{ dark }}"
     {% endif %}
     {% if image %}
-      style="--image: url('{{ image | relative_url | uri_escape }}')"
+      {% unless image contains "<" %}
+        style="--image: url('{{ image | relative_url | uri_escape }}')"
+      {% endunless %}
     {% endif %}
   >
     {{ section }}
