@@ -10,28 +10,27 @@ filling out biographies or other optional details.
 
 - Repository: `D:\work\labxscut\labxscut.github.io`
 - Branch: `main`
-- The deployed site revision is `6c75a12` (`fix: emit section spacing max as
-  CSS`).
+- The deployed site revision is `043cebe` (`fix: use a Pages-compatible font
+  stylesheet`).
 - GitHub Pages uses the legacy `main:/` source. A push to `main` triggers the
   Pages build/deploy.
-- Pages run [#30](https://github.com/labxscut/labxscut.github.io/actions/runs/37492378758)
-  for commit `6c75a12` completed successfully, including both build and deploy.
+- Pages run [#31](https://github.com/labxscut/labxscut.github.io/actions/runs/37494805517)
+  for commit `043cebe` completed successfully, including both build and deploy.
 - Public HTTP checks returned 200 for `/`, `/team/`, and `/team/lcx/`.
   `/people/` returns the expected redirect page pointing to `/team/`.
-- A live-page check found one visual asset issue: Pages left the template's
-  `file_read | google_fonts` filters unevaluated and emitted a broken
-  `_styles/-theme.scss` font URL. A direct Google Fonts URL is now in
-  `_includes/fonts.html`; this last polish fix is not yet deployed.
+  `_styles/section.css` also returns 200. The Team page now has a direct Google
+  Fonts stylesheet URL and no stale `_styles/-theme.scss` URL.
 - Release `v2026.10.07` was created from deployed commit `6c75a12` and is
   published at
   https://github.com/labxscut/labxscut.github.io/releases/tag/v2026.10.07.
-  The older `v2026.10.06` tag was not moved.
+  The older `v2026.10.06` tag was not moved. The small font-loader correction
+  in `043cebe` was deployed afterward.
 - The latest remote Pages run is `37484144252` (run 28), failed at
   `b98b127`. Its first failure was a Liquid syntax error in the old
   `publications/index.md`, caused by a `where_exp` condition. The replacement
   `5publications/index.md` uses Liquid loops. Run 29 then exposed the legacy
   Sass `max(calc(...))` incompatibility; commit `6c75a12` fixed it using
-  `unquote`.
+  `unquote`. The direct font URL fix is in `043cebe`.
 - No local Jekyll build was possible in the current Windows environment:
   `ruby` and `bundle` are not available on `PATH`; the remote Pages build is
   the authoritative validation.
@@ -58,11 +57,11 @@ filling out biographies or other optional details.
 
 ## Immediate next steps
 
-1. Commit and push the pending font-URL fix and this handoff update. Confirm the
-   new Pages build and deploy succeed.
-2. Recheck `/team/` for the direct font URL and verify the main routes again.
-3. After that, avoid optional profile-content work until requested; the user
-   prioritizes a running site over fully populated profiles.
+1. No deployment blocker remains. For any future code change, inspect the
+   resulting Pages run and verify the public URL before describing that version
+   as live.
+2. Avoid optional profile-content work until requested; the user prioritizes a
+   running site over fully populated profiles.
 
 ## Known constraints
 
@@ -75,5 +74,5 @@ filling out biographies or other optional details.
 - Pages is live and verified at the public URLs above. The deployment blockers
   from the earlier attempts (Liquid `where_exp` parsing and Sass 3.7 CSS
   `max(calc(...))` parsing) are fixed in the deployed revision.
-- The font URL fix is pending validation and deployment.
+- The font URL fix is deployed and verified.
 - Keep the restraint on optional profile content.
