@@ -1,0 +1,15 @@
+- key: who
+  label: Who
+  path: ""
+- key: cv
+  label: CV
+  path: cv/
+- key: publications
+  label: Publications
+  path: publications/
+- key: teaching
+  label: Teaching
+  path: teaching/
+- key: tools
+  label: Tools
+  path: tools/

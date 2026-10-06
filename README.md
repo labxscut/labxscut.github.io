@@ -11,26 +11,30 @@ while sharing the lab template's styles and assets.
 | Path | Role |
 |------|------|
 | `index.md` | front door: research themes, tools, people, and news |
-| `tools/` | collective tools index (per-tool docs stay in their own folders) |
-| `people/` | collective roster and al-folio-inspired `/people/<nick>/` profiles |
-| `publications/` | published and accepted papers, generated and deduplicated from the lab registry |
-| `blog/`, `_posts/` | group notes and updates |
-| `activities/` | seminars, workshops, and other group activities |
-| `resources/` | lab identity, address, brand assets, citation notes |
-| `research/`, `join/` | collective research themes and contact information |
-| `deeplb/`, `sxLaep/` | tool-specific documentation folders (hand-maintained, update in place) |
+| `1news/`, `_posts/` | group news, notes, and updates |
+| `2about/` | research themes and group overview |
+| `3team/` | collective roster and al-folio-inspired `/team/<nick>/` profiles |
+| `4tools/` | collective tools index and project documentation |
+| `5publications/` | published and accepted papers, generated and deduplicated from the lab registry |
+| `6activities/` | seminars, workshops, and other group activities |
+| `7engage/` | research opportunities and contact information |
 | `_data/`, `_includes/`, `_layouts/`, `_plugins/`, `_styles/`, `images/` | data, Greene template components, and shared assets |
+
+The numeric prefixes on the section folders express the intended top-navigation
+order. Explicit permalinks preserve established public URLs when the physical
+folders use those prefixes.
 
 ## Generated files (do not hand-edit)
 
 * `_data/publications.yml` — from `~/work/advisee/hc/labxManage/Paper/*/publication.yaml`
   (published and accepted records; duplicates, WIP, under-review, and placeholders are excluded).
-* `_data/people.yml` and `/people/<nick>/index.md` — from `~/work/advisee/core/database/contact.md`.
+* `_data/people.yml` and `/team/<nick>/index.md` — from `~/work/advisee/core/database/contact.md`.
   Only public-safe fields are copied; emails, phone numbers, chat ids, leaders, and
   notes stay in the roster. Legacy `/<nick>/` URLs redirect to the nested profiles.
 
 Member pages show only verified roster, software, and publication information;
-they do not invent biographies or photos.
+they do not invent biographies or photos. Teaching tabs are shown only for
+faculty.
 
 The publications index is based on the LabX paper registry and is not guaranteed
 to include the PI's full Google Scholar bibliography. The tools catalog links
@@ -56,10 +60,10 @@ bundle exec jekyll build --destination /tmp/labxscut-site-preview
 The generated preview is outside the repository; `/tmp/`, `_site/`, and Bundler
 artifacts are ignored locally.
 
-The public GitHub Pages configuration remains unchanged on its existing
-`main:/` source; this local rebuild does not switch deployment modes or publish
-changes. The repository is temporarily excluded from the hourly
-`htworkrepos-sync` job while the rebuild stays local; remove its entry from
+The public GitHub Pages source is the repository root on `main` (`main:/`).
+Pushing to `main` triggers the Pages build and deployment; a tag alone does not
+deploy. The repository is temporarily excluded from the hourly
+`htworkrepos-sync` job; remove its entry from
 `~/work/agents/scripts/sync-work-repos.conf` when automatic sync should resume.
 
 The template source is distributed under its BSD 3-Clause license in

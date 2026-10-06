@@ -1,9 +1,11 @@
 {% if include.lookup %}
-  {% assign citation = site.data.citations
-    | where_exp: "citation",
-      "citation.id == include.lookup or citation.title contains include.lookup"
-    | first
-  %}
+  {% assign citation = nil %}
+  {% for candidate in site.data.citations %}
+    {% if candidate.id == include.lookup or candidate.title contains include.lookup %}
+      {% assign citation = candidate %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
 {% else %}
   {% assign citation = include %}
 {% endif %}

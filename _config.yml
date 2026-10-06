@@ -38,6 +38,8 @@ include:
 
 exclude:
   - README.md
+  - AGENTS.md
+  - 0design
   - LICENSE
   - LICENSE-LWT.md
   - CITATION-LWT.cff

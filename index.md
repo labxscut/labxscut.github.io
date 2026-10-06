@@ -10,7 +10,7 @@ of Technology. We develop machine-learning methods for genomes, proteins,
 single cells, and clinical data, and share our research as open-source tools.
 
 {% include button.html text="Explore our research" link="research/" icon="fa-solid fa-arrow-right" %}
-{% include button.html text="Meet the team" link="people/" icon="fa-solid fa-users" %}
+{% include button.html text="Meet the team" link="team/" icon="fa-solid fa-users" %}
 
 <!-- section break -->
 

@@ -1,0 +1,6 @@
+---
+layout: default
+---
+
+{% assign member = site.data.people | where: "nick", page.nick | first %}
+{% include member-site-shell.html %}
