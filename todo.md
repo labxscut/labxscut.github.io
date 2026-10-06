@@ -10,10 +10,17 @@ filling out biographies or other optional details.
 
 - Repository: `D:\work\labxscut\labxscut.github.io`
 - Branch: `main`
-- Local HEAD: `6bf7e61` (`feat: reorganize site sections and team profiles`)
-- `origin/main` is still `b98b127`; the local commit has not been pushed yet.
+- `main` and `origin/main` are at `5d1571c` (`docs: add deployment handoff
+  checklist`); the working tree is clean.
 - GitHub Pages uses the legacy `main:/` source. A push to `main` triggers the
   Pages build/deploy.
+- Pages run [#29](https://github.com/labxscut/labxscut.github.io/actions/runs/37490903077)
+  for commit `5d1571c` failed. It includes site changes from `6bf7e61` and
+  this private handoff file.
+- The new failure is in `_styles/section.scss:5`: the Pages runtime uses
+  Sass 3.7, which interprets CSS `max()` as its Sass numeric function and
+  rejects the `calc()` argument. A local compatibility fix now emits `max()`
+  as CSS with Sass `unquote`; it has not yet been pushed or tested remotely.
 - The latest remote Pages run is `37484144252` (run 28), failed at
   `b98b127`. Its first failure was a Liquid syntax error in the old
   `publications/index.md`, caused by a `where_exp` condition. The replacement
@@ -45,16 +52,14 @@ filling out biographies or other optional details.
 
 ## Immediate next steps
 
-1. Review this handoff file and commit `6bf7e61`; do not discard the numbered
-   directory migration.
-2. Push `main` to `origin` (`git push origin main`) to start the Pages build.
-3. Watch the latest **pages build and deployment** run for `labxscut/labxscut.github.io`.
-   If it fails, inspect the build job log and fix the first actual error only;
-   push the fix and repeat until both build and deploy succeed.
-4. After a successful deployment, verify `https://labxscut.github.io/`,
+1. Commit and push the pending `_styles/section.scss` compatibility fix and
+   this updated handoff, then inspect the resulting Pages run. If it fails,
+   fix the first actual error only and repeat until build and deploy both
+   succeed.
+2. After a successful deployment, verify `https://labxscut.github.io/`,
    `/team/`, `/publications/`, and `/tools/`, and check that `/people/`
    redirects to `/team/`.
-5. Only after deployment is healthy, resume the outstanding release request.
+3. Only after deployment is healthy, resume the outstanding release request.
    Tag `v2026.10.06` already exists at `ae844361`; do not move it. The GitHub
    Release object was not present at the last check, so use a new, agreed
    release tag if publishing a release is still desired.
@@ -62,9 +67,11 @@ filling out biographies or other optional details.
 ## Known constraints
 
 - GitHub Pages currently builds with `github-pages v232`, Jekyll `3.10.0`,
-  Liquid `4.0.4`; the repository Gemfile's Jekyll 4 dependency was not honored
-  by that Pages build. Keep Liquid expressions compatible with the actual
-  Pages runtime and avoid compound `where_exp` predicates.
+  Liquid `4.0.4`, and Sass `3.7.4`; the repository Gemfile's Jekyll 4
+  dependency was not honored by that Pages build. Keep Liquid expressions
+  compatible with the actual Pages runtime, avoid compound `where_exp`
+  predicates, and avoid Sass `max()`/`min()` numeric functions with CSS
+  `calc()` expressions.
 - Do not claim the site is live until the Pages build and deploy both succeed
   and the public URL is checked.
 - Do not add optional profile content before the deployment blocker is cleared.
