@@ -1,21 +1,44 @@
-# LabX (labxscut) site config - GitHub Pages builds this with Jekyll.
+# LabX site configuration, using the Greene Lab Website Template.
 title: LabX
+subtitle: AI for Science · SCUT
 description: >-
   LabX is an AI-for-Science group at the School of Mathematics, South China
   University of Technology. We build machine-learning methods for genomes,
   proteins, single cells, and clinical data.
 url: https://labxscut.github.io
-lang: en
+baseurl: ""
 
-github_org: https://github.com/labxscut
-email: labx2025@gmail.com
+links:
+  email: labx2025@gmail.com
+  github: labxscut
+  google-scholar: e1GOPw0AAAAJ
 
-# Keep generated collections out of the published output.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+
+highlighter: rouge
+theme: null
+
+sass:
+  sass_dir: _styles
+
+include:
+  - _styles
+  - _scripts
+
 exclude:
   - README.md
+  - LICENSE
+  - LICENSE-LWT.md
+  - CITATION-LWT.cff
   - _generators
-
-collections:
-  people:
-    output: true
-    permalink: /:name/

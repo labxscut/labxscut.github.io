@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="labx-profile">
+  <aside class="labx-profile-aside">
+    <div class="labx-avatar" aria-hidden="true">{{ page.name_en | slice: 0 }}</div>
+    <h1>{{ page.name_en }}</h1>
+    {% if page.name_zh %}<p class="labx-name-zh">{{ page.name_zh }}</p>{% endif %}
+    <p>{{ page.role }}</p>
+    {% if page.degree %}<p>{{ page.degree }} · South China University of Technology</p>{% endif %}
+    {% if page.start_year %}<p>With LabX since {{ page.start_year }}</p>{% endif %}
+    <div class="labx-profile-links">
+      {% if page.github %}
+        {% include button.html type="github" text="GitHub" link=page.github style="bare" %}
+      {% endif %}
+      {% if page.nick == site.data.identity.pi.nick %}
+        {% include button.html type="google-scholar" text="Google Scholar" link=site.data.identity.pi.scholar style="bare" %}
+      {% endif %}
+    </div>
+  </aside>
+
+  <div class="labx-profile-main">
+    {% if content != "" %}{{ content }}{% endif %}
+
+    {% if page.tools.size > 0 %}
+      <section>
+        <h2>Software</h2>
+        <ul>
+          {% for key in page.tools %}
+            {% assign tool = site.data.tools | where: "key", key | first %}
+            {% if tool %}<li><a href="{{ tool.docs }}">{{ tool.name }}</a> — {{ tool.tagline }}</li>{% endif %}
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+
+    {% if page.papers.size > 0 %}
+      <section>
+        <h2>Selected publications</h2>
+        <ul>
+          {% for paper in page.papers %}
+            <li>{% if paper.url %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — {{ paper.venue }}, {{ paper.year }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
+  </div>
+</div>

@@ -1,8 +1,9 @@
 .*/
 
-# Generated previews are written to /tmp/labxscut-site-preview by default.
-# Keep these ignored paths for local overrides and previews from older runs.
+# Local Jekyll previews are built in /tmp/labxscut-site-preview.
 /_preview/
 /tmp/
+/_site/
+/vendor/
 __pycache__/
 *.py[cod]
