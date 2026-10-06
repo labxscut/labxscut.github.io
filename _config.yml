@@ -39,6 +39,7 @@ include:
 exclude:
   - README.md
   - AGENTS.md
+  - todo.md
   - 0design
   - LICENSE
   - LICENSE-LWT.md
