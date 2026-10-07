@@ -25,6 +25,15 @@
   color: var(--primary);
   font-size: 3rem;
   font-weight: var(--bold);
+  overflow: hidden;
+}
+
+.labx-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .labx-profile-aside h1 {
@@ -44,6 +53,35 @@
 
 .labx-profile-cv {
   margin-top: 1rem;
+}
+
+.labx-profile-nav {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-gray);
+  text-align: center;
+}
+
+.labx-profile-nav a {
+  display: block;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid transparent;
+  border-radius: var(--rounded);
+  font-size: 0.95em;
+}
+
+.labx-profile-nav a:hover {
+  border-color: var(--primary);
+  background: var(--background-alt);
+}
+
+.labx-profile-nav a[aria-current="page"] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--background);
+  font-weight: var(--bold);
 }
 
 .labx-profile-cv a {

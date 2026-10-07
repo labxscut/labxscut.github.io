@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Cartoon placeholder portrait">
+  <defs>
+    <clipPath id="frame"><circle cx="80" cy="80" r="78"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="160" height="160" fill="hsl(101, 42%, 84%)"/>
+    <circle cx="80" cy="150" r="62" fill="#5d6355"/>
+    <path d="M62 118h36v20H62z" fill="#d89a6c"/>
+    <circle cx="80" cy="86" r="34" fill="#d89a6c"/>
+    <g fill="#26221f"><path d="M52 62c4-22 52-24 56-2 3 12-8 8-14 4-9-6-20-6-28 0-6 4-17 8-14-2z"/></g>
+    <g fill="#33302f">
+      <circle cx="69" cy="88" r="3.4"/>
+      <circle cx="91" cy="88" r="3.4"/>
+    </g>
+    <path d="M70 102q10 9.0 20 0" fill="none" stroke="#8a5a4a" stroke-width="3" stroke-linecap="round"/>
+    <g fill="none" stroke="#3a3a45" stroke-width="2.6" opacity="0.85"><circle cx="68" cy="84" r="10"/><circle cx="92" cy="84" r="10"/><path d="M78 84h4M58 82l-6-3M102 82l6-3"/></g>
+  </g>
+  <circle cx="80" cy="80" r="78" fill="none" stroke="hsl(101, 38%, 70%)" stroke-width="3"/>
+</svg>

@@ -1,7 +1,13 @@
 {% assign profile_root = "/team/" | append: member.nick | append: "/" %}
 <div class="labx-profile">
   <aside class="labx-profile-aside labx-profile-card">
-    <div class="labx-avatar" aria-hidden="true">{{ member.name_en | slice: 0 | upcase }}</div>
+    <div class="labx-avatar" aria-hidden="true">
+      {% if member.avatar %}
+        <img src="{{ member.avatar | relative_url }}" alt="" loading="lazy">
+      {% else %}
+        {{ member.name_en | slice: 0 | upcase }}
+      {% endif %}
+    </div>
     <h1>{{ member.name_en }}</h1>
     {% if member.name_zh != "" %}<p class="labx-name-zh">{{ member.name_zh }}</p>{% endif %}
     <p>{{ member.role }}</p>
@@ -25,9 +31,7 @@
     {% if member.cv_url != nil and member.cv_url != "" %}
       <p class="labx-profile-cv"><a href="{{ member.cv_url }}">View CV (PDF)</a></p>
     {% endif %}
-  </aside>
 
-  <div class="labx-profile-main">
     <nav class="labx-profile-nav" aria-label="{{ member.name_en }} personal site">
       {% assign teaching_items = site.data.member_teaching | where: "nick", member.nick %}
       {% for tab in site.data.profile_sections %}
@@ -48,6 +52,9 @@
         {% endif %}
       {% endfor %}
     </nav>
+  </aside>
+
+  <div class="labx-profile-main">
 
     {% unless page.profile_section %}
       <section>

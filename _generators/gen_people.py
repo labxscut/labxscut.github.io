@@ -23,6 +23,7 @@ from urllib.parse import urlsplit
 
 import yaml
 
+from gen_avatars import ensure_avatar
 from gen_publications import REPO, load_roster
 
 OUT_DIR = REPO
@@ -236,6 +237,8 @@ def main() -> int:
         }
         if cv_url:
             entry["cv_url"] = cv_url
+        if has_page:
+            entry["avatar"] = row.get("avatar") or ensure_avatar(nick)
         people.append(entry)
 
         if has_page:

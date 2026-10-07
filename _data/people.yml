@@ -753,6 +753,7 @@
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+  avatar: /images/avatars/lhl.svg
 - nick: nkd
   title: Kaida Ning
   name_en: Kaida Ning
@@ -789,6 +790,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+  avatar: /images/avatars/nkd.svg
 - nick: wln
   title: Wan Lin
   name_en: Wan Lin
@@ -811,6 +813,7 @@
     year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
+  avatar: /images/avatars/wln.svg
 - nick: wsc
   title: Wang Shaochen
   name_en: Wang Shaochen
@@ -849,6 +852,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+  avatar: /images/avatars/xyh.svg
 - nick: lyi
   title: Liang Yin
   name_en: Liang Yin
@@ -948,6 +952,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+  avatar: /images/avatars/wyx.svg
 - nick: njt
   title: Ning Jingtai
   name_en: Ning Jingtai
@@ -984,6 +989,7 @@
     year: '2026'
     url: ''
     status: Accepted
+  avatar: /images/avatars/pel.svg
 - nick: xhx
   title: Xu Hongxing
   name_en: Xu Hongxing
@@ -1006,6 +1012,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+  avatar: /images/avatars/xhx.svg
 - nick: hch
   title: Han Cheng
   name_en: Han Cheng
@@ -1058,6 +1065,7 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+  avatar: /images/avatars/cqw.svg
 - nick: ych
   title: Yang Chunhao
   name_en: Yang Chunhao
@@ -1145,6 +1153,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+  avatar: /images/avatars/rbz.svg
 - nick: dhy
   title: Duan Hongyu
   name_en: Duan Hongyu
@@ -1184,6 +1193,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+  avatar: /images/avatars/dhy.svg
 - nick: wlp
   title: Wang Linping
   name_en: Wang Linping
@@ -1206,6 +1216,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+  avatar: /images/avatars/wlp.svg
 - nick: hxy
   title: Han Xinyu
   name_en: Han Xinyu
@@ -1222,6 +1233,7 @@
   tools:
   - sxLaep
   papers: []
+  avatar: /images/avatars/hxy.svg
 - nick: lzm
   title: Li Zhimin
   name_en: Li Zhimin
@@ -1253,6 +1265,7 @@
   tools:
   - deeplb
   papers: []
+  avatar: /images/avatars/kxf.svg
 - nick: sqh
   title: Shen Qihua
   name_en: Shen Qihua
@@ -1359,6 +1372,7 @@
     year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
+  avatar: /images/avatars/lcx.svg
 - nick: chb
   title: Chen Hongbo
   name_en: Chen Hongbo
@@ -1613,6 +1627,7 @@
   tools:
   - sxLaep
   papers: []
+  avatar: /images/avatars/myj.svg
 - nick: pre
   title: pre
   name_en: ''
