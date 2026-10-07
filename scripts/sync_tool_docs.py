@@ -81,8 +81,13 @@ def repository_path(tool: Tool) -> Path:
     if not (repo / ".git").exists():
         raise SyncError(f"Tool repository is missing: {repo}")
     remote = git(repo, "remote", "get-url", "origin").stdout.strip().rstrip("/")
-    expected_suffix = f"/{tool.repository}".casefold()
-    if remote.removesuffix(".git").casefold().endswith(expected_suffix) is False:
+    normalized = remote.removesuffix(".git").casefold()
+    # Accept both HTTPS (.../org/repo) and SSH (git@host:org/repo) origins.
+    expected_suffixes = (
+        f"/{tool.repository}".casefold(),
+        f":{tool.repository}".casefold(),
+    )
+    if not normalized.endswith(expected_suffixes):
         raise SyncError(f"Unexpected origin for {repo}: {remote}")
     return repo
 
