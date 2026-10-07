@@ -79,6 +79,91 @@ and generator output whenever a section path changes.
 - Preserve existing public URLs where practical. If a URL must change, add and
   verify a redirect; do not assume a folder rename is URL-neutral.
 
+## Tool documentation ownership and build-time publishing
+
+The tool repository is the source of truth for its user-facing documentation;
+the LabX website builds and publishes a static copy. Do not maintain a second
+editable copy of a tool's full documentation under this website repository.
+This is dynamic at **site build time**, not a browser-time fetch: GitHub Pages
+serves static files, and browser-side `fetch()` from tool repositories would
+make rendering depend on CORS, network availability, and the visitor's session.
+
+### Repository contract
+
+- Each participating tool repository owns its documentation source and build
+  instructions, normally under `docs/`. It must provide a predictable static
+  output directory, proposed as `docs/site/`, containing an `index.html` plus
+  every local stylesheet, script, image, and linked page needed by that site.
+- Keep relative assets and links inside the tool's documentation subtree.
+  Avoid root-relative links such as `/assets/...`, which escape the tool's
+  published prefix. External services can remain absolute links.
+- If documentation needs a generator (for example, Markdown to HTML), define
+  and test that generator in the tool repository. The LabX website build should
+  copy the declared static output, not rebuild tool software or infer how each
+  tool's docs work.
+- The tool owner reviews and merges doc changes in that tool repository.
+  Website maintainers only update the source manifest/revision and validate
+  the integrated result; they should not patch a copied deployed page.
+
+### Website integration
+
+- Keep concise catalog metadata (name, tagline, summary, repository, papers,
+  maintainers) in `_data/tools.yml`. Add explicit documentation integration
+  fields such as `docs_repo`, `docs_ref`, `docs_path`, and `docs_slug`; do not
+  derive repository names, refs, paths, or public routes from display names.
+- The canonical published documentation URL is
+  `https://labxscut.github.io/tools/<docs_slug>/`. Use lowercase, URL-safe
+  slugs and emit a directory index (`index.html`) so links work without a
+  filename. Catalog links should point to this canonical path when that
+  repository has opted into the integration. External docs/services can stay
+  external until migrated.
+- Extend `.github/workflows/pages.yml` with a preparation step before Jekyll
+  build: for each manifest entry, fetch the declared public tool repository at
+  its declared immutable commit (or release tag resolved and recorded as a
+  commit), verify `docs_path/index.html`, then copy that directory into the
+  matching `_site/tools/<docs_slug>/` destination after Jekyll build. Keep
+  fetched repositories in a temporary directory, not as submodules and not as
+  committed vendored copies.
+- If docs require private-repository access, do not silently skip them or
+  add broad credentials. First agree on a least-privilege read-only deploy
+  credential and store it only as a GitHub Actions secret; alternatively
+  publish only the approved public docs source. Public Pages output must not
+  contain credentials or restricted files.
+- Pinning makes a site build reproducible. When tool docs change, a maintainer
+  bumps `docs_ref` through a reviewed site change (or an automated PR that
+  proposes the new commit); do not silently track a moving default branch in a
+  release build.
+- Keep deploy-time checks for each configured doc route: source ref resolved,
+  `index.html` present, no forbidden/private paths, copied output exists, and
+  internal local links/assets stay beneath that slug. Report any failed sync
+  as a build failure instead of deploying stale or success-shaped fallback
+  content.
+
+### Migration sequence and compatibility
+
+1. Inventory the current `tools/<name>/` copies and each tool repository's
+   `docs/` content. Compare pages and assets; identify which repository version
+   is authoritative with the tool maintainer. Do not overwrite newer docs
+   based only on timestamps or similar filenames.
+2. Move/curate the approved complete docs into the tool repo, add its static
+   output contract and verify it locally. Merge the tool-repo change first.
+3. Add its explicit manifest fields, build-time fetch/copy, and route checks to
+   the website. Preview all links and assets under `/tools/<docs_slug>/`.
+4. Replace catalog links with that canonical URL and remove the duplicated
+   website copy only after a successful deployment confirms the integrated
+   pages and legacy destinations.
+5. Preserve old public documentation URLs (including existing `/sxLaep/` or
+   `/deeplb/` paths) with redirects to the canonical tool route. Add any
+   redirects to the existing CI required-route checks; do not leave two
+   separately editable copies after migration.
+
+Start with one low-risk public tool (for example, sxLaep), verify the whole
+flow, then migrate other repositories individually. The current website Pages
+workflow still contains older required-route checks; update those as part of
+the first pilot so CI validates the current named section routes and the new
+tool-doc routes rather than removed `/people/`, `/research/`, or `/join/`
+paths.
+
 ## Profiles
 
 The intended member URL pattern is `/team/<nick>/`. Only create/link a member
