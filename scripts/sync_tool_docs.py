@@ -203,10 +203,12 @@ def update_tool_metadata(text: str, tool: Tool, refs: dict[str, str]) -> str:
         "docs_path": str(SOURCE_PATH),
         "docs_slug": tool.slug,
     }
+    # Strip previously managed keys only; the `docs:` URL line stays as the
+    # anchor that the refreshed block is re-inserted after.
     filtered = [
         line
         for line in lines
-        if not any(re.match(rf"^  {re.escape(key)}:", line) for key in metadata)
+        if not any(re.match(rf"^  {re.escape(key)}:", line) for key in METADATA_KEYS)
     ]
     docs_line = next(
         (index for index, line in enumerate(filtered) if line.startswith("  docs:")),
@@ -214,8 +216,11 @@ def update_tool_metadata(text: str, tool: Tool, refs: dict[str, str]) -> str:
     )
     if docs_line is None:
         raise SyncError(f"Missing docs URL field in _data/tools.yml entry {tool.key}")
-    for offset, (key, value) in enumerate(metadata.items(), start=1):
-        filtered.insert(docs_line + offset, f"  {key}: {value}")
+    # The surviving `docs:` line is replaced by the full managed block so the
+    # docs URL and its provenance keys stay grouped and never duplicated.
+    filtered[docs_line : docs_line + 1] = [
+        f"  {key}: {value}" for key, value in metadata.items()
+    ]
     replacement = "\n".join(filtered)
     if block.endswith("\n"):
         replacement += "\n"
