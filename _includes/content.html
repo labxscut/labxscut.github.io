@@ -22,10 +22,13 @@
     | regex_scan: "<size>(.*?)</size>"
     | default: "page"
   %}
+  {% unless size == "page" or size == "wide" or size == "full" %}
+    {% assign size = "page" %}
+  {% endunless %}
 
   <section
     class="background"
-    data-size="{{ size }}"
+    data-size="{{ size | xml_escape }}"
     {% if dark == "true" or dark == "false" %}
       data-dark="{{ dark }}"
     {% endif %}
