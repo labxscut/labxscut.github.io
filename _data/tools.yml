@@ -31,7 +31,12 @@
   language: Python, R
   license: ""
   repo: https://github.com/labxscut/DeepLB
-  docs: https://labxscut.github.io/deeplb/
+  docs: https://labxscut.github.io/tools/deeplb/
+  docs_repo: labxscut/DeepLB
+  docs_ref: 995f7a2afc403a4804de0e88ec676f65d2606136
+  docs_release_ref: 995f7a2afc403a4804de0e88ec676f65d2606136
+  docs_path: docs/site
+  docs_slug: deeplb
   tags: [cfDNA methylation, deep learning, cancer detection]
   maintainers: [lyi, kxf]
   papers: []
