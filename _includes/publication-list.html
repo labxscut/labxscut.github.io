@@ -4,19 +4,19 @@
   Usage:  {% include publication-list.html papers=list %}
 
   The list must already be filtered (track, status). Published entries come
-  first within each year, accepted ones after them, matching the markup the
-  publications page has always used.
+  first within each year, accepted ones after them.
+
+  Keep the blank lines around every <article> block and do not add whitespace
+  control ("-") to the loop tags: kramdown only expands markdown="1" content
+  when the HTML block is separated from its neighbours by blank lines.
 {%- endcomment -%}
 {%- assign papers = include.papers -%}
 {%- assign years = papers | map: "year" | uniq | sort | reverse -%}
-{%- for year in years -%}
+{% for year in years %}
 ### {{ year }}
-
-{%- assign year_papers = papers | where: "year", year -%}
-{%- for paper in year_papers -%}
-{%- if paper.status == "Accept" or paper.status == "Accepted" -%}
-{%- continue -%}
-{%- endif -%}
+{% assign year_papers = papers | where: "year", year %}
+{% for paper in year_papers %}
+{% if paper.status == "Accept" or paper.status == "Accepted" %}{% continue %}{% endif %}
 <article class="labx-paper" id="{{ paper.slug | slugify }}" markdown="1">
 
 #### {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %}
@@ -27,11 +27,9 @@
 {% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
 
 </article>
-{%- endfor -%}
-{%- for paper in year_papers -%}
-{%- unless paper.status == "Accept" or paper.status == "Accepted" -%}
-{%- continue -%}
-{%- endunless -%}
+{% endfor %}
+{% for paper in year_papers %}
+{% unless paper.status == "Accept" or paper.status == "Accepted" %}{% continue %}{% endunless %}
 <article class="labx-paper" id="{{ paper.slug | slugify }}" markdown="1">
 
 #### {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %}
@@ -42,5 +40,5 @@
 {% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
 
 </article>
-{%- endfor -%}
-{%- endfor -%}
+{% endfor %}
+{% endfor %}
