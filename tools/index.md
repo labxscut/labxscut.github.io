@@ -40,6 +40,7 @@ nav:
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
 </div>
 
+{% include tool-papers.html papers=tool.papers %}
 {% include tool-provenance.html tool=tool %}
 
 </article>

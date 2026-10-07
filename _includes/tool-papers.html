@@ -1,0 +1,27 @@
+{%- comment -%}
+Related publications for one catalogued tool.
+
+`tool.papers` holds publication slugs from _data/publications.yml (maintained by
+hand in _data/tools.yml and validated by _generators/qa_check.py). Each paper is
+linked to its anchor on the publications page, newest first.
+
+Usage: {% include tool-papers.html papers=tool.papers %}
+{%- endcomment -%}
+{%- assign slugs = include.papers -%}
+{%- assign related = "" | split: "" -%}
+{%- for slug in slugs -%}
+  {%- assign paper = site.data.publications | where: "slug", slug | first -%}
+  {%- if paper -%}
+    {%- assign related = related | push: paper -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if related.size > 0 -%}
+  {%- assign related = related | sort: "year" | reverse -%}
+<p class="labx-tool-papers" lang="en">
+  <span class="labx-tool-papers-label">Related publications:</span>
+  {%- for paper in related -%}
+    <a href="/publications/#{{ paper.slug | slugify }}">{{ paper.title }}</a>
+    <span class="labx-tool-papers-year">({{ paper.year }})</span>{% unless forloop.last %} · {% endunless %}
+  {%- endfor -%}
+</p>
+{%- endif -%}

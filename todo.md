@@ -34,14 +34,31 @@ before spending time on optional profile details.
 
 ## Remaining blockers
 
-- [ ] Backfill publications and tool links into the pre-2022 records, and create
+- [x] Backfill publications and tool links into the pre-2022 records, and create
   registry entries for every Google Scholar item (including book chapters), so
-  the site bibliography can approach the Scholar record.
-- [ ] Section the publications into (co)-first/(co)-corresponding author work
-  and collaborative work, following the `hc/0fund` CV format.
-- [ ] Add a logo to each `labxscut/<tool>` repository, show it on
+  the site bibliography can approach the Scholar record. 41 records come from
+  the CV (_generators/backfill_cv_papers.py) and 15 from the Google
+  Scholar / ORCID / Crossref survey (_generators/backfill_scholar_papers.py);
+  the labxManage registry now holds 116 paper folders. Scholar-only items stay
+  out of the site bibliography via published_on_site: false, and the one
+  published article that was missing (WangGMR2013ThelperDifferentiation) is
+  now rendered. 	ool.papers in _data/tools.yml links each tool to its
+  publication slugs (site and registry-only); qa_check.py reports the
+  registry-only ones as pending promotion.
+- [x] Section the publications into (co)-first/(co)-corresponding author work
+  and collaborative work, following the `hc/0fund` CV format. Each record now
+  carries `category`, `pi_role`, and `pi_track`; `/publications/` and the
+  profile publications tab render three tracks (lead, collaborative, book
+  chapters) with per-track intros in `_data/intros.json`.
+- [x] Add a logo to each `labxscut/<tool>` repository, show it on
   `/tools/<tool>/`, and stamp each tool page with the source commit its data
-  were collected from.
+  were collected from. `_generators/gen_tool_logos.py` draws the marks,
+  `scripts/publish_tool_logos.py` opens the upstream PRs, `_data/tools.yml`
+  holds `logo:`, and `_includes/tool-provenance.html` names the
+  `docs_ref`/`docs_release_ref` commits recorded by `scripts/sync_tool_docs.py`.
+- [x] Show the papers a tool was published in on `/tools/`: `tool.papers`
+  slugs are rendered by `_includes/tool-papers.html` and cross-validated in
+  both directions by `_generators/qa_check.py`.
 - [ ] Complete the PI bibliography against Google Scholar. Automated requests
   are returning only partial citation data, so the current site registry is
   not a complete match. Ask the owner for a Google Scholar BibTeX/CSV export,

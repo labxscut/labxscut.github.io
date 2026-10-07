@@ -29,6 +29,7 @@ papers:
   year: '2025'
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
+  pi_track: lead
 avatar: /images/avatars/wyx.svg
 ---
 

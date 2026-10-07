@@ -28,12 +28,14 @@ papers:
   year: '2026'
   url: https://ieeexplore.ieee.org/document/11536776
   status: Published
+  pi_track: lead
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
   year: '2025'
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
+  pi_track: lead
 avatar: /images/avatars/lhl.svg
 ---
 

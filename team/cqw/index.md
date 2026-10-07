@@ -28,6 +28,7 @@ papers:
   year: '2026'
   url: https://ieeexplore.ieee.org/document/11536776
   status: Published
+  pi_track: lead
 avatar: /images/avatars/cqw.svg
 ---
 

@@ -5,6 +5,8 @@
   venue: IEEE Transactions on Computational Biology and Bioinformatics
   venue_short: IEEE Transactions on Computational Biology and Bioinformatics
   venue_type: journal
+  category: other
+  pi_role: 通讯作者（共同）
   year: '2026'
   status: Published
   doi: 10.1109/TCBBIO.2026.3697777
@@ -65,6 +67,7 @@
   - cqw
   - lhl
   - lcx
+  pi_track: lead
   tools:
   - sxSNF
 - slug: RenICAITE26MultimodalMathExpl
@@ -72,6 +75,8 @@
   venue: International Conference on Artificial Intelligence Technology and Education (ICAITE 2026)
   venue_short: International Conference on Artificial Intelligence Technology and Education
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2026'
   status: Accepted
   doi: ''
@@ -106,12 +111,15 @@
   - rbz
   - pel
   - lcx
+  pi_track: lead
   tools: []
 - slug: ChenICML26DataShiftRegular
   title: General Quantification of Covariate and Concept Shifts
   venue: 43rd International Conference on Machine Learning (ICML 2026)
   venue_short: International Conference on Machine Learning
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2026'
   status: Final
   doi: ''
@@ -139,6 +147,7 @@
   lab_authors:
   - chb
   - lcx
+  pi_track: lead
   tools: []
 - slug: WangBIBM2024sxFusion
   title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
@@ -146,6 +155,8 @@
   venue: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2025)
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Final
   doi: 10.1109/BIBM66473.2025.11356976
@@ -219,6 +230,7 @@
   - bxq
   - nkd
   - lcx
+  pi_track: lead
   tools: []
 - slug: NingJMIR2025Lymph
   title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
@@ -226,6 +238,8 @@
   venue: Journal of Medical Internet Research
   venue_short: Journal of Medical Internet Research
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Final
   doi: 10.2196/80497
@@ -239,12 +253,15 @@
   n_authors: 19
   authors: []
   lab_authors: []
+  pi_track: lead
   tools: []
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
   venue_short: Human Genetics and Genomics Advances
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Final
   doi: 10.1016/j.xhgg.2025.100540
@@ -324,12 +341,15 @@
   - lhl
   - nkd
   - lcx
+  pi_track: lead
   tools: []
 - slug: ChenICML25DshiftShort
   title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
   venue: ICML 2025 DataWorld Workshop
   venue_short: ICML 2025 DataWorld Workshop
   venue_type: workshop
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Accept
   doi: 10.48550/arXiv.2506.12829
@@ -357,6 +377,7 @@
   lab_authors:
   - chb
   - lcx
+  pi_track: lead
   tools: []
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
@@ -364,6 +385,8 @@
   venue: International Symposium on Bioinformatics Research and Applications (ISBRA 2025)
   venue_short: International Symposium on Bioinformatics Research and Applications
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Final
   doi: 10.1007/978-981-95-0695-8_18
@@ -436,6 +459,7 @@
   - wyx
   - rbz
   - lcx
+  pi_track: lead
   tools:
   - sxEnzHier
 - slug: ChangTCBB2025UGESdeng
@@ -444,6 +468,8 @@
   venue: IEEE Transactions on Computational Biology and Bioinformatics
   venue_short: IEEE Transactions on Computational Biology and Bioinformatics
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Published
   doi: 10.1109/TCBBIO.2025.3613591
@@ -520,6 +546,7 @@
   - bxq
   - nkd
   - lcx
+  pi_track: lead
   tools:
   - UGES
 - slug: DuanAPBC2025SNF
@@ -528,6 +555,8 @@
   venue: Asia Pacific Bioinformatics Conference (APBC 2025)
   venue_short: Asia Pacific Bioinformatics Conference
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2025'
   status: Final
   doi: ''
@@ -541,6 +570,7 @@
   n_authors: 7
   authors: []
   lab_authors: []
+  pi_track: lead
   tools:
   - sxSNF
 - slug: Feishu-2024-Molecular-mechanism-of-NAD+-and-NMN-binding-to
@@ -548,6 +578,8 @@
   venue: International Journal of Biological Macromolecules
   venue_short: International Journal of Biological Macromolecules
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2024'
   status: Final
   doi: 10.1016/j.ijbiomac.2024.130131
@@ -561,12 +593,15 @@
   n_authors: 9
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: BaiNARGB24CCNMF
   title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
   venue: NAR Genomics and Bioinformatics
   venue_short: NAR Genomics and Bioinformatics
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2024'
   status: Final
   doi: 10.1093/nargab/lqae017
@@ -607,6 +642,7 @@
   - bxq
   - wln
   - lcx
+  pi_track: lead
   tools:
   - CCNMF
 - slug: YangQB24UGESgas
@@ -615,6 +651,8 @@
   venue: Quantitative Biology
   venue_short: Quantitative Biology
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2024'
   status: Final
   doi: 10.1002/qub2.45
@@ -628,6 +666,7 @@
   n_authors: 14
   authors: []
   lab_authors: []
+  pi_track: lead
   tools:
   - HCG
 - slug: LiangBIBM24ctRhythm
@@ -636,6 +675,8 @@
   venue: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2024)
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
+  category: other
+  pi_role: 通讯作者
   year: '2024'
   status: Final
   doi: 10.1109/BIBM62325.2024.10822563
@@ -649,6 +690,7 @@
   n_authors: 10
   authors: []
   lab_authors: []
+  pi_track: lead
   tools:
   - CTRhythm
 - slug: Feishu-2024-A-comparative-study-of-structural-variant-calli
@@ -656,6 +698,8 @@
   venue: Life Science Alliance
   venue_short: Life Science Alliance
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2024'
   status: Final
   doi: 10.26508/lsa.202302181
@@ -669,12 +713,15 @@
   n_authors: 19
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
   title: Tumor tissue microorganisms are closely associated with tumor immune subtypes
   venue: Computers in Biology and Medicine
   venue_short: Computers in Biology and Medicine
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2023'
   status: Final
   doi: 10.1016/j.compbiomed.2023.106774
@@ -688,6 +735,7 @@
   n_authors: 7
   authors: []
   lab_authors: []
+  pi_track: lead
   tools: []
 - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
   title: Regularized survival learning and cross-database analysis enabled identification of colorectal
@@ -695,6 +743,8 @@
   venue: Frontiers in Genetics
   venue_short: Frontiers in Genetics
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2023'
   status: Final
   doi: 10.3389/fgene.2023.1148470
@@ -708,12 +758,15 @@
   n_authors: 7
   authors: []
   lab_authors: []
+  pi_track: lead
   tools: []
 - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
   title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
   venue: Frontiers in Microbiology
   venue_short: Frontiers in Microbiology
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2023'
   status: Final
   doi: 10.3389/fmicb.2023.1050130
@@ -727,6 +780,7 @@
   n_authors: 9
   authors: []
   lab_authors: []
+  pi_track: lead
   tools: []
 - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
   title: 'Identifying local associations in biological time series: algorithms, statistical significance,
@@ -734,6 +788,8 @@
   venue: Briefings in Bioinformatics
   venue_short: Briefings in Bioinformatics
   venue_type: journal
+  category: other
+  pi_role: 通讯作者
   year: '2023'
   status: Final
   doi: 10.1093/bib/bbad390
@@ -747,12 +803,16 @@
   n_authors: 10
   authors: []
   lab_authors: []
-  tools: []
+  pi_track: lead
+  tools:
+  - sxELA
 - slug: Feishu-2023-Crystal-Structure-of-Fungal-Nonspecific-Phospho
   title: Crystal Structure of Fungal Nonspecific Phospholipase C Unveils a Distinct Catalytic Mechanism
   venue: Journal of Agricultural and Food Chemistry
   venue_short: Journal of Agricultural and Food Chemistry
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2023'
   status: Final
   doi: 10.1021/acs.jafc.3c05155
@@ -766,12 +826,15 @@
   n_authors: 7
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2022-Progranulin-mutations-in-clinical-and-neuropath
   title: Progranulin mutations in clinical and neuropathological Alzheimer's disease
   venue: Alzheimer's & Dementia
   venue_short: Alzheimer's & Dementia
   venue_type: journal
+  category: other
+  pi_role: ADSP合作
   year: '2022'
   status: Final
   doi: 10.1002/alz.12567
@@ -785,6 +848,7 @@
   n_authors: null
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2022-Prediction-of-breast-cancer-risk-based-on-flow
   title: Prediction of breast cancer risk based on flow variant analysis of circulating peripheral blood
@@ -792,6 +856,8 @@
   venue: Human Genetics and Genomics Advances
   venue_short: Human Genetics and Genomics Advances
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2022'
   status: Final
   doi: 10.1016/j.xhgg.2022.100085
@@ -805,12 +871,80 @@
   n_authors: 10
   authors: []
   lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: AiFI2022JointAnalysisMicrobial
+  title: Joint analysis of microbial and immune cell abundance in liver cancer tissue using a gene expression
+    profile deconvolution algorithm combined with foreign read remapping
+  venue: Frontiers in Immunology
+  venue_short: Frontiers in Immunology
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2022'
+  status: Final
+  doi: 10.3389/fimmu.2022.853213
+  url: https://doi.org/10.3389/fimmu.2022.853213
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 7
+  n_authors: 7
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: YL Xing
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: QC Zhang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: YS Wang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XQ Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
   tools: []
 - slug: Feishu-2022-Exploratory-genomic-analysis-of-high-grade-neur
   title: Exploratory genomic analysis of high-grade neuroendocrine neoplasms across diverse primary sites
   venue: Endocrine-Related Cancer
   venue_short: Endocrine-Related Cancer
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2022'
   status: Final
   doi: 10.1530/ERC-22-0015
@@ -824,6 +958,7 @@
   n_authors: 10
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2022-Association-of-mitochondrial-variants-and-haplo
   title: Association of mitochondrial variants and haplogroups identified by whole exome sequencing with
@@ -831,6 +966,8 @@
   venue: Alzheimer's & Dementia
   venue_short: Alzheimer's & Dementia
   venue_type: journal
+  category: other
+  pi_role: ADSP合作
   year: '2022'
   status: Final
   doi: 10.1002/alz.12396
@@ -844,6 +981,7 @@
   n_authors: null
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2022-A-locus-at-19q13.31-significantly-reduces-the-A
   title: A locus at 19q13.31 significantly reduces the ApoE ε4 risk for Alzheimer's Disease in African
@@ -851,6 +989,8 @@
   venue: PLoS Genetics
   venue_short: PLoS Genetics
   venue_type: journal
+  category: other
+  pi_role: ADSP合作
   year: '2022'
   status: Final
   doi: 10.1371/journal.pgen.1009977
@@ -864,12 +1004,15 @@
   n_authors: null
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2021-Transcriptional-changes-in-CD16+-monocytes-may
   title: Transcriptional changes in CD16+ monocytes may contribute to the pathogenesis of COVID-19
   venue: Frontiers in Immunology
   venue_short: Frontiers in Immunology
   venue_type: journal
+  category: other
+  pi_role: 合作
   year: '2021'
   status: Final
   doi: 10.3389/fimmu.2021.665773
@@ -883,12 +1026,15 @@
   n_authors: 9
   authors: []
   lab_authors: []
+  pi_track: collaborative
   tools: []
 - slug: Feishu-2021-Large-scale-sequencing-studies-expand-the-known
   title: Large-scale sequencing studies expand the known genetic architecture of Alzheimer's disease
   venue: 'Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring'
   venue_short: 'Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring'
   venue_type: journal
+  category: other
+  pi_role: ADSP合作
   year: '2021'
   status: Final
   doi: 10.1002/dad2.12255
@@ -902,4 +1048,2361 @@
   n_authors: null
   authors: []
   lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaSR2020WholeGenomeAnalysis
+  title: Whole genome analysis identifies the association of TP53 genomic deletions with lower survival
+    in Stage III colorectal cancer
+  venue: Scientific Reports
+  venue_short: Scientific Reports
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2020'
+  status: Final
+  doi: 10.1038/s41598-020-61643-6
+  url: https://doi.org/10.1038/s41598-020-61643-6
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 14
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PV Hummelen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Kubit
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Lee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Bell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SM Grimes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Wood-Bouwens
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SU Greer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: T Barker
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DS Haslem
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Ford
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G Fulde
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LD Nadauld
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: BisMP2020WholeExomeSequencing
+  title: Whole exome sequencing study identifies novel rare and common Alzheimer's-Associated variants
+    involved in immune response and transcriptional regulation
+  venue: Molecular Psychiatry
+  venue_short: Molecular Psychiatry
+  venue_type: journal
+  category: collaborative
+  pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
+  year: '2020'
+  status: Final
+  doi: 10.1038/s41380-018-0112-7
+  url: https://doi.org/10.1038/s41380-018-0112-7
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 0
+  authors:
+  - name: JC Bis
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: SunJCO2020ComprehensiveGenomicSequencing
+  title: Comprehensive genomic sequencing of high-grade neuroendocrine neoplasms
+  venue: Journal of Clinical Oncology
+  venue_short: Journal of Clinical Oncology
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2020'
+  status: Final
+  doi: 10.1200/JCO.2020.38.4_suppl.624
+  url: https://doi.org/10.1200/JCO.2020.38.4_suppl.624
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 4
+  n_authors: 9
+  authors:
+  - name: TF Sun
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PV Hummelen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: B Martin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Lee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: L Zhao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: K Hornbacker
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PL Kunz
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: AiGenes2019UsingDecisionTree
+  title: Using decision tree aggregation with random forest model to identify gut microbes associated
+    with colorectal cancer
+  venue: Genes
+  venue_short: Genes
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.3390/genes10020112
+  url: https://doi.org/10.3390/genes10020112
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 6
+  n_authors: 6
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HF Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: RB Han
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XX Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: HuangSSB2019StatisticalPowerK
+  title: The statistical power of k-mer based aggregative statistics for alignment-free detection of horizontal
+    gene transfer
+  venue: Synthetic and Systems Biotechnology
+  venue_short: Synthetic and Systems Biotechnology
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.1016/j.synbio.2019.08.001
+  url: https://doi.org/10.1016/j.synbio.2019.08.001
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 4
+  n_authors: 4
+  authors:
+  - name: GD Huang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XM Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: TL Huang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: ShinNAR2019StructuralVariationHaplotypes
+  title: Structural variation and haplotypes from CRISPR-targeted sequencing of intact sub-Megabase DNA
+  venue: Nucleic Acids Research
+  venue_short: Nucleic Acids Research
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2019'
+  status: Final
+  doi: 10.1093/nar/gkz661
+  url: https://doi.org/10.1093/nar/gkz661
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 6
+  authors:
+  - name: GW Shin
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SU Greer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Zhou
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: CT Boles
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: NajGenomi2019QualityControlIntegration
+  title: Quality control and integration of genotypes from two calling pipelines for whole genome sequence
+    data in the Alzheimer's disease sequencing project
+  venue: Genomics
+  venue_short: Genomics
+  venue_type: journal
+  category: collaborative
+  pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
+  year: '2019'
+  status: Final
+  doi: 10.1016/j.ygeno.2018.05.004
+  url: https://doi.org/10.1016/j.ygeno.2018.05.004
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 0
+  authors:
+  - name: AC Naj
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: AiFM2019IdentifyingGutMicrobiota
+  title: Identifying gut microbiota associated with colorectal cancer using a zero-inflated lognormal
+    model
+  venue: Frontiers in Microbiology
+  venue_short: Frontiers in Microbiology
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.3389/fmicb.2019.00826
+  url: https://doi.org/10.3389/fmicb.2019.00826
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 6
+  n_authors: 6
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HF Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XX Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: YX Gao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: AiBG2019ExploreMediatedCo
+  title: Explore mediated co-varying dynamics in microbial community using integrated local similarity
+    and liquid association analysis
+  venue: BMC Genomics
+  venue_short: BMC Genomics
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.1186/s12864-019-5469-8
+  url: https://doi.org/10.1186/s12864-019-5469-8
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 6
+  n_authors: 6
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XX Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HF Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Chen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: AiGenes2019ConstructingMicrobialAssociat
+  title: Constructing the microbial association network from large-scale time series data using Granger
+    causality
+  venue: Genes
+  venue_short: Genes
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.3390/genes10030216
+  url: https://doi.org/10.3390/genes10030216
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 5
+  n_authors: 5
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XX Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G Liu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XY Liang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: PatelJNO2019AssociationRareCoding
+  title: Association of rare coding mutations with Alzheimer disease and other dementias among adults
+    of European ancestry
+  venue: JAMA Network Open
+  venue_short: JAMA Network Open
+  venue_type: journal
+  category: collaborative
+  pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
+  year: '2019'
+  status: Final
+  doi: 10.1001/jamanetworkopen.2019.1350
+  url: https://doi.org/10.1001/jamanetworkopen.2019.1350
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 0
+  authors:
+  - name: D Patel
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: AiPeerJ2019AssociationNetworkAnalysis
+  title: Association network analysis identifies enzymatic components of gut microbiota that significantly
+    differ between colorectal cancer patients and healthy controls
+  venue: PeerJ
+  venue_short: PeerJ
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2019'
+  status: Final
+  doi: 10.7717/peerj.7315
+  url: https://doi.org/10.7717/peerj.7315
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 5
+  n_authors: 5
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HF Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XX Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Wu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: MaJN2019AnalysisWholeExome
+  title: Analysis of Whole-Exome Sequencing Data for Alzheimer Disease Stratified by APOE Genotype
+  venue: JAMA Neurology
+  venue_short: JAMA Neurology
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2019'
+  status: Final
+  doi: 10.1001/jamaneurol.2019.1456
+  url: https://doi.org/10.1001/jamaneurol.2019.1456
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 2
+  authors:
+  - name: YY Ma
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LA Farrer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: ZhangASD2019RareMissenseVariant
+  title: A rare missense variant of CASP7 is associated with familial late-onset Alzheimer's disease
+  venue: Alzheimer's & Dementia
+  venue_short: Alzheimer's & Dementia
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2019'
+  status: Final
+  doi: 10.1016/j.jalz.2018.10.005
+  url: https://doi.org/10.1016/j.jalz.2018.10.005
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 2
+  authors:
+  - name: XL Zhang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LA Farrer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: RaghavanACTN2018WholeExomeSequencing
+  title: Whole‐exome sequencing in 20,197 persons for rare variants in Alzheimer's disease
+  venue: Annals of Clinical and Translational Neurology
+  venue_short: Annals of Clinical and Translational Neurology
+  venue_type: journal
+  category: collaborative
+  pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
+  year: '2018'
+  status: Final
+  doi: 10.1002/acn3.582
+  url: https://doi.org/10.1002/acn3.582
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 0
+  authors:
+  - name: NS Raghavan
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: VardarajACTN2018WholeGenomeSequencing
+  title: Whole genome sequencing of Caribbean Hispanic families with late‐onset Alzheimer's disease
+  venue: Annals of Clinical and Translational Neurology
+  venue_short: Annals of Clinical and Translational Neurology
+  venue_type: journal
+  category: collaborative
+  pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
+  year: '2018'
+  status: Final
+  doi: 10.1002/acn3.537
+  url: https://doi.org/10.1002/acn3.537
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 0
+  n_authors: 0
+  authors:
+  - name: BN Vardarajan
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaGigaSc2018SVEngineEfficientVersatile
+  title: 'SVEngine: an efficient and versatile simulator of genome structural variations with features
+    of cancer clonal evolution'
+  venue: GigaScience
+  venue_short: GigaScience
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2018'
+  status: Final
+  doi: 10.1093/gigascience/giy081
+  url: https://doi.org/10.1093/gigascience/giy081
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 7
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DM Ai
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Lee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: N Andor
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: NR Zhang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: HummelenCG2018LowCoverageWhole
+  title: Low-coverage whole genome sequencing revealed a deletion on chromosome 17p, carrying TP53, that
+    suggests poor survival in stage III colorectal cancer
+  venue: Cancer Genetics
+  venue_short: Cancer Genetics
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2018'
+  status: Final
+  doi: 10.1016/j.cancergen.2018.04.084
+  url: https://doi.org/10.1016/j.cancergen.2018.04.084
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 2
+  n_authors: 17
+  authors:
+  - name: PV Hummelen
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HJ Lee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Kubit
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: CW Bouwens
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: GW Shin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: S Greer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Bell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: S Grimes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: B Lau
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: L Johnson
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: N Andor
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: K Day
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Miller
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Escobar
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: L Nadauld
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: NadauldJCO2018LossTp53As
+  title: Loss of TP53 as a prognostic biomarker of poor survival in stage III colorectal cancer patients
+  venue: Journal of Clinical Oncology
+  venue_short: Journal of Clinical Oncology
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2018'
+  status: Final
+  doi: 10.1200/JCO.2018.36.15_suppl.e15588
+  url: https://doi.org/10.1200/JCO.2018.36.15_suppl.e15588
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 0
+  authors:
+  - name: L Nadauld
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PV Hummelen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaNAR2018IdentificationLargeRearrangeme
+  title: Identification of large rearrangements in cancer genomes with barcode linked reads
+  venue: Nucleic Acids Research
+  venue_short: Nucleic Acids Research
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2018'
+  status: Final
+  doi: 10.1093/nar/gkx1193
+  url: https://doi.org/10.1093/nar/gkx1193
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 6
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Bell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Wood-Bouwens
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JJ Chen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: NR Zhang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: AiGenes2018CoreProbeNovelAlgorithm
+  title: 'CoreProbe: a novel algorithm for estimating relative abundance based on metagenomic reads'
+  venue: Genes
+  venue_short: Genes
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2018'
+  status: Final
+  doi: 10.3390/genes9060313
+  url: https://doi.org/10.3390/genes9060313
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 4
+  n_authors: 4
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HF Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: RC Huang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: AiBG2017IntegratedMetagenomicData
+  title: Integrated metagenomic data analysis demonstrates that a loss of diversity in oral microbiota
+    is associated with Periodontitis
+  venue: BMC Genomics
+  venue_short: BMC Genomics
+  venue_type: journal
+  category: research
+  pi_role: 通讯作者
+  year: '2017'
+  status: Final
+  doi: 10.1186/s12864-016-3254-5
+  url: https://doi.org/10.1186/s12864-016-3254-5
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 6
+  n_authors: 6
+  authors:
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: RC Huang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Wen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JP Zhu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: BellNAR2017ChromosomeScaleMega
+  title: Chromosome-scale mega-haplotypes enable digital karyotyping of cancer aneuploidy
+  venue: Nucleic Acids Research
+  venue_short: Nucleic Acids Research
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2017'
+  status: Final
+  doi: 10.1093/nar/gkx712
+  url: https://doi.org/10.1093/nar/gkx712
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 5
+  n_authors: 8
+  authors:
+  - name: JM Bell
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: BT Lau
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SU Greer
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Wood-Bouwens
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: ID Connolly
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: MH Gephart
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: ShinNC2017CrisprCas9Targeted
+  title: CRISPR-Cas9-targeted fragmentation and selective sequencing enable massively parallel microsatellite
+    analysis
+  venue: Nature Communications
+  venue_short: Nature Communications
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2017'
+  status: Final
+  doi: 10.1038/ncomms14291
+  url: https://doi.org/10.1038/ncomms14291
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 5
+  n_authors: 6
+  authors:
+  - name: GW Shin
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SM Grimes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H Lee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: BT Lau
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: ZhangAAS2016ScanStatisticsPoisson
+  title: Scan statistics on Poisson random fields with applications in genomics
+  venue: Annals of Applied Statistics
+  venue_short: Annals of Applied Statistics
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2016'
+  status: Final
+  doi: 10.1214/15-AOAS892
+  url: https://doi.org/10.1214/15-AOAS892
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 4
+  authors:
+  - name: NR Zhang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: B Yakir
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: D Siegmund
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: AndorNM2016PanCancerAnalysis
+  title: Pan-cancer analysis of the extent and consequences of intra-tumor heterogeneity
+  venue: Nature Medicine
+  venue_short: Nature Medicine
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2016'
+  status: Final
+  doi: 10.1038/nm.3984
+  url: https://doi.org/10.1038/nm.3984
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 4
+  n_authors: 8
+  authors:
+  - name: N Andor
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: T Graham
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Jansen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Aktipis
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Petritsch
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Maley
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: WeissIJ2016CorrelationDetectionStrategie
+  title: Correlation detection strategies in microbial datasets vary widely in sensitivity and precision
+  venue: The ISME Journal
+  venue_short: The ISME Journal
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2016'
+  status: Final
+  doi: 10.1038/ismej.2015.235
+  url: https://doi.org/10.1038/ismej.2015.235
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 7
+  n_authors: 17
+  authors:
+  - name: S Weiss
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: WV Treuren
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: C Lozupone
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: K Faust
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Friedman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Y Deng
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Z Xu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: L Ursell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: E Alm
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: A Birmingham
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Raes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: F Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Zhou
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: R Knight
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaNAR2016GenomeWideApproach
+  title: A genome-wide approach for detecting the full spectrum of insertion-deletion variants
+  venue: Nucleic Acids Research
+  venue_short: Nucleic Acids Research
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2016'
+  status: Final
+  doi: 10.1093/nar/gkw481
+  url: https://doi.org/10.1093/nar/gkw481
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 8
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: S Sakshuwong
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: ES Hopmans
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Bell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SM Grimes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DO Siegmund
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: NR Zhang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: XiaBB2015StatisticalSignificanceApproxim
+  title: Statistical significance approximation in local trend analysis of high-throughput time-series
+    data using the theory of Markov chains
+  venue: BMC Bioinformatics
+  venue_short: BMC Bioinformatics
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2015'
+  status: Final
+  doi: 10.1186/s12859-015-0732-8
+  url: https://doi.org/10.1186/s12859-015-0732-8
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 6
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DM Ai
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: XY Liang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrmann
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: FZ Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools:
+  - sxELA
+- slug: CushingSR2015EmergenceHemagglutininMutat
+  title: Emergence of hemagglutinin mutations during the course of Influenza infection
+  venue: Scientific Reports
+  venue_short: Scientific Reports
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2015'
+  status: Final
+  doi: 10.1038/srep16178
+  url: https://doi.org/10.1038/srep16178
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 7
+  n_authors: 11
+  authors:
+  - name: A Cushing
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: A Kamali
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Winters
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: E Hopmans
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: J Bell
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: SM Grimes
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: NR Zhang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: R Moss
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M Holodniy
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: HP Ji
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: CramIJ2015CrossDepthAnalysis
+  title: Cross-depth analysis of marine bacterial networks suggests downward propagation of temporal changes
+  venue: The ISME Journal
+  venue_short: The ISME Journal
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2015'
+  status: Final
+  doi: 10.1038/ismej.2015.76
+  url: https://doi.org/10.1038/ismej.2015.76
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 2
+  n_authors: 6
+  authors:
+  - name: JA Cram
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DM Needham
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: R Sachdeva
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: F Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: SunEM2014ExtendedLocalSimilarity
+  title: Extended local similarity analysis (ELSA) of biological data
+  venue: Encyclopedia of Metagenomics
+  venue_short: Encyclopedia of Metagenomics
+  venue_type: book
+  category: book-chapter
+  pi_role: ''
+  year: '2014'
+  status: Final
+  doi: ''
+  url: ''
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 2
+  n_authors: 2
+  authors:
+  - name: F Sun
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: book-chapter
+  tools:
+  - sxELA
+- slug: SunEM2014AccurateGenomeRelative
+  title: Accurate genome relative abundance estimation based on shotgun metagenomic reads
+  venue: Encyclopedia of Metagenomics
+  venue_short: Encyclopedia of Metagenomics
+  venue_type: book
+  category: book-chapter
+  pi_role: ''
+  year: '2014'
+  status: Final
+  doi: ''
+  url: ''
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 2
+  n_authors: 2
+  authors:
+  - name: F Sun
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: book-chapter
+  tools: []
+- slug: WangGMR2013ThelperDifferentiation
+  title: Genetic analysis of differentiation of T-helper lymphocytes
+  venue: Genetics and Molecular Research
+  venue_short: Genetics and Molecular Research
+  venue_type: journal
+  category: collaborative
+  pi_role: co_author
+  year: '2013'
+  status: Published
+  doi: 10.4238/2013.APRIL.2.13
+  url: https://doi.org/10.4238/2013.APRIL.2.13
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 6
+  authors:
+  - name: Q. Wang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M. Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: L.C. Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: G. Wen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: H. Zu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: M. Gao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaBioinf2013EfficientStatisticalSignifi
+  title: Efficient statistical significance approximation for local association analysis of high-throughput
+    time series data
+  venue: Bioinformatics
+  venue_short: Bioinformatics
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2013'
+  status: Final
+  doi: 10.1093/bioinformatics/bts668
+  url: https://doi.org/10.1093/bioinformatics/bts668
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 5
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DM Ai
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: FZ Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools:
+  - sxELA
+- slug: SteeleIJ2011MarineBacterialArchaeal
+  title: Marine bacterial, archaeal and protistan association networks reveal ecological linkages
+  venue: The ISME Journal
+  venue_short: The ISME Journal
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2011'
+  status: Final
+  doi: 10.1038/ismej.2011.24
+  url: https://doi.org/10.1038/ismej.2011.24
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 16
+  authors:
+  - name: JA Steele
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PD Countway
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: PD Vigil
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Beman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DY Kim
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: CET Chow
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: R Sachdeva
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: AC Jones
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: MS Schwalbach
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JM Rose
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: I Hewson
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: A Patel
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: F Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: DA Caron
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaBSB2011ExtendedLocalSimilarity
+  title: Extended local similarity analysis of microbial community and other time series data with replicates
+  venue: BMC Systems Biology
+  venue_short: BMC Systems Biology
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2011'
+  status: Final
+  doi: 10.1186/1752-0509-5-s2-s15
+  url: https://doi.org/10.1186/1752-0509-5-s2-s15
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 8
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Steele
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: ZG Cardon
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: S Simmons
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JJ Vallino
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: F Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools:
+  - sxELA
+- slug: XiaPO2011AccurateGenomeRelative
+  title: Accurate genome relative abundance estimation based on shotgun metagenomic reads
+  venue: PLoS One
+  venue_short: PLoS One
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2011'
+  status: Final
+  doi: 10.1371/journal.pone.0027992
+  url: https://doi.org/10.1371/journal.pone.0027992
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 5
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Cram
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: T Chen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: JA Fuhrman
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: F Sun
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: ZhangBB2010PPLookAutomatedData
+  title: 'PPLook: an automated data mining tool for protein-protein interaction'
+  venue: BMC Bioinformatics
+  venue_short: BMC Bioinformatics
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2010'
+  status: Final
+  doi: 10.1186/1471-2105-11-326
+  url: https://doi.org/10.1186/1471-2105-11-326
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 3
+  n_authors: 4
+  authors:
+  - name: S Zhang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Y Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Q Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
+  tools: []
+- slug: XiaJSSC2007PhaseTransitionSequence
+  title: Phase transition in sequence unique reconstruction
+  venue: Journal of Systems Science and Complexity
+  venue_short: Journal of Systems Science and Complexity
+  venue_type: journal
+  category: research
+  pi_role: 第一作者
+  year: '2007'
+  status: Final
+  doi: 10.1007/s11424-007-9001-x
+  url: https://doi.org/10.1007/s11424-007-9001-x
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 1
+  n_authors: 2
+  authors:
+  - name: LC Xia
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Chan Zhou
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: lead
+  tools: []
+- slug: HeCCHTS2007OligonucleotideProfilingDiscr
+  title: Oligonucleotide profiling for discriminating bacteria in bacterial communities
+  venue: Combinatorial Chemistry and High-throughput Screening
+  venue_short: Combinatorial Chemistry and High-throughput Screening
+  venue_type: journal
+  category: collaborative
+  pi_role: ''
+  year: '2007'
+  status: Final
+  doi: 10.2174/138620707780636646
+  url: https://doi.org/10.2174/138620707780636646
+  repo: ''
+  if: ''
+  quartile: ''
+  ccf: ''
+  sci: false
+  xia_rank: 2
+  n_authors: 2
+  authors:
+  - name: P He
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LC Xia
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors: []
+  pi_track: collaborative
   tools: []

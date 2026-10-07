@@ -118,10 +118,47 @@ def read_record(path: Path) -> dict:
     return yaml.safe_load(text) or {}
 
 
-def build_entry(slug: str, doc: dict, lookup: dict[str, dict]) -> dict | None:
+def pi_track(entry: dict, cv_index: dict[str, str] | None = None) -> str:
+    """Which CV section a paper belongs to: PI-led, collaborative, or a chapter.
+
+    Mirrors the CV layout (Research Articles / Collaborative Articles / Book
+    Chapters). Order of authority: an explicit category on the record, then the
+    CV's own sectioning, then the author roles (first or corresponding author
+    means PI-led).
+    """
+    if entry.get("venue_type") == "book" or entry.get("category") == "book-chapter":
+        return "book-chapter"
+    if entry.get("category") in {"research", "collaborative"}:
+        # The CV already files these under Research / Collaborative articles.
+        return "lead" if entry["category"] == "research" else "collaborative"
+    doi = clean(entry.get("doi")).lower()
+    if cv_index:
+        track = cv_index.get(f"doi:{doi}") or cv_index.get(f"title:{normalize(clean(entry.get('title')))}")
+        if track:
+            return track
+    names = [str(a.get("name") or "").lower().rstrip(".").strip() for a in entry.get("authors") or []]
+    roles = {
+        str(a.get("role") or "")
+        for a, n in zip(entry.get("authors") or [], names)
+        if n.endswith("xia") or n in {"lc xia", "li c. xia", "li c xia"}
+    }
+    if "first_author" in roles or "corresponding_author" in roles:
+        return "lead"
+    rank, total = entry.get("xia_rank"), entry.get("n_authors")
+    if isinstance(rank, int) and isinstance(total, int) and rank > 0:
+        if rank == 1 or rank == total:
+            return "lead"
+    return "collaborative"
+
+
+def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[str, str] | None = None) -> dict | None:
     lifecycle = doc.get("lifecycle") or {}
     status = clean(lifecycle.get("status"))
     if status not in PUBLIC_STATUS:
+        return None
+    # Scholar/CV backfill records opt in explicitly; abstracts, preprints and
+    # theses stay in the registry only until a human promotes them.
+    if doc.get("published_on_site") is False:
         return None
 
     title = clean(doc.get("title"))
@@ -170,12 +207,14 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict]) -> dict | None:
         doi = ""
     url = clean(ids.get("ieee_url")) or (f"https://doi.org/{doi}" if doi else "")
 
-    return {
+    entry = {
         "slug": slug,
         "title": title,
         "venue": venue_name,
         "venue_short": clean(venue.get("name")) or venue_name,
         "venue_type": clean(venue.get("type")) or "journal",
+        "category": clean(doc.get("category")) or "other",
+        "pi_role": clean(doc.get("role")),
         "year": year,
         "status": status,
         "doi": doi,
@@ -190,6 +229,8 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict]) -> dict | None:
         "authors": authors,
         "lab_authors": lab_authors,
     }
+    entry["pi_track"] = pi_track(entry, cv_index)
+    return entry
 
 
 def publication_key(entry: dict) -> tuple[str, ...]:
@@ -226,6 +267,43 @@ def deduplicate(entries: list[dict]) -> tuple[list[dict], int]:
     return result, len(entries) - len(result)
 
 
+def cv_sections() -> dict[str, str]:
+    """Index the CV's own publication sections by DOI and normalized title.
+
+    The CV (``advisee/hc/0fund/00lcx-cv/LiXia.cv.en.md``) is the curated split
+    between Research Articles (first/corresponding) and Collaborative Articles,
+    so it decides the section for the Feishu records that carry no category.
+    """
+    try:
+        entries = parse_cv_entries()
+    except Exception:  # the CV is optional context; roles can classify without it
+        return {}
+    index: dict[str, str] = {}
+    for entry in entries:
+        value = {"research": "lead", "collaborative": "collaborative", "book-chapter": "book-chapter"}[
+            entry["category"]
+        ]
+        if entry["doi"]:
+            index[f"doi:{entry['doi'].lower()}"] = value
+        index.setdefault(f"title:{normalize(entry['title'])}", value)
+    return index
+
+
+def parse_cv_entries() -> list[dict]:
+    """Parse the CV with the backfill generator's parser (same _generators dir)."""
+    import importlib.util
+
+    path = Path(__file__).resolve().parent / "backfill_cv_papers.py"
+    spec = importlib.util.spec_from_file_location("backfill_cv_papers", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.parse_cv()
+
+
+def normalize(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (text or "").lower())
+
+
 def tools_by_paper() -> dict[str, list[str]]:
     """Read explicit tool-to-paper links from the site's tools data."""
     path = REPO / "_data" / "tools.yml"
@@ -242,6 +320,7 @@ def tools_by_paper() -> dict[str, list[str]]:
 def main() -> int:
     roster = load_roster()
     lookup = roster_lookup(roster)
+    cv_index = cv_sections()
     paper_tools = tools_by_paper()
     entries: list[dict] = []
     skipped = 0
@@ -250,7 +329,7 @@ def main() -> int:
         if not path.exists():
             continue
         doc = read_record(path)
-        entry = build_entry(folder.name, doc, lookup)
+        entry = build_entry(folder.name, doc, lookup, cv_index)
         if entry:
             entry["tools"] = paper_tools.get(folder.name, [])
             entries.append(entry)

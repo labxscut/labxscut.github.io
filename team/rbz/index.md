@@ -28,12 +28,14 @@ papers:
   year: '2026'
   url: ''
   status: Accepted
+  pi_track: lead
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
   year: '2025'
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
+  pi_track: lead
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
     Contrastive Learning'
@@ -41,6 +43,7 @@ papers:
   year: '2025'
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
+  pi_track: lead
 avatar: /images/avatars/rbz.svg
 ---
 

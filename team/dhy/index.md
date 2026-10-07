@@ -31,6 +31,7 @@ papers:
   year: '2026'
   url: https://ieeexplore.ieee.org/document/11536776
   status: Published
+  pi_track: lead
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
     Contrastive Learning'
@@ -38,6 +39,7 @@ papers:
   year: '2025'
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
+  pi_track: lead
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
     DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -45,6 +47,7 @@ papers:
   year: '2025'
   url: https://ieeexplore.ieee.org/abstract/document/11176992
   status: Published
+  pi_track: lead
 avatar: /images/avatars/dhy.svg
 ---
 

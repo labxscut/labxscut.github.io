@@ -29,6 +29,7 @@ papers:
   year: '2025'
   url: https://ieeexplore.ieee.org/abstract/document/11176992
   status: Published
+  pi_track: lead
 avatar: /images/avatars/xyh.svg
 ---
 

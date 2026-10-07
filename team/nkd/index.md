@@ -29,12 +29,14 @@ papers:
   year: '2025'
   url: https://doi.org/10.1109/BIBM66473.2025.11356976
   status: Final
+  pi_track: lead
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
   year: '2025'
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
+  pi_track: lead
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
     DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -42,6 +44,7 @@ papers:
   year: '2025'
   url: https://ieeexplore.ieee.org/abstract/document/11176992
   status: Published
+  pi_track: lead
 avatar: /images/avatars/nkd.svg
 ---
 

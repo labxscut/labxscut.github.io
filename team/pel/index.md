@@ -27,6 +27,7 @@ papers:
   year: '2026'
   url: ''
   status: Accepted
+  pi_track: lead
 avatar: /images/avatars/pel.svg
 ---
 

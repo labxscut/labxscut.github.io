@@ -27,18 +27,21 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+    pi_track: lead
   - slug: RenICAITE26MultimodalMathExpl
     title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
     venue: International Conference on Artificial Intelligence Technology and Education
     year: '2026'
     url: ''
     status: Accepted
+    pi_track: lead
   - slug: ChenICML26DataShiftRegular
     title: General Quantification of Covariate and Concept Shifts
     venue: International Conference on Machine Learning
     year: '2026'
     url: ''
     status: Final
+    pi_track: lead
   - slug: WangBIBM2024sxFusion
     title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
       of low-rank representation with clustering'
@@ -46,18 +49,21 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   - slug: ChenICML25DshiftShort
     title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
     venue: ICML 2025 DataWorld Workshop
     year: '2025'
     url: https://doi.org/10.48550/arXiv.2506.12829
     status: Accept
+    pi_track: lead
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
@@ -65,6 +71,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+    pi_track: lead
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -72,12 +79,14 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   - slug: BaiNARGB24CCNMF
     title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
     venue: NAR Genomics and Bioinformatics
     year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
+    pi_track: lead
   avatar: /images/avatars/lcx.svg
 - nick: lhl
   title: Liu Huiling
@@ -103,12 +112,14 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+    pi_track: lead
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   avatar: /images/avatars/lhl.svg
 - nick: lxm
   title: Liu Xuemei
@@ -135,6 +146,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   avatar: /images/avatars/lxm.svg
 - nick: nkd
   title: Kaida Ning
@@ -161,12 +173,14 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -174,6 +188,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   avatar: /images/avatars/nkd.svg
 - nick: wln
   title: Wan Lin
@@ -199,6 +214,7 @@
     year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
+    pi_track: lead
 - nick: wsc
   title: Wang Shaochen
   name_en: Wang Shaochen
@@ -241,6 +257,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   avatar: /images/avatars/xyh.svg
 - nick: rbz
   title: Ren Bozhen
@@ -266,12 +283,14 @@
     year: '2026'
     url: ''
     status: Accepted
+    pi_track: lead
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
     venue: Human Genetics and Genomics Advances
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
@@ -279,6 +298,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+    pi_track: lead
   avatar: /images/avatars/rbz.svg
 - nick: dhy
   title: Duan Hongyu
@@ -307,6 +327,7 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+    pi_track: lead
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
       Contrastive Learning'
@@ -314,6 +335,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+    pi_track: lead
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -321,6 +343,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   avatar: /images/avatars/dhy.svg
 - nick: wlp
   title: Wang Linping
@@ -346,6 +369,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   avatar: /images/avatars/wlp.svg
 - nick: hxy
   title: Han Xinyu
@@ -529,6 +553,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+    pi_track: lead
   avatar: /images/avatars/wyx.svg
 - nick: njt
   title: Ning Jingtai
@@ -570,6 +595,7 @@
     year: '2026'
     url: ''
     status: Accepted
+    pi_track: lead
   avatar: /images/avatars/pel.svg
 - nick: xhx
   title: Xu Hongxing
@@ -595,6 +621,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   avatar: /images/avatars/xhx.svg
 - nick: hch
   title: Han Cheng
@@ -654,6 +681,7 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+    pi_track: lead
   avatar: /images/avatars/cqw.svg
 - nick: ych
   title: Yang Chunhao
@@ -697,6 +725,7 @@
     year: '2025'
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
+    pi_track: lead
 - nick: yzz
   title: Yang Zizhen
   name_en: Yang Zizhen
@@ -895,6 +924,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -902,12 +932,14 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   - slug: BaiNARGB24CCNMF
     title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
     venue: NAR Genomics and Bioinformatics
     year: '2024'
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
+    pi_track: lead
   now: postdoc, Stanford
 - nick: liy
   title: Li Yang
@@ -968,6 +1000,7 @@
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   now: 广州移动
 - nick: xlh
   title: Xiao Longhui
@@ -1010,6 +1043,7 @@
     year: '2025'
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
+    pi_track: lead
   now: 深圳迈瑞
 - nick: xjm
   title: Xie Jiemin
@@ -1036,6 +1070,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   now: 广州联通
 - nick: tay
   title: Tang Yu
@@ -1079,6 +1114,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   now: master, Zhejiang University
 - nick: grx
   title: Gao Ruoxin
@@ -1243,6 +1279,7 @@
     year: '2025'
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
+    pi_track: lead
   now: Johns Hopkins University (JHU MSE)
 - nick: chb
   title: Chen Hongbo
@@ -1267,12 +1304,14 @@
     year: '2026'
     url: ''
     status: Final
+    pi_track: lead
   - slug: ChenICML25DshiftShort
     title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
     venue: ICML 2025 DataWorld Workshop
     year: '2025'
     url: https://doi.org/10.48550/arXiv.2506.12829
     status: Accept
+    pi_track: lead
   now: PhD applicant, overseas
 - nick: fymr
   title: Fu Yinmingren
@@ -1352,6 +1391,7 @@
     year: '2026'
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
+    pi_track: lead
   now: 中山大学
 - nick: zhh
   title: Zhang Hui
@@ -1413,6 +1453,7 @@
     year: '2025'
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
+    pi_track: lead
   now: 哥伦比亚大学
 - nick: lzs
   title: Long Zhaoshen

@@ -28,7 +28,10 @@
   },
 
   "publications": {
-    "intro": "{published} published and {accepted} accepted records, deduplicated from the LabX paper registry. Work in preparation or under review is not listed. The registry has not been verified as a complete match to Google Scholar; see [Xia Li's Google Scholar profile]({scholar}) for the broader author bibliography."
+    "intro": "{published} published and {accepted} accepted records, deduplicated from the LabX paper registry and sectioned as in the CV. Work in preparation or under review is not listed. The registry has not been verified as a complete match to Google Scholar; see [Xia Li's Google Scholar profile]({scholar}) for the broader author bibliography.",
+    "lead": "Papers where {pi} is a (co-)first or (co-)corresponding author, newest first.",
+    "collaborative": "Papers where {pi} is a co-author or consortium member, newest first.",
+    "book_chapters": "Chapters, encyclopaedia entries and other book contributions."
   },
 
   "tools": {

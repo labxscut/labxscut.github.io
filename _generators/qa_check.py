@@ -39,12 +39,20 @@ print(f"pubs with >=1 linked lab author: {len(matched)}/{len(pubs)}")
 print("pubs with repo:", sum(1 for p in pubs if p.get("repo")), "with doi:", sum(1 for p in pubs if p.get("doi")))
 print("pubs missing year:", sum(1 for p in pubs if not p.get("year")))
 pub_slugs = {paper["slug"] for paper in pubs}
+# Registry folders that are not (yet) rendered on the site: preprints, meeting
+# abstracts and theses.  Tools may already cite them; they simply do not render
+# a link until the record is promoted to a public status.
+from gen_publications import PAPERS  # noqa: E402
+
+registry_slugs = {folder.name for folder in PAPERS.iterdir() if (folder / "publication.yaml").is_file()}
+registry_only = registry_slugs - pub_slugs
 tool_papers = {
     (tool["key"], slug)
     for tool in tools
     for slug in (tool.get("papers") or [])
 }
-missing_papers = sorted(slug for _, slug in tool_papers if slug not in pub_slugs)
+missing_papers = sorted(slug for _, slug in tool_papers if slug not in pub_slugs and slug not in registry_slugs)
+pending_papers = sorted({slug for _, slug in tool_papers if slug in registry_only})
 tool_keys = {tool["key"] for tool in tools}
 missing_tools = sorted(
     (paper["slug"], key)
@@ -54,6 +62,7 @@ missing_tools = sorted(
 )
 print("invalid tool-to-publication links:", missing_papers)
 print("invalid publication-to-tool links:", missing_tools)
+print("tool papers pending promotion (registry only):", sorted(pending_papers))
 if missing_papers or missing_tools:
     raise ValueError("tool/publication cross-references must resolve in both directions")
 print("unmatched author names (no roster hit, no affiliation):", len(unmatched_authors))

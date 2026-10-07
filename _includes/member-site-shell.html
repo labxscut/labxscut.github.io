@@ -79,12 +79,34 @@
           {% when "publications" %}
             <h2>Publications</h2>
             {% assign all_papers = member.papers | sort: "year" | reverse %}
+            {% assign member_lead = all_papers | where: "pi_track", "lead" %}
+            {% assign member_collaborative = all_papers | where: "pi_track", "collaborative" %}
+            {% assign member_chapters = all_papers | where: "pi_track", "book-chapter" %}
             {% if all_papers.size > 0 %}
-              <ol class="labx-member-papers">
-                {% for paper in all_papers %}
+              {% if member_lead.size > 0 %}
+                <h3>First / Corresponding Author Papers</h3>
+                <ol class="labx-member-papers">
+                {% for paper in member_lead %}
                   <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — {{ paper.venue }}, {{ paper.year }}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
                 {% endfor %}
-              </ol>
+                </ol>
+              {% endif %}
+              {% if member_collaborative.size > 0 %}
+                <h3>Collaborative Papers</h3>
+                <ol class="labx-member-papers">
+                {% for paper in member_collaborative %}
+                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — {{ paper.venue }}, {{ paper.year }}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
+                {% endfor %}
+                </ol>
+              {% endif %}
+              {% if member_chapters.size > 0 %}
+                <h3>Book Chapters</h3>
+                <ol class="labx-member-papers">
+                {% for paper in member_chapters %}
+                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — {{ paper.venue }}, {{ paper.year }}</li>
+                {% endfor %}
+                </ol>
+              {% endif %}
             {% else %}
               <p>No publications are currently linked to this member in the lab publication registry.</p>
             {% endif %}

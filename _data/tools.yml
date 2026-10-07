@@ -21,7 +21,7 @@
   docs_slug: sxlaep
   tags: [XGBoost, protein sequences, pip]
   maintainers: [myj, hxy, dhy]
-  papers: []
+  papers: [DuanPreprint2026SxLaep]
 
 - key: deeplb
   name: DeepLB
@@ -45,7 +45,7 @@
   docs_slug: deeplb
   tags: [cfDNA methylation, deep learning, cancer detection]
   maintainers: [lyi, kxf]
-  papers: []
+  papers: [XieopenRxiv2023BreastCancerModel, LiangGB2025DeepLB]
 
 - key: sxSNF
   name: sxSNF
@@ -83,7 +83,7 @@
   docs: https://github.com/labxscut/sxRaep
   tags: [enzyme prediction, protein sequences, XGBoost]
   maintainers: []
-  papers: []
+  papers: [XiaCR2015Abstract4871, XiaCR2018Abstract4334, XiaCR2019Abstract5022]
 
 - key: sxEnzHier
   name: sxEnzHier / EnzHire
@@ -99,7 +99,7 @@
   client: https://github.com/labxscut/sxWebEnz
   tags: [enzyme function, protein language models, EC classification]
   maintainers: [dhy]
-  papers: [DuanISBRA2025EnzHier]
+  papers: [DuanISBRA2025EnzHier, DuanopenRxiv2024EnzHier, Duan2025sxEnzHier]
 
 - key: sxELA
   name: pseudoLiquid (sxELA)
@@ -113,7 +113,7 @@
   docs: https://github.com/labxscut/sxELA
   tags: [single-cell, pseudotime, local association]
   maintainers: []
-  papers: []
+  papers: [XiaBSB2011ExtendedLocalSimilarity, XiaBioinf2013EfficientStatisticalSignifi, XiaBB2015StatisticalSignificanceApproxim, SunEM2014ExtendedLocalSimilarity, Feishu-2023-Identifying-local-associations-in-biological-ti, XiaISMB2008LSAWebService, XiaRECOMB2009PairTriplet]
 
 - key: SPRINT
   name: SPRINT
@@ -127,7 +127,7 @@
   docs: https://github.com/labxscut/sxSPRINT
   tags: [genetic risk, SNP, polygenic risk score]
   maintainers: []
-  papers: []
+  papers: [Li2025sprint]
 
 - key: DHMOC
   name: DHMOC

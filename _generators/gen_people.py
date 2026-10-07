@@ -163,6 +163,7 @@ def short_paper(entry: dict) -> dict:
         "year": entry["year"],
         "url": entry["url"],
         "status": entry.get("status", ""),
+        "pi_track": entry.get("pi_track", ""),
     }
 
 

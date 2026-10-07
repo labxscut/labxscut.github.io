@@ -103,7 +103,8 @@
   margin: 1.5rem 0;
 }
 
-.labx-paper h3 {
+.labx-paper h3,
+.labx-paper h4 {
   margin-bottom: 0.4em;
 }
 
@@ -155,7 +156,8 @@
 }
 
 .labx-tool h2,
-.labx-paper h3 {
+.labx-paper h3,
+.labx-paper h4 {
   margin-top: 0;
 }
 
@@ -188,6 +190,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 1rem;
+}
+
+.labx-tool-papers {
+  margin: 0.75rem 0 0;
+  font-size: 0.88em;
+}
+
+.labx-tool-papers-label {
+  font-weight: 600;
+}
+
+.labx-tool-papers-year {
+  color: var(--text-color-secondary);
 }
 
 .labx-status {

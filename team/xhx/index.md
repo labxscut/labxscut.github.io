@@ -28,6 +28,7 @@ papers:
   year: '2025'
   url: https://doi.org/10.1109/BIBM66473.2025.11356976
   status: Final
+  pi_track: lead
 avatar: /images/avatars/xhx.svg
 ---
 
