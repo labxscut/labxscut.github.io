@@ -89,11 +89,12 @@
   background: var(--background-alt);
 }
 
+// Sticky (not fixed): a fixed element leaves the grid flow, which collapses the
+// main column back under the card and overlaps the profile panel.
 .labx-profile-aside {
-  position: fixed;
+  position: sticky;
   top: 1.5rem;
-  left: max(24px, calc((100vw - 1100px) / 2));
-  width: min(267px, calc((100vw - 80px) / 4));
+  align-self: start;
   max-height: calc(100vh - 3rem);
   overflow-y: auto;
 }

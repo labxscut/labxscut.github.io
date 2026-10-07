@@ -1,11 +1,35 @@
 {% assign button = include %}
 {% assign button = button | hash_default: site.data.types[include.type] %}
 
+{% comment %}
+  Resolve the href: a type template may contain "$VALUE" (e.g.
+  "https://github.com/$VALUE"), which is replaced by the caller's link value.
+  A caller may also pass "$LINK" to reuse its own value verbatim. Without this
+  substitution the bare identifier (an email, GitHub org, Scholar id) leaked
+  into relative_url and produced broken site-relative links.
+{% endcomment %}
+{% assign href = button.link %}
+{% if href %}
+  {% assign absolute = false %}
+  {% if href contains "://" or href contains "mailto:" or href contains "tel:" %}
+    {% assign absolute = true %}
+  {% endif %}
+  {% assign template = site.data.types[include.type].link %}
+  {% if absolute == false and template and template contains "$VALUE" %}
+    {% assign href = template | replace: "$VALUE", href %}
+    {% assign absolute = true %}
+  {% endif %}
+  {% assign href = href | replace: "$LINK", button.link %}
+  {% unless absolute %}
+    {% assign href = href | relative_url %}
+  {% endunless %}
+{% endif %}
+
 {% if button.link or button.icon or button.text %}
   <div class="button-wrapper">
     <a
       class="button"
-      href="{{ button.link | replace: "$LINK", button.link | relative_url }}"
+      href="{{ href }}"
       {% if button.tooltip %}
         data-tooltip="{{ button.tooltip | xml_escape }}"
       {% endif %}
