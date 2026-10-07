@@ -132,9 +132,9 @@ scheduled job, browser-time fetch, or Pages-build-time fetch.
   `remote: Internal Server Error` push failures no longer need a manual re-run.
   It stops as soon as the pipeline is clean.
 - `--forever` turns the same driver into a resident watcher: it keeps re-checking
-  (every 10 minutes when something failed, every 30 minutes when clean), so a
-  recovered network connection or a new upstream doc commit gets published without
-  waiting for the hourly tick. It appends to `../logs/auto_retry_sync.log` and
+  every 10 minutes whether the pipeline is clean or not, so a recovered network
+  connection or a new upstream doc commit gets published without waiting for the
+  hourly tick. It appends to `../logs/auto_retry_sync.log` and
   holds `../logs/auto_retry_sync.lock`; any second instance exits 0 immediately,
   which makes overlapping launches harmless.
 - The watcher starts at logon from the user Startup folder

@@ -208,11 +208,10 @@ def main() -> int:
                     if not args.forever:
                         log("pipeline clean and published; stopping")
                         return 0
-                    # Resident watcher: rest a longer stretch while healthy, then
-                    # re-check so upstream doc updates and stray edits still land.
-                    idle = max(args.interval_minutes, 30.0)
-                    log(f"clean; watcher idle {idle:g} min")
-                    time.sleep(idle * 60)
+                    # Resident watcher: keep the same beat while healthy so a
+                    # recovered connection or a new upstream commit lands soon.
+                    log("clean; watcher heartbeat")
+                    time.sleep(args.interval_minutes * 60)
                     continue
             except Exception as error:  # retry loop must survive any failure
                 log(f"error: {error}")
