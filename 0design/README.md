@@ -124,6 +124,17 @@ scheduled job, browser-time fetch, or Pages-build-time fetch.
   Do not silently skip the branch, publish stale files as success, or add broad
   credentials. Only public, approved documentation belongs in `docs/site/`.
 
+### Auto-retry publishing
+
+- `python scripts/auto_retry_sync.py --interval-minutes 10 --attempts 6` runs the
+  whole publish path (sync all three tools, commit, push, verify `origin/main`)
+  and repeats every 10 minutes only while a step fails, so transient GitHub
+  `remote: Internal Server Error` push failures no longer need a manual re-run.
+  It stops as soon as the pipeline is clean.
+- A host automation ("Tool docs auto-retry sync", hourly) launches that driver.
+  The scheduler's finest granularity is hourly, so the 10-minute cadence lives in
+  the script rather than in the schedule.
+
 ### Current integrated tools
 
 sxLaep, sxSNF, and DeepLB each have the current public page payload under their
