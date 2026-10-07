@@ -2,6 +2,7 @@
 # papers are publication slugs in _data/publications.yml; maintainers are roster nicks.
 - key: sxLaep
   name: sxLaep
+  logo: /images/tools/sxLaep.svg
   tagline: Rapid enzyme / non-enzyme prediction
   description: >-
     Multi-physicochemical sequence features with an XGBoost classifier, exposed
@@ -22,6 +23,7 @@
 
 - key: deeplb
   name: DeepLB
+  logo: /images/tools/deeplb.svg
   tagline: Deep learning for liquid biopsy
   description: >-
     A four-module pipeline - feature selection, methylation microarray-to-sequence
@@ -43,6 +45,7 @@
 
 - key: sxSNF
   name: sxSNF
+  logo: /images/tools/sxSNF.svg
   tagline: Single-cell multi-modal integration
   description: >-
     Modality-specific similarity graphs, geometry-anchored similarity network
@@ -64,6 +67,7 @@
 
 - key: sxRaep
   name: sxRaep
+  logo: /images/tools/sxRaep.svg
   tagline: Enzyme screening for high-throughput sequence mining
   description: >-
     A rapid enzyme/non-enzyme prediction workflow using physicochemical
@@ -77,6 +81,7 @@
 
 - key: sxEnzHier
   name: sxEnzHier / EnzHire
+  logo: /images/tools/sxEnzHier.svg
   tagline: Hierarchical enzyme function prediction
   description: >-
     ESM-derived protein embeddings and hierarchical contrastive learning for
@@ -92,6 +97,7 @@
 
 - key: sxELA
   name: pseudoLiquid (sxELA)
+  logo: /images/tools/sxELA.svg
   tagline: Triplet local liquid association for single-cell pseudotime
   description: >-
     An R and Python workflow for identifying local changes in pairwise gene
@@ -105,6 +111,7 @@
 
 - key: SPRINT
   name: SPRINT
+  logo: /images/tools/SPRINT.svg
   tagline: Multi-trait genetic risk prediction
   description: >-
     A deep-learning framework combining disease-specific SNP dosage and
@@ -118,6 +125,7 @@
 
 - key: DHMOC
   name: DHMOC
+  logo: /images/tools/DHMOC.svg
   tagline: Hierarchical learning for multi-class omics classification
   description: >-
     A data-driven framework that jointly learns class hierarchies and sample
@@ -131,6 +139,7 @@
 
 - key: CCNMF
   name: CCNMF
+  logo: /images/tools/CCNMF.svg
   tagline: Joint clonal inference from single-cell DNA and RNA
   description: >-
     Coupled-clone nonnegative matrix factorization for joint inference of
@@ -144,6 +153,7 @@
 
 - key: HCG
   name: HCG
+  logo: /images/tools/HCG.svg
   tagline: DNA-based hierarchical gastric cancer subtyping
   description: >-
     A hierarchical classifier integrating DNA-level molecular alterations
@@ -157,6 +167,7 @@
 
 - key: UGES
   name: UGES
+  logo: /images/tools/UGES.svg
   tagline: Breast cancer subtype prediction from DNA-level data
   description: >-
     A unified genetic and epigenetic model using hierarchical learning to
@@ -170,6 +181,7 @@
 
 - key: CTRhythm
   name: CTRhythm
+  logo: /images/tools/CTRhythm.svg
   tagline: Atrial fibrillation detection from single-lead ECG
   description: >-
     A CNN and transformer model for atrial fibrillation detection from

@@ -159,6 +159,31 @@
   margin-top: 0;
 }
 
+.labx-tool-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.labx-tool-logo {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+}
+
+.labx-provenance {
+  margin: 0.75rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--light-gray);
+  font-size: 0.82em;
+  color: var(--text-color-secondary);
+}
+
+.labx-provenance code {
+  font-size: 0.95em;
+}
+
 .labx-tool-links {
   display: flex;
   flex-wrap: wrap;

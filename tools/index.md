@@ -14,9 +14,16 @@ nav:
 {% for tool in site.data.tools %}
 <article class="labx-tool" markdown="1">
 
+<div class="labx-tool-head">
+{% if tool.logo %}<img class="labx-tool-logo" src="{{ tool.logo }}" alt="" width="56" height="56">{% endif %}
+<div>
+
 ## {{ tool.name }}
 
 **{{ tool.tagline }}**
+
+</div>
+</div>
 
 {{ tool.description }}
 
@@ -32,6 +39,8 @@ nav:
 {% if tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
 </div>
+
+{% include tool-provenance.html tool=tool %}
 
 </article>
 {% endfor %}

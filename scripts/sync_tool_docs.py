@@ -41,7 +41,17 @@ LEGACY_ROUTES = {
     "sxSNF": ("/sxSNF/",),
 }
 SOURCE_PATH = PurePosixPath("docs/site")
-METADATA_KEYS = ("docs_repo", "docs_ref", "docs_release_ref", "docs_path", "docs_slug")
+# `docs:` itself stays in the catalog as the anchor line that the managed
+# provenance block is re-inserted after (see update_tool_metadata).
+METADATA_KEYS = (
+    "docs_repo",
+    "docs_ref",
+    "docs_ref_date",
+    "docs_release_ref",
+    "docs_release_ref_date",
+    "docs_path",
+    "docs_slug",
+)
 FORBIDDEN_PARTS = {".git", "private", "raw"}
 FORBIDDEN_NAMES = {".env", "credentials", "secrets"}
 
@@ -102,6 +112,26 @@ def fetch_refs(repo: Path) -> dict[str, str]:
         ref = f"refs/remotes/origin/{branch}"
         refs[branch] = git(repo, "rev-parse", "--verify", ref).stdout.strip()
     return refs
+
+
+def commit_date(repo: Path, sha: str) -> str:
+    """Committer date (YYYY-MM-DD) of ``sha``; used for the provenance stamp."""
+    return git(repo, "show", "-s", "--date=short", "--format=%cd", sha).stdout.strip()
+
+
+def provenance_html(
+    repository: str,
+    branch: str,
+    sha: str,
+    date: str,
+    site_root: str,
+) -> str:
+    return (
+        '<p class="labx-provenance" lang="en">Tool data collected from '
+        f'<a href="https://github.com/{repository}/tree/{sha}">'
+        f"{repository}@{sha[:12]}</a> ({branch}, {date}). "
+        f'<a href="{site_root}">Back to the LabX tools list</a>.</p>'
+    )
 
 
 def validate_source_path(path: PurePosixPath) -> None:
@@ -178,7 +208,9 @@ def validate_local_links(root: Path, slug: str) -> None:
                 raise SyncError(f"Broken local link in {page.relative_to(root)}: {value}")
 
 
-def update_tool_metadata(text: str, tool: Tool, refs: dict[str, str]) -> str:
+def update_tool_metadata(
+    text: str, tool: Tool, refs: dict[str, str], dates: dict[str, str]
+) -> str:
     starts = list(re.finditer(r"(?m)^- key: ([^\r\n]+)\r?$", text))
     matches = [
         match
@@ -196,10 +228,11 @@ def update_tool_metadata(text: str, tool: Tool, refs: dict[str, str]) -> str:
     block = text[start:next_start]
     lines = block.splitlines()
     metadata = {
-        "docs": f"https://labxscut.github.io/tools/{tool.slug}/",
         "docs_repo": tool.repository,
         "docs_ref": refs["main"],
+        "docs_ref_date": dates["main"],
         "docs_release_ref": refs["release"],
+        "docs_release_ref_date": dates["release"],
         "docs_path": str(SOURCE_PATH),
         "docs_slug": tool.slug,
     }
@@ -216,9 +249,9 @@ def update_tool_metadata(text: str, tool: Tool, refs: dict[str, str]) -> str:
     )
     if docs_line is None:
         raise SyncError(f"Missing docs URL field in _data/tools.yml entry {tool.key}")
-    # The surviving `docs:` line is replaced by the full managed block so the
-    # docs URL and its provenance keys stay grouped and never duplicated.
-    filtered[docs_line : docs_line + 1] = [
+    # The managed provenance keys are inserted right after the surviving
+    # `docs:` line so the docs URL and its provenance stay grouped together.
+    filtered[docs_line + 1 : docs_line + 1] = [
         f"  {key}: {value}" for key, value in metadata.items()
     ]
     replacement = "\n".join(filtered)
@@ -237,6 +270,46 @@ def add_jekyll_front_matter(index: Path, permalink: str, legacy_routes: tuple[st
         lines.extend(f"  - {route}" for route in legacy_routes)
     lines.extend(["---", ""])
     index.write_text("\n".join(lines) + body, encoding="utf-8", newline="")
+
+
+def stamp_provenance(
+    index: Path,
+    tool: Tool,
+    branch: str,
+    sha: str,
+    date: str,
+) -> None:
+    """Prepend a logo + commit-provenance banner to a synced docs index.
+
+    Runs after link validation, so the injected root-relative asset paths are
+    never checked against the ``/tools/<slug>/`` containment rule.  Styles are
+    inlined because the mirrored docs pages ship their own CSS.
+    """
+    style = (
+        "display:flex;align-items:center;gap:12px;margin:0 0 1.25rem;padding:10px 14px;"
+        "border:1px solid #d9e2ec;border-radius:10px;background:#f6f9fc;"
+        "font-size:0.85rem;line-height:1.5;color:#334e68"
+    )
+    banner = (
+        f'<div class="labx-provenance" lang="en" style="{style}">'
+        f'<img src="/images/tools/{tool.key}.svg" alt="" width="40" height="40" '
+        'style="flex:none;border-radius:8px">'
+        "<span>Tool data collected from "
+        f'<a href="https://github.com/{tool.repository}/tree/{sha}" '
+        'style="color:#2b6cb0">'
+        f"{tool.repository}@{sha[:12]}</a> ({branch}, {date}). "
+        '<a href="/tools/" style="color:#2b6cb0">All LabX tools</a>'
+        "</span></div>"
+    )
+    html = index.read_text(encoding="utf-8")
+    match = re.search(r"(?i)<body\b[^>]*>", html)
+    if match is None:
+        raise SyncError(f"Synced docs index has no <body> element: {index}")
+    index.write_text(
+        html[: match.end()] + banner + html[match.end() :],
+        encoding="utf-8",
+        newline="",
+    )
 
 
 def write_metadata(path: Path, text: str) -> None:
@@ -270,6 +343,7 @@ def ensure_clean_targets(tool: Tool) -> None:
 def sync_tool(tool: Tool) -> None:
     repo = repository_path(tool)
     refs = fetch_refs(repo)
+    dates = {branch: commit_date(repo, sha) for branch, sha in refs.items()}
     ensure_clean_targets(tool)
 
     with tempfile.TemporaryDirectory(prefix=f"sync-{tool.key}-", dir=SITE_ROOT) as temp:
@@ -291,9 +365,19 @@ def sync_tool(tool: Tool) -> None:
         shutil.copytree(main_docs, staged_site)
         shutil.copytree(release_docs, staged_site / "release")
         validate_local_links(staged_site, tool.slug)
+        stamp_provenance(
+            staged_site / "index.html", tool, "main", refs["main"], dates["main"]
+        )
+        stamp_provenance(
+            staged_site / "release" / "index.html",
+            tool,
+            "release",
+            refs["release"],
+            dates["release"],
+        )
 
         catalog = TOOLS_DATA.read_text(encoding="utf-8")
-        updated_catalog = update_tool_metadata(catalog, tool, refs)
+        updated_catalog = update_tool_metadata(catalog, tool, refs, dates)
         old_site = TOOLS_ROOT / tool.slug
         backup = staging / "previous"
         if old_site.exists():
