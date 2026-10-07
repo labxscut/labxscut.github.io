@@ -10,9 +10,7 @@ nav:
 
 # Team
 
-LabX is led by {{ site.data.identity.pi.name_en }} ({{ site.data.identity.pi.name_zh }})
-at the School of Mathematics, South China University of Technology. Personal
-pages link from current members' names. Contact details are not published here.
+{% include intro.html value=site.data.intros.team.intro %}
 
 {% assign sections = "pi:Principal investigator,faculty:Faculty,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni,collaborator:Collaborators,visiting:Visiting scholars" | split: "," %}
 {% for entry in sections %}

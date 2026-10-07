@@ -1,0 +1,56 @@
+{
+  "_readme": [
+    "Hand-edited intro text for every section of the site. Pages render these",
+    "strings verbatim, so plain markdown links work: [label](https://example.com).",
+    "Keep each value on a single line (one paragraph). Placeholders substituted",
+    "when the page renders:",
+    "  {pi}  the PI's English name     {pi_zh}     the PI's Chinese name",
+    "  {email}  lab contact address    {scholar}   the PI's Google Scholar URL",
+    "  {unit}  school/department       {university} the university name",
+    "  {published} / {accepted}  publication counts on the publications page.",
+    "Set a value to \"\" to hide that intro."
+  ],
+
+  "home": {
+    "hero": "LabX is a research group in the School of Mathematics at South China University of Technology. We study AI theory and develop AI methods for biomedical sciences, materials science, and other emerging fields.",
+    "research": "",
+    "tools": "We build software to make our methods and research workflows reusable.",
+    "activities": "",
+    "news": ""
+  },
+
+  "about": {
+    "intro": "We develop AI methods and apply them to biomedical sciences and emerging scientific fields."
+  },
+
+  "team": {
+    "intro": "LabX is led by {pi} ({pi_zh}) at {unit}, {university}. Personal pages link from members' names. Contact details are not published here."
+  },
+
+  "publications": {
+    "intro": "{published} published and {accepted} accepted records, deduplicated from the LabX paper registry. Work in preparation or under review is not listed. The registry has not been verified as a complete match to Google Scholar; see [Xia Li's Google Scholar profile]({scholar}) for the broader author bibliography."
+  },
+
+  "tools": {
+    "intro": "Open-source software from the group. Documentation remains in each project's own site and is updated in place. This catalog includes the publicly documented tools and research-code repositories reviewed in the LabX organization; papers are linked only where the relationship is present in the lab's publication records."
+  },
+
+  "activities": {
+    "intro": ""
+  },
+
+  "news": {
+    "intro": ""
+  },
+
+  "engage": {
+    "themes": "We welcome conversations with agencies and organizations interested in supporting collaborative research in:",
+    "students": "We welcome inquiries from prospective postdoctoral researchers, PhD students, and master's students interested in our research. Availability depends on current projects, supervision capacity, and funding; this page does not imply that a funded position is open. Please email a brief introduction, CV, and research interests to [{email}](mailto:{email}).",
+    "partnerships": "We welcome conversations with agencies and organizations interested in supporting collaborative research in the themes listed above. Potential partners can contact us at [{email}](mailto:{email}) to discuss a research question, possible collaboration, and support needs.",
+    "location": "LabX is based in {unit} at {university}, Guangzhou."
+  },
+
+  "profile": {
+    "intro": "{role} at LabX, {unit}, {university}."
+  }
+}

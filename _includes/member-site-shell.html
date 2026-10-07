@@ -68,7 +68,7 @@
     {% unless page.profile_section %}
       <section>
         <h2>Profile</h2>
-        <p>{{ member.role }} at LabX, School of Mathematics, South China University of Technology.</p>
+        {% include intro.html value=site.data.intros.profile.intro role=member.role %}
       </section>
     {% else %}
       <section class="labx-member-section">

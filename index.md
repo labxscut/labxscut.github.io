@@ -5,9 +5,7 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 # AI for Science
 
-LabX is a research group in the School of Mathematics at South China University
-of Technology. We study AI theory and develop AI methods for biomedical
-sciences, materials science, and other emerging fields.
+{% include intro.html value=site.data.intros.home.hero %}
 
 {% include button.html text="Explore our research" link="about/" icon="fa-solid fa-arrow-right" %}
 {% include button.html text="Meet the team" link="team/" icon="fa-solid fa-users" %}
@@ -24,6 +22,8 @@ sciences, materials science, and other emerging fields.
 
 ## Research
 
+{% include intro.html value=site.data.intros.home.research %}
+
 {% for theme in site.data.research %}
 ### {{ theme.title }}
 
@@ -37,7 +37,7 @@ sciences, materials science, and other emerging fields.
 
 ## Open-source tools
 
-We build software to make our methods and research workflows reusable.
+{% include intro.html value=site.data.intros.home.tools %}
 
 {% for tool in site.data.tools limit:3 %}
 ### [{{ tool.name }}]({{ tool.docs }})
@@ -55,6 +55,8 @@ We build software to make our methods and research workflows reusable.
 
 ## Activities
 
+{% include intro.html value=site.data.intros.home.activities %}
+
 {% if site.data.activities.size > 0 %}
 {% for activity in site.data.activities limit:3 %}
 - **{{ activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
@@ -68,6 +70,8 @@ No activities have been posted yet.
 <!-- section break -->
 
 ## News
+
+{% include intro.html value=site.data.intros.home.news %}
 
 {% assign recent_posts = site.posts | sort: "date" | reverse %}
 {% if recent_posts.size > 0 %}

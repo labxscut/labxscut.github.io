@@ -10,6 +10,7 @@ nav:
 
 # News
 
+{% include intro.html value=site.data.intros.news.intro %}
 {% assign posts = site.posts | sort: "date" | reverse %}
 {% if posts.size > 0 %}
 {% for post in posts %}

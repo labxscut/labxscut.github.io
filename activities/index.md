@@ -9,6 +9,7 @@ nav:
 
 # Activities
 
+{% include intro.html value=site.data.intros.activities.intro %}
 {% if site.data.activities.size > 0 %}
 {% assign activities = site.data.activities | sort: "date" | reverse %}
 {% for activity in activities %}

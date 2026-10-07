@@ -1,0 +1,27 @@
+{%- comment -%}
+  Render one hand-edited intro paragraph from _data/intros.json.
+
+  Usage:  {% include intro.html value=site.data.intros.team.intro %}
+  Extra keyword arguments fill the documented placeholders:
+    published= accepted= role=
+
+  The value is rendered through `markdownify`, so markdown links in the JSON
+  work without any surrounding `markdown="1"` block.
+{%- endcomment -%}
+{%- assign text = include.value | strip -%}
+{%- if text != "" -%}
+  {%- assign identity = site.data.identity -%}
+  {%- assign affiliation = identity.affiliation -%}
+  {%- assign text = text
+      | replace: "{pi}", identity.pi.name_en
+      | replace: "{pi_zh}", identity.pi.name_zh
+      | replace: "{scholar}", identity.pi.scholar
+      | replace: "{email}", site.links.email
+      | replace: "{unit}", affiliation.unit_en
+      | replace: "{university}", affiliation.university_en
+  -%}
+  {%- if include.published != nil -%}{%- assign value = include.published | append: "" -%}{%- assign text = text | replace: "{published}", value -%}{%- endif -%}
+  {%- if include.accepted != nil -%}{%- assign value = include.accepted | append: "" -%}{%- assign text = text | replace: "{accepted}", value -%}{%- endif -%}
+  {%- if include.role != nil -%}{%- assign value = include.role | append: "" -%}{%- assign text = text | replace: "{role}", value -%}{%- endif -%}
+{{ text | markdownify }}
+{%- endif -%}

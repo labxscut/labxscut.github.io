@@ -18,11 +18,7 @@ nav:
     {% assign published = published | push: paper %}
   {% endif %}
 {% endfor %}
-{{ published.size }} published and {{ accepted.size }} accepted records, deduplicated
-from the LabX paper registry. Work in preparation or under review is not listed.
-The registry has not been verified as a complete match to Google Scholar; see
-[Xia Li's Google Scholar profile]({{ site.data.identity.pi.scholar }}) for the
-broader author bibliography.
+{% include intro.html value=site.data.intros.publications.intro published=published.size accepted=accepted.size %}
 
 ## Published
 

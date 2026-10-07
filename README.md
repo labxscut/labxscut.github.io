@@ -20,6 +20,12 @@ while sharing the lab template's styles and assets.
 | `engage/` | Engage: opportunities and contact information (`/engage/`) |
 | `_data/`, `_includes/`, `_layouts/`, `_plugins/`, `_styles/`, `images/` | data, Greene template components, and shared assets |
 
+Section intro prose lives in one hand-editable file, `_data/intros.json`, and is
+rendered through `_includes/intro.html`. Every page section has a slot (empty
+strings hide the intro); `{pi}`, `{email}`, `{unit}`, `{published}`, and the
+other placeholders documented in the file's `_readme` are substituted at build
+time.
+
 The section folder name, canonical browser path, and navigation label should
 stay aligned. The navigation order is recorded in `0design/README.md` and in
 each section page's `nav.order`. The old News URL `/blog/` redirects to

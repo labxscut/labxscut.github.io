@@ -10,8 +10,7 @@ nav:
 
 # About
 
-We develop AI methods and apply them to biomedical sciences and emerging
-scientific fields.
+{% include intro.html value=site.data.intros.about.intro %}
 
 {% for theme in site.data.research %}
 ## {{ theme.title }}

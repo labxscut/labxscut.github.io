@@ -9,11 +9,7 @@ nav:
 
 # Tools
 
-Open-source software from the group. Documentation remains in each project's
-own site and is updated in place. This catalog includes the publicly documented
-tools and research-code repositories reviewed in the LabX organization; papers
-are linked only where the relationship is present in the lab's publication
-records.
+{% include intro.html value=site.data.intros.tools.intro %}
 
 {% for tool in site.data.tools %}
 <article class="labx-tool" markdown="1">
