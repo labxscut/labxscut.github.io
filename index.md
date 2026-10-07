@@ -14,6 +14,14 @@ sciences, materials science, and other emerging fields.
 
 <!-- section break -->
 
+## Latest news
+
+{% for item in site.data.news limit:4 %}
+- **{{ item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
+{% endfor %}
+
+<!-- section break -->
+
 ## Research
 
 {% for theme in site.data.research %}
@@ -38,14 +46,6 @@ We build software to make our methods and research workflows reusable.
 
 {% include button.html text="Documentation" link=tool.docs type="docs" style="bare" %}
 {% include button.html text="Source code" link=tool.repo type="source" style="bare" %}
-{% endfor %}
-
-<!-- section break -->
-
-## Latest news
-
-{% for item in site.data.news limit:4 %}
-- **{{ item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
 {% endfor %}
 
 {% include button.html text="All tools" link="tools/" icon="fa-solid fa-arrow-right" %}

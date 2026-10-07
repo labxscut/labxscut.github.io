@@ -79,97 +79,58 @@ and generator output whenever a section path changes.
 - Preserve existing public URLs where practical. If a URL must change, add and
   verify a redirect; do not assume a folder rename is URL-neutral.
 
-## Tool documentation ownership and build-time publishing
+## Tool documentation ownership and agent-triggered publishing
 
-The tool repository is the source of truth for its user-facing documentation;
-the LabX website builds and publishes a static copy. Do not maintain a second
-editable copy of a tool's full documentation under this website repository.
-This is dynamic at **site build time**, not a browser-time fetch: GitHub Pages
-serves static files, and browser-side `fetch()` from tool repositories would
-make rendering depend on CORS, network availability, and the visitor's session.
+Each tool repository is the source of truth for its user-facing documentation.
+The website contains a generated copy for GitHub Pages; agents must not hand-edit
+that copy. Refreshing a tool page is an explicit agent action, not a push hook,
+scheduled job, browser-time fetch, or Pages-build-time fetch.
 
 ### Repository contract
 
-- Each participating tool repository owns its documentation source and build
-  instructions, normally under `docs/`. It must provide a predictable static
-  output directory, proposed as `docs/site/`, containing an `index.html` plus
-  every local stylesheet, script, image, and linked page needed by that site.
-- Keep relative assets and links inside the tool's documentation subtree.
-  Avoid root-relative links such as `/assets/...`, which escape the tool's
-  published prefix. External services can remain absolute links.
-- If documentation needs a generator (for example, Markdown to HTML), define
-  and test that generator in the tool repository. The LabX website build should
-  copy the declared static output, not rebuild tool software or infer how each
-  tool's docs work.
-- The tool owner reviews and merges doc changes in that tool repository.
-  Website maintainers only update the source manifest/revision and validate
-  the integrated result; they should not patch a copied deployed page.
+- Participating tool repositories maintain a predictable static payload at
+  `docs/site/`, with `index.html` and all local stylesheets, scripts, images, and
+  linked pages needed by the public docs.
+- Keep relative assets and links inside that docs subtree. Avoid root-relative
+  links such as `/assets/...`, which escape the tool's published prefix.
+- If documentation needs generation, keep the generator and its verification
+  in the tool repository. The site sync copies the static payload; it does not
+  rebuild tool software or infer a tool-specific build.
+- Tool owners review and merge the docs source on both `main` and `release`.
+  Keep both branches available on `origin`; do not create or push a branch as a
+  side effect of the website sync.
+- Keep legacy project Pages redirects outside `docs/site/` (for example,
+  sxLaep's redirect at `docs/index.html`) so a canonical page cannot overwrite
+  its redirect.
 
-### Website integration
+### Explicit website refresh
 
-- Keep concise catalog metadata (name, tagline, summary, repository, papers,
-  maintainers) in `_data/tools.yml`. Add explicit documentation integration
-  fields such as `docs_repo`, `docs_ref`, `docs_path`, and `docs_slug`; do not
-  derive repository names, refs, paths, or public routes from display names.
-- The canonical published documentation URL is
-  `https://labxscut.github.io/tools/<docs_slug>/`. Use lowercase, URL-safe
-  slugs and emit a directory index (`index.html`) so links work without a
-  filename. Catalog links should point to this canonical path when that
-  repository has opted into the integration. External docs/services can stay
-  external until migrated.
-- Extend `.github/workflows/pages.yml` with a preparation step before Jekyll
-  build: for each manifest entry, fetch the declared public tool repository at
-  its declared immutable commit (or release tag resolved and recorded as a
-  commit), verify `docs_path/index.html`, then copy that directory into the
-  matching `_site/tools/<docs_slug>/` destination after Jekyll build. Keep
-  fetched repositories in a temporary directory, not as submodules and not as
-  committed vendored copies.
-- If docs require private-repository access, do not silently skip them or
-  add broad credentials. First agree on a least-privilege read-only deploy
-  credential and store it only as a GitHub Actions secret; alternatively
-  publish only the approved public docs source. Public Pages output must not
-  contain credentials or restricted files.
-- Pinning makes a site build reproducible. When tool docs change, a maintainer
-  bumps `docs_ref` through a reviewed site change (or an automated PR that
-  proposes the new commit); do not silently track a moving default branch in a
-  release build.
-- Keep deploy-time checks for each configured doc route: source ref resolved,
-  `index.html` present, no forbidden/private paths, copied output exists, and
-  internal local links/assets stay beneath that slug. Report any failed sync
-  as a build failure instead of deploying stale or success-shaped fallback
-  content.
-- sxLaep and sxSNF docs currently live in the website as static snapshots from
-  the pinned public revisions recorded in `_data/tools.yml`. Preserve the
-  requested `/tools/sxSNF/` capitalization; sxLaep uses lowercase
-  `/tools/sxlaep/`. Each tool repository's Pages workflow redirects its former
-  project URL to the canonical route. Refresh a snapshot from its source repo
-  when the pin changes; replace these copies with automated build-time syncing
-  when the website's Pages workflow is tracked and enabled.
+- Use `_data/tools.yml` as the explicit catalog of tool repo, slug, source path,
+  and immutable source refs. Never derive repository names or routes from a
+  display name.
+- Run `python scripts/sync_tool_docs.py --tool <deeplb|sxLaep|sxSNF>` only when
+  an agent is explicitly asked to refresh that tool. The script fetches
+  `origin/main` and `origin/release`, verifies both `docs/site/index.html`
+  payloads and local links, and refuses to overwrite dirty site targets.
+- The tool's `main` docs publish at `/tools/<docs_slug>/`; its `release` docs
+  publish at `/tools/<docs_slug>/release/`. Preserve the existing capitalization
+  for sxSNF (`/tools/sxSNF/`) and lowercase sxLaep (`/tools/sxlaep/`).
+- The script records the immutable main and release commit IDs in that tool's
+  `_data/tools.yml` entry and updates only the selected tool's page and metadata.
+  It changes the local website worktree only: it does not commit or push any
+  tool or website repository. Review the diff, validate the site, then publish
+  the website through its configured Pages source on `main:/`.
+- If either source branch or its docs output is absent/invalid, fail the sync.
+  Do not silently skip the branch, publish stale files as success, or add broad
+  credentials. Only public, approved documentation belongs in `docs/site/`.
 
-### Migration sequence and compatibility
+### Current integrated tools
 
-1. Inventory the current `tools/<name>/` copies and each tool repository's
-   `docs/` content. Compare pages and assets; identify which repository version
-   is authoritative with the tool maintainer. Do not overwrite newer docs
-   based only on timestamps or similar filenames.
-2. Move/curate the approved complete docs into the tool repo, add its static
-   output contract and verify it locally. Merge the tool-repo change first.
-3. Add its explicit manifest fields, build-time fetch/copy, and route checks to
-   the website. Preview all links and assets under `/tools/<docs_slug>/`.
-4. Replace catalog links with that canonical URL and remove the duplicated
-   website copy only after a successful deployment confirms the integrated
-   pages and legacy destinations.
-5. Preserve old public documentation URLs (including existing `/sxLaep/` or
-   `/deeplb/` paths) with redirects to the canonical tool route. Add any
-   redirects to the existing CI required-route checks; do not leave two
-   separately editable copies after migration.
-
-The sxSNF route migration is the first pilot, using a pinned static snapshot
-because the website repository currently has no tracked Pages workflow for
-build-time syncing. Verify its published pages, relative links, and legacy
-redirect after deployment. Migrate other repositories individually only after
-confirming each authoritative docs source; add automated build checks when the
-website's Pages workflow is tracked and enabled.
+sxLaep, sxSNF, and DeepLB each have the current public page payload under their
+tool repo's `docs/site/` on `main` and `release`. The website's old sxLaep and
+sxSNF Pages URLs redirect to their canonical tool routes; `/deeplb/` remains a
+legacy route and should redirect to `/tools/deeplb/`. Verify all canonical and
+legacy URLs after a website deployment.
 
 ## Profiles
 
