@@ -61,8 +61,10 @@
   repo: https://github.com/labxscut/sxSNF
   docs: https://labxscut.github.io/tools/sxSNF/
   docs_repo: labxscut/sxSNF
-  docs_ref: cc8915e059f8963dd31bc14ab8a0248b744faf4c
+  docs_ref: 7173692ad855a5db895254e37860e2038557e146
+  docs_ref_date: 2026-10-08
   docs_release_ref: cc8915e059f8963dd31bc14ab8a0248b744faf4c
+  docs_release_ref_date: 2026-10-07
   docs_path: docs/site
   docs_slug: sxSNF
   tags: [single-cell, similarity network fusion, graph learning]
