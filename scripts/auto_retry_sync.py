@@ -38,7 +38,10 @@ _LOG_PATH: Path | None = None
 def log(message: str) -> None:
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{stamp}] {message}"
-    print(line, flush=True)
+    try:
+        print(line, flush=True)
+    except (OSError, ValueError):  # pythonw has no console; the log file still works
+        pass
     if _LOG_PATH is not None:
         try:
             with _LOG_PATH.open("a", encoding="utf-8") as handle:
