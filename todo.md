@@ -27,9 +27,21 @@ before spending time on optional profile details.
 - [x] Fix live profile rendering so profile pages bypass the generic section
   parser, preventing duplicated/malformed profile markup; prefer the deployed
   LabX PNG over the missing SVG logo.
+- [x] Move every section intro paragraph into one hand-editable data file,
+  `_data/intros.json`, rendered by `_includes/intro.html` with `{pi}`,
+  `{email}`, `{unit}`, `{university}`, `{scholar}`, `{published}`,
+  `{accepted}`, and `{role}` placeholders. Empty strings hide an intro.
 
 ## Remaining blockers
 
+- [ ] Backfill publications and tool links into the pre-2022 records, and create
+  registry entries for every Google Scholar item (including book chapters), so
+  the site bibliography can approach the Scholar record.
+- [ ] Section the publications into (co)-first/(co)-corresponding author work
+  and collaborative work, following the `hc/0fund` CV format.
+- [ ] Add a logo to each `labxscut/<tool>` repository, show it on
+  `/tools/<tool>/`, and stamp each tool page with the source commit its data
+  were collected from.
 - [ ] Complete the PI bibliography against Google Scholar. Automated requests
   are returning only partial citation data, so the current site registry is
   not a complete match. Ask the owner for a Google Scholar BibTeX/CSV export,
