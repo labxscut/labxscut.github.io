@@ -16,7 +16,7 @@ are linked only where the relationship is present in the lab's publication
 records.
 
 {% for tool in site.data.tools %}
-<article class="labx-tool" id="{{ tool.key | slugify }}" markdown="1">
+<article class="labx-tool" markdown="1">
 
 ## {{ tool.name }}
 

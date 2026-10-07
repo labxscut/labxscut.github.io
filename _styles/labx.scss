@@ -90,8 +90,12 @@
 }
 
 .labx-profile-aside {
-  position: sticky;
+  position: fixed;
   top: 1.5rem;
+  left: max(24px, calc((100vw - 1100px) / 2));
+  width: min(267px, calc((100vw - 80px) / 4));
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
 }
 
 .labx-profile-aside p {
@@ -138,5 +142,10 @@
 
   .labx-profile-aside {
     position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-height: none;
+    overflow: visible;
   }
 }
