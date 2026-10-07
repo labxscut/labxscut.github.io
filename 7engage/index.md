@@ -1,13 +1,14 @@
 ---
-title: Opportunities
+title: Engage
 description: "Contact LabX about research opportunities."
-permalink: /join/
+permalink: /engage/
+redirect_from: /join/
 nav:
   order: 7
   tooltip: Contact the lab
 ---
 
-# Opportunities at LabX
+# Engage with LabX
 
 ## Postdoctoral, PhD, and MS opportunities
 

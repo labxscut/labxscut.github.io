@@ -22,18 +22,29 @@ generated site and do not publish private roster/contact information.
 | Folder | Navigation label | Order |
 | --- | --- | ---: |
 | `1news/` | News | 1 |
-| `2about/` | Overview | 2 |
+| `2about/` | About | 2 |
 | `3team/` | Team | 3 |
 | `4tools/` | Tools | 4 |
 | `5publications/` | Publications | 5 |
 | `6activities/` | Activities | 6 |
-| `7engage/` | Opportunities / contact | 7 |
+| `7engage/` | Engage | 7 |
 
 Keep each landing page's `nav.order` consistent with the folder prefix. These
 prefixes are filesystem organization only: Jekyll derives URLs from paths, so
 preserve intended public URLs with explicit permalinks and redirects. Audit
 internal links, generated pages, and generator output whenever a numbered
 folder is moved or renamed.
+
+## Visual identity and contact
+
+- Use the LabX `images/logo.png` mark, not the SCUT seal.
+- New visitors start in dark mode with a deep navy/blue palette. The selectable
+  light theme uses warm brown and gray neutrals; keep both palettes readable.
+- The public contact email is `lcxia@scut.edu.cn`.
+- The PI's verified ORCID is `https://orcid.org/0000-0003-0868-1923`.
+- Keep the footer free of the template credit and school/university attribution
+  line. The contact address and other institutional context elsewhere are
+  separate site information.
 
 ## Content and data rules
 
@@ -46,18 +57,26 @@ folder is moved or renamed.
   Do not invent biographies, credentials, photos, or funding availability.
 - The publication list includes records marked published/accepted after
   deduplication; it is not a claim of a complete Google Scholar bibliography.
+- Google Scholar is the reference for the PI's full publication list. Current
+  automated requests return incomplete pages; do not claim the registry is
+  complete or add guessed records. Request an owner-provided BibTeX/CSV export
+  if Scholar continues to block a complete comparison.
 - Link a project to a paper only when that relationship is recorded in the
-  lab data. Keep tool documentation in its project-specific documentation
-  rather than copying it into the collective catalog.
+  lab data. Keep tool documentation in its project-specific documentation;
+  do not duplicate paper details in the Tools catalog.
 - Preserve existing public URLs where practical. If a URL must change, add and
   verify a redirect; do not assume a folder rename is URL-neutral.
 
 ## Profiles
 
-The intended member URL pattern is `/team/<nick>/`, with CV, publications,
-teaching (faculty only), and tools sections below that route. The generator writes physical
-pages under `3team/` and sets explicit `/team/<nick>/...` permalinks. Legacy
-`/people/` URLs redirect to their `/team/` counterparts.
+The intended member URL pattern is `/team/<nick>/`. Only create/link a member
+profile when there is verified CV, publication, faculty teaching, or tool
+material. Only render tabs with material; do not use a generic placeholder CV.
+Teaching is faculty-only and links directly to course material hosted by
+GitHub/Gitee/Ulearning so each platform controls access. The generator writes
+physical pages under `3team/` and sets explicit `/team/<nick>/...` permalinks.
+Legacy `/people/` URLs redirect to their `/team/` counterparts. Do not add a
+Who tab or repeat selected tools/papers on the profile landing page.
 Generated section pages use `member-section` and the section definitions in
 `_data/profile_sections.yml`. Preserve the generator's overwrite protection
 for hand-maintained pages. Treat the roster as the source of truth and show
@@ -77,28 +96,13 @@ only verified profile data.
 - Do not stage all files, discard changes, or rewrite tags to make deployment
   easier. Inspect the working tree and publish only the intended site changes.
 
-## Handoff status (2026-10-06)
+## Current handoff
 
-- The owner has renamed/reorganized local section directories to the numbered
-  names above. Those changes are currently local and uncommitted; the old
-  tracked paths appear deleted and the new directories appear untracked.
-  Preserve them and review the complete rename/link/generator diff before
-  committing. Do not deploy only the older tracked tree by mistake.
-- The local tree now has explicit permalinks for the seven section pages,
-  `/team/<nick>/` permalinks for generated profiles, generated member
-  section routes, and redirects for the moved `/deeplb/` and `/sxLaep/` docs.
-  These changes still need a Pages build to validate.
-- Tag `v2026.10.06` points to commit `ae84436`; do not move it. Pages builds
-  exposed several Liquid/Jekyll incompatibilities. Commits `01cdcad` and
-  `b98b127` were pushed to `main` to simplify a compound CSS `where_exp` and
-  guard background URLs against rendered markup. The latest build at handoff
-  still fails on a compound `where_exp` in the old `publications/index.md`.
-  The numbered `5publications/index.md` has since been rewritten to use a
-  Liquid loop, but that local change has not yet been pushed or validated by
-  Pages.
-- The tag exists remotely, but `gh release view v2026.10.06` reported that no
-  GitHub Release object exists. Create or update a release only after agreeing
-  which commit represents the deployable site; do not move the existing tag.
-- At handoff, `main` is at `b98b127` and the numbered-directory work remains
-  uncommitted. The working tree also contains site files outside those
-  directories; inspect status before any commit.
+- The current baseline is `a11d6d2`; the numbered sections, canonical Team
+  routes, legacy redirects, and GitHub Pages deployment are already verified.
+- Pending visual/content updates are tracked in the repository-root `todo.md`.
+  Before calling this refresh complete, validate the generated profile pages,
+  confirm a Pages build/deploy, and verify the live logo, navigation, and
+  routes.
+- The full Google Scholar bibliography remains blocked on obtaining a complete
+  Scholar export. Never represent the current LabX registry as complete.

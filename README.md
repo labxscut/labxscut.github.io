@@ -12,12 +12,12 @@ while sharing the lab template's styles and assets.
 |------|------|
 | `index.md` | front door: research themes, tools, people, and news |
 | `1news/`, `_posts/` | group news, notes, and updates |
-| `2about/` | research themes and group overview |
+| `2about/` | About: research themes and group overview (`/about/`) |
 | `3team/` | collective roster and al-folio-inspired `/team/<nick>/` profiles |
 | `4tools/` | collective tools index and project documentation |
 | `5publications/` | published and accepted papers, generated and deduplicated from the lab registry |
 | `6activities/` | seminars, workshops, and other group activities |
-| `7engage/` | research opportunities and contact information |
+| `7engage/` | Engage: opportunities and contact information (`/engage/`) |
 | `_data/`, `_includes/`, `_layouts/`, `_plugins/`, `_styles/`, `images/` | data, Greene template components, and shared assets |
 
 The numeric prefixes on the section folders express the intended top-navigation
@@ -32,13 +32,14 @@ folders use those prefixes.
   Only public-safe fields are copied; emails, phone numbers, chat ids, leaders, and
   notes stay in the roster. Legacy `/<nick>/` URLs redirect to the nested profiles.
 
-Member pages show only verified roster, software, and publication information;
-they do not invent biographies or photos. Teaching tabs are shown only for
-faculty.
+Member pages are generated only when a current member has verified CV,
+publication, faculty teaching, or tool material. They do not invent
+biographies or photos. Teaching tabs are shown only for faculty.
 
 The publications index is based on the LabX paper registry and is not guaranteed
-to include the PI's full Google Scholar bibliography. The tools catalog links
-projects and papers where that relationship is recorded in the lab data.
+to include the PI's full Google Scholar bibliography. The tools catalog does
+not repeat publication details; paper/tool cross-links are maintained in the
+publication records.
 
 ## Regenerating
 

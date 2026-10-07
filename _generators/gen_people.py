@@ -8,15 +8,16 @@ degree, entry/exit year, status, generic affiliation, GitHub handle, and links
 to their tools/papers.  Contact details (email, mobile, WeChat/WeCom ids,
 leader assignments, free-text notes) are deliberately NOT published.
 
-Rule for individual pages: active members of the group (PI, SCUT faculty,
-current PhD / Master / undergraduate) get a page at /team/<nick>/. Alumni
-and external collaborators are listed on /team/ only.
+Rule for individual pages: current group members get a page at /team/<nick>/
+only when verified CV, publication, teaching, or tool material is available.
+Alumni and external collaborators are listed on /team/ only.
 
 Usage (WSL):  python3 _generators/gen_people.py
 """
 from __future__ import annotations
 
 import re
+import subprocess
 import sys
 
 import yaml
@@ -84,16 +85,60 @@ def short_paper(entry: dict) -> dict:
     }
 
 
+def tracked_profile_nicks() -> set[str]:
+    result = subprocess.run(
+        ["git", "-C", str(REPO), "ls-tree", "-r", "--name-only", "HEAD", "--", "3team"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return {
+        parts[1]
+        for path in result.stdout.splitlines()
+        if len(parts := path.split("/")) == 3
+        and parts[0] == "3team"
+        and parts[2] == "index.md"
+    }
+
+
+def write_team_redirect(path, nick: str) -> None:
+    front = {
+        "layout": "default",
+        "permalink": f"/team/{nick}/",
+        "redirect_to": "/team/",
+        "redirect_from": [f"/{nick}/", f"/people/{nick}/"],
+        "nick": nick,
+        "has_page": False,
+        "title": "Team",
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists() and PAGE_MARKER not in path.read_text(encoding="utf-8"):
+        raise RuntimeError(f"refusing to overwrite hand-maintained profile: {path}")
+    path.write_text(
+        "---\n"
+        + yaml.safe_dump(front, allow_unicode=True, sort_keys=False, width=100).strip()
+        + f"\n---\n\n{PAGE_MARKER}\n",
+        encoding="utf-8",
+    )
+
+
 def main() -> int:
+    previous_profiles = tracked_profile_nicks()
     roster = load_roster()
     pub_docs: list[dict] = []
     if PUBLICATIONS.exists():
         pub_docs = yaml.safe_load(PUBLICATIONS.read_text(encoding="utf-8")) or []
     tool_docs = yaml.safe_load(TOOLS.read_text(encoding="utf-8")) or []
+    teaching_docs = yaml.safe_load(
+        (DATA / "member_teaching.yml").read_text(encoding="utf-8")
+    ) or []
     tools_by_member: dict[str, set[str]] = {}
     for tool in tool_docs:
         for nick in tool.get("maintainers") or []:
             tools_by_member.setdefault(nick, set()).add(tool["key"])
+    teaching_by_member: dict[str, list[dict]] = {}
+    for item in teaching_docs:
+        teaching_by_member.setdefault(item["nick"], []).append(item)
 
     DATA.mkdir(parents=True, exist_ok=True)
     profile_sections = yaml.safe_load(
@@ -116,12 +161,21 @@ def main() -> int:
                 for key in (paper.get("tools") or [])
             } | tools_by_member.get(nick, set())
         )
+        cv_url = row.get("cv_url", "")
+        teaching = teaching_by_member.get(nick, []) if row["degree"] == "Faculty" else []
         start, end = years(row)
-        has_page = (
+        eligible_member = (
             section != "alumni"
             and row["status"] == "active"
             and (row["affiliation"].strip() in SCUT_AFFILIATION or section in {"pi", "faculty"})
         )
+        section_material = {
+            "cv": bool(cv_url),
+            "publications": bool(papers),
+            "teaching": bool(teaching),
+            "tools": bool(tools),
+        }
+        has_page = eligible_member and any(section_material.values())
         entry = {
             "nick": nick,
             "title": row["name_en"] or row["name_zh"] or nick,
@@ -139,6 +193,8 @@ def main() -> int:
             "tools": tools,
             "papers": papers,
         }
+        if cv_url:
+            entry["cv_url"] = cv_url
         people.append(entry)
 
         if has_page:
@@ -159,37 +215,10 @@ def main() -> int:
                 + f"\n---\n\n{PAGE_MARKER}\n",
                 encoding="utf-8",
             )
-            for profile_section in profile_sections:
-                section_key = profile_section.get("key")
-                section_path = (profile_section.get("path") or "").strip("/")
-                if not section_key or section_key == "who" or not section_path:
-                    continue
-                if section_key == "teaching" and row["degree"] != "Faculty":
-                    continue
-                section_page = profile_dir / section_path / "index.md"
-                section_page.parent.mkdir(parents=True, exist_ok=True)
-                section_front = {
-                    "layout": "member-section",
-                    "permalink": f"/team/{nick}/{section_path}/",
-                    "redirect_from": f"/people/{nick}/{section_path}/",
-                    "nick": nick,
-                    "profile_section": section_key,
-                    "title": f"{entry['name_en']} - {profile_section.get('label', section_key)}",
-                }
-                if section_page.exists() and PAGE_MARKER not in section_page.read_text(encoding="utf-8"):
-                    raise RuntimeError(f"refusing to overwrite hand-maintained profile section: {section_page}")
-                section_page.write_text(
-                    "---\n"
-                    + yaml.safe_dump(section_front, allow_unicode=True, sort_keys=False, width=100).strip()
-                    + f"\n---\n\n{PAGE_MARKER}\n",
-                    encoding="utf-8",
-                )
             for section in profile_sections:
                 section_key = section.get("key")
                 section_path = (section.get("path") or "").strip("/")
-                if not section_key or section_key == "who" or not section_path:
-                    continue
-                if section_key == "teaching" and row["degree"] != "Faculty":
+                if not section_key or not section_path or not section_material.get(section_key):
                     continue
                 section_page = profile_dir / section_path / "index.md"
                 section_page.parent.mkdir(parents=True, exist_ok=True)
@@ -209,6 +238,17 @@ def main() -> int:
                     + f"\n---\n\n{PAGE_MARKER}\n",
                     encoding="utf-8",
                 )
+            for section_page in profile_dir.rglob("index.md"):
+                text = section_page.read_text(encoding="utf-8")
+                if PAGE_MARKER not in text or section_page == page_path:
+                    continue
+                try:
+                    old_section = yaml.safe_load(text.split("---", 2)[1]) or {}
+                except (IndexError, yaml.YAMLError):
+                    continue
+                section_key = old_section.get("profile_section")
+                if section_key and not section_material.get(section_key, False):
+                    section_page.unlink()
             pages += 1
 
     # Remove only the empty, generated collection pages from the old layout.
@@ -250,7 +290,7 @@ def main() -> int:
             continue
         if old_profile.get("nick") not in active_nicks:
             for generated_page in profile_page.parent.rglob("index.md"):
-                if PAGE_MARKER in generated_page.read_text(encoding="utf-8"):
+                if generated_page != profile_page and PAGE_MARKER in generated_page.read_text(encoding="utf-8"):
                     generated_page.unlink()
             for directory in sorted(
                 (path for path in profile_page.parent.rglob("*") if path.is_dir()),
@@ -259,8 +299,10 @@ def main() -> int:
             ):
                 if not any(directory.iterdir()):
                     directory.rmdir()
-            if not any(profile_page.parent.iterdir()):
-                profile_page.parent.rmdir()
+            write_team_redirect(profile_page, old_profile["nick"])
+
+    for nick in previous_profiles - active_nicks:
+        write_team_redirect(PROFILE_ROOT / nick / "index.md", nick)
 
     for nick in nonfaculty_nicks:
         profile_dir = PROFILE_ROOT / nick

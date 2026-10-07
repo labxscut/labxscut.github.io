@@ -1,78 +1,52 @@
-# Site deployment handoff
+# LabX website handoff
 
 ## Priority
 
-Get the existing site building and deployed on GitHub Pages before adding or
-polishing content. The owner wants a usable site first; do not spend time
-filling out biographies or other optional details.
+Keep the website building and deployed. Finish owner-requested site changes
+before spending time on optional profile details.
 
-## Current state
+## Changes in progress
 
-- Repository: `D:\work\labxscut\labxscut.github.io`
-- Branch: `main`
-- The deployed site revision is `043cebe` (`fix: use a Pages-compatible font
-  stylesheet`).
-- GitHub Pages uses the legacy `main:/` source. A push to `main` triggers the
-  Pages build/deploy.
-- Pages run [#31](https://github.com/labxscut/labxscut.github.io/actions/runs/37494805517)
-  for commit `043cebe` completed successfully, including both build and deploy.
-- Public HTTP checks returned 200 for `/`, `/team/`, and `/team/lcx/`.
-  `/people/` returns the expected redirect page pointing to `/team/`.
-  `_styles/section.css` also returns 200. The Team page now has a direct Google
-  Fonts stylesheet URL and no stale `_styles/-theme.scss` URL.
-- Release `v2026.10.07` was created from deployed commit `6c75a12` and is
-  published at
-  https://github.com/labxscut/labxscut.github.io/releases/tag/v2026.10.07.
-  The older `v2026.10.06` tag was not moved. The small font-loader correction
-  in `043cebe` was deployed afterward.
-- The latest remote Pages run is `37484144252` (run 28), failed at
-  `b98b127`. Its first failure was a Liquid syntax error in the old
-  `publications/index.md`, caused by a `where_exp` condition. The replacement
-  `5publications/index.md` uses Liquid loops. Run 29 then exposed the legacy
-  Sass `max(calc(...))` incompatibility; commit `6c75a12` fixed it using
-  `unquote`. The direct font URL fix is in `043cebe`.
-- No local Jekyll build was possible in the current Windows environment:
-  `ruby` and `bundle` are not available on `PATH`; the remote Pages build is
-  the authoritative validation.
+- [x] Replace the SCUT seal with the local LabX logo in `images/logo.png`.
+- [x] Default new visitors to the dark navy/blue palette; use warm brown/gray
+  colors in light mode and make the header/footer follow the selected theme.
+- [x] Rename the visible top-level sections to About and Engage, with redirects
+  preserved from `/research/` and `/join/`.
+- [x] Set the public contact email to `lcxia@scut.edu.cn` and remove the
+  template/affiliation credit line from the footer.
+- [x] Remove the Who tab and the profile landing-page copies of tool and paper
+  lists. Do not repeat related paper details under the Tools catalog.
+- [x] Generate individual Team links/pages only for current members with
+  verified CV, publication, faculty teaching, or tool material. Render only
+  profile sections that have material; Teaching is faculty-only.
+- [x] Add PI ORCID `0000-0003-0868-1923`.
+- [x] Add verified ISLDSu course links to the PI Teaching section. The GitHub
+  repository requires authorization (the public fetch returned 404); the
+  Ulearning destination is access-controlled by Ulearning. No verified Gitee
+  mirror was found.
 
-## Work completed
+## Remaining blockers
 
-- Reorganized the top sections into numbered folders `1news/` through
-  `7engage/`; section index pages preserve their intended public routes.
-- Renamed `3people/` to `3team/`, changed the visible title to Team, and moved
-  profile routes to `/team/`. Added redirects from legacy `/people/` routes.
-- Kept individual profiles and their CV, publications, and tools sections.
-  Teaching is generated and shown only for faculty (including the PI); the
-  generated Teaching pages were removed from the other 30 profiles. Six
-  faculty profiles currently have Teaching pages.
-- Updated navigation, internal links, profile generation, and README/design
-  handoff documentation.
-- Added `0design/README.md` and `AGENTS.md` for future-agent context; Jekyll
-  excludes these internal notes from the published site.
-- Fixed the earlier background-image Liquid/URI issue and simplified the
-  stylesheet filter in commits already pushed to `main`.
-- Local checks passed: Python syntax validation for `_generators/gen_people.py`,
-  route/count checks for 36 profiles and 114 profile-section pages, and
-  `git diff --check` (using `core.whitespace=cr-at-eol`).
+- [ ] Complete the PI bibliography against Google Scholar. Automated requests
+  are returning only partial citation data, so the current site registry is
+  not a complete match. Ask the owner for a Google Scholar BibTeX/CSV export,
+  then merge and deduplicate only verified published papers.
+- [ ] Commit and push the verified site changes to `main`; inspect the GitHub
+  Pages build/deploy and verify the live navigation, logo, profile routes, and
+  theme toggle. A local Jekyll build is unavailable because Ruby/Bundler are
+  not on the Windows PATH.
 
-## Immediate next steps
+## Constraints and verification
 
-1. No deployment blocker remains. For any future code change, inspect the
-   resulting Pages run and verify the public URL before describing that version
-   as live.
-2. Avoid optional profile-content work until requested; the user prioritizes a
-   running site over fully populated profiles.
-
-## Known constraints
-
-- GitHub Pages currently builds with `github-pages v232`, Jekyll `3.10.0`,
-  Liquid `4.0.4`, and Sass `3.7.4`; the repository Gemfile's Jekyll 4
-  dependency was not honored by that Pages build. Keep Liquid expressions
-  compatible with the actual Pages runtime, avoid compound `where_exp`
-  predicates, and avoid Sass `max()`/`min()` numeric functions with CSS
-  `calc()` expressions.
-- Pages is live and verified at the public URLs above. The deployment blockers
-  from the earlier attempts (Liquid `where_exp` parsing and Sass 3.7 CSS
-  `max(calc(...))` parsing) are fixed in the deployed revision.
-- The font URL fix is deployed and verified.
-- Keep the restraint on optional profile content.
+- Google Pages uses the repository root on `main` (`main:/`). A successful
+  Pages deployment is required before describing a change as live.
+- The live GitHub Pages runtime is Jekyll 3.10/Liquid 4.0/Sass 3.7. Avoid
+  compound `where_exp` expressions and Sass `max()`/`min()` around `calc()`.
+- The profile generator is `_generators/gen_people.py`; generated
+  `_data/people.yml` and profile pages must be regenerated from source.
+  Preserve its refusal to overwrite hand-maintained pages.
+- Do not publish private roster details, student records, credentials, or
+  course materials. Teaching links must leave authorization to the hosting
+  service.
+- Do not claim the Scholar bibliography is complete until compared against a
+  full owner-provided export.

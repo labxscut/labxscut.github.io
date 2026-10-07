@@ -1,2 +1,11 @@
-# Add only verified public teaching records, keyed to a roster nick.
-[]
+# Link only to course resources whose access is controlled by the hosting
+# platform (GitHub, Gitee, Ulearning, etc.).
+- nick: lcx
+  title: Introduction to Statistical Learning and Data Science (ISLDSu)
+  term: Spring 2026
+  role: Instructor
+  links:
+    - label: Course materials (GitHub)
+      url: https://github.com/labxscut/teach/tree/main/9Uslds/26islds
+    - label: Ulearning course page
+      url: https://courseweb.ulearning.cn/ulearning/index.html#/course/homework?courseId=162188

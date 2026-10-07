@@ -1,13 +1,14 @@
 ---
-title: Overview
+title: About
 description: "Research themes at LabX."
-permalink: /research/
+permalink: /about/
+redirect_from: /research/
 nav:
   order: 2
   tooltip: Research themes
 ---
 
-# Overview
+# About
 
 We develop computational methods for biological and clinical data, with a focus
 on transparent, reproducible analysis.

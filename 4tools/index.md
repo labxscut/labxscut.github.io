@@ -37,18 +37,5 @@ records.
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
 </div>
 
-{% assign linked_papers = "" | split: "" %}
-{% for paper in site.data.publications %}
-  {% if tool.papers contains paper.slug %}
-    {% assign linked_papers = linked_papers | push: paper %}
-  {% endif %}
-{% endfor %}
-{% if linked_papers.size > 0 %}
-**Related publications**
-{% for paper in linked_papers %}
-- [{{ paper.title }}](/publications/#{{ paper.slug | slugify }}) — {{ paper.venue }}, {{ paper.year }}
-{% endfor %}
-{% endif %}
-
 </article>
 {% endfor %}

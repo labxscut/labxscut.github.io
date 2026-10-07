@@ -823,7 +823,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: xyh
@@ -877,7 +877,7 @@
   status: active
   affiliation: ''
   github: lzj-scut
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: cpy
@@ -892,7 +892,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: sxf
@@ -907,7 +907,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: bal
@@ -922,7 +922,7 @@
   status: active
   affiliation: ''
   github: balscut
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: wyx
@@ -960,7 +960,7 @@
   status: active
   affiliation: ''
   github: labxnjt
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: pel
@@ -1018,7 +1018,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: lyc
@@ -1033,7 +1033,7 @@
   status: active
   affiliation: ''
   github: labxlyc
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: cqw
@@ -1070,7 +1070,7 @@
   status: active
   affiliation: ''
   github: ych-kes
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: bxq
@@ -1234,7 +1234,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: kxf
@@ -1265,7 +1265,7 @@
   status: active
   affiliation: ''
   github: preeced809-ai
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: wxy
@@ -1280,7 +1280,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: lcx
@@ -1444,7 +1444,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: cxy
@@ -1459,7 +1459,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: fyy
@@ -1474,7 +1474,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: qxi
@@ -1489,7 +1489,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: sca
@@ -1504,7 +1504,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: zmx
@@ -1519,7 +1519,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: zxy
@@ -1534,7 +1534,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: zyq
@@ -1549,7 +1549,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: czq
@@ -1579,7 +1579,7 @@
   status: active
   affiliation: ''
   github: ''
-  has_page: true
+  has_page: false
   tools: []
   papers: []
 - nick: hua
