@@ -24,6 +24,9 @@ before spending time on optional profile details.
   repository requires authorization (the public fetch returned 404); the
   Ulearning destination is access-controlled by Ulearning. No verified Gitee
   mirror was found.
+- [x] Fix live profile rendering so profile pages bypass the generic section
+  parser, preventing duplicated/malformed profile markup; prefer the deployed
+  LabX PNG over the missing SVG logo.
 
 ## Remaining blockers
 
@@ -31,10 +34,18 @@ before spending time on optional profile details.
   are returning only partial citation data, so the current site registry is
   not a complete match. Ask the owner for a Google Scholar BibTeX/CSV export,
   then merge and deduplicate only verified published papers.
-- [ ] Commit and push the verified site changes to `main`; inspect the GitHub
-  Pages build/deploy and verify the live navigation, logo, profile routes, and
-  theme toggle. A local Jekyll build is unavailable because Ruby/Bundler are
-  not on the Windows PATH.
+
+## Latest deployment
+
+- Commit `9a0b042` is pushed to `main`; GitHub Pages build and deployment run
+  [#34](https://github.com/labxscut/labxscut.github.io/actions/runs/37559440646)
+  passed.
+- Live checks passed for `/team/lcx/`, `/team/lcx/teaching/`, and `/about/`:
+  one profile shell per member page, no malformed wrapper/artifact, PNG logo
+  rendered, course links present, and ordinary content sections preserved.
+- A local Jekyll build remains unavailable because Ruby/Bundler are not on
+  the Windows PATH; the successful GitHub Pages build is the deployment
+  authority.
 
 ## Constraints and verification
 
