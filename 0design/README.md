@@ -55,6 +55,10 @@ and generator output whenever a section path changes.
   `_generators/gen_people.py`; `_data/publications.yml` is generated from the
   publication registry by `_generators/gen_publications.py`. Regenerate from
   their sources rather than editing generated output by hand.
+- Curate verified public CV PDF links in `_data/member_profiles.yml`. When
+  reviewing a member's GitHub material, check for the person's same-named
+  public repository and confirm the PDF itself before adding its `cv_url` and
+  `cv_repository_url`; never guess links or expose private material.
 - Use [`labxscut.github.io.md`](./labxscut.github.io.md) as the readable,
   structured intake template for research directions, people, publications,
   tools, and courses. It is internal curation guidance, not live site data;

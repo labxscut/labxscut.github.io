@@ -97,7 +97,8 @@ people:
     short_bio: TODO-verified concise biography
     research_keywords: [TODO]
     profile_links:
-      cv: TODO-public-url-or-omit
+      cv_url: TODO-direct-link-to-verified-public-PDF-or-omit
+      cv_repository_url: TODO-public-GitHub-repository-named-for-this-person-or-omit
       orcid: TODO-verified-url-or-omit
       scholar: TODO-verified-url-or-omit
       github: TODO-verified-url-or-omit
@@ -170,6 +171,13 @@ courses:
   direction as an aspiration and leave its selected-paper list empty.
 - People records use approved public names and facts; use the existing
   roster/generator for member pages and do not expose private roster fields.
+- For a CV, check for a public GitHub repository named after the person's
+  public nick, then verify that it contains their intended CV PDF. Do not
+  infer a repository, owner, filename, or permission. Add the verified direct
+  PDF URL as `cv_url` and repository URL as `cv_repository_url` to
+  `_data/member_profiles.yml`; the profile panel and CV tab use that curated
+  URL. The CV should appear in the left profile panel only after its public PDF
+  link has been verified.
 - Tools and courses link to their authoritative repositories/platforms.
   Hosting providers control access; do not mirror restricted resources.
 - Keep canonical website data in `_data/research.yml`, `_data/people.yml`,

@@ -22,6 +22,9 @@
         {% include button.html type="orcid" text="ORCID" link=site.data.identity.pi.orcid style="bare" %}
       {% endif %}
     </div>
+    {% if member.cv_url != nil and member.cv_url != "" %}
+      <p class="labx-profile-cv"><a href="{{ member.cv_url }}">View CV (PDF)</a></p>
+    {% endif %}
   </aside>
 
   <div class="labx-profile-main">

@@ -29,9 +29,12 @@ each section page's `nav.order`. The old News URL `/blog/` redirects to
 
 * `_data/publications.yml` — from `~/work/advisee/hc/labxManage/Paper/*/publication.yaml`
   (published and accepted records; duplicates, WIP, under-review, and placeholders are excluded).
-* `_data/people.yml` and `/team/<nick>/index.md` — from `~/work/advisee/core/database/contact.md`.
-  Only public-safe fields are copied; emails, phone numbers, chat ids, leaders, and
-  notes stay in the roster. Legacy `/<nick>/` URLs redirect to the nested profiles.
+* `_data/people.yml` and `/team/<nick>/index.md` — from `~/work/advisee/core/database/contact.md`
+  and curated public CV links in `_data/member_profiles.yml`. Only public-safe
+  fields are copied; emails, phone numbers, chat ids, leaders, and notes stay
+  in the roster. CV links must point to verified PDFs in public GitHub
+  repositories named for the member. Legacy `/<nick>/` URLs redirect to the
+  nested profiles.
 
 Member pages are generated only when a current member has verified CV,
 publication, faculty teaching, or tool material. They do not invent
