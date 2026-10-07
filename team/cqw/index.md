@@ -13,10 +13,12 @@ degree: Master
 section: master
 start_year: ''
 end_year: ''
+years: ''
 status: active
 affiliation: ''
 github: Cqianwen
 has_page: true
+site: true
 tools:
 - sxSNF
 papers:

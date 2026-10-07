@@ -13,10 +13,12 @@ degree: Faculty
 section: pi
 start_year: ''
 end_year: ''
+years: ''
 status: active
 affiliation: ''
 github: chaelir
 has_page: true
+site: true
 tools:
 - CCNMF
 - UGES

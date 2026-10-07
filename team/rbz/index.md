@@ -13,10 +13,12 @@ degree: PhD
 section: phd
 start_year: '2022'
 end_year: ''
+years: 2022i
 status: active
 affiliation: ''
 github: Bren0314
 has_page: true
+site: true
 tools:
 - sxEnzHier
 papers:

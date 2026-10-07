@@ -13,10 +13,12 @@ degree: PhD
 section: phd
 start_year: '2025'
 end_year: ''
+years: 2025i
 status: active
 affiliation: ''
 github: labxHXY
 has_page: true
+site: true
 tools:
 - sxLaep
 papers: []

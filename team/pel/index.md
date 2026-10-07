@@ -13,10 +13,12 @@ degree: Master
 section: master
 start_year: '2025'
 end_year: ''
+years: 2025i
 status: active
 affiliation: ''
 github: penglei0501
 has_page: true
+site: true
 tools: []
 papers:
 - slug: RenICAITE26MultimodalMathExpl

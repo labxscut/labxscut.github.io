@@ -13,10 +13,12 @@ degree: Master
 section: master
 start_year: '2025'
 end_year: ''
+years: 2025i
 status: active
 affiliation: ''
 github: xhx-labxscut
 has_page: true
+site: true
 tools: []
 papers:
 - slug: WangBIBM2024sxFusion

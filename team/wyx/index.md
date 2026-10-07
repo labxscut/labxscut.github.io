@@ -13,10 +13,12 @@ degree: Master
 section: master
 start_year: '2024'
 end_year: ''
+years: 2024i
 status: active
 affiliation: ''
 github: WuMiranda
 has_page: true
+site: true
 tools:
 - sxEnzHier
 papers:

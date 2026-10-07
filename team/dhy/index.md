@@ -13,10 +13,12 @@ degree: PhD
 section: phd
 start_year: '2023'
 end_year: ''
+years: 2023i
 status: active
 affiliation: ''
 github: duanHY-26
 has_page: true
+site: true
 tools:
 - UGES
 - sxEnzHier

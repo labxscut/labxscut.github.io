@@ -54,9 +54,28 @@ def load_roster() -> list[dict]:
                 "name_en": name_en,
                 "name_zh": name_zh,
                 "github": gh.group(1) if gh else "",
+                # Optional note markers curated in the roster:
+                #   Type=<label>   relationship label (Collaborator, VisitingScholar, ...)
+                #   Site=false     hide the public labxscut.github.io page
+                #   Alumni=true    list under Alumni while still collaborating
+                #   Now=<text>     current position shown on the public profile
+                "type": match_note_marker(note, "Type"),
+                "site": "false" if match_note_marker(note, "Site") == "false" else "",
+                "alumni": match_note_marker(note, "Alumni") == "true",
+                "now": match_note_marker(note, "Now"),
             }
         )
     return rows
+
+
+def match_note_marker(note: str, key: str) -> str:
+    """Return the value of a ``Key=value`` marker embedded in a roster note.
+
+    Markers are ``; ``-separated, so the value may contain spaces as long as it
+    does not contain a semicolon.
+    """
+    match = re.search(rf"\b{key}=(.*?)(?:\s*;\s*|\s*$)", note or "")
+    return match.group(1).strip() if match else ""
 
 
 def roster_lookup(rows: list[dict]) -> dict[str, dict]:

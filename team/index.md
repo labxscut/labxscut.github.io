@@ -14,7 +14,7 @@ LabX is led by {{ site.data.identity.pi.name_en }} ({{ site.data.identity.pi.nam
 at the School of Mathematics, South China University of Technology. Personal
 pages link from current members' names. Contact details are not published here.
 
-{% assign sections = "pi:Principal investigator,faculty:Faculty,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni and collaborators" | split: "," %}
+{% assign sections = "pi:Principal investigator,faculty:Faculty,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni,collaborator:Collaborators,visiting:Visiting scholars" | split: "," %}
 {% for entry in sections %}
   {% assign pair = entry | split: ":" %}
   {% assign group = site.data.people | where: "section", pair[0] %}
@@ -23,7 +23,7 @@ pages link from current members' names. Contact details are not published here.
 ## {{ pair[1] }}
 
 {% for person in group %}
-{% if person.has_page %}[**{{ person.name_en }}**](/team/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh != "" %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.start_year != "" %} ({{ person.start_year }}{% if person.end_year != "" %}–{{ person.end_year }}{% endif %}){% endif %}{% if person.affiliation != "" %} · {{ person.affiliation }}{% endif %}{% if person.github != "" %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
+{% if person.has_page %}[**{{ person.name_en }}**](/team/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.years %} ({{ person.years }}){% endif %}{% if person.affiliation %} · {{ person.affiliation }}{% endif %}{% if person.now %} · now {{ person.now }}{% endif %}{% if person.github %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
 
 {% endfor %}
   {% endif %}

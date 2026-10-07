@@ -13,10 +13,12 @@ degree: Under
 section: under
 start_year: ''
 end_year: ''
+years: ''
 status: active
 affiliation: ''
 github: CirinMok
 has_page: true
+site: true
 tools:
 - sxLaep
 papers: []

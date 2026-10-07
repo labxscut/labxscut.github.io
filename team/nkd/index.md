@@ -13,10 +13,12 @@ degree: Faculty
 section: faculty
 start_year: ''
 end_year: ''
+years: ''
 status: active
 affiliation: ''
 github: ''
 has_page: true
+site: true
 tools:
 - UGES
 papers:

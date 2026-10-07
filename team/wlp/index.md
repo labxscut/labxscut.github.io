@@ -13,10 +13,12 @@ degree: PhD
 section: phd
 start_year: '2024'
 end_year: ''
+years: 2024i
 status: active
 affiliation: ''
 github: labxwlp
 has_page: true
+site: true
 tools: []
 papers:
 - slug: WangBIBM2024sxFusion

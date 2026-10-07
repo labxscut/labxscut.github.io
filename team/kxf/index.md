@@ -13,10 +13,12 @@ degree: PhD
 section: phd
 start_year: '2026'
 end_year: ''
+years: 2026i
 status: active
 affiliation: ''
 github: kxf-scut
 has_page: true
+site: true
 tools:
 - deeplb
 papers: []

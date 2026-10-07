@@ -17,7 +17,16 @@
       <p><a href="{{ site.data.identity.affiliation.website }}">{{ site.data.identity.affiliation.unit_en }}</a></p>
       <p>{{ site.data.identity.affiliation.university_en }}</p>
     {% endif %}
-    {% if member.start_year != "" %}<p>With LabX since {{ member.start_year }}</p>{% endif %}
+    {% if member.years %}
+      {% if member.section == "alumni" %}
+        <p>LabX {{ member.years }}</p>
+      {% else %}
+        <p>With LabX since {{ member.start_year }}</p>
+      {% endif %}
+    {% endif %}
+    {% if member.now %}
+      <p>Now: {{ member.now }}</p>
+    {% endif %}
     <div class="labx-profile-links">
       {% if member.github != "" %}
         {% assign github_url = "https://github.com/" | append: member.github %}
