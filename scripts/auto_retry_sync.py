@@ -33,6 +33,21 @@ TOOLS = ("sxLaep", "sxSNF", "deeplb")
 TRAILER = "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
 _LOG_PATH: Path | None = None
+LOG_MAX_BYTES = 1_000_000
+LOG_KEEP_BYTES = 200_000
+
+
+def rotate_log() -> None:
+    """Keep the resident watcher's log bounded by trimming old lines."""
+    if _LOG_PATH is None:
+        return
+    try:
+        if _LOG_PATH.stat().st_size <= LOG_MAX_BYTES:
+            return
+        tail = _LOG_PATH.read_bytes()[-LOG_KEEP_BYTES:]
+        _LOG_PATH.write_bytes(b"[log trimmed]\n" + tail)
+    except OSError:
+        pass
 
 
 def log(message: str) -> None:
@@ -204,6 +219,7 @@ def main() -> int:
         attempt = 0
         while True:
             attempt += 1
+            rotate_log()
             limit = "inf" if args.forever else str(args.attempts)
             log(f"attempt {attempt}/{limit}")
             try:
