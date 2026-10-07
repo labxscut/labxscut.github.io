@@ -10,8 +10,8 @@ nav:
 
 # About
 
-We develop computational methods for biological and clinical data, with a focus
-on transparent, reproducible analysis.
+We develop AI methods and apply them to biomedical sciences and emerging
+scientific fields.
 
 {% for theme in site.data.research %}
 ## {{ theme.title }}
@@ -19,4 +19,19 @@ on transparent, reproducible analysis.
 {{ theme.summary }}
 
 {% if theme.keywords.size > 0 %}**Topics:** {{ theme.keywords | join: " · " }}{% endif %}
+
+{% if theme.selected_papers.size > 0 %}
+
+**Selected work**
+
+{% for selected in theme.selected_papers %}
+{% assign paper = site.data.publications | where: "slug", selected.slug | first %}
+{% if paper %}
+- {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %} ({{ paper.year }}). {{ selected.narrative }}
+{% endif %}
+{% endfor %}
+{% elsif theme.evidence_note %}
+
+{{ theme.evidence_note }}
+{% endif %}
 {% endfor %}

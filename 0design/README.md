@@ -55,6 +55,11 @@ and generator output whenever a section path changes.
   `_generators/gen_people.py`; `_data/publications.yml` is generated from the
   publication registry by `_generators/gen_publications.py`. Regenerate from
   their sources rather than editing generated output by hand.
+- Use [`labxscut.github.io.md`](./labxscut.github.io.md) as the readable,
+  structured intake template for research directions, people, publications,
+  tools, and courses. It is internal curation guidance, not live site data;
+  promote verified and approved records into the canonical `_data/*.yml`
+  sources.
 - Publish only verified, public-safe roster fields. Never expose email,
   telephone, chat IDs, leader assignments, or private notes from the roster.
   Do not invent biographies, credentials, photos, or funding availability.

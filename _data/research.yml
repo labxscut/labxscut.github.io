@@ -1,37 +1,69 @@
-# Research themes, phrased from the group's own tools and records.
-- key: single-cell
-  title: Single-cell and multi-omics integration
-  icon: "🕸"
+# Public research directions. Keep keywords concise and attach only verified
+# publication slugs from publications.yml with a factual, plain-language note.
+- key: ai-theory
+  title: AI theory and learning methodology
   summary: >-
-    Fusing modality-specific single-cell measurements into one coherent view,
-    using geometry-anchored similarity network fusion and self-supervised graph
-    learning.
-  keywords: [single-cell, multi-omics, graph learning, SNF]
-  tools: [sxSNF, sxELA]
+    We study the principles behind reliable learning: generalization bounds,
+    domain transfer under distribution shift, hierarchical learning, and
+    multi-model and multimodal learning.
+  keywords:
+    - learning bounds
+    - domain transfer
+    - distribution shift
+    - hierarchical learning
+    - multi-model learning
+    - multimodal learning
+  selected_papers:
+    - slug: ChenICML25DshiftShort
+      narrative: >-
+        Develops an estimable learning bound that unifies covariate and concept
+        shift, connecting distribution-shift analysis with generalization.
 
-- key: protein
-  title: Protein and enzyme function prediction
-  icon: "🧪"
+- key: biomedical-ai
+  title: AI for biomedical sciences
   summary: >-
-    Sequence-based prediction of enzyme function, from rapid binary enzyme
-    screening to hierarchical EC-class assignment and contrastive embeddings.
-  keywords: [enzyme, EC number, sequence features, XGBoost]
-  tools: [sxLaep, sxRaep, sxEnzHier]
+    We develop AI methods for enzyme-function prediction, single-cell
+    genomics, metagenomic and phylogenomic analysis, and clinical data.
+  keywords:
+    - enzyme function prediction
+    - single-cell genomics
+    - multi-omics
+    - metagenomics
+    - phylogenomics
+    - clinical sciences
+  selected_papers:
+    - slug: DuanISBRA2025EnzHier
+      narrative: >-
+        Integrates multi-scale protein-sequence features with hierarchical
+        contrastive learning to predict enzyme function.
+    - slug: Duan2025sxSNF
+      narrative: >-
+        Combines similarity-network fusion with deep graph learning to
+        integrate multimodal single-cell measurements.
+    - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
+      narrative: >-
+        Presents a high-throughput alignment-free phylogenetics tool, relevant
+        to scalable analysis of microbial sequence data.
+    - slug: YuHGGadv2025MtagHF
+      narrative: >-
+        Uses multi-trait genome-wide analysis to identify heart-failure risk
+        loci and candidate drugs.
+    - slug: ChangTCBB2025UGESdeng
+      narrative: >-
+        Combines genetic and epigenetic signals with hierarchical learning to
+        predict breast-cancer intrinsic subtypes from DNA-level multi-omics.
 
-- key: cancer
-  title: Cancer genomics and liquid biopsy
-  icon: "🩸"
+- key: materials-and-frontiers
+  title: AI for materials science and emerging fields
   summary: >-
-    Deep learning on cfDNA methylation sequencing and tumour methylation arrays
-    to detect tumour-derived fragments and score cancer risk from a blood draw.
-  keywords: [cfDNA, methylation, deep learning, early detection]
-  tools: [deeplb, HCG, UGES]
-
-- key: methods
-  title: Statistical and machine-learning methodology
-  icon: "📐"
-  summary: >-
-    The statistics behind the tools: distribution shift, estimable learning
-    bounds, local genetic association, and survival learning across databases.
-  keywords: [distribution shift, learning bounds, local association, survival]
-  tools: [DHMOC, CCNMF, CTRhythm, SPRINT]
+    We aim to extend AI-for-science methods to materials science and other
+    cutting-edge research fields, in collaboration with domain experts.
+  keywords:
+    - materials science
+    - scientific machine learning
+    - emerging research fields
+  selected_papers: []
+  evidence_note: >-
+    Add representative papers and tool links after their relevance to this
+    direction has been verified; the current publication registry has no
+    confirmed materials-science example.
