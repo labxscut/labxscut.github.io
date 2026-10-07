@@ -25,7 +25,8 @@ import yaml
 from gen_publications import REPO, load_roster
 
 OUT_DIR = REPO
-PROFILE_ROOT = REPO / "3team"
+TEAM_DIR = "team"
+PROFILE_ROOT = REPO / TEAM_DIR
 LEGACY_OUT_DIR = REPO / "_people"
 DATA = REPO / "_data"
 PUBLICATIONS = DATA / "publications.yml"
@@ -87,7 +88,7 @@ def short_paper(entry: dict) -> dict:
 
 def tracked_profile_nicks() -> set[str]:
     result = subprocess.run(
-        ["git", "-C", str(REPO), "ls-tree", "-r", "--name-only", "HEAD", "--", "3team"],
+        ["git", "-C", str(REPO), "ls-tree", "-r", "--name-only", "HEAD", "--", TEAM_DIR],
         check=True,
         capture_output=True,
         text=True,
@@ -96,7 +97,7 @@ def tracked_profile_nicks() -> set[str]:
         parts[1]
         for path in result.stdout.splitlines()
         if len(parts := path.split("/")) == 3
-        and parts[0] == "3team"
+        and parts[0] == TEAM_DIR
         and parts[2] == "index.md"
     }
 

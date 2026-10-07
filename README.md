@@ -11,18 +11,19 @@ while sharing the lab template's styles and assets.
 | Path | Role |
 |------|------|
 | `index.md` | front door: research themes, tools, people, and news |
-| `1news/`, `_posts/` | group news, notes, and updates |
-| `2about/` | About: research themes and group overview (`/about/`) |
-| `3team/` | collective roster and al-folio-inspired `/team/<nick>/` profiles |
-| `4tools/` | collective tools index and project documentation |
-| `5publications/` | published and accepted papers, generated and deduplicated from the lab registry |
-| `6activities/` | seminars, workshops, and other group activities |
-| `7engage/` | Engage: opportunities and contact information (`/engage/`) |
+| `news/`, `_posts/` | group news, notes, and updates (`/news/`) |
+| `about/` | About: research themes and group overview (`/about/`) |
+| `team/` | collective roster and al-folio-inspired `/team/<nick>/` profiles |
+| `tools/` | collective tools index and project documentation (`/tools/`) |
+| `publications/` | published and accepted papers, generated and deduplicated from the lab registry (`/publications/`) |
+| `activities/` | seminars, workshops, and other group activities (`/activities/`) |
+| `engage/` | Engage: opportunities and contact information (`/engage/`) |
 | `_data/`, `_includes/`, `_layouts/`, `_plugins/`, `_styles/`, `images/` | data, Greene template components, and shared assets |
 
-The numeric prefixes on the section folders express the intended top-navigation
-order. Explicit permalinks preserve established public URLs when the physical
-folders use those prefixes.
+The section folder name, canonical browser path, and navigation label should
+stay aligned. The navigation order is recorded in `0design/README.md` and in
+each section page's `nav.order`. The old News URL `/blog/` redirects to
+`/news/`.
 
 ## Generated files (do not hand-edit)
 

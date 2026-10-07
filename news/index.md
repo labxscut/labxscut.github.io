@@ -1,7 +1,8 @@
 ---
 title: News
 description: "Notes and updates from the LabX group."
-permalink: /blog/
+permalink: /news/
+redirect_from: /blog/
 nav:
   order: 1
   tooltip: Lab notes

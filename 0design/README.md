@@ -13,27 +13,30 @@ generated site and do not publish private roster/contact information.
   attribution and license files.
 - `index.md` is the public landing page. Shared presentation lives in
   `_includes/`, `_layouts/`, `_styles/`, and `_plugins/`; content/data live in
-  the numbered sections and `_data/`.
-- The top-level numbered folders are an intentional owner convention: their
-  numeric prefixes represent the top-navigation order, not page titles.
+  the named sections and `_data/`.
+- Public section folder names should match their canonical browser paths.
+  Avoid numeric prefixes so filesystem paths and navigation links are easy
+  to compare.
 
-## Navigation and numbered sections
+## Navigation and canonical paths
 
-| Folder | Navigation label | Order |
-| --- | --- | ---: |
-| `1news/` | News | 1 |
-| `2about/` | About | 2 |
-| `3team/` | Team | 3 |
-| `4tools/` | Tools | 4 |
-| `5publications/` | Publications | 5 |
-| `6activities/` | Activities | 6 |
-| `7engage/` | Engage | 7 |
+Keep this tab order and use the matching section folder and canonical URL:
 
-Keep each landing page's `nav.order` consistent with the folder prefix. These
-prefixes are filesystem organization only: Jekyll derives URLs from paths, so
-preserve intended public URLs with explicit permalinks and redirects. Audit
-internal links, generated pages, and generator output whenever a numbered
-folder is moved or renamed.
+| Order | Folder | Navigation label | Canonical URL |
+| ---: | --- | --- | --- |
+| 1 | `news/` | News | `/news/` |
+| 2 | `about/` | About | `/about/` |
+| 3 | `team/` | Team | `/team/` |
+| 4 | `tools/` | Tools | `/tools/` |
+| 5 | `publications/` | Publications | `/publications/` |
+| 6 | `activities/` | Activities | `/activities/` |
+| 7 | `engage/` | Engage | `/engage/` |
+
+Each landing page's `nav.order` is the source for tab ordering and must match
+this table. Keep folder names, canonical permalinks, and navigation links
+aligned. Preserve changed historical URLs with redirects; `/blog/` redirects
+to the canonical News path `/news/`. Audit internal links, generated pages,
+and generator output whenever a section path changes.
 
 ## Visual identity and contact
 
@@ -74,7 +77,7 @@ profile when there is verified CV, publication, faculty teaching, or tool
 material. Only render tabs with material; do not use a generic placeholder CV.
 Teaching is faculty-only and links directly to course material hosted by
 GitHub/Gitee/Ulearning so each platform controls access. The generator writes
-physical pages under `3team/` and sets explicit `/team/<nick>/...` permalinks.
+physical pages under `team/` and sets explicit `/team/<nick>/...` permalinks.
 Legacy `/people/` URLs redirect to their `/team/` counterparts. Do not add a
 Who tab or repeat selected tools/papers on the profile landing page.
 Generated section pages use `member-section` and the section definitions in
@@ -96,13 +99,12 @@ only verified profile data.
 - Do not stage all files, discard changes, or rewrite tags to make deployment
   easier. Inspect the working tree and publish only the intended site changes.
 
-## Current handoff
+## Handoff priorities
 
-- The current baseline is `a11d6d2`; the numbered sections, canonical Team
-  routes, legacy redirects, and GitHub Pages deployment are already verified.
-- Pending visual/content updates are tracked in the repository-root `todo.md`.
-  Before calling this refresh complete, validate the generated profile pages,
-  confirm a Pages build/deploy, and verify the live logo, navigation, and
-  routes.
-- The full Google Scholar bibliography remains blocked on obtaining a complete
-  Scholar export. Never represent the current LabX registry as complete.
+- When changing section names or paths, verify navigation order, canonical
+  routes, redirects, and the deployed Pages build before describing the change
+  as live.
+- Check the repository-root `todo.md` for current deployment and content work.
+- The full Google Scholar bibliography requires a complete owner-provided
+  export. Never represent the current LabX registry as complete without that
+  comparison.
