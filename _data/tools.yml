@@ -13,8 +13,10 @@
   repo: https://github.com/labxscut/sxLaep
   docs: https://labxscut.github.io/tools/sxlaep/
   docs_repo: labxscut/sxLaep
-  docs_ref: 7901794f3cfda3750098aa0d8165d06dac60bc3c
+  docs_ref: d53079a6ab7e3f69f36639199e9fc8ab71832ea9
+  docs_ref_date: 2026-10-08
   docs_release_ref: 7901794f3cfda3750098aa0d8165d06dac60bc3c
+  docs_release_ref_date: 2026-10-07
   docs_path: docs/site
   docs_slug: sxlaep
   tags: [XGBoost, protein sequences, pip]
