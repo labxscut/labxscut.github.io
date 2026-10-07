@@ -131,9 +131,17 @@ scheduled job, browser-time fetch, or Pages-build-time fetch.
   and repeats every 10 minutes only while a step fails, so transient GitHub
   `remote: Internal Server Error` push failures no longer need a manual re-run.
   It stops as soon as the pipeline is clean.
-- A host automation ("Tool docs auto-retry sync", hourly) launches that driver.
-  The scheduler's finest granularity is hourly, so the 10-minute cadence lives in
-  the script rather than in the schedule.
+- `--forever` turns the same driver into a resident watcher: it keeps re-checking
+  (every 10 minutes when something failed, every 30 minutes when clean), so a
+  recovered network connection or a new upstream doc commit gets published without
+  waiting for the hourly tick. It appends to `../logs/auto_retry_sync.log` and
+  holds `../logs/auto_retry_sync.lock`; any second instance exits 0 immediately,
+  which makes overlapping launches harmless.
+- The watcher starts at logon from the user Startup folder
+  (`labx-auto-retry-sync.bat`) and a host automation ("Tool docs auto-retry sync",
+  hourly) launches the bounded driver as a backstop that takes over if the watcher
+  died. The scheduler's finest granularity is hourly, so the 10-minute cadence
+  lives in the script rather than in the schedule.
 
 ### Current integrated tools
 
