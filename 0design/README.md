@@ -138,6 +138,13 @@ make rendering depend on CORS, network availability, and the visitor's session.
   internal local links/assets stay beneath that slug. Report any failed sync
   as a build failure instead of deploying stale or success-shaped fallback
   content.
+- sxLaep and sxSNF docs currently live in the website as static snapshots from
+  the pinned public revisions recorded in `_data/tools.yml`. Preserve the
+  requested `/tools/sxSNF/` capitalization; sxLaep uses lowercase
+  `/tools/sxlaep/`. Each tool repository's Pages workflow redirects its former
+  project URL to the canonical route. Refresh a snapshot from its source repo
+  when the pin changes; replace these copies with automated build-time syncing
+  when the website's Pages workflow is tracked and enabled.
 
 ### Migration sequence and compatibility
 
@@ -157,12 +164,12 @@ make rendering depend on CORS, network availability, and the visitor's session.
    redirects to the existing CI required-route checks; do not leave two
    separately editable copies after migration.
 
-Start with one low-risk public tool (for example, sxLaep), verify the whole
-flow, then migrate other repositories individually. The current website Pages
-workflow still contains older required-route checks; update those as part of
-the first pilot so CI validates the current named section routes and the new
-tool-doc routes rather than removed `/people/`, `/research/`, or `/join/`
-paths.
+The sxSNF route migration is the first pilot, using a pinned static snapshot
+because the website repository currently has no tracked Pages workflow for
+build-time syncing. Verify its published pages, relative links, and legacy
+redirect after deployment. Migrate other repositories individually only after
+confirming each authoritative docs source; add automated build checks when the
+website's Pages workflow is tracked and enabled.
 
 ## Profiles
 

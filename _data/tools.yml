@@ -10,7 +10,11 @@
   language: Python
   license: MIT
   repo: https://github.com/labxscut/sxLaep
-  docs: https://labxscut.github.io/sxLaep/
+  docs: https://labxscut.github.io/tools/sxlaep/
+  docs_repo: labxscut/sxLaep
+  docs_ref: 69278bb6a2206cdaa4049272097ef2f467270b6f
+  docs_path: docs
+  docs_slug: sxlaep
   tags: [XGBoost, protein sequences, pip]
   maintainers: [myj, hxy, dhy]
   papers: []
@@ -42,7 +46,11 @@
   language: Python
   license: ""
   repo: https://github.com/labxscut/sxSNF
-  docs: https://labxscut.github.io/sxSNF/
+  docs: https://labxscut.github.io/tools/sxSNF/
+  docs_repo: labxscut/sxSNF
+  docs_ref: 480217ef54af326ca7f9f151d64c986ac6638056
+  docs_path: docs
+  docs_slug: sxSNF
   tags: [single-cell, similarity network fusion, graph learning]
   maintainers: [dhy]
   papers: [Duan2025sxSNF, DuanAPBC2025SNF]
