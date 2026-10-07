@@ -4,7 +4,11 @@
   <body>
     {% include header.html %}
     <main>
-      {% include content.html content=content %}
+      {% if page.has_page or page.profile_section %}
+        {{ content }}
+      {% else %}
+        {% include content.html content=content %}
+      {% endif %}
     </main>
     {% include footer.html %}
   </body>
