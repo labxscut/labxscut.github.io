@@ -23,6 +23,11 @@ from urllib.parse import urlsplit
 
 import yaml
 
+try:  # optional: only needed to recognise Chinese-order names
+    from pypinyin import lazy_pinyin
+except ImportError:  # pragma: no cover
+    lazy_pinyin = None
+
 from gen_avatars import AVATAR_ROOT, ensure_avatar
 from gen_publications import REPO, load_roster
 
@@ -256,6 +261,42 @@ def role_text(title: str, fallback: str) -> str:
     return f"{role}@{place}"
 
 
+CJK_RE = re.compile(r"[\u4e00-\u9fff]+")
+
+
+def _pinyin(text: str) -> list[str]:
+    """One lowercase pinyin syllable per Chinese character; [] if not all Chinese."""
+    if lazy_pinyin is None or not text:
+        return []
+    if not CJK_RE.fullmatch(text):
+        return []
+    return [s.lower() for s in lazy_pinyin(text)]
+
+
+def first_last(name_en: str, name_zh: str) -> str:
+    """Render a roster English name in Western `First Last` order.
+
+    The roster keeps Chinese order (`Surname Given`, e.g. ``Duan Hongyu``); the
+    site shows ``Hongyu Duan``. The Chinese cell decides: a two-token name whose
+    first token spells the surname character is swapped. Names already in
+    Western order (``Kaida Ning`` — first token spells the *given* characters),
+    middle initials, and anything that cannot be matched are left untouched.
+    Given names romanised unusually (``Deng Siyuan`` for 邓偲媛) still swap.
+    """
+    tokens = name_en.split()
+    if len(tokens) != 2:
+        return name_en
+    first, second = tokens
+    syl = _pinyin(name_zh)
+    if len(syl) < 2:
+        return name_en
+    if "".join(syl[1:]) == first.lower():
+        return name_en  # already `Given Surname`
+    if first.lower() != syl[0]:
+        return name_en
+    return f"{second} {first}"
+
+
 def short_paper(entry: dict) -> dict:
     return {
         "slug": entry["slug"],
@@ -409,8 +450,10 @@ def main() -> int:
             and any(section_material.values())
         )
         if row["nick"] == PI_NICK:
-            role = TITLE_BY_SECTION["pi"]
-            fallback_role = role
+            # The PI's roster title wins ("Professor"); the section label is only
+            # a fallback for when the roster carries no title at all.
+            fallback_role = TITLE_BY_SECTION["pi"]
+            role = role_text(row.get("title", ""), fallback_role)
             group = None
         elif section == "alumni":
             group = alumni_group(row["degree"], row.get("now", ""), row.get("title", ""), row.get("type", ""))
@@ -430,6 +473,8 @@ def main() -> int:
             )
             role = role_text(row.get("title", ""), fallback_role)
         display_name = row["name_en"] or row["name_zh"] or nick
+        if display_name == row["name_en"]:
+            display_name = first_last(display_name, row["name_zh"])
         if row.get("dr") and display_name and not display_name.startswith("Dr."):
             display_name = f"Dr. {display_name}"
         # An affiliation that only repeats the institution already in the "now"

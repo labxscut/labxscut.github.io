@@ -5,8 +5,8 @@ redirect_from:
 - /wyx/
 - /people/wyx/
 nick: wyx
-title: Wu Yixuan
-name_en: Wu Yixuan
+title: Yixuan Wu
+name_en: Yixuan Wu
 name_zh: 吴亦萱
 role: Master's student
 degree: Master

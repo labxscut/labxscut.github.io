@@ -5,8 +5,8 @@ redirect_from:
 - /myj/
 - /people/myj/
 nick: myj
-title: Mo Yijun
-name_en: Mo Yijun
+title: Yijun Mo
+name_en: Yijun Mo
 name_zh: 莫易君
 role: Undergraduate researcher
 degree: Under

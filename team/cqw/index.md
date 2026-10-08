@@ -5,8 +5,8 @@ redirect_from:
 - /cqw/
 - /people/cqw/
 nick: cqw
-title: Chen Qianwen
-name_en: Chen Qianwen
+title: Qianwen Chen
+name_en: Qianwen Chen
 name_zh: 陈倩文
 role: Master's student
 degree: Master

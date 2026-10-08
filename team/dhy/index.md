@@ -5,8 +5,8 @@ redirect_from:
 - /dhy/
 - /people/dhy/
 nick: dhy
-title: Duan Hongyu
-name_en: Duan Hongyu
+title: Dr. Hongyu Duan
+name_en: Dr. Hongyu Duan
 name_zh: 段宏宇
 role: PhD student
 degree: PhD

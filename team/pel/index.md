@@ -5,8 +5,8 @@ redirect_from:
 - /pel/
 - /people/pel/
 nick: pel
-title: Peng Lei
-name_en: Peng Lei
+title: Lei Peng
+name_en: Lei Peng
 name_zh: 彭磊
 role: Master's student
 degree: Master

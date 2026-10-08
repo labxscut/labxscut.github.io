@@ -8,7 +8,7 @@ nick: lcx
 title: Dr. Li C. Xia
 name_en: Dr. Li C. Xia
 name_zh: 夏立
-role: Principal Investigator
+role: Professor
 degree: Faculty
 section: pi
 start_year: ''

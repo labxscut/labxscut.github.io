@@ -5,8 +5,8 @@ redirect_from:
 - /xhx/
 - /people/xhx/
 nick: xhx
-title: Xu Hongxing
-name_en: Xu Hongxing
+title: Hongxing Xu
+name_en: Hongxing Xu
 name_zh: 徐宏星
 role: Master's student
 degree: Master

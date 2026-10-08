@@ -4,7 +4,7 @@
   title: Dr. Li C. Xia
   name_en: Dr. Li C. Xia
   name_zh: 夏立
-  role: Principal Investigator
+  role: Professor
   degree: Faculty
   section: pi
   start_year: ''
@@ -89,8 +89,8 @@
     pi_track: lead
   avatar: /images/avatars/lcx.jpg
 - nick: lhl
-  title: Dr. Liu Huiling
-  name_en: Dr. Liu Huiling
+  title: Dr. Huiling Liu
+  name_en: Dr. Huiling Liu
   name_zh: 刘卉灵
   role: Associate Professor
   degree: Faculty
@@ -122,8 +122,8 @@
     pi_track: lead
   avatar: /images/avatars/lhl.svg
 - nick: lxm
-  title: Dr. Liu Xuemei
-  name_en: Dr. Liu Xuemei
+  title: Dr. Xuemei Liu
+  name_en: Dr. Xuemei Liu
   name_zh: 刘雪梅
   role: Faculty
   degree: Faculty
@@ -149,8 +149,8 @@
     pi_track: lead
   avatar: /images/avatars/lxm.svg
 - nick: wsc
-  title: Dr. Wang Shaochen
-  name_en: Dr. Wang Shaochen
+  title: Dr. Shaochen Wang
+  name_en: Dr. Shaochen Wang
   name_zh: 王绍臣
   role: Associate Professor
   degree: Faculty
@@ -166,8 +166,8 @@
   tools: []
   papers: []
 - nick: xyh
-  title: Dr. Xiong Yunhui
-  name_en: Dr. Xiong Yunhui
+  title: Dr. Yunhui Xiong
+  name_en: Dr. Yunhui Xiong
   name_zh: 熊赟晖
   role: Faculty
   degree: Faculty
@@ -193,8 +193,8 @@
     pi_track: lead
   avatar: /images/avatars/xyh.svg
 - nick: adm
-  title: Dr. Ai Dongmei
-  name_en: Dr. Ai Dongmei
+  title: Dr. Dongmei Ai
+  name_en: Dr. Dongmei Ai
   name_zh: 艾冬梅
   role: Professor@北京科技大学
   degree: Faculty
@@ -210,10 +210,10 @@
   tools: []
   papers: []
 - nick: lqj
-  title: Dr. Li Qingjiao
-  name_en: Dr. Li Qingjiao
+  title: Dr. Qingjiao Li
+  name_en: Dr. Qingjiao Li
   name_zh: 李青娇
-  role: GroupLeader@复星
+  role: GroupLeader@深圳复星
   degree: Faculty
   section: collaborator
   start_year: ''
@@ -227,10 +227,10 @@
   tools: []
   papers: []
 - nick: lyz
-  title: Dr. Lu Yizhen
-  name_en: Dr. Lu Yizhen
+  title: Dr. Yizhen Lu
+  name_en: Dr. Yizhen Lu
   name_zh: 卢益甄
-  role: Investor@温州林论生命科学研究中心（筹）
+  role: Investor@温州Tlife
   degree: Faculty
   section: collaborator
   start_year: ''
@@ -285,8 +285,8 @@
     status: Published
     pi_track: lead
 - nick: rbz
-  title: Ren Bozhen
-  name_en: Ren Bozhen
+  title: Dr. Bozhen Ren
+  name_en: Dr. Bozhen Ren
   name_zh: 任伯桢
   role: PhD student
   degree: PhD
@@ -326,8 +326,8 @@
     pi_track: lead
   avatar: /images/avatars/rbz.svg
 - nick: dhy
-  title: Duan Hongyu
-  name_en: Duan Hongyu
+  title: Dr. Hongyu Duan
+  name_en: Dr. Hongyu Duan
   name_zh: 段宏宇
   role: PhD student
   degree: PhD
@@ -371,8 +371,8 @@
     pi_track: lead
   avatar: /images/avatars/dhy.svg
 - nick: wlp
-  title: Wang Linping
-  name_en: Wang Linping
+  title: Dr. Linping Wang
+  name_en: Dr. Linping Wang
   name_zh: 王林萍
   role: PhD student
   degree: PhD
@@ -397,8 +397,8 @@
     pi_track: lead
   avatar: /images/avatars/wlp.svg
 - nick: wxy
-  title: Wang Xiaoyang
-  name_en: Wang Xiaoyang
+  title: Dr. Xiaoyang Wang
+  name_en: Dr. Xiaoyang Wang
   name_zh: 王晓阳
   role: PhD student
   degree: PhD
@@ -414,8 +414,8 @@
   tools: []
   papers: []
 - nick: hxy
-  title: Han Xinyu
-  name_en: Han Xinyu
+  title: Dr. Xinyu Han
+  name_en: Dr. Xinyu Han
   name_zh: 韩欣宇
   role: PhD student
   degree: PhD
@@ -433,8 +433,8 @@
   papers: []
   avatar: /images/avatars/hxy.svg
 - nick: lzm
-  title: Li Zhimin
-  name_en: Li Zhimin
+  title: Dr. Zhimin Li
+  name_en: Dr. Zhimin Li
   name_zh: 李智敏
   role: PhD student
   degree: PhD
@@ -450,8 +450,8 @@
   tools: []
   papers: []
 - nick: kxf
-  title: Kong Xufeng
-  name_en: Kong Xufeng
+  title: Dr. Xufeng Kong
+  name_en: Dr. Xufeng Kong
   name_zh: 孔栩丰
   role: PhD student
   degree: PhD
@@ -469,8 +469,8 @@
   papers: []
   avatar: /images/avatars/kxf.svg
 - nick: sqh
-  title: Shen Qihua
-  name_en: Shen Qihua
+  title: Dr. Qihua Shen
+  name_en: Dr. Qihua Shen
   name_zh: 沈启华
   role: PhD student
   degree: PhD
@@ -486,8 +486,8 @@
   tools: []
   papers: []
 - nick: bal
-  title: Ba Lei
-  name_en: Ba Lei
+  title: Lei Ba
+  name_en: Lei Ba
   name_zh: 巴蕾
   role: Master's student
   degree: Master
@@ -503,8 +503,8 @@
   tools: []
   papers: []
 - nick: wyx
-  title: Wu Yixuan
-  name_en: Wu Yixuan
+  title: Yixuan Wu
+  name_en: Yixuan Wu
   name_zh: 吴亦萱
   role: Master's student
   degree: Master
@@ -530,8 +530,8 @@
     pi_track: lead
   avatar: /images/avatars/wyx.svg
 - nick: cqw
-  title: Chen Qianwen
-  name_en: Chen Qianwen
+  title: Qianwen Chen
+  name_en: Qianwen Chen
   name_zh: 陈倩文
   role: Master's student
   degree: Master
@@ -556,8 +556,8 @@
     pi_track: lead
   avatar: /images/avatars/cqw.svg
 - nick: njt
-  title: Ning Jingtai
-  name_en: Ning Jingtai
+  title: Jingtai Ning
+  name_en: Jingtai Ning
   name_zh: 宁靖泰
   role: Master's student
   degree: Master
@@ -573,8 +573,8 @@
   tools: []
   papers: []
 - nick: pel
-  title: Peng Lei
-  name_en: Peng Lei
+  title: Lei Peng
+  name_en: Lei Peng
   name_zh: 彭磊
   role: Master's student
   degree: Master
@@ -598,8 +598,8 @@
     pi_track: lead
   avatar: /images/avatars/pel.svg
 - nick: xhx
-  title: Xu Hongxing
-  name_en: Xu Hongxing
+  title: Hongxing Xu
+  name_en: Hongxing Xu
   name_zh: 徐宏星
   role: Master's student
   degree: Master
@@ -624,8 +624,8 @@
     pi_track: lead
   avatar: /images/avatars/xhx.svg
 - nick: lyc
-  title: Liu Yichen
-  name_en: Liu Yichen
+  title: Yichen Liu
+  name_en: Yichen Liu
   name_zh: 刘羿辰
   role: Master's student
   degree: Master
@@ -641,8 +641,8 @@
   tools: []
   papers: []
 - nick: lzj
-  title: Li Zhijian
-  name_en: Li Zhijian
+  title: Zhijian Li
+  name_en: Zhijian Li
   name_zh: 李志健
   role: Master's student
   degree: Master
@@ -658,8 +658,8 @@
   tools: []
   papers: []
 - nick: ych
-  title: Yang Chunhao
-  name_en: Yang Chunhao
+  title: Chunhao Yang
+  name_en: Chunhao Yang
   name_zh: 杨春浩
   role: Master's student
   degree: Master
@@ -675,8 +675,8 @@
   tools: []
   papers: []
 - nick: cpy
-  title: Chen Pengyu
-  name_en: Chen Pengyu
+  title: Pengyu Chen
+  name_en: Pengyu Chen
   name_zh: 陈鹏宇
   role: Master's student
   degree: Master
@@ -692,8 +692,8 @@
   tools: []
   papers: []
 - nick: hch
-  title: Han Cheng
-  name_en: Han Cheng
+  title: Cheng Han
+  name_en: Cheng Han
   name_zh: 韩成
   role: Master's student
   degree: Master
@@ -709,8 +709,8 @@
   tools: []
   papers: []
 - nick: sxf
-  title: Shen Xifan
-  name_en: Shen Xifan
+  title: Xifan Shen
+  name_en: Xifan Shen
   name_zh: 沈熙凡
   role: Master's student
   degree: Master
@@ -726,8 +726,8 @@
   tools: []
   papers: []
 - nick: yzz
-  title: Yang Zizhen
-  name_en: Yang Zizhen
+  title: Zizhen Yang
+  name_en: Zizhen Yang
   name_zh: 杨子震
   role: Undergraduate researcher
   degree: Under
@@ -743,8 +743,8 @@
   tools: []
   papers: []
 - nick: cxy
-  title: Chen Xiyingxue
-  name_en: Chen Xiyingxue
+  title: Xiyingxue Chen
+  name_en: Xiyingxue Chen
   name_zh: 陈曦映雪
   role: Undergraduate researcher
   degree: Under
@@ -760,8 +760,8 @@
   tools: []
   papers: []
 - nick: fyy
-  title: Fang Yuyi
-  name_en: Fang Yuyi
+  title: Yuyi Fang
+  name_en: Yuyi Fang
   name_zh: 方羽易
   role: Undergraduate researcher
   degree: Under
@@ -777,8 +777,8 @@
   tools: []
   papers: []
 - nick: qxi
-  title: Qu Xiang
-  name_en: Qu Xiang
+  title: Xiang Qu
+  name_en: Xiang Qu
   name_zh: 屈想
   role: Undergraduate researcher
   degree: Under
@@ -794,8 +794,8 @@
   tools: []
   papers: []
 - nick: sca
-  title: Sun Chang
-  name_en: Sun Chang
+  title: Chang Sun
+  name_en: Chang Sun
   name_zh: 孙畅
   role: Undergraduate researcher
   degree: Under
@@ -811,8 +811,8 @@
   tools: []
   papers: []
 - nick: zmx
-  title: Zou Mengxue
-  name_en: Zou Mengxue
+  title: Mengxue Zou
+  name_en: Mengxue Zou
   name_zh: 邹梦雪
   role: Undergraduate researcher
   degree: Under
@@ -828,8 +828,8 @@
   tools: []
   papers: []
 - nick: zxy
-  title: Zhang Xinyi
-  name_en: Zhang Xinyi
+  title: Xinyi Zhang
+  name_en: Xinyi Zhang
   name_zh: 张馨仪
   role: Undergraduate researcher
   degree: Under
@@ -845,8 +845,8 @@
   tools: []
   papers: []
 - nick: zyq
-  title: Zhou Yangqi
-  name_en: Zhou Yangqi
+  title: Yangqi Zhou
+  name_en: Yangqi Zhou
   name_zh: 周杨骐
   role: Undergraduate researcher
   degree: Under
@@ -862,8 +862,8 @@
   tools: []
   papers: []
 - nick: hej
-  title: He Jingyao
-  name_en: He Jingyao
+  title: Jingyao He
+  name_en: Jingyao He
   name_zh: 和敬尧
   role: Undergraduate researcher
   degree: Under
@@ -879,8 +879,8 @@
   tools: []
   papers: []
 - nick: myj
-  title: Mo Yijun
-  name_en: Mo Yijun
+  title: Yijun Mo
+  name_en: Yijun Mo
   name_zh: 莫易君
   role: Undergraduate researcher
   degree: Under
@@ -898,8 +898,8 @@
   papers: []
   avatar: /images/avatars/myj.svg
 - nick: fyl
-  title: Dr. Fang Yanli
-  name_en: Dr. Fang Yanli
+  title: Dr. Yanli Fang
+  name_en: Dr. Yanli Fang
   name_zh: 方艳丽
   role: Professor@惠州学院
   degree: Faculty
@@ -916,8 +916,8 @@
   papers: []
   alumni_group: Visiting scholars
 - nick: jdy
-  title: Dr. Jiao Dongyan
-  name_en: Dr. Jiao Dongyan
+  title: Dr. Dongyan Jiao
+  name_en: Dr. Dongyan Jiao
   name_zh: 焦冬艳
   role: Professor@广东理工职业学院
   degree: Faculty
@@ -934,8 +934,8 @@
   papers: []
   alumni_group: Visiting scholars
 - nick: bxq
-  title: Bai Xiangqi
-  name_en: Bai Xiangqi
+  title: Dr. Xiangqi Bai
+  name_en: Dr. Xiangqi Bai
   name_zh: 白向琦
   role: Postdoctoral researcher
   degree: PhD
@@ -978,8 +978,8 @@
   alumni_group: Postdocs
   now: postdoc@Stanford
 - nick: liy
-  title: Li Yang
-  name_en: Li Yang
+  title: Yang Li
+  name_en: Yang Li
   name_zh: 李洋
   role: Master's
   degree: Master
@@ -996,8 +996,8 @@
   papers: []
   alumni_group: Master's
 - nick: tay
-  title: Tang Yu
-  name_en: Tang Yu
+  title: Yu Tang
+  name_en: Yu Tang
   name_zh: 唐瑀
   role: Master's
   degree: Master
@@ -1014,8 +1014,8 @@
   papers: []
   alumni_group: Master's
 - nick: lyi
-  title: Liang Yin
-  name_en: Liang Yin
+  title: Yin Liang
+  name_en: Yin Liang
   name_zh: 梁茵
   role: Master's
   degree: Master
@@ -1034,8 +1034,8 @@
   alumni_group: Master's
   now: 佛山五院
 - nick: lzy
-  title: Liang Zhanyu
-  name_en: Liang Zhanyu
+  title: Zhanyu Liang
+  name_en: Zhanyu Liang
   name_zh: 梁展瑜
   role: Master's
   degree: Master
@@ -1060,8 +1060,8 @@
   alumni_group: Master's
   now: 广州移动
 - nick: xlh
-  title: Xiao Longhui
-  name_en: Xiao Longhui
+  title: Longhui Xiao
+  name_en: Longhui Xiao
   name_zh: 肖龙慧
   role: Master's
   degree: Master
@@ -1079,8 +1079,8 @@
   alumni_group: Master's
   now: 深圳国企
 - nick: yzy
-  title: Yu Zhengyang
-  name_en: Yu Zhengyang
+  title: Zhengyang Yu
+  name_en: Zhengyang Yu
   name_zh: 余正阳
   role: Master's
   degree: Master
@@ -1105,8 +1105,8 @@
   alumni_group: Master's
   now: 深圳迈瑞
 - nick: xjm
-  title: Xie Jiemin
-  name_en: Xie Jiemin
+  title: Jiemin Xie
+  name_en: Jiemin Xie
   name_zh: 谢介民
   role: Master's
   degree: Master
@@ -1133,8 +1133,8 @@
   alumni_group: Master's
   now: 广州联通
 - nick: cxt
-  title: Chang Xintong
-  name_en: Chang Xintong
+  title: Xintong Chang
+  name_en: Xintong Chang
   name_zh: 常馨桐
   role: Undergraduate
   degree: Under
@@ -1161,8 +1161,8 @@
   alumni_group: Undergraduates
   now: 浙江大学
 - nick: liz
-  title: Li Ziyan
-  name_en: Li Ziyan
+  title: Ziyan Li
+  name_en: Ziyan Li
   name_zh: 李梓妍
   role: Undergraduate
   degree: Under
@@ -1188,8 +1188,8 @@
     pi_track: lead
   alumni_group: Undergraduates
 - nick: yxy
-  title: Yang Xiaoying
-  name_en: Yang Xiaoying
+  title: Xiaoying Yang
+  name_en: Xiaoying Yang
   name_zh: 杨晓盈
   role: Undergraduate
   degree: Under
@@ -1207,8 +1207,8 @@
   alumni_group: Undergraduates
   now: UCSD
 - nick: grx
-  title: Gao Ruoxin
-  name_en: Gao Ruoxin
+  title: Ruoxin Gao
+  name_en: Ruoxin Gao
   name_zh: 高若馨
   role: Undergraduate
   degree: Under
@@ -1226,8 +1226,8 @@
   alumni_group: Undergraduates
   now: 香港理工大学
 - nick: lyt
-  title: Yang Lingfeng
-  name_en: Yang Lingfeng
+  title: Lingfeng Yang
+  name_en: Lingfeng Yang
   name_zh: 杨凌峰
   role: Undergraduate
   degree: Under
@@ -1244,8 +1244,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: lza
-  title: Li Zian
-  name_en: Li Zian
+  title: Zian Li
+  name_en: Zian Li
   name_zh: 李子桉
   role: Undergraduate
   degree: Under
@@ -1262,8 +1262,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: txd
-  title: Tan Xudong
-  name_en: Tan Xudong
+  title: Xudong Tan
+  name_en: Xudong Tan
   name_zh: 谈旭东
   role: Undergraduate
   degree: Under
@@ -1280,8 +1280,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: wws
-  title: Wang Wenshuai
-  name_en: Wang Wenshuai
+  title: Wenshuai Wang
+  name_en: Wenshuai Wang
   name_zh: 王汶帅
   role: Undergraduate
   degree: Under
@@ -1298,8 +1298,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: wzh
-  title: Wu Zehao
-  name_en: Wu Zehao
+  title: Zehao Wu
+  name_en: Zehao Wu
   name_zh: 吴泽昊
   role: Undergraduate
   degree: Under
@@ -1317,8 +1317,8 @@
   alumni_group: Undergraduates
   now: 新加坡国立大学
 - nick: yez
-  title: Ye Chaoyang
-  name_en: Ye Chaoyang
+  title: Chaoyang Ye
+  name_en: Chaoyang Ye
   name_zh: 叶朝阳
   role: Undergraduate
   degree: Under
@@ -1336,8 +1336,8 @@
   alumni_group: Undergraduates
   now: 新加坡国立大学
 - nick: zhy
-  title: Zhang Yuan
-  name_en: Zhang Yuan
+  title: Yuan Zhang
+  name_en: Yuan Zhang
   name_zh: 张原
   role: Undergraduate
   degree: Under
@@ -1354,8 +1354,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: zjy
-  title: Zhang Jiayi
-  name_en: Zhang Jiayi
+  title: Jiayi Zhang
+  name_en: Jiayi Zhang
   name_zh: 张嘉一
   role: Undergraduate
   degree: Under
@@ -1381,8 +1381,8 @@
   alumni_group: Undergraduates
   now: Johns Hopkins University
 - nick: chb
-  title: Chen Hongbo
-  name_en: Chen Hongbo
+  title: Hongbo Chen
+  name_en: Hongbo Chen
   name_zh: 陈泓伯
   role: Undergraduate
   degree: Under
@@ -1414,8 +1414,8 @@
   alumni_group: Undergraduates
   now: PhD applicant@overseas
 - nick: fymr
-  title: Fu Yinmingren
-  name_en: Fu Yinmingren
+  title: Yinmingren Fu
+  name_en: Yinmingren Fu
   name_zh: 符尹铭人
   role: Undergraduate
   degree: Under
@@ -1433,8 +1433,8 @@
   alumni_group: Undergraduates
   now: Santa Clara University
 - nick: hjy
-  title: Huang Jiayu
-  name_en: Huang Jiayu
+  title: Jiayu Huang
+  name_en: Jiayu Huang
   name_zh: 黄佳羽
   role: Undergraduate
   degree: Under
@@ -1452,8 +1452,8 @@
   alumni_group: Undergraduates
   now: 哥伦比亚大学
 - nick: ljh
-  title: Li Jiahua
-  name_en: Li Jiahua
+  title: Jiahua Li
+  name_en: Jiahua Li
   name_zh: 李嘉华
   role: Undergraduate
   degree: Under
@@ -1471,8 +1471,8 @@
   alumni_group: Undergraduates
   now: 香港大学
 - nick: way
-  title: Wang Yang
-  name_en: Wang Yang
+  title: Yang Wang
+  name_en: Yang Wang
   name_zh: 王扬
   role: Undergraduate
   degree: Under
@@ -1498,8 +1498,8 @@
   alumni_group: Undergraduates
   now: 中山大学
 - nick: zhh
-  title: Zhang Hui
-  name_en: Zhang Hui
+  title: Hui Zhang
+  name_en: Hui Zhang
   name_zh: 张惠
   role: Undergraduate
   degree: Under
@@ -1516,8 +1516,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: ljw
-  title: Luo Jiawei
-  name_en: Luo Jiawei
+  title: Jiawei Luo
+  name_en: Jiawei Luo
   name_zh: 罗嘉伟
   role: Undergraduate
   degree: Under
@@ -1535,8 +1535,8 @@
   alumni_group: Undergraduates
   now: 中山大学
 - nick: lky
-  title: Li Keyi
-  name_en: Li Keyi
+  title: Keyi Li
+  name_en: Keyi Li
   name_zh: 李科毅
   role: Undergraduate
   degree: Under
@@ -1563,8 +1563,8 @@
   alumni_group: Undergraduates
   now: 哥伦比亚大学
 - nick: lzs
-  title: Long Zhaoshen
-  name_en: Long Zhaoshen
+  title: Zhaoshen Long
+  name_en: Zhaoshen Long
   name_zh: 龙兆燊
   role: Undergraduate
   degree: Under
@@ -1581,8 +1581,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: zba
-  title: Zhu Baian
-  name_en: Zhu Baian
+  title: Baian Zhu
+  name_en: Baian Zhu
   name_zh: 朱柏安
   role: Undergraduate
   degree: Under
@@ -1600,8 +1600,8 @@
   alumni_group: Undergraduates
   now: 哥伦比亚大学
 - nick: zjh
-  title: Zhang Jinhang
-  name_en: Zhang Jinhang
+  title: Jinhang Zhang
+  name_en: Jinhang Zhang
   name_zh: 张瑾杭
   role: Undergraduate
   degree: Under
@@ -1619,8 +1619,8 @@
   alumni_group: Undergraduates
   now: 中山大学
 - nick: czq
-  title: Cheng Ziqi
-  name_en: Cheng Ziqi
+  title: Ziqi Cheng
+  name_en: Ziqi Cheng
   name_zh: 程子齐
   role: Undergraduate
   degree: Under
@@ -1638,8 +1638,8 @@
   alumni_group: Undergraduates
   now: 网易游戏
 - nick: cyy
-  title: Chen Yingying
-  name_en: Chen Yingying
+  title: Yingying Chen
+  name_en: Yingying Chen
   name_zh: 陈莹莹
   role: Undergraduate
   degree: Under
@@ -1656,8 +1656,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: dsy
-  title: Deng Siyuan
-  name_en: Deng Siyuan
+  title: Siyuan Deng
+  name_en: Siyuan Deng
   name_zh: 邓偲媛
   role: Undergraduate
   degree: Under
@@ -1674,8 +1674,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: hzq
-  title: Huang Zhouqing
-  name_en: Huang Zhouqing
+  title: Zhouqing Huang
+  name_en: Zhouqing Huang
   name_zh: 黄周卿
   role: Undergraduate
   degree: Under
@@ -1692,8 +1692,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: lmz
-  title: Li Mingze
-  name_en: Li Mingze
+  title: Mingze Li
+  name_en: Mingze Li
   name_zh: 李明泽
   role: Undergraduate
   degree: Under
@@ -1710,8 +1710,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: lsy
-  title: Liu Siying
-  name_en: Liu Siying
+  title: Siying Liu
+  name_en: Siying Liu
   name_zh: 刘思盈
   role: Undergraduate
   degree: Under
@@ -1728,8 +1728,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: lziyi
-  title: Lu Ziyi
-  name_en: Lu Ziyi
+  title: Ziyi Lu
+  name_en: Ziyi Lu
   name_zh: 陆梓怡
   role: Undergraduate
   degree: Under
@@ -1746,8 +1746,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: mhz
-  title: Ma Haizhen
-  name_en: Ma Haizhen
+  title: Haizhen Ma
+  name_en: Haizhen Ma
   name_zh: 马海珍
   role: Undergraduate
   degree: Under
@@ -1764,8 +1764,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: mqn
-  title: Ma Qian
-  name_en: Ma Qian
+  title: Qian Ma
+  name_en: Qian Ma
   name_zh: 马倩
   role: Undergraduate
   degree: Under
@@ -1782,8 +1782,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: txi
-  title: Tang Xi
-  name_en: Tang Xi
+  title: Xi Tang
+  name_en: Xi Tang
   name_zh: 唐玺
   role: Undergraduate
   degree: Under
@@ -1800,8 +1800,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: wgc
-  title: Wu Guocong
-  name_en: Wu Guocong
+  title: Guocong Wu
+  name_en: Guocong Wu
   name_zh: 吴国聪
   role: Undergraduate
   degree: Under
@@ -1818,8 +1818,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: wjb
-  title: Wang Jianbo
-  name_en: Wang Jianbo
+  title: Jianbo Wang
+  name_en: Jianbo Wang
   name_zh: 王健博
   role: Undergraduate
   degree: Under
@@ -1836,8 +1836,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: yby
-  title: Yang Binyu
-  name_en: Yang Binyu
+  title: Binyu Yang
+  name_en: Binyu Yang
   name_zh: 杨滨屿
   role: Undergraduate
   degree: Under
@@ -1854,8 +1854,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: yyu
-  title: Yu Yue
-  name_en: Yu Yue
+  title: Yue Yu
+  name_en: Yue Yu
   name_zh: 余悦
   role: Undergraduate
   degree: Under
@@ -1872,8 +1872,8 @@
   papers: []
   alumni_group: Undergraduates
 - nick: pxy
-  title: Pan Xingyue
-  name_en: Pan Xingyue
+  title: Xingyue Pan
+  name_en: Xingyue Pan
   name_zh: 潘星玥
   role: Alumni
   degree: —

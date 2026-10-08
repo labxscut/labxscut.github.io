@@ -5,8 +5,8 @@ redirect_from:
 - /kxf/
 - /people/kxf/
 nick: kxf
-title: Kong Xufeng
-name_en: Kong Xufeng
+title: Dr. Xufeng Kong
+name_en: Dr. Xufeng Kong
 name_zh: 孔栩丰
 role: PhD student
 degree: PhD
