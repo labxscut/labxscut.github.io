@@ -356,8 +356,17 @@ def main() -> int:
         # An affiliation that only repeats the institution already in the "now"
         # line (or in the faculty title) would be shown twice on /team/.
         affil = row["affiliation"].strip()
-        # Vague career notes ("就业") are not institutions; don't show them at all.
-        if affil in SCUT_AFFILIATION or affil in NON_INSTITUTIONAL_AFFILIATIONS:
+        # Vague career notes ("就业") are not institutions, and "—"/"待定" are
+        # blanks; neither should render as a stray separator on /team/.
+        if (
+            affil in SCUT_AFFILIATION
+            or affil in PLACEHOLDER_AFFILIATIONS
+            or affil in NON_INSTITUTIONAL_AFFILIATIONS
+        ):
+            affil = ""
+        # A trailing "?" means the roster is unsure where someone went; publishing
+        # "北大?" on a public page reads as an error, so keep it private.
+        if affil.endswith(("?", "？")):
             affil = ""
         affiliation = affil
         now_text = place_text(row["now"]) if row.get("now") else ""

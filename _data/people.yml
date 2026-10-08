@@ -1631,7 +1631,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: —
+  affiliation: ''
   github: ''
   has_page: false
   site: false
@@ -1648,7 +1648,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: 北大?
+  affiliation: ''
   github: ''
   has_page: false
   site: false
@@ -1716,7 +1716,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: 清华?
+  affiliation: ''
   github: ''
   has_page: false
   site: false
@@ -1733,7 +1733,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: —
+  affiliation: ''
   github: ''
   has_page: false
   site: false
@@ -1767,7 +1767,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: 武大?
+  affiliation: ''
   github: ''
   has_page: false
   site: false
@@ -1802,7 +1802,7 @@
   end_year: ''
   years: ''
   status: alumni
-  affiliation: —
+  affiliation: ''
   github: ''
   has_page: false
   site: false
