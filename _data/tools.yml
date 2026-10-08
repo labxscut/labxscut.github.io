@@ -82,7 +82,6 @@
   language: Python
   repo: https://github.com/labxscut/sxEnzHier
   docs: https://sxwebenz.scutlabx.com/
-  client: https://github.com/labxscut/sxWebEnz
   tags: [enzyme function, protein language models, EC classification]
   maintainers: [dhy]
   papers: [DuanISBRA2025EnzHier, DuanopenRxiv2024EnzHier, Duan2025sxEnzHier]
@@ -99,7 +98,22 @@
   docs: https://github.com/labxscut/sxELA
   tags: [single-cell, pseudotime, local association]
   maintainers: []
-  papers: [XiaBSB2011ExtendedLocalSimilarity, XiaBioinf2013EfficientStatisticalSignifi, XiaBB2015StatisticalSignificanceApproxim, SunEM2014ExtendedLocalSimilarity, Feishu-2023-Identifying-local-associations-in-biological-ti, XiaISMB2008LSAWebService, XiaRECOMB2009PairTriplet]
+  papers: []
+
+- key: elsa
+  name: ELSA
+  logo: /images/tools/elsa.svg
+  tagline: Extended local similarity analysis of time-series data
+  description: >-
+    Replication- and permutation-based local similarity analysis (LSA/eLSA) for
+    finding time-dependent associations in microbial, environmental and other
+    high-throughput time-series data, with statistical-significance
+    approximations built in.
+  repo: https://github.com/labxscut/elsa
+  docs: https://github.com/labxscut/elsa
+  tags: [time series, local similarity analysis, microbiome]
+  maintainers: []
+  papers: [XiaBSB2011ExtendedLocalSimilarity, XiaBioinf2013EfficientStatisticalSignifi, XiaBB2015StatisticalSignificanceApproxim, SunEM2014ExtendedLocalSimilarity, Feishu-2023-Identifying-local-associations-in-biological-ti]
 
 - key: SPRINT
   name: SPRINT
@@ -183,3 +197,45 @@
   tags: [ECG, atrial fibrillation, deep learning]
   maintainers: []
   papers: [LiangBIBM24ctRhythm]
+
+- key: svengine
+  name: SVEngine
+  logo: /images/tools/svengine.svg
+  tagline: Simulator of genome structural variations
+  description: >-
+    An efficient and versatile simulator of genome structural variations that
+    models copy-number, sequence and breakpoint features of the underlying
+    sequencing data.
+  repo: https://github.com/labxscut/svengine
+  docs: https://github.com/labxscut/svengine
+  tags: [structural variation, genome simulation, sequencing]
+  maintainers: []
+  papers: [XiaGigaSc2018SVEngineEfficientVersatile]
+
+- key: grammy
+  name: GRAMMy
+  logo: /images/tools/grammy.svg
+  tagline: Microbial abundance estimation for metagenomic short reads
+  description: >-
+    A maximum-likelihood framework that uses reference genomes to estimate
+    species-level abundance and detect novel species in metagenomic short-read
+    data.
+  repo: https://github.com/labxscut/grammy
+  docs: https://github.com/labxscut/grammy
+  tags: [metagenomics, abundance estimation, read mapping]
+  maintainers: []
+  papers: []
+
+- key: swan
+  name: SWAN
+  logo: /images/tools/swan.svg
+  tagline: Statistical structural variant analysis for NGS
+  description: >-
+    A statistical method for detecting and genotyping structural variants
+    (deletions, duplications and rearrangements) from whole-genome sequencing
+    copy-number and read-depth signals.
+  repo: https://github.com/labxscut/swan
+  docs: https://github.com/labxscut/swan
+  tags: [structural variation, copy number, NGS]
+  maintainers: []
+  papers: []

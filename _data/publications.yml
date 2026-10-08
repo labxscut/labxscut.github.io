@@ -1482,7 +1482,7 @@
   pi_track: lead
   sort_key: '2023-09-22'
   tools:
-  - sxELA
+  - elsa
 - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
   title: Tumor tissue microorganisms are closely associated with tumor immune subtypes
   venue: Computers in Biology and Medicine
@@ -3281,7 +3281,8 @@
   lab_authors: []
   pi_track: lead
   sort_key: '2018-07-01'
-  tools: []
+  tools:
+  - svengine
 - slug: AiGenes2018CoreProbeNovelAlgorithm
   title: 'CoreProbe: a novel algorithm for estimating relative abundance based on metagenomic reads'
   venue: Genes
@@ -4169,7 +4170,7 @@
   pi_track: lead
   sort_key: '2015-12-01'
   tools:
-  - sxELA
+  - elsa
 - slug: CramIJ2015CrossDepthAnalysis
   title: Cross-depth analysis of marine bacterial networks suggests downward propagation of temporal changes
   venue: The ISME Journal
@@ -4380,7 +4381,7 @@
   pi_track: book-chapter
   sort_key: '2014-01-01'
   tools:
-  - sxELA
+  - elsa
 - slug: SunEM2014AccurateGenomeRelative
   title: Accurate genome relative abundance estimation based on shotgun metagenomic reads
   venue: Encyclopedia of Metagenomics
@@ -4488,7 +4489,7 @@
   pi_track: lead
   sort_key: '2013-01-15'
   tools:
-  - sxELA
+  - elsa
 - slug: WangGMR2013ThelperDifferentiation
   title: Genetic analysis of differentiation of T-helper lymphocytes
   venue: Genetics and Molecular Research
@@ -4699,7 +4700,7 @@
   pi_track: lead
   sort_key: '2011-12-01'
   tools:
-  - sxELA
+  - elsa
 - slug: SteeleIJ2011MarineBacterialArchaeal
   title: Marine bacterial, archaeal and protistan association networks reveal ecological linkages
   venue: The ISME Journal
