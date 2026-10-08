@@ -71,20 +71,6 @@
   maintainers: [dhy]
   papers: [Duan2025sxSNF, DuanAPBC2025SNF]
 
-- key: sxRaep
-  name: sxRaep
-  logo: /images/tools/sxRaep.svg
-  tagline: Enzyme screening for high-throughput sequence mining
-  description: >-
-    A rapid enzyme/non-enzyme prediction workflow using physicochemical
-    sequence features and an XGBoost classifier.
-  language: Python
-  repo: https://github.com/labxscut/sxRaep
-  docs: https://github.com/labxscut/sxRaep
-  tags: [enzyme prediction, protein sequences, XGBoost]
-  maintainers: []
-  papers: [XiaCR2015Abstract4871, XiaCR2018Abstract4334, XiaCR2019Abstract5022]
-
 - key: sxEnzHier
   name: sxEnzHier / EnzHire
   logo: /images/tools/sxEnzHier.svg
