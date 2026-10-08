@@ -87,9 +87,28 @@ def svg(nick: str) -> str:
 """
 
 
+PHOTO_SUFFIXES = (".jpg", ".jpeg", ".png", ".webp")
+
+
+def existing_avatar(nick: str):
+    """Return a real portrait for ``nick`` if one has been dropped in.
+
+    A photo installed by hand (e.g. ``lcx.jpg``) always wins over the generated
+    placeholder, otherwise regenerating avatars would shadow the real headshot.
+    """
+    for suffix in PHOTO_SUFFIXES:
+        photo = AVATAR_DIR / f"{nick}{suffix}"
+        if photo.exists():
+            return photo
+    return None
+
+
 def ensure_avatar(nick: str) -> str:
     """Write the placeholder for ``nick`` if missing and return its site path."""
     AVATAR_DIR.mkdir(parents=True, exist_ok=True)
+    photo = existing_avatar(nick)
+    if photo is not None:
+        return f"{AVATAR_ROOT}/{photo.name}"
     path = AVATAR_DIR / f"{nick}.svg"
     if not path.exists():
         path.write_text(svg(nick), encoding="utf-8")

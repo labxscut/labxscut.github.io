@@ -161,6 +161,40 @@ def years_label(row: dict, start: str, end: str) -> str:
     return year
 
 
+# Chinese and English spellings of the same institution, so "浙江大学" and
+# "master@Zhejiang University" are not published side by side as two places.
+INSTITUTION_ALIASES = {
+    "浙江大学": {"zhejiang university", "zju"},
+    "中山大学": {"sun yat-sen university", "sysu"},
+    "华南理工大学": {"south china university of technology", "scut"},
+    "海外": {"overseas", "海外phd申请中"},
+    "北京大学": {"peking university", "pku"},
+    "清华大学": {"tsinghua university"},
+}
+
+
+def _place_key(text: str) -> str:
+    return text.strip().lower().replace(" ", "")
+
+
+def same_place(left: str, right: str) -> bool:
+    """True when two strings name the same institution in either language."""
+    a, b = _place_key(left), _place_key(right)
+    if not a or not b:
+        return False
+    if a == b or a in b or b in a:
+        return True
+    for zh, en_names in INSTITUTION_ALIASES.items():
+        names = {_place_key(n) for n in en_names} | {_place_key(zh)}
+
+        def matches(text: str) -> bool:
+            return text in names or any(n in text or text in n for n in names)
+
+        if matches(a) and matches(b):
+            return True
+    return False
+
+
 def place_text(now: str) -> str:
     """'postdoc@Stanford' -> 'postdoc@Stanford'; '@NetEase Games' -> 'NetEase Games'."""
     role, _, place = now.partition("@")
@@ -370,17 +404,13 @@ def main() -> int:
             affil = ""
         affiliation = affil
         now_text = place_text(row["now"]) if row.get("now") else ""
-        if now_text and affiliation and (
-            affiliation == now_text
-            or affiliation in now_text
-            or now_text.endswith(affiliation)
-        ):
+        if now_text and affiliation and same_place(affiliation, now_text):
             affiliation = ""
         # A faculty title that already names the institute says the same thing
         # the "now" line would ("Professor@惠州学院" + "now Prof@惠州学院").
         if now_text and role and role != fallback_role:
             place = now_text.rpartition("@")[2] or now_text
-            if place and place in role:
+            if place and same_place(place, role):
                 now_text = ""
         entry = {
             "nick": nick,
