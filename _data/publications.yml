@@ -5,12 +5,16 @@
   venue: 43rd International Conference on Machine Learning (ICML 2026)
   venue_short: International Conference on Machine Learning
   venue_type: conference
+  venue_full: 43rd International Conference on Machine Learning (ICML 2026)
+  venue_location: Seoul, South Korea (COEX)
+  venue_dates: 2026-07-06/2026-07-11
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2026'
   status: Final
-  doi: ''
-  url: ''
+  doi: 10.48550/arxiv.2609.11918
+  url: https://doi.org/10.48550/arxiv.2609.11918
   published_on: '2026-09-10'
   volume: ''
   issue: ''
@@ -47,6 +51,10 @@
   venue: IEEE Transactions on Computational Biology and Bioinformatics
   venue_short: IEEE Transactions on Computational Biology and Bioinformatics
   venue_type: journal
+  venue_full: IEEE Transactions on Computational Biology and Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者（共同）
   year: '2026'
@@ -123,6 +131,10 @@
   venue: Human Genetics and Genomics Advances
   venue_short: Human Genetics and Genomics Advances
   venue_type: journal
+  venue_full: Human Genetics and Genomics Advances
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -217,6 +229,10 @@
   venue: International Conference on Artificial Intelligence Technology and Education (ICAITE 2026)
   venue_short: International Conference on Artificial Intelligence Technology and Education
   venue_type: conference
+  venue_full: International Conference on Artificial Intelligence Technology and Education (ICAITE 2026)
+  venue_location: Nagasaki, Japan
+  venue_dates: 2026-12-06/2026-12-08
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2026'
@@ -267,6 +283,10 @@
   venue: International Symposium on Bioinformatics Research and Applications (ISBRA 2025)
   venue_short: International Symposium on Bioinformatics Research and Applications
   venue_type: conference
+  venue_full: International Symposium on Bioinformatics Research and Applications (ISBRA 2025)
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -356,6 +376,10 @@
   venue: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2025)
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
+  venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2025)
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -445,6 +469,10 @@
   venue: Journal of Medical Internet Research
   venue_short: Journal of Medical Internet Research
   venue_type: journal
+  venue_full: Journal of Medical Internet Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -591,6 +619,10 @@
   venue: IEEE Transactions on Computational Biology and Bioinformatics
   venue_short: IEEE Transactions on Computational Biology and Bioinformatics
   venue_type: journal
+  venue_full: IEEE Transactions on Computational Biology and Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -683,6 +715,10 @@
   venue: ICML 2025 DataWorld Workshop
   venue_short: ICML 2025 DataWorld Workshop
   venue_type: workshop
+  venue_full: ICML 2025 DataWorld Workshop
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -726,6 +762,10 @@
   venue: Asia Pacific Bioinformatics Conference (APBC 2025)
   venue_short: Asia Pacific Bioinformatics Conference
   venue_type: conference
+  venue_full: Asia Pacific Bioinformatics Conference (APBC 2025)
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2025'
@@ -756,6 +796,10 @@
   venue: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2024)
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
+  venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2024)
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2024'
@@ -853,6 +897,10 @@
   venue: Quantitative Biology
   venue_short: Quantitative Biology
   venue_type: journal
+  venue_full: Quantitative Biology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2024'
@@ -974,6 +1022,10 @@
   venue: Life Science Alliance
   venue_short: Life Science Alliance
   venue_type: journal
+  venue_full: Life Science Alliance
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2024'
@@ -1116,6 +1168,10 @@
   venue: International Journal of Biological Macromolecules
   venue_short: International Journal of Biological Macromolecules
   venue_type: journal
+  venue_full: International Journal of Biological Macromolecules
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2024'
@@ -1200,6 +1256,10 @@
   venue: NAR Genomics and Bioinformatics
   venue_short: NAR Genomics and Bioinformatics
   venue_type: journal
+  venue_full: NAR Genomics and Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2024'
@@ -1256,6 +1316,10 @@
   venue: Journal of Agricultural and Food Chemistry
   venue_short: Journal of Agricultural and Food Chemistry
   venue_type: journal
+  venue_full: Journal of Agricultural and Food Chemistry
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2023'
@@ -1328,6 +1392,10 @@
   venue: Briefings in Bioinformatics
   venue_short: Briefings in Bioinformatics
   venue_type: journal
+  venue_full: Briefings in Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2023'
@@ -1420,6 +1488,10 @@
   venue: Computers in Biology and Medicine
   venue_short: Computers in Biology and Medicine
   venue_type: journal
+  venue_full: Computers in Biology and Medicine
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2023'
@@ -1492,6 +1564,10 @@
   venue: Frontiers in Microbiology
   venue_short: Frontiers in Microbiology
   venue_type: journal
+  venue_full: Frontiers in Microbiology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2023'
@@ -1580,6 +1656,10 @@
   venue: Frontiers in Genetics
   venue_short: Frontiers in Genetics
   venue_type: journal
+  venue_full: Frontiers in Genetics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 通讯作者
   year: '2023'
@@ -1652,6 +1732,10 @@
   venue: Alzheimer's & Dementia
   venue_short: Alzheimer's & Dementia
   venue_type: journal
+  venue_full: Alzheimer's & Dementia
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: ADSP合作
   year: '2022'
@@ -1680,6 +1764,10 @@
   venue: Endocrine-Related Cancer
   venue_short: Endocrine-Related Cancer
   venue_type: journal
+  venue_full: Endocrine-Related Cancer
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2022'
@@ -1770,6 +1858,10 @@
   venue: PLoS Genetics
   venue_short: PLoS Genetics
   venue_type: journal
+  venue_full: PLoS Genetics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: ADSP合作
   year: '2022'
@@ -1799,6 +1891,10 @@
   venue: Frontiers in Immunology
   venue_short: Frontiers in Immunology
   venue_type: journal
+  venue_full: Frontiers in Immunology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2022'
@@ -1870,6 +1966,10 @@
   venue: Human Genetics and Genomics Advances
   venue_short: Human Genetics and Genomics Advances
   venue_type: journal
+  venue_full: Human Genetics and Genomics Advances
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2022'
@@ -1960,6 +2060,10 @@
   venue: Alzheimer's & Dementia
   venue_short: Alzheimer's & Dementia
   venue_type: journal
+  venue_full: Alzheimer's & Dementia
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: ADSP合作
   year: '2022'
@@ -1988,6 +2092,10 @@
   venue: Frontiers in Immunology
   venue_short: Frontiers in Immunology
   venue_type: journal
+  venue_full: Frontiers in Immunology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: 合作
   year: '2021'
@@ -2071,6 +2179,10 @@
   venue: 'Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring'
   venue_short: 'Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring'
   venue_type: journal
+  venue_full: 'Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring'
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: other
   pi_role: ADSP合作
   year: '2021'
@@ -2100,6 +2212,10 @@
   venue: Molecular Psychiatry
   venue_short: Molecular Psychiatry
   venue_type: journal
+  venue_full: Molecular Psychiatry
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
   year: '2020'
@@ -2135,6 +2251,10 @@
   venue: Scientific Reports
   venue_short: Scientific Reports
   venue_type: journal
+  venue_full: Scientific Reports
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2020'
@@ -2247,6 +2367,10 @@
   venue: Journal of Clinical Oncology
   venue_short: Journal of Clinical Oncology
   venue_type: journal
+  venue_full: Journal of Clinical Oncology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2020'
@@ -2329,6 +2453,10 @@
   venue: Nucleic Acids Research
   venue_short: Nucleic Acids Research
   venue_type: journal
+  venue_full: Nucleic Acids Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2019'
@@ -2394,6 +2522,10 @@
   venue: Synthetic and Systems Biotechnology
   venue_short: Synthetic and Systems Biotechnology
   venue_type: journal
+  venue_full: Synthetic and Systems Biotechnology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2446,6 +2578,10 @@
   venue: JAMA Neurology
   venue_short: JAMA Neurology
   venue_type: journal
+  venue_full: JAMA Neurology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2019'
@@ -2487,6 +2623,10 @@
   venue: PeerJ
   venue_short: PeerJ
   venue_type: journal
+  venue_full: PeerJ
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2546,6 +2686,10 @@
   venue: Genomics
   venue_short: Genomics
   venue_type: journal
+  venue_full: Genomics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
   year: '2019'
@@ -2581,6 +2725,10 @@
   venue: Frontiers in Microbiology
   venue_short: Frontiers in Microbiology
   venue_type: journal
+  venue_full: Frontiers in Microbiology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2646,6 +2794,10 @@
   venue: BMC Genomics
   venue_short: BMC Genomics
   venue_type: journal
+  venue_full: BMC Genomics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2711,6 +2863,10 @@
   venue: JAMA Network Open
   venue_short: JAMA Network Open
   venue_type: journal
+  venue_full: JAMA Network Open
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
   year: '2019'
@@ -2746,6 +2902,10 @@
   venue: Genes
   venue_short: Genes
   venue_type: journal
+  venue_full: Genes
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2804,6 +2964,10 @@
   venue: Alzheimer's & Dementia
   venue_short: Alzheimer's & Dementia
   venue_type: journal
+  venue_full: Alzheimer's & Dementia
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2019'
@@ -2845,6 +3009,10 @@
   venue: Genes
   venue_short: Genes
   venue_type: journal
+  venue_full: Genes
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2019'
@@ -2910,6 +3078,10 @@
   venue: Cancer Genetics
   venue_short: Cancer Genetics
   venue_type: journal
+  venue_full: Cancer Genetics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2018'
@@ -3041,6 +3213,10 @@
   venue: GigaScience
   venue_short: GigaScience
   venue_type: journal
+  venue_full: GigaScience
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2018'
@@ -3111,6 +3287,10 @@
   venue: Genes
   venue_short: Genes
   venue_type: journal
+  venue_full: Genes
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2018'
@@ -3163,6 +3343,10 @@
   venue: Journal of Clinical Oncology
   venue_short: Journal of Clinical Oncology
   venue_type: journal
+  venue_full: Journal of Clinical Oncology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2018'
@@ -3209,6 +3393,10 @@
   venue: Annals of Clinical and Translational Neurology
   venue_short: Annals of Clinical and Translational Neurology
   venue_type: journal
+  venue_full: Annals of Clinical and Translational Neurology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
   year: '2018'
@@ -3243,6 +3431,10 @@
   venue: Annals of Clinical and Translational Neurology
   venue_short: Annals of Clinical and Translational Neurology
   venue_type: journal
+  venue_full: Annals of Clinical and Translational Neurology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: 合著（ consortium，作者名单在 CV 中缩写为 et al）
   year: '2018'
@@ -3277,6 +3469,10 @@
   venue: Nucleic Acids Research
   venue_short: Nucleic Acids Research
   venue_type: journal
+  venue_full: Nucleic Acids Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2018'
@@ -3341,6 +3537,10 @@
   venue: Nucleic Acids Research
   venue_short: Nucleic Acids Research
   venue_type: journal
+  venue_full: Nucleic Acids Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2017'
@@ -3418,6 +3618,10 @@
   venue: Nature Communications
   venue_short: Nature Communications
   venue_type: journal
+  venue_full: Nature Communications
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2017'
@@ -3483,6 +3687,10 @@
   venue: BMC Genomics
   venue_short: BMC Genomics
   venue_type: journal
+  venue_full: BMC Genomics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 通讯作者
   year: '2017'
@@ -3547,6 +3755,10 @@
   venue: The ISME Journal
   venue_short: The ISME Journal
   venue_type: journal
+  venue_full: The ISME Journal
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2016'
@@ -3677,6 +3889,10 @@
   venue: Nucleic Acids Research
   venue_short: Nucleic Acids Research
   venue_type: journal
+  venue_full: Nucleic Acids Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2016'
@@ -3753,6 +3969,10 @@
   venue: Annals of Applied Statistics
   venue_short: Annals of Applied Statistics
   venue_type: journal
+  venue_full: Annals of Applied Statistics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2016'
@@ -3805,6 +4025,10 @@
   venue: Nature Medicine
   venue_short: Nature Medicine
   venue_type: journal
+  venue_full: Nature Medicine
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2016'
@@ -3882,6 +4106,10 @@
   venue: BMC Bioinformatics
   venue_short: BMC Bioinformatics
   venue_type: journal
+  venue_full: BMC Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2015'
@@ -3947,6 +4175,10 @@
   venue: The ISME Journal
   venue_short: The ISME Journal
   venue_type: journal
+  venue_full: The ISME Journal
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2015'
@@ -4011,6 +4243,10 @@
   venue: Scientific Reports
   venue_short: Scientific Reports
   venue_type: journal
+  venue_full: Scientific Reports
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2015'
@@ -4105,12 +4341,16 @@
   venue: Encyclopedia of Metagenomics
   venue_short: Encyclopedia of Metagenomics
   venue_type: book
+  venue_full: Encyclopedia of Metagenomics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: book-chapter
   pi_role: ''
   year: '2014'
   status: Final
-  doi: ''
-  url: ''
+  doi: 10.1007/978-1-4614-6418-1_722-5
+  url: https://doi.org/10.1007/978-1-4614-6418-1_722-5
   published_on: '2014'
   volume: ''
   issue: ''
@@ -4146,12 +4386,16 @@
   venue: Encyclopedia of Metagenomics
   venue_short: Encyclopedia of Metagenomics
   venue_type: book
+  venue_full: Encyclopedia of Metagenomics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: book-chapter
   pi_role: ''
   year: '2014'
   status: Final
-  doi: ''
-  url: ''
+  doi: 10.1007/978-1-4614-6418-1_723-4
+  url: https://doi.org/10.1007/978-1-4614-6418-1_723-4
   published_on: '2014'
   volume: ''
   issue: ''
@@ -4187,6 +4431,10 @@
   venue: Bioinformatics
   venue_short: Bioinformatics
   venue_type: journal
+  venue_full: Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2013'
@@ -4246,6 +4494,10 @@
   venue: Genetics and Molecular Research
   venue_short: Genetics and Molecular Research
   venue_type: journal
+  venue_full: Genetics and Molecular Research
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: co_author
   year: '2013'
@@ -4310,6 +4562,10 @@
   venue: PLoS One
   venue_short: PLoS One
   venue_type: journal
+  venue_full: PLoS One
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2011'
@@ -4368,6 +4624,10 @@
   venue: BMC Systems Biology
   venue_short: BMC Systems Biology
   venue_type: journal
+  venue_full: BMC Systems Biology
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2011'
@@ -4445,6 +4705,10 @@
   venue: The ISME Journal
   venue_short: The ISME Journal
   venue_type: journal
+  venue_full: The ISME Journal
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2011'
@@ -4569,6 +4833,10 @@
   venue: BMC Bioinformatics
   venue_short: BMC Bioinformatics
   venue_type: journal
+  venue_full: BMC Bioinformatics
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2010'
@@ -4621,6 +4889,10 @@
   venue: Combinatorial Chemistry and High-throughput Screening
   venue_short: Combinatorial Chemistry and High-throughput Screening
   venue_type: journal
+  venue_full: Combinatorial Chemistry and High-throughput Screening
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: collaborative
   pi_role: ''
   year: '2007'
@@ -4661,6 +4933,10 @@
   venue: Journal of Systems Science and Complexity
   venue_short: Journal of Systems Science and Complexity
   venue_type: journal
+  venue_full: Journal of Systems Science and Complexity
+  venue_location: ''
+  venue_dates: ''
+  presentation: ''
   category: research
   pi_role: 第一作者
   year: '2007'

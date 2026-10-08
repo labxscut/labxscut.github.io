@@ -24,4 +24,10 @@ nav:
 
 {% include intro.html value=site.data.intros.engage.partnerships %}
 
-{% include intro.html value=site.data.intros.engage.location %}
+## Contact
+
+{% include intro.html value=site.data.intros.engage.contact %}
+
+- **Email** · [{{ site.links.email }}](mailto:{{ site.links.email }})
+- **School** · {{ site.data.identity.affiliation.unit_en }}, {{ site.data.identity.affiliation.university_en }}
+- **Address** · {{ site.data.identity.affiliation.address_en }}

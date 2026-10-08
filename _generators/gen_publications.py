@@ -7,6 +7,8 @@ Source of truth: ~/work/advisee/hc/labxManage/Paper/<slug>/publication.yaml
 Only records that are safe to publish go into the site:
   status in {Published, Final, Accept, Accepted}  AND a real title
   AND the venue is known. WIP / ToSub / UdRev / TPL records stay private.
+Meeting abstracts and posters (status Meeting, with a resolvable DOI) are
+written to _data/abstracts.yml and rendered in their own site section.
 Duplicate source records are collapsed by DOI or normalized title and venue.
 
 Usage (WSL):  python3 _generators/gen_publications.py
@@ -26,8 +28,12 @@ REPO = WORK / "labxscut" / "labxscut.github.io"
 PAPERS = WORK / "advisee" / "hc" / "labxManage" / "Paper"
 CONTACT = WORK / "advisee" / "core" / "database" / "contact.md"
 OUT = REPO / "_data" / "publications.yml"
+ABSTRACTS_OUT = REPO / "_data" / "abstracts.yml"
 
 PUBLIC_STATUS = {"Published", "Final", "Accept", "Accepted"}
+# Meeting abstracts and conference posters are published separately, at the
+# bottom of the publications page, so they never mix with full papers.
+ABSTRACT_STATUS = {"Meeting"}
 
 
 def load_roster() -> list[dict]:
@@ -200,14 +206,42 @@ def pi_track(entry: dict, cv_index: dict[str, str] | None = None) -> str:
     return "collaborative"
 
 
+def presentation_type(doc: dict, venue: dict, status: str) -> str:
+    """Classify a non-journal record for display: regular/workshop/poster/abstract.
+
+    Reads an explicit ``presentation:`` field first, then falls back to hints in
+    the venue name and the record notes (the registry writes "poster" and
+    "Meeting abstract" in free text).
+    """
+    explicit = clean(doc.get("presentation")).lower()
+    if explicit in {"regular", "full", "short", "workshop", "poster", "abstract", "demo", "spotlight"}:
+        return {"full": "regular", "short": "regular", "demo": "regular", "spotlight": "workshop"}.get(explicit, explicit)
+    text = " ".join(
+        (clean(venue.get("full_name")) + " " + clean(venue.get("name")) + " " + clean(doc.get("notes")))
+    ).lower()
+    if "poster" in text:
+        return "poster"
+    if status in ABSTRACT_STATUS or "abstract" in text:
+        return "abstract"
+    if "workshop" in text:
+        return "workshop"
+    if "regular" in text:
+        return "regular"
+    return ""
+
+
 def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[str, str] | None = None) -> dict | None:
     lifecycle = doc.get("lifecycle") or {}
     status = clean(lifecycle.get("status"))
-    if status not in PUBLIC_STATUS:
+    is_abstract = status in ABSTRACT_STATUS
+    if status not in PUBLIC_STATUS and not is_abstract:
         return None
-    # Scholar/CV backfill records opt in explicitly; abstracts, preprints and
-    # theses stay in the registry only until a human promotes them.
-    if doc.get("published_on_site") is False:
+    # Scholar/CV backfill records opt in explicitly; preprints and theses stay
+    # in the registry only until a human promotes them. Meeting abstracts and
+    # posters are exempt: they always render in the separate abstracts section,
+    # but only once they carry a resolvable DOI (records flagged "resolve
+    # before publishing" stay out).
+    if doc.get("published_on_site") is False and not is_abstract:
         return None
 
     title = clean(doc.get("title"))
@@ -241,8 +275,16 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         if entry["nick"] and entry["nick"] not in lab_authors:
             lab_authors.append(entry["nick"])
 
+    # Citation metadata harvested from Crossref/OpenAlex and written back into
+    # the registry as an appended `citation:` block (see labxManage/Paper).
+    cite = doc.get("citation") or {}
+    published_on = clean(cite.get("published_on"))
+
     year = ""
-    match = re.search(r"(20\d{2})", clean(lifecycle.get("pub_date")) or clean(lifecycle.get("decision_date")))
+    match = re.search(
+        r"(20\d{2})",
+        clean(lifecycle.get("pub_date")) or clean(lifecycle.get("decision_date")) or published_on,
+    )
     if match:
         year = match.group(1)
     else:
@@ -253,13 +295,16 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
 
     doi = clean(ids.get("doi"))
     if not re.match(r"^10\.\d{4,9}/\S+$", doi, re.IGNORECASE):
+        # Meeting abstracts carry their DOI in the harvested citation block.
+        doi = clean(cite.get("api_doi"))
+    if not re.match(r"^10\.\d{4,9}/\S+$", doi, re.IGNORECASE):
         doi = ""
+    if is_abstract and not doi:
+        # Without a resolvable DOI an abstract is not citable; leave it in the
+        # registry only (the record's own notes ask for a year fix first).
+        return None
     url = clean(ids.get("ieee_url")) or (f"https://doi.org/{doi}" if doi else "")
 
-    # Citation metadata harvested from Crossref/OpenAlex and written back into
-    # the registry as an appended `citation:` block (see labxManage/Paper).
-    cite = doc.get("citation") or {}
-    published_on = clean(cite.get("published_on"))
     volume = clean(cite.get("volume"))
     issue = clean(cite.get("issue"))
     pages = clean(cite.get("pages"))
@@ -274,6 +319,10 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         "venue": venue_name,
         "venue_short": clean(venue.get("name")) or venue_name,
         "venue_type": clean(venue.get("type")) or "journal",
+        "venue_full": venue_name,
+        "venue_location": clean(venue.get("location")),
+        "venue_dates": clean(venue.get("dates")),
+        "presentation": presentation_type(doc, venue, status),
         "category": clean(doc.get("category")) or "other",
         "pi_role": clean(doc.get("role")),
         "year": year,
@@ -406,6 +455,7 @@ def main() -> int:
     cv_index = cv_sections()
     paper_tools = tools_by_paper()
     entries: list[dict] = []
+    abstracts: list[dict] = []
     skipped = 0
     for folder in sorted(p for p in PAPERS.iterdir() if p.is_dir()):
         path = folder / "publication.yaml"
@@ -415,11 +465,15 @@ def main() -> int:
         entry = build_entry(folder.name, doc, lookup, cv_index)
         if entry:
             entry["tools"] = paper_tools.get(folder.name, [])
-            entries.append(entry)
+            if entry["status"] in ABSTRACT_STATUS:
+                abstracts.append(entry)
+            else:
+                entries.append(entry)
         else:
             skipped += 1
 
     entries, duplicates = deduplicate(entries)
+    abstracts, abstract_dups = deduplicate(abstracts)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     header = (
         "# Generated by _generators/gen_publications.py - do not hand-edit.\n"
@@ -429,12 +483,22 @@ def main() -> int:
         header + yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=100),
         encoding="utf-8",
     )
+    abstract_header = (
+        "# Generated by _generators/gen_publications.py - do not hand-edit.\n"
+        "# Source: advisee/hc/labxManage/Paper/<slug>/publication.yaml "
+        "(meeting abstracts and posters).\n"
+    )
+    ABSTRACTS_OUT.write_text(
+        abstract_header + yaml.safe_dump(abstracts, allow_unicode=True, sort_keys=False, width=100),
+        encoding="utf-8",
+    )
     published = sum(1 for entry in entries if entry["status"] not in {"Accept", "Accepted"})
     accepted = len(entries) - published
     print(
         f"publications: {published} published, {accepted} accepted, "
         f"{duplicates} duplicate source records removed, {skipped} excluded"
     )
+    print(f"abstracts: {len(abstracts)} rendered, {abstract_dups} duplicate source records removed")
     return 0
 
 

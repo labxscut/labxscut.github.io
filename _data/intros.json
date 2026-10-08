@@ -50,7 +50,8 @@
     "themes": "We welcome conversations with agencies and organizations interested in supporting collaborative research in:",
     "students": "We welcome inquiries from prospective postdoctoral researchers, PhD students, and master's students interested in our research. Availability depends on current projects, supervision capacity, and funding; this page does not imply that a funded position is open. Please email a brief introduction, CV, and research interests to [{email}](mailto:{email}).",
     "partnerships": "We welcome conversations with agencies and organizations interested in supporting collaborative research in the themes listed above. Potential partners can contact us at [{email}](mailto:{email}) to discuss a research question, possible collaboration, and support needs.",
-    "location": "LabX is based in {unit} at {university}, Guangzhou."
+    "contact": "For all inquiries — prospective students, collaborations, and funding discussions — please reach us here.",
+    "location": ""
   },
 
   "profile": {

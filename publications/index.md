@@ -46,3 +46,12 @@ nav:
 {% include intro.html value=intros.book_chapters %}
 {% include publication-list.html papers=chapters %}
 {% endif %}
+
+{% if site.data.abstracts.size > 0 %}
+## Conference Abstracts and Posters
+
+Meeting abstracts and posters, newest first. These are not counted as full
+papers.
+
+{% include publication-list.html papers=site.data.abstracts %}
+{% endif %}
