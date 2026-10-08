@@ -36,7 +36,7 @@ nav:
 {% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
 {% if tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
-{% if tool.docs %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
+{% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
 </div>
 
 {% include tool-papers.html papers=tool.papers %}
