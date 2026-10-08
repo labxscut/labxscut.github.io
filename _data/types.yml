@@ -1,52 +1,12 @@
 # map general type to default/fallback icon, text, etc.
-
-# team member roles
-
-principal-investigator:
-  icon: fa-solid fa-microscope
-  description: Principal Investigator
-
-postdoc:
-  icon: fa-solid fa-glasses
-  description: Postdoctoral Researcher
-
-phd:
-  icon: fa-solid fa-graduation-cap
-  description: PhD Student
-
-undergrad:
-  icon: fa-solid fa-user-graduate
-  description: Undergraduate Student
-
-programmer:
-  icon: fa-solid fa-code
-  description: Programmer
-
-mascot:
-  icon: fa-solid fa-dog
-  description: Mascot
-
-# general
-
-link:
-  icon: fa-solid fa-globe
-  text: Link
-  tooltip: Link
-
-website:
-  icon: fa-solid fa-globe
-  text: Website
-  tooltip: Website
-
-external:
-  icon: fa-solid fa-up-right-from-square
-  text: External Link
-  tooltip: External link
-
-home-page:
-  icon: fa-solid fa-house-user
-  text: Home Page
-  tooltip: Home page
+#
+# Only keys reachable from the live site are kept:
+#   * footer.html iterates site.links -> email, github, google-scholar
+#   * explicit {% include button.html type=... %} callers -> external, orcid,
+#     docs, source
+# The member role keys (principal-investigator, postdoc, phd, ...) were dropped
+# because portrait.html looks up site.data.types[member.role] and no role string
+# in _data/people.yml ever matches a key here, so the lookup always returned nil.
 
 email:
   icon: fa-solid fa-envelope
@@ -54,29 +14,11 @@ email:
   tooltip: Email
   link: mailto:$VALUE
 
-phone:
-  icon: fa-solid fa-phone
-  text: Phone Number
-  tooltip: Phone number
-  link: tel:$VALUE
-
-address:
-  icon: fa-solid fa-map-location-dot
-  text: Address
-  tooltip: Address
-
-search:
-  icon: fa-solid fa-magnifying-glass
-  text: Search
-  tooltip: Search
-
-# social media
-
-orcid:
-  icon: fa-brands fa-orcid
-  text: ORCID
-  tooltip: ORCID
-  link: https://orcid.org/$VALUE
+github:
+  icon: fa-brands fa-github
+  text: GitHub
+  tooltip: GitHub
+  link: https://github.com/$VALUE
 
 google-scholar:
   icon: fa-brands fa-google
@@ -84,112 +26,16 @@ google-scholar:
   tooltip: Google Scholar
   link: https://scholar.google.com/citations?user=$VALUE
 
-github:
-  icon: fa-brands fa-github
-  text: GitHub
-  tooltip: GitHub
-  link: https://github.com/$VALUE
+external:
+  icon: fa-solid fa-up-right-from-square
+  text: External Link
+  tooltip: External link
 
-twitter:
-  icon: fa-brands fa-twitter
-  text: Twitter
-  tooltip: Twitter
-  link: https://twitter.com/$VALUE
-
-bluesky:
-  icon: fa-brands fa-bluesky
-  text: Bluesky
-  tooltip: Bluesky
-  link: https://bsky.app/profile/$VALUE
-
-facebook:
-  icon: fa-brands fa-facebook
-  text: Facebook
-  tooltip: Facebook
-  link: https://facebook.com/$VALUE
-
-instagram:
-  icon: fa-brands fa-instagram
-  text: Instagram
-  tooltip: Instagram
-  link: https://instagram.com/$VALUE
-
-youtube:
-  icon: fa-brands fa-youtube
-  text: YouTube
-  tooltip: YouTube
-  link: https://youtube.com/$VALUE
-
-linkedin:
-  icon: fa-brands fa-linkedin
-  text: LinkedIn
-  tooltip: LinkedIn
-  link: https://www.linkedin.com/in/$VALUE
-
-# alerts
-
-tip:
-  icon: fa-solid fa-lightbulb
-  color: "#d946ef"
-
-help:
-  icon: fa-solid fa-circle-question
-  color: "#6366f1"
-
-info:
-  icon: fa-solid fa-circle-info
-  color: "#0ea5e9"
-
-success:
-  icon: fa-solid fa-circle-check
-  color: "#22c55e"
-
-warning:
-  icon: fa-solid fa-circle-exclamation
-  color: "#F59E0B"
-
-error:
-  icon: fa-solid fa-ban
-  color: "#ef4444"
-
-# publications
-
-paper:
-  icon: fa-solid fa-scroll
-  text: Paper
-  tooltip: Paper
-
-book:
-  icon: fa-solid fa-book
-  text: Book
-  tooltip: Book
-
-article:
-  icon: fa-solid fa-newspaper
-  text: Article
-  tooltip: Article
-
-journal:
-  icon: fa-regular fa-newspaper
-  text: Journal
-  tooltip: Journal
-
-preprint:
-  icon: fa-regular fa-eye
-  text: Preprint
-  tooltip: Preprint
-
-unpublished:
-  icon: fa-regular fa-eye
-  text: Unpublished
-  tooltip: Unpublished
-
-manubot:
-  icon: manubot.svg
-  text: Manubot
-  tooltip: Manubot
-
-# software
+orcid:
+  icon: fa-brands fa-orcid
+  text: ORCID
+  tooltip: ORCID
+  link: https://orcid.org/$VALUE
 
 docs:
   icon: fa-solid fa-book
@@ -200,23 +46,3 @@ source:
   icon: fa-solid fa-code
   text: Source
   tooltip: Source code
-
-server:
-  icon: fa-solid fa-server
-  text: Server
-  tooltip: Server
-
-app:
-  icon: fa-solid fa-hand-pointer
-  text: App
-  tooltip: App
-
-data:
-  icon: fa-solid fa-database
-  text: Data
-  tooltip: Data
-
-package:
-  icon: fa-solid fa-box
-  text: Package
-  tooltip: Package

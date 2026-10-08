@@ -36,12 +36,18 @@ include:
   - _styles
   - _scripts
 
+# Everything below stays tracked in git but is NOT published to the site.
 exclude:
   - README.md
   - AGENTS.md
   - todo.md
   - 0design
+  - 1chats
   - LICENSE
   - LICENSE-LWT.md
   - CITATION-LWT.cff
   - _generators
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - requirements.txt
