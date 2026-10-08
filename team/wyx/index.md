@@ -30,6 +30,13 @@ papers:
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
   pi_track: lead
+  doi: 10.1007/978-981-95-0695-8_18
+  published_on: '2026'
+  volume: ''
+  issue: ''
+  pages: 217-227
+  pdf: /papers/DuanXia2025EnzhierAccurateEnzymeFunction.pdf
+  sort_key: '2026-01-01'
 avatar: /images/avatars/wyx.svg
 ---
 

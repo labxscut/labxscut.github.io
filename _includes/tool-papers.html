@@ -16,7 +16,7 @@ Usage: {% include tool-papers.html papers=tool.papers %}
   {%- endif -%}
 {%- endfor -%}
 {%- if related.size > 0 -%}
-  {%- assign related = related | sort: "year" | reverse -%}
+  {%- assign related = related | sort: "sort_key" | reverse -%}
 <p class="labx-tool-papers" lang="en">
   <span class="labx-tool-papers-label">Related publications:</span>
   {%- for paper in related -%}

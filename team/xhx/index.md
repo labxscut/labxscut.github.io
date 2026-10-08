@@ -29,6 +29,13 @@ papers:
   url: https://doi.org/10.1109/BIBM66473.2025.11356976
   status: Final
   pi_track: lead
+  doi: 10.1109/BIBM66473.2025.11356976
+  published_on: '2025-12-15'
+  volume: ''
+  issue: ''
+  pages: 1278-1283
+  pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
+  sort_key: '2025-12-15'
 avatar: /images/avatars/xhx.svg
 ---
 

@@ -28,6 +28,13 @@ papers:
   url: ''
   status: Accepted
   pi_track: lead
+  doi: ''
+  published_on: ''
+  volume: ''
+  issue: ''
+  pages: ''
+  pdf: ''
+  sort_key: '2026-01-01'
 avatar: /images/avatars/pel.svg
 ---
 

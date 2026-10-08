@@ -29,6 +29,13 @@ papers:
   url: https://ieeexplore.ieee.org/document/11536776
   status: Published
   pi_track: lead
+  doi: 10.1109/TCBBIO.2026.3697777
+  published_on: '2026'
+  volume: ''
+  issue: ''
+  pages: 1-14
+  pdf: ''
+  sort_key: '2026-01-01'
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
@@ -36,6 +43,13 @@ papers:
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
   pi_track: lead
+  doi: 10.1016/j.xhgg.2025.100540
+  published_on: 2026-01
+  volume: '7'
+  issue: '1'
+  pages: '100540'
+  pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
+  sort_key: '2026-01-01'
 avatar: /images/avatars/lhl.svg
 ---
 

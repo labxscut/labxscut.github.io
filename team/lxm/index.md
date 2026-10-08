@@ -30,6 +30,13 @@ papers:
   url: https://ieeexplore.ieee.org/abstract/document/11176992
   status: Published
   pi_track: lead
+  doi: 10.1109/TCBBIO.2025.3613591
+  published_on: 2025-11
+  volume: '22'
+  issue: '6'
+  pages: 3000-3016
+  pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
+  sort_key: '2025-11-01'
 avatar: /images/avatars/lxm.svg
 ---
 

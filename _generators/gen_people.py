@@ -306,6 +306,13 @@ def short_paper(entry: dict) -> dict:
         "url": entry["url"],
         "status": entry.get("status", ""),
         "pi_track": entry.get("pi_track", ""),
+        "doi": entry.get("doi", ""),
+        "published_on": entry.get("published_on", ""),
+        "volume": entry.get("volume", ""),
+        "issue": entry.get("issue", ""),
+        "pages": entry.get("pages", ""),
+        "pdf": entry.get("pdf", ""),
+        "sort_key": entry.get("sort_key", entry.get("year", "")),
     }
 
 

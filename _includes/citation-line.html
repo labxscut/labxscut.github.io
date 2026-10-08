@@ -1,0 +1,11 @@
+{%- comment -%
+  One-line citation for a publication entry.
+
+  Usage:  {% include citation-line.html paper=paper %}
+          {% include citation-line.html paper=paper accepted=true %}
+
+  Renders: **Venue** · volume(issue), pages · date · [PDF] · [doi] · [Code]
+  Missing metadata is skipped, so records without a harvested citation block
+  still print exactly as before.
+{%- endcomment -%}
+**{{ paper.venue }}**{% if paper.volume != "" %} · {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %} · {% if paper.published_on != "" %}{{ paper.published_on }}{% else %}{{ paper.year }}{% endif %}{% if include.accepted %} <span class="labx-status">Accepted</span>{% endif %}{% if paper.pdf != "" %} · [PDF]({{ paper.pdf }}){% endif %}{% if paper.doi != "" %} · [doi:{{ paper.doi }}](https://doi.org/{{ paper.doi }}){% endif %}{% unless include.accepted %}{% if paper.repo != "" %} · [Code]({{ paper.repo }}){% endif %}{% endunless %}

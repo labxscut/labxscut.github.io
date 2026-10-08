@@ -256,6 +256,18 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         doi = ""
     url = clean(ids.get("ieee_url")) or (f"https://doi.org/{doi}" if doi else "")
 
+    # Citation metadata harvested from Crossref/OpenAlex and written back into
+    # the registry as an appended `citation:` block (see labxManage/Paper).
+    cite = doc.get("citation") or {}
+    published_on = clean(cite.get("published_on"))
+    volume = clean(cite.get("volume"))
+    issue = clean(cite.get("issue"))
+    pages = clean(cite.get("pages"))
+    # A `pdf:` block points at the downloadable PDF: either a hosted file in
+    # this repo (`site_path`) or an external open-access URL (`url`).
+    pdf = doc.get("pdf") or {}
+    pdf_url = clean(pdf.get("site_path")) or clean(pdf.get("url"))
+
     entry = {
         "slug": slug,
         "title": title,
@@ -268,6 +280,11 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         "status": status,
         "doi": doi,
         "url": url,
+        "published_on": published_on,
+        "volume": volume,
+        "issue": issue,
+        "pages": pages,
+        "pdf": pdf_url,
         "repo": clean(ids.get("repo_url")),
         "if": clean(metrics.get("impact_factor")),
         "quartile": clean(metrics.get("jcr_quartile")),
@@ -279,7 +296,22 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         "lab_authors": lab_authors,
     }
     entry["pi_track"] = pi_track(entry, cv_index)
+    entry["sort_key"] = sort_key(entry)
     return entry
+
+
+def sort_key(entry: dict) -> str:
+    """ISO-ish date used to order the list newest-first.
+
+    Prefers the harvested publication date (``citation.published_on``, which is
+    ``YYYY-MM`` or ``YYYY-MM-DD``) and falls back to the bare year so records
+    without citation data keep their place at the end of that year.
+    """
+    date = clean(entry.get("published_on"))
+    m = re.match(r"^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?", date)
+    if m:
+        return "%s-%s-%s" % (m.group(1), m.group(2) or "01", m.group(3) or "01")
+    return "%s-01-01" % (entry.get("year") or "0000")
 
 
 def publication_key(entry: dict) -> tuple[str, ...]:
@@ -299,6 +331,8 @@ def entry_quality(entry: dict) -> tuple[int, ...]:
         len(entry.get("authors") or []),
         bool(entry.get("repo")),
         bool(entry.get("url")),
+        bool(entry.get("published_on")),
+        bool(entry.get("pdf")),
         entry.get("status") == "Published",
         not entry.get("slug", "").startswith("Feishu-"),
     )
@@ -312,7 +346,7 @@ def deduplicate(entries: list[dict]) -> tuple[list[dict], int]:
         if existing is None or entry_quality(entry) > entry_quality(existing):
             unique[key] = entry
     result = list(unique.values())
-    result.sort(key=lambda e: (e["year"] or "0", e["title"]), reverse=True)
+    result.sort(key=lambda e: (e.get("sort_key") or "0000-01-01", e["title"]), reverse=True)
     return result, len(entries) - len(result)
 
 

@@ -25,20 +25,6 @@ tools:
 - sxEnzHier
 - sxSNF
 papers:
-- slug: Duan2025sxSNF
-  title: 'sxSNF: Similarity Network Fusion-Guided Deep Graph Learning for Single-Cell Multimodal Integration'
-  venue: IEEE Transactions on Computational Biology and Bioinformatics
-  year: '2026'
-  url: https://ieeexplore.ieee.org/document/11536776
-  status: Published
-  pi_track: lead
-- slug: RenICAITE26MultimodalMathExpl
-  title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
-  venue: International Conference on Artificial Intelligence Technology and Education
-  year: '2026'
-  url: ''
-  status: Accepted
-  pi_track: lead
 - slug: ChenICML26DataShiftRegular
   title: General Quantification of Covariate and Concept Shifts
   venue: International Conference on Machine Learning
@@ -46,14 +32,27 @@ papers:
   url: ''
   status: Final
   pi_track: lead
-- slug: WangBIBM2024sxFusion
-  title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
-    of low-rank representation with clustering'
-  venue: IEEE International Conference on Bioinformatics and Biomedicine
-  year: '2025'
-  url: https://doi.org/10.1109/BIBM66473.2025.11356976
-  status: Final
+  doi: ''
+  published_on: '2026-09-10'
+  volume: ''
+  issue: ''
+  pages: ''
+  pdf: https://arxiv.org/pdf/2609.11918
+  sort_key: '2026-09-10'
+- slug: Duan2025sxSNF
+  title: 'sxSNF: Similarity Network Fusion-Guided Deep Graph Learning for Single-Cell Multimodal Integration'
+  venue: IEEE Transactions on Computational Biology and Bioinformatics
+  year: '2026'
+  url: https://ieeexplore.ieee.org/document/11536776
+  status: Published
   pi_track: lead
+  doi: 10.1109/TCBBIO.2026.3697777
+  published_on: '2026'
+  volume: ''
+  issue: ''
+  pages: 1-14
+  pdf: ''
+  sort_key: '2026-01-01'
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
@@ -61,13 +60,27 @@ papers:
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
   pi_track: lead
-- slug: ChenICML25DshiftShort
-  title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
-  venue: ICML 2025 DataWorld Workshop
-  year: '2025'
-  url: https://doi.org/10.48550/arXiv.2506.12829
-  status: Accept
+  doi: 10.1016/j.xhgg.2025.100540
+  published_on: 2026-01
+  volume: '7'
+  issue: '1'
+  pages: '100540'
+  pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
+  sort_key: '2026-01-01'
+- slug: RenICAITE26MultimodalMathExpl
+  title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
+  venue: International Conference on Artificial Intelligence Technology and Education
+  year: '2026'
+  url: ''
+  status: Accepted
   pi_track: lead
+  doi: ''
+  published_on: ''
+  volume: ''
+  issue: ''
+  pages: ''
+  pdf: ''
+  sort_key: '2026-01-01'
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
     Contrastive Learning'
@@ -76,6 +89,28 @@ papers:
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
   pi_track: lead
+  doi: 10.1007/978-981-95-0695-8_18
+  published_on: '2026'
+  volume: ''
+  issue: ''
+  pages: 217-227
+  pdf: /papers/DuanXia2025EnzhierAccurateEnzymeFunction.pdf
+  sort_key: '2026-01-01'
+- slug: WangBIBM2024sxFusion
+  title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
+    of low-rank representation with clustering'
+  venue: IEEE International Conference on Bioinformatics and Biomedicine
+  year: '2025'
+  url: https://doi.org/10.1109/BIBM66473.2025.11356976
+  status: Final
+  pi_track: lead
+  doi: 10.1109/BIBM66473.2025.11356976
+  published_on: '2025-12-15'
+  volume: ''
+  issue: ''
+  pages: 1278-1283
+  pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
+  sort_key: '2025-12-15'
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
     DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -84,6 +119,27 @@ papers:
   url: https://ieeexplore.ieee.org/abstract/document/11176992
   status: Published
   pi_track: lead
+  doi: 10.1109/TCBBIO.2025.3613591
+  published_on: 2025-11
+  volume: '22'
+  issue: '6'
+  pages: 3000-3016
+  pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
+  sort_key: '2025-11-01'
+- slug: ChenICML25DshiftShort
+  title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
+  venue: ICML 2025 DataWorld Workshop
+  year: '2025'
+  url: https://doi.org/10.48550/arXiv.2506.12829
+  status: Accept
+  pi_track: lead
+  doi: 10.48550/arXiv.2506.12829
+  published_on: '2025-06-15'
+  volume: ''
+  issue: ''
+  pages: ''
+  pdf: https://arxiv.org/pdf/2506.12829
+  sort_key: '2025-06-15'
 - slug: BaiNARGB24CCNMF
   title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
   venue: NAR Genomics and Bioinformatics
@@ -91,6 +147,13 @@ papers:
   url: https://doi.org/10.1093/nargab/lqae017
   status: Final
   pi_track: lead
+  doi: 10.1093/nargab/lqae017
+  published_on: '2024-01-05'
+  volume: '6'
+  issue: '1'
+  pages: lqae017
+  pdf: /papers/BaiXia2024JointInferenceOfClonal.pdf
+  sort_key: '2024-01-05'
 avatar: /images/avatars/lcx.jpg
 ---
 

@@ -22,13 +22,6 @@ site: true
 tools:
 - sxEnzHier
 papers:
-- slug: RenICAITE26MultimodalMathExpl
-  title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
-  venue: International Conference on Artificial Intelligence Technology and Education
-  year: '2026'
-  url: ''
-  status: Accepted
-  pi_track: lead
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
@@ -36,6 +29,27 @@ papers:
   url: https://doi.org/10.1016/j.xhgg.2025.100540
   status: Final
   pi_track: lead
+  doi: 10.1016/j.xhgg.2025.100540
+  published_on: 2026-01
+  volume: '7'
+  issue: '1'
+  pages: '100540'
+  pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
+  sort_key: '2026-01-01'
+- slug: RenICAITE26MultimodalMathExpl
+  title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
+  venue: International Conference on Artificial Intelligence Technology and Education
+  year: '2026'
+  url: ''
+  status: Accepted
+  pi_track: lead
+  doi: ''
+  published_on: ''
+  volume: ''
+  issue: ''
+  pages: ''
+  pdf: ''
+  sort_key: '2026-01-01'
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
     Contrastive Learning'
@@ -44,6 +58,13 @@ papers:
   url: https://doi.org/10.1007/978-981-95-0695-8_18
   status: Final
   pi_track: lead
+  doi: 10.1007/978-981-95-0695-8_18
+  published_on: '2026'
+  volume: ''
+  issue: ''
+  pages: 217-227
+  pdf: /papers/DuanXia2025EnzhierAccurateEnzymeFunction.pdf
+  sort_key: '2026-01-01'
 avatar: /images/avatars/rbz.svg
 ---
 
