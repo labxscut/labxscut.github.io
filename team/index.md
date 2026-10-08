@@ -20,9 +20,11 @@ nav:
 
 ## {{ pair[1] }}
 
-{% for person in group %}
-{% if person.has_page %}[**{{ person.name_en }}**](/team/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh != "" %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.years != "" %} ({{ person.years }}){% endif %}{% if person.affiliation != "" %} · {{ person.affiliation }}{% endif %}{% if person.now %} · now {{ person.now }}{% endif %}{% if person.github != "" %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
+{% if pair[0] == "alumni" %}
+{% include team-alumni.html %}
+{% else %}{% for person in group %}
+{% include team-row.html person=person %}
 
-{% endfor %}
+{% endfor %}{% endif %}
   {% endif %}
 {% endfor %}

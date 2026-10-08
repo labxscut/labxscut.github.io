@@ -75,6 +75,33 @@ ALUMNI_ROLE = {
 
 # Alumni are grouped by the level they left at: highest first, then most recent exit.
 ALUMNI_RANK = {"Faculty": 0, "PostDoc": 1, "PhD": 2, "Master": 3, "Under": 4}
+# the sub-sections /team/ shows inside Alumni, in display order
+ALUMNI_GROUP_ORDER = ["Visiting scholars", "Postdocs", "PhD", "Master's", "Undergraduates"]
+# a visiting scholar's displayed role, unless the roster carries a more specific title
+ALUMNI_VISITING_ROLE = "Visiting scholar"
+
+
+ALUMNI_POSTDOC_ROLE = "Postdoctoral researcher"
+
+
+def alumni_group(degree: str, now: str, title: str, type_: str) -> dict:
+    """Alumni sub-section rank and role text for one alumnus.
+
+    A roster ``type`` of ``VisitingScholar`` (or a postdoctoral position) wins over
+    the study level, so visiting scholars and postdocs are listed above the
+    PhD / Master's / undergraduate groups.
+    """
+    if type_ == "VisitingScholar":
+        rank = 0
+        role = role_text(title, ALUMNI_VISITING_ROLE) if title else ALUMNI_VISITING_ROLE
+        fallback = ALUMNI_VISITING_ROLE
+    elif now.lower().startswith("postdoc"):
+        rank, role, fallback = 1, ALUMNI_POSTDOC_ROLE, ALUMNI_POSTDOC_ROLE
+    else:
+        rank = ALUMNI_RANK.get(degree, 4)
+        role = ALUMNI_ROLE.get(degree, "Alumni")
+        fallback = role
+    return {"rank": rank, "label": ALUMNI_GROUP_ORDER[rank], "role": role, "fallback": fallback}
 
 # Order of the /team/ sections; also the order people.yml is written in.
 # Collaborators and visiting scholars are current collaborators, so they sit
@@ -105,10 +132,13 @@ PI_NICK = "lcx"
 def section_for(row: dict) -> str:
     if row["nick"] == "lcx":
         return "pi"
+    is_alumni = bool(row["status"] == "alumni" or row.get("alumni") or row["nick"] in EXTERNAL_FACULTY)
     type_section = TYPE_SECTIONS.get(row.get("type", ""))
-    if type_section:
+    # a departed visiting scholar belongs to the Alumni section (shown as its own
+    # sub-group); the top-level `visiting` section is for current visitors only
+    if type_section and not (is_alumni and type_section == "visiting"):
         return type_section
-    if row["status"] == "alumni" or row.get("alumni") or row["nick"] in EXTERNAL_FACULTY:
+    if is_alumni:
         return "alumni"
     return {
         "Faculty": "faculty",
@@ -119,12 +149,17 @@ def section_for(row: dict) -> str:
 
 
 def alumni_rank(entry: dict) -> tuple[int, int]:
-    """Sort key for alumni: degree level first, then most recent departure."""
-    degree = entry["degree"] if entry["degree"] in ALUMNI_RANK else "Under"
-    if str(entry.get("now", "")).lower().startswith("postdoc"):
-        degree = "PostDoc"
+    """Sort key for alumni: sub-group first, then most recent departure."""
+    label = entry.get("alumni_group") or ""
+    if label in ALUMNI_GROUP_ORDER:
+        rank = ALUMNI_GROUP_ORDER.index(label)
+    else:
+        rank = ALUMNI_RANK.get(entry["degree"], len(ALUMNI_GROUP_ORDER) - 1)
     end = re.sub(r"\D", "", str(entry.get("end_year") or ""))
-    return ALUMNI_RANK[degree], -(int(end) if end else 0)
+    return rank, -(int(end) if end else 0)
+
+
+
 
 
 def years(row: dict) -> tuple[str, str]:
@@ -376,10 +411,13 @@ def main() -> int:
         if row["nick"] == PI_NICK:
             role = TITLE_BY_SECTION["pi"]
             fallback_role = role
+            group = None
         elif section == "alumni":
-            role = ALUMNI_ROLE.get(row["degree"], "Alumni")
-            fallback_role = role
+            group = alumni_group(row["degree"], row.get("now", ""), row.get("title", ""), row.get("type", ""))
+            role = group["role"]
+            fallback_role = group["fallback"]
         else:
+            group = None
             fallback_role = (
                 TITLE_BY_SECTION.get(section) or DEGREE_ROLE.get(row["degree"], row["degree"])
             )
@@ -431,6 +469,9 @@ def main() -> int:
             "tools": tools,
             "papers": papers,
         }
+        if section == "alumni":
+            # /team/ renders the alumni as sub-sections in this order.
+            entry["alumni_group"] = group["label"]
         if now_text:
             entry["now"] = now_text
         elif section == "alumni":
@@ -441,6 +482,7 @@ def main() -> int:
                 affil not in PLACEHOLDER_AFFILIATIONS
                 and affil not in NON_INSTITUTIONAL_AFFILIATIONS
                 and not affil.endswith(("?", "？"))
+                and not (role and same_place(affil, role))
             ):
                 entry["now"] = affil
                 # The affiliation only fed the "now" line; showing it twice is noise.
@@ -582,7 +624,7 @@ def main() -> int:
             if not any(directory.iterdir()):
                 directory.rmdir()
 
-    # Section order first; inside Alumni sort by level then most recent exit.
+    # Section order first; inside Alumni sort by sub-group then most recent exit.
     people.sort(
         key=lambda p: (
             SECTION_ORDER.index(p["section"]) if p["section"] in SECTION_ORDER else len(SECTION_ORDER),

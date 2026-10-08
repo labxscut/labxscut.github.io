@@ -1,0 +1,20 @@
+{%- comment -%}
+  Render the Alumni roster as sub-sections (visiting scholars and postdocs
+  first, then PhD, Master's and undergraduate alumni), newest exit first.
+
+  Usage:  {% include team-alumni.html %}
+{%- endcomment -%}
+{%- assign groups = "Visiting scholars,Postdocs,PhD,Master's,Undergraduates" | split: "," -%}
+{%- assign alumni = site.data.people | where: "section", "alumni" -%}
+{%- for label in groups -%}
+  {%- assign subset = alumni | where: "alumni_group", label -%}
+  {%- if subset.size > 0 -%}
+
+### {{ label }}
+
+{% for person in subset %}
+{% include team-row.html person=person %}
+
+{% endfor %}
+  {%- endif -%}
+{%- endfor -%}

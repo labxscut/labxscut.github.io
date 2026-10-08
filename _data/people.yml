@@ -88,40 +88,6 @@
     status: Final
     pi_track: lead
   avatar: /images/avatars/lcx.jpg
-- nick: fyl
-  title: Dr. Fang Yanli
-  name_en: Dr. Fang Yanli
-  name_zh: 方艳丽
-  role: Professor@惠州学院
-  degree: Faculty
-  section: faculty
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: active
-  affiliation: ''
-  github: ''
-  has_page: false
-  site: false
-  tools: []
-  papers: []
-- nick: jdy
-  title: Dr. Jiao Dongyan
-  name_en: Dr. Jiao Dongyan
-  name_zh: 焦冬艳
-  role: Professor@广东理工职业学院
-  degree: Faculty
-  section: faculty
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: active
-  affiliation: ''
-  github: ''
-  has_page: false
-  site: false
-  tools: []
-  papers: []
 - nick: lhl
   title: Dr. Liu Huiling
   name_en: Dr. Liu Huiling
@@ -933,11 +899,47 @@
   - sxLaep
   papers: []
   avatar: /images/avatars/myj.svg
+- nick: fyl
+  title: Dr. Fang Yanli
+  name_en: Dr. Fang Yanli
+  name_zh: 方艳丽
+  role: Professor@惠州学院
+  degree: Faculty
+  section: alumni
+  start_year: ''
+  end_year: ''
+  years: ''
+  status: alumni
+  affiliation: ''
+  github: ''
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Visiting scholars
+- nick: jdy
+  title: Dr. Jiao Dongyan
+  name_en: Dr. Jiao Dongyan
+  name_zh: 焦冬艳
+  role: Professor@广东理工职业学院
+  degree: Faculty
+  section: alumni
+  start_year: ''
+  end_year: ''
+  years: ''
+  status: alumni
+  affiliation: ''
+  github: ''
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Visiting scholars
 - nick: bxq
   title: Bai Xiangqi
   name_en: Bai Xiangqi
   name_zh: 白向琦
-  role: PhD
+  role: Postdoctoral researcher
   degree: PhD
   section: alumni
   start_year: ''
@@ -975,6 +977,7 @@
     url: https://doi.org/10.1093/nargab/lqae017
     status: Final
     pi_track: lead
+  alumni_group: Postdocs
   now: postdoc@Stanford
 - nick: liy
   title: Li Yang
@@ -993,6 +996,25 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Master's
+- nick: tay
+  title: Tang Yu
+  name_en: Tang Yu
+  name_zh: 唐瑀
+  role: Master's
+  degree: Master
+  section: alumni
+  start_year: '2023'
+  end_year: '2026'
+  years: 23i–26o
+  status: alumni
+  affiliation: ''
+  github: shuigelanjiao33
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Master's
 - nick: lyi
   title: Liang Yin
   name_en: Liang Yin
@@ -1011,6 +1033,7 @@
   tools:
   - deeplb
   papers: []
+  alumni_group: Master's
   now: 佛山五院
 - nick: lzy
   title: Liang Zhanyu
@@ -1036,6 +1059,7 @@
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
     pi_track: lead
+  alumni_group: Master's
   now: 广州移动
 - nick: xlh
   title: Xiao Longhui
@@ -1054,6 +1078,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Master's
   now: 深圳国企
 - nick: yzy
   title: Yu Zhengyang
@@ -1079,6 +1104,7 @@
     url: https://doi.org/10.1016/j.xhgg.2025.100540
     status: Final
     pi_track: lead
+  alumni_group: Master's
   now: 深圳迈瑞
 - nick: xjm
   title: Xie Jiemin
@@ -1106,24 +1132,8 @@
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
     pi_track: lead
+  alumni_group: Master's
   now: 广州联通
-- nick: tay
-  title: Tang Yu
-  name_en: Tang Yu
-  name_zh: 唐瑀
-  role: Master's
-  degree: Master
-  section: alumni
-  start_year: ''
-  end_year: '2023'
-  years: 23o
-  status: alumni
-  affiliation: ''
-  github: shuigelanjiao33
-  has_page: false
-  site: false
-  tools: []
-  papers: []
 - nick: cxt
   title: Chang Xintong
   name_en: Chang Xintong
@@ -1150,7 +1160,8 @@
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
     pi_track: lead
-  now: master@Zhejiang University
+  alumni_group: Undergraduates
+  now: 浙江大学
 - nick: liz
   title: Li Ziyan
   name_en: Li Ziyan
@@ -1177,6 +1188,26 @@
     url: https://doi.org/10.1007/978-981-95-0695-8_18
     status: Final
     pi_track: lead
+  alumni_group: Undergraduates
+- nick: yxy
+  title: Yang Xiaoying
+  name_en: Yang Xiaoying
+  name_zh: 杨晓盈
+  role: Undergraduate
+  degree: Under
+  section: alumni
+  start_year: '2022'
+  end_year: '2026'
+  years: 22i–26o
+  status: alumni
+  affiliation: ''
+  github: xyyang20
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Undergraduates
+  now: UCSD
 - nick: grx
   title: Gao Ruoxin
   name_en: Gao Ruoxin
@@ -1194,6 +1225,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 香港理工大学
 - nick: lyt
   title: Yang Lingfeng
@@ -1212,6 +1244,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: lza
   title: Li Zian
   name_en: Li Zian
@@ -1229,6 +1262,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: txd
   title: Tan Xudong
   name_en: Tan Xudong
@@ -1246,6 +1280,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: wws
   title: Wang Wenshuai
   name_en: Wang Wenshuai
@@ -1263,6 +1298,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: wzh
   title: Wu Zehao
   name_en: Wu Zehao
@@ -1280,6 +1316,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 新加坡国立大学
 - nick: yez
   title: Ye Chaoyang
@@ -1298,6 +1335,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 新加坡国立大学
 - nick: zhy
   title: Zhang Yuan
@@ -1316,6 +1354,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: zjy
   title: Zhang Jiayi
   name_en: Zhang Jiayi
@@ -1341,6 +1380,7 @@
     url: https://doi.org/10.1109/BIBM66473.2025.11356976
     status: Final
     pi_track: lead
+  alumni_group: Undergraduates
   now: Johns Hopkins University
 - nick: chb
   title: Chen Hongbo
@@ -1373,6 +1413,7 @@
     url: https://doi.org/10.48550/arXiv.2506.12829
     status: Accept
     pi_track: lead
+  alumni_group: Undergraduates
   now: PhD applicant@overseas
 - nick: fymr
   title: Fu Yinmingren
@@ -1391,6 +1432,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: Santa Clara University
 - nick: hjy
   title: Huang Jiayu
@@ -1409,6 +1451,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 哥伦比亚大学
 - nick: ljh
   title: Li Jiahua
@@ -1427,6 +1470,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 香港大学
 - nick: way
   title: Wang Yang
@@ -1453,6 +1497,7 @@
     url: https://ieeexplore.ieee.org/document/11536776
     status: Published
     pi_track: lead
+  alumni_group: Undergraduates
   now: 中山大学
 - nick: zhh
   title: Zhang Hui
@@ -1471,6 +1516,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: ljw
   title: Luo Jiawei
   name_en: Luo Jiawei
@@ -1488,6 +1534,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 中山大学
 - nick: lky
   title: Li Keyi
@@ -1515,6 +1562,7 @@
     url: https://ieeexplore.ieee.org/abstract/document/11176992
     status: Published
     pi_track: lead
+  alumni_group: Undergraduates
   now: 哥伦比亚大学
 - nick: lzs
   title: Long Zhaoshen
@@ -1533,6 +1581,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: zba
   title: Zhu Baian
   name_en: Zhu Baian
@@ -1550,7 +1599,46 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
   now: 哥伦比亚大学
+- nick: zjh
+  title: Zhang Jinhang
+  name_en: Zhang Jinhang
+  name_zh: 张瑾杭
+  role: Undergraduate
+  degree: Under
+  section: alumni
+  start_year: '2018'
+  end_year: '2022'
+  years: 18i–22o
+  status: alumni
+  affiliation: ''
+  github: ''
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Undergraduates
+  now: 中山大学
+- nick: czq
+  title: Cheng Ziqi
+  name_en: Cheng Ziqi
+  name_zh: 程子齐
+  role: Undergraduate
+  degree: Under
+  section: alumni
+  start_year: '2017'
+  end_year: '2021'
+  years: 17i–21o
+  status: active
+  affiliation: ''
+  github: costena
+  has_page: false
+  site: false
+  tools: []
+  papers: []
+  alumni_group: Undergraduates
+  now: 网易游戏
 - nick: cyy
   title: Chen Yingying
   name_en: Chen Yingying
@@ -1568,24 +1656,7 @@
   site: false
   tools: []
   papers: []
-- nick: czq
-  title: Cheng Ziqi
-  name_en: Cheng Ziqi
-  name_zh: 程子齐
-  role: Undergraduate
-  degree: Under
-  section: alumni
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: active
-  affiliation: ''
-  github: costena
-  has_page: false
-  site: false
-  tools: []
-  papers: []
-  now: 网易游戏
+  alumni_group: Undergraduates
 - nick: dsy
   title: Deng Siyuan
   name_en: Deng Siyuan
@@ -1603,6 +1674,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: hzq
   title: Huang Zhouqing
   name_en: Huang Zhouqing
@@ -1620,6 +1692,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: lmz
   title: Li Mingze
   name_en: Li Mingze
@@ -1637,6 +1710,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: lsy
   title: Liu Siying
   name_en: Liu Siying
@@ -1654,6 +1728,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: lziyi
   title: Lu Ziyi
   name_en: Lu Ziyi
@@ -1671,6 +1746,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: mhz
   title: Ma Haizhen
   name_en: Ma Haizhen
@@ -1688,6 +1764,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: mqn
   title: Ma Qian
   name_en: Ma Qian
@@ -1705,6 +1782,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: txi
   title: Tang Xi
   name_en: Tang Xi
@@ -1722,6 +1800,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: wgc
   title: Wu Guocong
   name_en: Wu Guocong
@@ -1739,6 +1818,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: wjb
   title: Wang Jianbo
   name_en: Wang Jianbo
@@ -1756,6 +1836,7 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
 - nick: yby
   title: Yang Binyu
   name_en: Yang Binyu
@@ -1773,24 +1854,7 @@
   site: false
   tools: []
   papers: []
-- nick: yxy
-  title: Yang Xiaoying
-  name_en: Yang Xiaoying
-  name_zh: 杨晓盈
-  role: Undergraduate
-  degree: Under
-  section: alumni
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: alumni
-  affiliation: ''
-  github: xyyang20
-  has_page: false
-  site: false
-  tools: []
-  papers: []
-  now: UCSD
+  alumni_group: Undergraduates
 - nick: yyu
   title: Yu Yue
   name_en: Yu Yue
@@ -1808,24 +1872,7 @@
   site: false
   tools: []
   papers: []
-- nick: zjh
-  title: Zhang Jinhang
-  name_en: Zhang Jinhang
-  name_zh: 张瑾杭
-  role: Undergraduate
-  degree: Under
-  section: alumni
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: alumni
-  affiliation: ''
-  github: ''
-  has_page: false
-  site: false
-  tools: []
-  papers: []
-  now: 中山大学
+  alumni_group: Undergraduates
 - nick: pxy
   title: Pan Xingyue
   name_en: Pan Xingyue
@@ -1843,3 +1890,4 @@
   site: false
   tools: []
   papers: []
+  alumni_group: Undergraduates
