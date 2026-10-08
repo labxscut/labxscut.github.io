@@ -708,7 +708,7 @@
   volume: '7'
   issue: '5'
   pages: e202302181
-  pdf: https://www.life-science-alliance.org/content/lsa/7/5/e202302181.full.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10902710
   repo: ''
   if: '2.9'
   quartile: Q1
@@ -849,7 +849,7 @@
   volume: '24'
   issue: '6'
   pages: bbad390
-  pdf: https://academic.oup.com/bib/article-pdf/24/6/bbad390/52778042/bbad390.pdf
+  pdf: ''
   repo: ''
   if: '8.6'
   quartile: Q1
@@ -906,7 +906,7 @@
   volume: '14'
   issue: ''
   pages: '1050130'
-  pdf: https://pmc.ncbi.nlm.nih.gov/articles/PMC10098151/pdf/fmicb-14-1050130.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
   repo: ''
   if: '5.2'
   quartile: Q1
@@ -963,7 +963,7 @@
   volume: '18'
   issue: '12'
   pages: 2458-2467
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.12567
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC9360185
   repo: ''
   if: '13.0'
   quartile: Q1
@@ -991,7 +991,7 @@
   volume: '29'
   issue: '12'
   pages: 665-679
-  pdf: https://pmc.ncbi.nlm.nih.gov/articles/PMC10043760/pdf/nihms-1842782.pdf
+  pdf: ''
   repo: ''
   if: '3.9'
   quartile: Q2
@@ -1120,7 +1120,7 @@
   volume: '3'
   issue: '2'
   pages: '100085'
-  pdf: https://www.sciencedirect.com/science/article/pii/S266624772200001X/pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC8801379
   repo: ''
   if: '3.6'
   quartile: Q1
@@ -1149,7 +1149,7 @@
   volume: '18'
   issue: '2'
   pages: 294-306
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/alz.12396
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC8764625
   repo: ''
   if: '13.0'
   quartile: Q1
@@ -1205,7 +1205,7 @@
   volume: '13'
   issue: '1'
   pages: e12255
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/dad2.12255
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC8720139
   repo: ''
   if: '4.4'
   quartile: Q2
@@ -1234,7 +1234,7 @@
   volume: '25'
   issue: '8'
   pages: 1859-1875
-  pdf: https://www.nature.com/articles/s41380-018-0112-7.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6375806
   repo: ''
   if: ''
   quartile: ''
@@ -1463,7 +1463,7 @@
   volume: '47'
   issue: '19'
   pages: e115-e115
-  pdf: https://academic.oup.com/nar/article-pdf/47/19/e115/30314492/gkz661.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6821272
   repo: ''
   if: ''
   quartile: ''
@@ -1528,7 +1528,7 @@
   volume: '4'
   issue: '3'
   pages: 150-156
-  pdf: https://www.sciencedirect.com/science/article/pii/S2405805X19300304?via%3Dihub
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6723412
   repo: ''
   if: ''
   quartile: ''
@@ -1580,7 +1580,7 @@
   volume: '76'
   issue: '9'
   pages: '1099'
-  pdf: https://jamanetwork.com/journals/jamaneurology/articlepdf/2735123/jamaneurology_ma_2019_oi_190038.pdf
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -1621,7 +1621,7 @@
   volume: '7'
   issue: ''
   pages: e7315
-  pdf: https://europepmc.org/articles/PMC6673421?pdf=render
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6673421
   repo: ''
   if: ''
   quartile: ''
@@ -1680,7 +1680,7 @@
   volume: '111'
   issue: '4'
   pages: 808-818
-  pdf: https://europepmc.org/articles/PMC6397097?pdf=render
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -1845,7 +1845,7 @@
   volume: '2'
   issue: '3'
   pages: e191350
-  pdf: https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2729478/patel_2019_oi_190073_1600366938.63058.pdf
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -1880,7 +1880,7 @@
   volume: '10'
   issue: '3'
   pages: '216'
-  pdf: https://www.mdpi.com/2073-4425/10/3/216/pdf?version=1552564245
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6471626
   repo: ''
   if: ''
   quartile: ''
@@ -1938,7 +1938,7 @@
   volume: '15'
   issue: '3'
   pages: 441-452
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1016/j.jalz.2018.10.005
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -1979,7 +1979,7 @@
   volume: '10'
   issue: '2'
   pages: '112'
-  pdf: https://www.mdpi.com/2073-4425/10/2/112/pdf?version=1550142375
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6410271
   repo: ''
   if: ''
   quartile: ''
@@ -2175,7 +2175,7 @@
   volume: '7'
   issue: '7'
   pages: giy081
-  pdf: https://academic.oup.com/gigascience/article-pdf/7/7/giy081/25205161/giy081.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6057526
   repo: ''
   if: ''
   quartile: ''
@@ -2245,7 +2245,7 @@
   volume: '9'
   issue: '6'
   pages: '313'
-  pdf: https://www.mdpi.com/2073-4425/9/6/313/pdf?version=1529580314
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6027520
   repo: ''
   if: ''
   quartile: ''
@@ -2343,7 +2343,7 @@
   volume: ''
   issue: ''
   pages: ''
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/acn3.582
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC6043775
   repo: ''
   if: ''
   quartile: ''
@@ -2377,7 +2377,7 @@
   volume: '5'
   issue: '4'
   pages: 406-417
-  pdf: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/acn3.537
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC5899906
   repo: ''
   if: ''
   quartile: ''
@@ -2411,7 +2411,7 @@
   volume: '46'
   issue: '4'
   pages: e19-e19
-  pdf: https://academic.oup.com/nar/article-pdf/46/4/e19/24214374/gkx1193.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC5829571
   repo: ''
   if: ''
   quartile: ''
@@ -2475,7 +2475,7 @@
   volume: '45'
   issue: '19'
   pages: e162-e162
-  pdf: https://academic.oup.com/nar/article-pdf/45/19/e162/26355914/gkx712.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC5737808
   repo: ''
   if: ''
   quartile: ''
@@ -2681,7 +2681,7 @@
   volume: '10'
   issue: '7'
   pages: 1669-1681
-  pdf: https://www.nature.com/articles/ismej2015235.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC4918442
   repo: ''
   if: ''
   quartile: ''
@@ -2811,7 +2811,7 @@
   volume: ''
   issue: ''
   pages: gkw481
-  pdf: https://academic.oup.com/nar/article-pdf/44/15/e126/17437449/gkw481.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC5009736
   repo: ''
   if: ''
   quartile: ''
@@ -2887,7 +2887,7 @@
   volume: '10'
   issue: '2'
   pages: ''
-  pdf: https://projecteuclid.org/journals/annals-of-applied-statistics/volume-10/issue-2/Scan-statistics-on-Poisson-random-fields-with-applications-in-genomics/10.1214/15-AOAS892.pdf
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -2939,7 +2939,7 @@
   volume: '22'
   issue: '1'
   pages: 105-113
-  pdf: https://europepmc.org/articles/PMC4830693?pdf=render
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -3081,7 +3081,7 @@
   volume: '9'
   issue: '12'
   pages: 2573-2586
-  pdf: https://europepmc.org/articles/PMC4817623?pdf=render
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC4817623
   repo: ''
   if: ''
   quartile: ''
@@ -3321,7 +3321,7 @@
   volume: '29'
   issue: '2'
   pages: 230-237
-  pdf: https://academic.oup.com/bioinformatics/article-pdf/29/2/230/48888746/bioinformatics_29_2_230.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC4990825
   repo: ''
   if: ''
   quartile: ''
@@ -3380,7 +3380,7 @@
   volume: '12'
   issue: '2'
   pages: 972-987
-  pdf: https://doi.org/10.4238/2013.april.2.13
+  pdf: ''
   repo: ''
   if: ''
   quartile: ''
@@ -3579,7 +3579,7 @@
   volume: '5'
   issue: '9'
   pages: 1414-1425
-  pdf: https://www.nature.com/articles/ismej201124.pdf
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC3160682
   repo: ''
   if: ''
   quartile: ''
