@@ -41,6 +41,12 @@ GIT_TIMEOUT = 120
 PUSH_TIMEOUT = 300
 SYNC_TIMEOUT = 600
 
+# The resident watcher runs under pythonw.exe, which has no console to hand
+# down. A console-subsystem child (git.exe) would therefore be given a brand
+# new *visible* console -- the screen flash reported on this host. CREATE_NO_
+# WINDOW gives it a hidden one instead; it is Windows-only, so stay 0 elsewhere.
+NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0) if sys.platform == "win32" else 0
+
 _LOG_PATH: Path | None = None
 LOG_MAX_BYTES = 1_000_000
 LOG_KEEP_BYTES = 200_000
@@ -134,6 +140,7 @@ def git(*args: str, check: bool = True,
         encoding="utf-8",
         errors="replace",
         timeout=timeout,
+        creationflags=NO_WINDOW,
     )
     if check and result.returncode:
         detail = (result.stderr or result.stdout).strip()
@@ -162,6 +169,7 @@ def run_sync(tool: str) -> bool:
             encoding="utf-8",
             errors="replace",
             timeout=SYNC_TIMEOUT,
+            creationflags=NO_WINDOW,
         )
     except subprocess.TimeoutExpired:
         log(f"sync {tool}: timed out after {SYNC_TIMEOUT}s; will retry")

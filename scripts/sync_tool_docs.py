@@ -21,6 +21,11 @@ TOOLS_DATA = SITE_ROOT / "_data" / "tools.yml"
 SOURCE_ROOT = SITE_ROOT.parent
 BRANCHES = ("main", "release")
 
+# Invoked by auto_retry_sync.py under pythonw.exe, which owns no console: a
+# console-subsystem child (git.exe) would otherwise get a new visible one and
+# flash the screen. CREATE_NO_WINDOW is Windows-only, so stay 0 elsewhere.
+NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0) if sys.platform == "win32" else 0
+
 
 @dataclass(frozen=True)
 class Tool:
@@ -67,6 +72,7 @@ def git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProce
         capture_output=True,
         text=True,
         encoding="utf-8",
+        creationflags=NO_WINDOW,
     )
     if check and result.returncode:
         detail = result.stderr.strip() or result.stdout.strip()
@@ -79,6 +85,7 @@ def git_blob(repo: Path, object_id: str) -> bytes:
         ["git", "-C", str(repo), "cat-file", "blob", object_id],
         check=False,
         capture_output=True,
+        creationflags=NO_WINDOW,
     )
     if result.returncode:
         detail = result.stderr.decode("utf-8", errors="replace").strip()

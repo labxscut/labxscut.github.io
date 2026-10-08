@@ -19,6 +19,10 @@ TOOLS = ("sxLaep", "sxSNF", "DeepLB")
 # Keys accepted by sync_tool_docs.py --tool, in the same order as TOOLS.
 SYNC_KEYS = ("sxLaep", "sxSNF", "deeplb")
 
+# Console-subsystem children (git.exe) get a new visible console when the
+# parent has none, e.g. under pythonw.exe. CREATE_NO_WINDOW is Windows-only.
+NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0) if sys.platform == "win32" else 0
+
 
 def run(cmd: list[str], cwd: Path | None = None) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
@@ -29,6 +33,7 @@ def run(cmd: list[str], cwd: Path | None = None) -> subprocess.CompletedProcess[
         text=True,
         encoding="utf-8",
         errors="replace",
+        creationflags=NO_WINDOW,
     )
 
 

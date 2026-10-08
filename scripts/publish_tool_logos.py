@@ -30,6 +30,10 @@ LOGO_DIR = SITE_ROOT / "images" / "tools"
 REPO_TARGET = "logo.svg"
 ORG_PREFIX = "https://github.com/labxscut/"
 
+# Console-subsystem children (gh.exe) get a new visible console when the
+# parent has none, e.g. under pythonw.exe. CREATE_NO_WINDOW is Windows-only.
+NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0) if sys.platform == "win32" else 0
+
 
 class PublishError(RuntimeError):
     """Raised when the GitHub API call fails."""
@@ -42,6 +46,7 @@ def gh(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
         capture_output=True,
         text=True,
         encoding="utf-8",
+        creationflags=NO_WINDOW,
     )
     if check and result.returncode:
         detail = (result.stderr or result.stdout).strip()
@@ -97,6 +102,7 @@ def put_logo(
         text=True,
         encoding="utf-8",
         input=json.dumps(payload),
+        creationflags=NO_WINDOW,
     )
     if result.returncode:
         detail = (result.stderr or result.stdout).strip()
