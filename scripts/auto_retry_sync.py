@@ -7,7 +7,9 @@ enough. This driver makes publishing self-healing: each pass re-runs the
 per-tool syncs, commits any result, pushes, and verifies that origin/main
 matches the local HEAD. Failures are retried after --interval-minutes; a
 resident watcher (--forever) keeps re-checking so recovered connections and new
-upstream docs are picked up automatically.
+upstream docs are picked up automatically. Every network-touching subprocess
+carries a timeout, so a half-open connection fails the pass instead of hanging
+the watcher forever.
 
 Usage:
     python scripts/auto_retry_sync.py                     # 6 attempts, 10 min apart
@@ -31,6 +33,13 @@ DEFAULT_LOG = STATE_ROOT / "auto_retry_sync.log"
 DEFAULT_LOCK = STATE_ROOT / "auto_retry_sync.lock"
 TOOLS = ("sxLaep", "sxSNF", "deeplb")
 TRAILER = "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+
+# A half-open SSH/TLS connection over flaky WiFi can hang git push / ls-remote
+# forever; every subprocess call must carry a timeout so the pass fails (and
+# retries next interval) instead of wedging the watcher behind a live lock.
+GIT_TIMEOUT = 120
+PUSH_TIMEOUT = 300
+SYNC_TIMEOUT = 600
 
 _LOG_PATH: Path | None = None
 LOG_MAX_BYTES = 1_000_000
@@ -115,7 +124,8 @@ class Lock:
 
 
 
-def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
+def git(*args: str, check: bool = True,
+        timeout: int = GIT_TIMEOUT) -> subprocess.CompletedProcess[str]:
     result = subprocess.run(
         ["git", "-C", str(SITE_ROOT), *args],
         check=False,
@@ -123,6 +133,7 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
         text=True,
         encoding="utf-8",
         errors="replace",
+        timeout=timeout,
     )
     if check and result.returncode:
         detail = (result.stderr or result.stdout).strip()
@@ -131,21 +142,30 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
 
 
 def remote_main() -> str:
-    result = git("ls-remote", "origin", "refs/heads/main", check=False)
+    try:
+        result = git("ls-remote", "origin", "refs/heads/main", check=False)
+    except subprocess.TimeoutExpired:
+        log(f"ls-remote timed out after {GIT_TIMEOUT}s")
+        return ""
     if result.returncode or not result.stdout.strip():
         return ""
     return result.stdout.split()[0]
 
 
 def run_sync(tool: str) -> bool:
-    result = subprocess.run(
-        [sys.executable, str(SITE_ROOT / "scripts" / "sync_tool_docs.py"), "--tool", tool],
-        cwd=SITE_ROOT,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
+    try:
+        result = subprocess.run(
+            [sys.executable, str(SITE_ROOT / "scripts" / "sync_tool_docs.py"), "--tool", tool],
+            cwd=SITE_ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=SYNC_TIMEOUT,
+        )
+    except subprocess.TimeoutExpired:
+        log(f"sync {tool}: timed out after {SYNC_TIMEOUT}s; will retry")
+        return False
     output = ((result.stdout or "") + (result.stderr or "")).strip()
     if output:
         log(f"sync {tool}: {output.splitlines()[-1]}")
@@ -167,7 +187,12 @@ def commit_changes() -> bool:
 
 
 def push_and_verify() -> bool:
-    result = git("push", "origin", "HEAD:refs/heads/main", check=False)
+    try:
+        result = git("push", "origin", "HEAD:refs/heads/main", check=False,
+                     timeout=PUSH_TIMEOUT)
+    except subprocess.TimeoutExpired:
+        log(f"push timed out after {PUSH_TIMEOUT}s; will retry")
+        return False
     detail = ((result.stdout or "") + (result.stderr or "")).strip()
     if detail:
         log(f"push: {detail.splitlines()[-1]}")
