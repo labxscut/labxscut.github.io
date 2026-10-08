@@ -217,7 +217,7 @@ def presentation_type(doc: dict, venue: dict, status: str) -> str:
     if explicit in {"regular", "full", "short", "workshop", "poster", "abstract", "demo", "spotlight"}:
         return {"full": "regular", "short": "regular", "demo": "regular", "spotlight": "workshop"}.get(explicit, explicit)
     text = " ".join(
-        (clean(venue.get("full_name")) + " " + clean(venue.get("name")) + " " + clean(doc.get("notes")))
+        [clean(venue.get("full_name")), clean(venue.get("name")), clean(doc.get("notes"))]
     ).lower()
     if "poster" in text:
         return "poster"

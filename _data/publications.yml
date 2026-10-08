@@ -8,7 +8,7 @@
   venue_full: 43rd International Conference on Machine Learning (ICML 2026)
   venue_location: Seoul, South Korea (COEX)
   venue_dates: 2026-07-06/2026-07-11
-  presentation: ''
+  presentation: regular
   category: other
   pi_role: 通讯作者
   year: '2026'
@@ -718,7 +718,7 @@
   venue_full: ICML 2025 DataWorld Workshop
   venue_location: ''
   venue_dates: ''
-  presentation: ''
+  presentation: workshop
   category: other
   pi_role: 通讯作者
   year: '2025'
