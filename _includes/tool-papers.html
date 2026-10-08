@@ -17,11 +17,14 @@ Usage: {% include tool-papers.html papers=tool.papers %}
 {%- endfor -%}
 {%- if related.size > 0 -%}
   {%- assign related = related | sort: "sort_key" | reverse -%}
-<p class="labx-tool-papers" lang="en">
-  <span class="labx-tool-papers-label">Related publications:</span>
-  {%- for paper in related -%}
+<ul class="labx-tool-papers" lang="en">
+  {%- for paper in related %}
+  <li>
     <a href="/publications/#{{ paper.slug | slugify }}">{{ paper.title }}</a>
-    <span class="labx-tool-papers-year">({{ paper.year }})</span>{% unless forloop.last %} · {% endunless %}
+    <span class="labx-tool-papers-year">({{ paper.year }})</span>
+  </li>
   {%- endfor -%}
-</p>
+</ul>
+{%- else -%}
+<p class="labx-tool-papers labx-tool-papers-empty" lang="en">Paper in press.</p>
 {%- endif -%}

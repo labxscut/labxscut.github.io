@@ -33,7 +33,7 @@ nav:
 ## Team Lead Papers
 
 {% include intro.html value=intros.lead %}
-{% include publication-list.html papers=lead %}
+{% include publication-list.html papers=lead lead=true %}
 
 ## Collaborative Papers
 

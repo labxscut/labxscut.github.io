@@ -11,11 +11,11 @@ nav:
 # News
 
 {% include intro.html value=site.data.intros.news.intro %}
-{% assign posts = site.posts | sort: "date" | reverse %}
-{% if posts.size > 0 %}
-{% for post in posts %}
-{% include post-excerpt.html lookup=post.slug %}
+{% assign items = site.data.news | sort: "date" | reverse %}
+{% if items.size > 0 %}
+{% for item in items %}
+- **{{ item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
 {% endfor %}
 {% else %}
-No blog posts have been published yet.
+No news has been posted yet.
 {% endif %}

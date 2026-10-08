@@ -2,9 +2,12 @@
   Render publication entries grouped by year, newest first.
 
   Usage:  {% include publication-list.html papers=list %}
+          {% include publication-list.html papers=list lead=true %}
+          {% include publication-list.html papers=list lead=true %}
 
   The list must already be filtered (track, status). Published entries come
-  first within each year, accepted ones after them.
+  first within each year, accepted ones after them. `lead=true` marks a
+  team-lead list, which is the only list allowed to link a local PDF.
 
   Keep the blank lines around every <article> block and do not add whitespace
   control ("-") to the loop tags: kramdown only expands markdown="1" content
@@ -23,7 +26,7 @@
 
 {% for author in paper.authors %}{% assign person = site.data.people | where: "nick", author.nick | first %}{% if person and person.has_page %}[{{ author.name }}](/team/{{ author.nick }}/){% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
 
-{% include citation-line.html paper=paper %}
+{% include citation-line.html paper=paper lead=include.lead %}
 {% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
 
 </article>
@@ -36,7 +39,7 @@
 
 {% for author in paper.authors %}{% assign person = site.data.people | where: "nick", author.nick | first %}{% if person and person.has_page %}[{{ author.name }}](/team/{{ author.nick }}/){% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
 
-{% include citation-line.html paper=paper accepted=true %}
+{% include citation-line.html paper=paper accepted=true lead=include.lead %}
 {% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
 
 </article>
