@@ -416,6 +416,13 @@ def main() -> int:
             group = alumni_group(row["degree"], row.get("now", ""), row.get("title", ""), row.get("type", ""))
             role = group["role"]
             fallback_role = group["fallback"]
+        elif section == "collaborator":
+            # Collaborators already sit under a "Collaborators" heading, so the
+            # section label adds nothing: show their own title instead, and leave
+            # the role blank when the roster does not carry one.
+            group = None
+            fallback_role = ""
+            role = role_text(row.get("title", ""), "")
         else:
             group = None
             fallback_role = (
