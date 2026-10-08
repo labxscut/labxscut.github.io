@@ -11,9 +11,9 @@ name_zh: 陈倩文
 role: Master's student
 degree: Master
 section: master
-start_year: ''
+start_year: '2025'
 end_year: ''
-years: ''
+years: 25i
 status: active
 affiliation: ''
 github: Cqianwen

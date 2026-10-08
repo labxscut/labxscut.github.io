@@ -13,7 +13,7 @@ degree: PhD
 section: phd
 start_year: '2026'
 end_year: ''
-years: 2026i
+years: 26i
 status: active
 affiliation: ''
 github: kxf-scut

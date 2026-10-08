@@ -5,8 +5,8 @@ redirect_from:
 - /nkd/
 - /people/nkd/
 nick: nkd
-title: Kaida Ning
-name_en: Kaida Ning
+title: Dr. Kaida Ning
+name_en: Dr. Kaida Ning
 name_zh: 宁开达
 role: Faculty
 degree: Faculty
@@ -16,7 +16,7 @@ end_year: ''
 years: ''
 status: active
 affiliation: ''
-github: ''
+github: kaidaning
 has_page: true
 site: true
 tools:

@@ -5,8 +5,8 @@ redirect_from:
 - /xyh/
 - /people/xyh/
 nick: xyh
-title: Xiong Yunhui
-name_en: Xiong Yunhui
+title: Dr. Xiong Yunhui
+name_en: Dr. Xiong Yunhui
 name_zh: 熊赟晖
 role: Faculty
 degree: Faculty

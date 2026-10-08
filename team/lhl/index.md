@@ -5,10 +5,10 @@ redirect_from:
 - /lhl/
 - /people/lhl/
 nick: lhl
-title: Liu Huiling
-name_en: Liu Huiling
+title: Dr. Liu Huiling
+name_en: Dr. Liu Huiling
 name_zh: 刘卉灵
-role: Faculty
+role: Associate Professor
 degree: Faculty
 section: faculty
 start_year: ''

@@ -5,7 +5,7 @@
       {% if member.avatar %}
         <img src="{{ member.avatar | relative_url }}" alt="" loading="lazy">
       {% else %}
-        {{ member.name_en | slice: 0 | upcase }}
+        {{ member.name_en | remove: "Dr. " | slice: 0 | upcase }}
       {% endif %}
     </div>
     <h1>{{ member.name_en }}</h1>
@@ -17,7 +17,7 @@
       <p><a href="{{ site.data.identity.affiliation.website }}">{{ site.data.identity.affiliation.unit_en }}</a></p>
       <p>{{ site.data.identity.affiliation.university_en }}</p>
     {% endif %}
-    {% if member.years %}
+    {% if member.years != "" %}
       {% if member.section == "alumni" %}
         <p>LabX {{ member.years }}</p>
       {% else %}

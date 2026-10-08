@@ -13,7 +13,7 @@ degree: Master
 section: master
 start_year: '2024'
 end_year: ''
-years: 2024i
+years: 24i
 status: active
 affiliation: ''
 github: WuMiranda

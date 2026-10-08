@@ -23,7 +23,7 @@ from urllib.parse import urlsplit
 
 import yaml
 
-from gen_avatars import ensure_avatar
+from gen_avatars import AVATAR_ROOT, ensure_avatar
 from gen_publications import REPO, load_roster
 
 OUT_DIR = REPO
@@ -77,9 +77,15 @@ ALUMNI_ROLE = {
 ALUMNI_RANK = {"Faculty": 0, "PostDoc": 1, "PhD": 2, "Master": 3, "Under": 4}
 
 # Order of the /team/ sections; also the order people.yml is written in.
-SECTION_ORDER = ["pi", "faculty", "phd", "master", "under", "alumni", "collaborator", "visiting"]
+# Collaborators and visiting scholars are current collaborators, so they sit
+# right after the faculty rather than trailing the alumni.
+SECTION_ORDER = ["pi", "faculty", "collaborator", "visiting", "phd", "master", "under", "alumni"]
 
 SCUT_AFFILIATION = {"", "n.a.", "在校", "华南理工大学"}
+
+# Institute names in a note `title` that mean "here at LabX"; keeping them in the
+# displayed role would only repeat the affiliation everyone already sees.
+SCUT_TITLE_PLACES = {"SCUT", "华南理工大学", "South China University of Technology"}
 
 # Affiliation cells that carry no information about where someone is now.
 PLACEHOLDER_AFFILIATIONS = {"", "n.a.", "—", "-", "待定", "TBD", "华南理工大学"}
@@ -132,27 +138,53 @@ def years(row: dict) -> tuple[str, str]:
     return start, end
 
 
+def short_year(year: str) -> str:
+    """'2026' -> '26'; leave anything that is not a four-digit year alone."""
+    return year[2:] if len(year) == 4 and year.isdigit() else year
+
+
 def years_label(row: dict, start: str, end: str) -> str:
-    """Render membership years unambiguously as ``YYYYi`` / ``YYYYi–YYYYo``."""
+    """Render membership years unambiguously as ``YYi`` / ``YYi–YYo``.
+
+    The century is dropped ("26i") because the lab is young enough that no two
+    membership years can be confused across a century boundary.
+    """
     year = (row["year"] or "").strip()
     if not year:
         return ""
-    if not start:
-        return year
+    if start and end:
+        return f"{short_year(start)}i–{short_year(end)}o"
     if end:
-        return f"{start}i–{end}o"
-    if year.endswith("o"):
-        return f"{start}o"
-    return f"{start}i" if year.endswith("i") else start
+        return f"{short_year(end)}o"
+    if start:
+        return f"{short_year(start)}o" if year.endswith("o") else f"{short_year(start)}i"
+    return year
 
 
 def place_text(now: str) -> str:
-    """'postdoc@Stanford' -> 'postdoc, Stanford'; '@NetEase Games' -> 'NetEase Games'."""
+    """'postdoc@Stanford' -> 'postdoc@Stanford'; '@NetEase Games' -> 'NetEase Games'."""
     role, _, place = now.partition("@")
     role, place = role.strip(), place.strip()
     if role and place:
-        return f"{role}, {place}"
+        return f"{role}@{place}"
     return role or place or now
+
+
+def role_text(title: str, fallback: str) -> str:
+    """'Associate Professor@SCUT' -> 'Associate Professor'.
+
+    A title held away from SCUT keeps its institute, because the institute is
+    the part of the role that tells readers where the person actually works.
+    """
+    if not title:
+        return fallback
+    role, _, place = title.partition("@")
+    role, place = role.strip(), place.strip()
+    if not role:
+        return fallback
+    if not place or place in SCUT_TITLE_PLACES:
+        return role
+    return f"{role}@{place}"
 
 
 def short_paper(entry: dict) -> dict:
@@ -275,6 +307,9 @@ def main() -> int:
             # Placeholder rows (identity TBD or GitHub aliases) stay in the private
             # roster but are not published.
             continue
+        if row.get("hide"):
+            # Roster marks this person as not shown on /team/ at all.
+            continue
         section = section_for(row)
         papers = [short_paper(p) for p in pub_docs if nick in (p.get("lab_authors") or [])]
         tools = sorted(
@@ -306,14 +341,42 @@ def main() -> int:
         )
         if row["nick"] == PI_NICK:
             role = TITLE_BY_SECTION["pi"]
+            fallback_role = role
         elif section == "alumni":
             role = ALUMNI_ROLE.get(row["degree"], "Alumni")
+            fallback_role = role
         else:
-            role = TITLE_BY_SECTION.get(section) or DEGREE_ROLE.get(row["degree"], row["degree"])
+            fallback_role = (
+                TITLE_BY_SECTION.get(section) or DEGREE_ROLE.get(row["degree"], row["degree"])
+            )
+            role = role_text(row.get("title", ""), fallback_role)
+        display_name = row["name_en"] or row["name_zh"] or nick
+        if row.get("dr") and display_name and not display_name.startswith("Dr."):
+            display_name = f"Dr. {display_name}"
+        # An affiliation that only repeats the institution already in the "now"
+        # line (or in the faculty title) would be shown twice on /team/.
+        affil = row["affiliation"].strip()
+        # Vague career notes ("就业") are not institutions; don't show them at all.
+        if affil in SCUT_AFFILIATION or affil in NON_INSTITUTIONAL_AFFILIATIONS:
+            affil = ""
+        affiliation = affil
+        now_text = place_text(row["now"]) if row.get("now") else ""
+        if now_text and affiliation and (
+            affiliation == now_text
+            or affiliation in now_text
+            or now_text.endswith(affiliation)
+        ):
+            affiliation = ""
+        # A faculty title that already names the institute says the same thing
+        # the "now" line would ("Professor@惠州学院" + "now Prof@惠州学院").
+        if now_text and role and role != fallback_role:
+            place = now_text.rpartition("@")[2] or now_text
+            if place and place in role:
+                now_text = ""
         entry = {
             "nick": nick,
-            "title": row["name_en"] or row["name_zh"] or nick,
-            "name_en": row["name_en"],
+            "title": display_name,
+            "name_en": display_name,
             "name_zh": row["name_zh"],
             "role": role,
             "degree": row["degree"],
@@ -322,15 +385,15 @@ def main() -> int:
             "end_year": end,
             "years": years_label(row, start, end),
             "status": row["status"] or "active",
-            "affiliation": "" if row["affiliation"].strip() in SCUT_AFFILIATION else row["affiliation"],
+            "affiliation": affiliation,
             "github": row["github"],
             "has_page": has_page,
             "site": has_page,
             "tools": tools,
             "papers": papers,
         }
-        if row.get("now"):
-            entry["now"] = place_text(row["now"])
+        if now_text:
+            entry["now"] = now_text
         elif section == "alumni":
             # Without an explicit Now= marker, fall back to the affiliation cell,
             # skipping placeholders and entries the roster marks as uncertain.
@@ -341,10 +404,16 @@ def main() -> int:
                 and not affil.endswith(("?", "？"))
             ):
                 entry["now"] = affil
+                # The affiliation only fed the "now" line; showing it twice is noise.
+                entry["affiliation"] = ""
         if cv_url:
             entry["cv_url"] = cv_url
         if has_page:
-            entry["avatar"] = row.get("avatar") or ensure_avatar(nick)
+            explicit = (row.get("avatar") or "").strip()
+            if explicit:
+                entry["avatar"] = f"{AVATAR_ROOT}/{explicit}"
+            else:
+                entry["avatar"] = ensure_avatar(nick)
         people.append(entry)
 
         if has_page:

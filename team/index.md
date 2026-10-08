@@ -12,7 +12,7 @@ nav:
 
 {% include intro.html value=site.data.intros.team.intro %}
 
-{% assign sections = "pi:Principal investigator,faculty:Faculty,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni,collaborator:Collaborators,visiting:Visiting scholars" | split: "," %}
+{% assign sections = "pi:Principal investigator,faculty:Faculty,collaborator:Collaborators,visiting:Visiting scholars,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni" | split: "," %}
 {% for entry in sections %}
   {% assign pair = entry | split: ":" %}
   {% assign group = site.data.people | where: "section", pair[0] %}
@@ -21,7 +21,7 @@ nav:
 ## {{ pair[1] }}
 
 {% for person in group %}
-{% if person.has_page %}[**{{ person.name_en }}**](/team/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.years %} ({{ person.years }}){% endif %}{% if person.affiliation %} · {{ person.affiliation }}{% endif %}{% if person.now %} · now {{ person.now }}{% endif %}{% if person.github %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
+{% if person.has_page %}[**{{ person.name_en }}**](/team/{{ person.nick }}/){% else %}**{{ person.name_en }}**{% endif %}{% if person.name_zh != "" %} · {{ person.name_zh }}{% endif %} — {{ person.role }}{% if person.years != "" %} ({{ person.years }}){% endif %}{% if person.affiliation != "" %} · {{ person.affiliation }}{% endif %}{% if person.now %} · now {{ person.now }}{% endif %}{% if person.github != "" %} · [GitHub](https://github.com/{{ person.github }}){% endif %}
 
 {% endfor %}
   {% endif %}

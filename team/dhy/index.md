@@ -13,7 +13,7 @@ degree: PhD
 section: phd
 start_year: '2023'
 end_year: ''
-years: 2023i
+years: 23i
 status: active
 affiliation: ''
 github: duanHY-26

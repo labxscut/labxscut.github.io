@@ -5,8 +5,8 @@ redirect_from:
 - /lxm/
 - /people/lxm/
 nick: lxm
-title: Liu Xuemei
-name_en: Liu Xuemei
+title: Dr. Liu Xuemei
+name_en: Dr. Liu Xuemei
 name_zh: 刘雪梅
 role: Faculty
 degree: Faculty

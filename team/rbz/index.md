@@ -13,7 +13,7 @@ degree: PhD
 section: phd
 start_year: '2022'
 end_year: ''
-years: 2022i
+years: 22i
 status: active
 affiliation: ''
 github: Bren0314

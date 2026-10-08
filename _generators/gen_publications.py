@@ -14,6 +14,7 @@ Usage (WSL):  python3 _generators/gen_publications.py
 from __future__ import annotations
 
 import os
+import json
 import re
 import sys
 from pathlib import Path
@@ -42,7 +43,7 @@ def load_roster() -> list[dict]:
             continue
         nick, group, degree, year, status = cells[0], cells[1], cells[2], cells[3], cells[4]
         affiliation, name_en, name_zh, note = cells[5], cells[6], cells[7], cells[13]
-        gh = re.search(r"https://github\.com/([A-Za-z0-9_.-]+)", note)
+        flags = parse_note(note)
         rows.append(
             {
                 "nick": nick,
@@ -53,19 +54,67 @@ def load_roster() -> list[dict]:
                 "affiliation": affiliation,
                 "name_en": name_en,
                 "name_zh": name_zh,
-                "github": gh.group(1) if gh else "",
-                # Optional note markers curated in the roster:
-                #   Type=<label>   relationship label (Collaborator, VisitingScholar, ...)
-                #   Site=false     hide the public labxscut.github.io page
-                #   Alumni=true    list under Alumni while still collaborating
-                #   Now=<text>     current position shown on the public profile
-                "type": match_note_marker(note, "Type"),
-                "site": "false" if match_note_marker(note, "Site") == "false" else "",
-                "alumni": match_note_marker(note, "Alumni") == "true",
-                "now": match_note_marker(note, "Now"),
+                "github": flags["github"],
+                # Optional note markers curated in the roster (now stored as
+                # one-line JSON; see core/database/contact.md):
+                #   github      verified GitHub handle (shown on /team/ when present)
+                #   type        relationship label (Collaborator, VisitingScholar, ...)
+                #   site=false  hide the public labxscut.github.io page
+                #   hide=true   omit the row entirely from /team/
+                #   alumni      list under Alumni while still collaborating
+                #   dr          render the name as "Dr. <name>"
+                #   title       position title for faculty (Dr@institute)
+                #   avatar      explicit avatar filename under images/avatars/
+                #   now         current position shown on the public profile
+                "type": flags["type"],
+                "site": "false" if flags["site"] is False else "",
+                "hide": flags["hide"],
+                "dr": flags["dr"],
+                "title": flags["title"],
+                "avatar": flags["avatar"],
+                "alumni": flags["alumni"],
+                "now": flags["now"],
             }
         )
     return rows
+
+
+NOTE_FLAGS = ("github", "type", "now", "title", "avatar")
+
+
+def parse_note(note: str) -> dict:
+    """Return the public-safe flags embedded in a roster note.
+
+    Notes are one-line JSON objects; older rows still use ``Key=value; prose``.
+    Both forms are accepted so the generator works across the migration.
+    """
+    out: dict = {k: "" for k in NOTE_FLAGS}
+    out.update({"site": None, "hide": False, "dr": False, "alumni": False})
+    if not note or note == "n.a.":
+        return out
+    if note.lstrip().startswith("{"):
+        try:
+            obj = json.loads(note)
+        except (ValueError, TypeError):
+            obj = None
+        if isinstance(obj, dict):
+            for k in NOTE_FLAGS:
+                v = obj.get(k)
+                if isinstance(v, str):
+                    out[k] = v.strip()
+            out["site"] = False if obj.get("site") is False else None
+            out["hide"] = obj.get("hide") is True
+            out["dr"] = obj.get("dr") is True
+            out["alumni"] = obj.get("alumni") is True
+            return out
+    gh = re.search(r"https://github\.com/([A-Za-z0-9_.-]+)", note)
+    out["github"] = gh.group(1) if gh else ""
+    out["type"] = match_note_marker(note, "Type")
+    out["now"] = match_note_marker(note, "Now")
+    if match_note_marker(note, "Site") == "false":
+        out["site"] = False
+    out["alumni"] = match_note_marker(note, "Alumni") == "true"
+    return out
 
 
 def match_note_marker(note: str, key: str) -> str:

@@ -13,10 +13,10 @@ degree: Master
 section: master
 start_year: '2025'
 end_year: ''
-years: 2025i
+years: 25i
 status: active
 affiliation: ''
-github: xhx-labxscut
+github: ''
 has_page: true
 site: true
 tools: []
