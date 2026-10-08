@@ -24,6 +24,10 @@ nav:
 
 {% include intro.html value=site.data.intros.engage.partnerships %}
 
+## Funding support
+
+{% include intro.html value=site.data.intros.engage.funding %}
+
 ## Contact
 
 {% include intro.html value=site.data.intros.engage.contact %}
