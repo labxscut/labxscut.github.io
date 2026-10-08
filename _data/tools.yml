@@ -102,7 +102,7 @@
 
 - key: elsa
   name: ELSA
-  logo: /images/tools/elsa.svg
+  logo: /images/tools/elsa.png
   tagline: Extended local similarity analysis of time-series data
   description: >-
     Replication- and permutation-based local similarity analysis (LSA/eLSA) for
@@ -228,7 +228,7 @@
 
 - key: swan
   name: SWAN
-  logo: /images/tools/swan.svg
+  logo: /images/tools/swan.png
   tagline: Statistical structural variant analysis for NGS
   description: >-
     A statistical method for detecting and genotyping structural variants

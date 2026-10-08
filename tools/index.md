@@ -15,7 +15,7 @@ nav:
 <article class="labx-tool" markdown="1">
 
 <div class="labx-tool-head">
-{% if tool.logo %}<img class="labx-tool-logo" src="{{ tool.logo }}" alt="" width="56" height="56">{% endif %}
+{% if tool.logo %}<img class="labx-tool-logo" src="{{ tool.logo }}" alt="">{% endif %}
 <div>
 
 <h2 id="{{ tool.key | slugify }}">{{ tool.name }}</h2>
