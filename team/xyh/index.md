@@ -20,6 +20,7 @@ github: yhxiong
 has_page: true
 site: true
 tools:
+- HCG
 - UGES
 papers:
 - slug: ChangTCBB2025UGESdeng
@@ -37,6 +38,21 @@ papers:
   pages: 3000-3016
   pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
   sort_key: '2025-11-01'
+- slug: YangQB24UGESgas
+  title: Hierarchical learning of gastric cancer molecular subtypes by integrating multi-modal DNA-level
+    omics data and clinical stratification
+  venue: Quantitative Biology
+  year: '2024'
+  url: https://doi.org/10.1002/qub2.45
+  status: Final
+  pi_track: lead
+  doi: 10.1002/qub2.45
+  published_on: 2024-06
+  volume: '12'
+  issue: '2'
+  pages: 182-196
+  pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
+  sort_key: '2024-06-01'
 avatar: /images/avatars/xyh.svg
 ---
 

@@ -20,6 +20,8 @@ github: ''
 has_page: true
 site: true
 tools:
+- CTRhythm
+- HCG
 - UGES
 papers:
 - slug: ChangTCBB2025UGESdeng
@@ -37,6 +39,50 @@ papers:
   pages: 3000-3016
   pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
   sort_key: '2025-11-01'
+- slug: LiangBIBM24ctRhythm
+  title: 'CTRhythm: Accurate Atrial Fibrillation Detection from Single-Lead ECG by CNN and Transformer
+    Integration'
+  venue: IEEE International Conference on Bioinformatics and Biomedicine
+  year: '2024'
+  url: https://doi.org/10.1109/BIBM62325.2024.10822563
+  status: Final
+  pi_track: lead
+  doi: 10.1109/BIBM62325.2024.10822563
+  published_on: '2024-12-03'
+  volume: ''
+  issue: ''
+  pages: 4452-4458
+  pdf: /papers/LiangXia2024CtrhythmAccurateAtrialFibrillation.pdf
+  sort_key: '2024-12-03'
+- slug: YangQB24UGESgas
+  title: Hierarchical learning of gastric cancer molecular subtypes by integrating multi-modal DNA-level
+    omics data and clinical stratification
+  venue: Quantitative Biology
+  year: '2024'
+  url: https://doi.org/10.1002/qub2.45
+  status: Final
+  pi_track: lead
+  doi: 10.1002/qub2.45
+  published_on: 2024-06
+  volume: '12'
+  issue: '2'
+  pages: 182-196
+  pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
+  sort_key: '2024-06-01'
+- slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
+  title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
+  venue: Frontiers in Microbiology
+  year: '2023'
+  url: https://doi.org/10.3389/fmicb.2023.1050130
+  status: Final
+  pi_track: lead
+  doi: 10.3389/fmicb.2023.1050130
+  published_on: '2023-03-30'
+  volume: '14'
+  issue: ''
+  pages: '1050130'
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
+  sort_key: '2023-03-30'
 avatar: /images/avatars/lxm.svg
 ---
 

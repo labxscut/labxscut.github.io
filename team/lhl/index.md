@@ -50,6 +50,21 @@ papers:
   pages: '100540'
   pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
   sort_key: '2026-01-01'
+- slug: NingJMIR2025Lymph
+  title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
+    Study of Regional and Temporal Trends'
+  venue: Journal of Medical Internet Research
+  year: '2025'
+  url: https://doi.org/10.2196/80497
+  status: Final
+  pi_track: lead
+  doi: 10.2196/80497
+  published_on: '2025-11-18'
+  volume: '27'
+  issue: ''
+  pages: e80497
+  pdf: /papers/NingXia2025OnlineHealthSeekingBehaviors.pdf
+  sort_key: '2025-11-18'
 avatar: /images/avatars/lhl.svg
 ---
 

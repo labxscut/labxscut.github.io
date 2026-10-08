@@ -463,8 +463,125 @@
   sci: false
   xia_rank: 19
   n_authors: 19
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Ning Kaida
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: nkd
+  - name: Gu Hongfei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Franklin Meredith
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Yang Xiaoying
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: yxy
+  - name: Wei Rong
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Song Zhen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xu Hong
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Leng Ling Li
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Mengting
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Dai Ju
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhang Jin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zeng Rui
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Hou Yongshuai
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Rongjie
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Zirong
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Huang Chenyang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Cai Runfa
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Huiling
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lhl
+  - name: Xia Li Charlie
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - nkd
+  - yxy
+  - lhl
   pi_track: lead
   sort_key: '2025-11-18'
   tools: []
@@ -657,8 +774,75 @@
   sci: false
   xia_rank: 10
   n_authors: 10
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Liang Zhanyu
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: lzy
+  - name: Yang Chen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Yu Zhengyang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: yzy
+  - name: Fu Yinmingren
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: fymr
+  - name: Ren Bozhen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: rbz
+  - name: Lin Maohuan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Li Qingjiao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lqj
+  - name: Liu Xuemei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lxm
+  - name: Chen Yangxin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  lab_authors:
+  - lzy
+  - yzy
+  - fymr
+  - rbz
+  - lqj
+  - lxm
+  - lcx
   pi_track: lead
   sort_key: '2024-12-03'
   tools:
@@ -687,8 +871,100 @@
   sci: false
   xia_rank: 14
   n_authors: 14
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Yang Binyu
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: yby
+  - name: Liu Siying
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lsy
+  - name: Xie Jiemin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: xjm
+  - name: Tang Xi
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: txi
+  - name: Guan Pan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhu Yifan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Xuemei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lxm
+  - name: Xiong Yunhui
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: xyh
+  - name: Yang Zuli
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Li Weiyao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Yonghua
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Chen Wen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Li Qingjiao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lqj
+  - name: Xia Li C.
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  lab_authors:
+  - yby
+  - lsy
+  - xjm
+  - txi
+  - lxm
+  - xyh
+  - lqj
+  - lcx
   pi_track: lead
   sort_key: '2024-06-01'
   tools:
@@ -716,7 +992,121 @@
   sci: false
   xia_rank: 3
   n_authors: 19
-  authors: []
+  authors:
+  - name: Malamon John S
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Farrell John J
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li Charlie
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Dombroski Beth A
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Das Rueben G
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Way Jessica
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Kuzma Amanda B
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Valladares Otto
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Leung Yuk Yee
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Scanlon Allison J
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Lopez Irving Antonio Barrera
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Brehony Jack
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Worley Kim C
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhang Nancy R
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Li-San
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Farrer Lindsay A
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Schellenberg Gerard D
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Lee Wan-Ping
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Vardarajan Badri N
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
   lab_authors: []
   pi_track: collaborative
   sort_key: '2024-05-01'
@@ -744,8 +1134,64 @@
   sci: false
   xia_rank: 6
   n_authors: 9
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Ou Liming
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhao Xuechen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wu Ivy (Jing)
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Yu Zhengyang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: yzy
+  - name: Xiong Zhiyuan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  - name: Wang Yonghua
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhou Guangyu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Chen Wen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - yzy
+  - lcx
   pi_track: collaborative
   sort_key: '2024-03-01'
   tools: []
@@ -828,8 +1274,51 @@
   sci: false
   xia_rank: 5
   n_authors: 7
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Feng Chenhao
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Fang Hao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Fanghua
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Chen Wen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  - name: Lan Dongming
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Yonghua
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '2023-11-01'
   tools: []
@@ -857,8 +1346,71 @@
   sci: false
   xia_rank: 10
   n_authors: 10
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Ai Dongmei
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: adm
+  - name: Chen Lulu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xie Jiemin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: xjm
+  - name: Cheng Longwei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhang Fang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Luan Yihui
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Li Yang
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: liy
+  - name: Hou Shengwei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Sun Fengzhu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li Charlie
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - adm
+  - xjm
+  - liy
   pi_track: lead
   sort_key: '2023-09-22'
   tools:
@@ -886,8 +1438,52 @@
   sci: false
   xia_rank: 7
   n_authors: 7
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Ai Dongmei
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: adm
+  - name: Zhang Xiaomeng
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhang Qingchuan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Li Xiaoxin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Yishu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Xiuqin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  lab_authors:
+  - adm
+  - lcx
   pi_track: lead
   sort_key: '2023-05-01'
   tools: []
@@ -914,8 +1510,67 @@
   sci: false
   xia_rank: 9
   n_authors: 9
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Liu Xuemei
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: lxm
+  - name: Cheng Ziqi
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: czq
+  - name: Xu Guohao
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xie Jiemin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: xjm
+  - name: Liu Xudong
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Ren Bozhen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: rbz
+  - name: Ai Dongmei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: adm
+  - name: Chen Yangxin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li Charlie
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - lxm
+  - czq
+  - xjm
+  - rbz
+  - adm
   pi_track: lead
   sort_key: '2023-03-30'
   tools: []
@@ -943,8 +1598,52 @@
   sci: false
   xia_rank: 7
   n_authors: 7
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Ai Dongmei
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: adm
+  - name: Wang Mingmei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhang Qingchuan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Cheng Longwei
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Wang Yishu
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Liu Xiuqin
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: corresponding_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  lab_authors:
+  - adm
+  - lcx
   pi_track: lead
   sort_key: '2023-02-23'
   tools: []
@@ -999,8 +1698,69 @@
   sci: false
   xia_rank: 7
   n_authors: 10
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Sun Thomas Yang
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Zhao Lan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Van Hummelen Paul
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Martin Brock
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Hornbacker Kathleen
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Lee HoJoon
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  - name: Padda Sukhmani K
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Ji Hanlee P
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Kunz Pamela
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '2022-12-01'
   tools: []
@@ -1128,8 +1888,69 @@
   sci: false
   xia_rank: 5
   n_authors: 10
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Loke Johnny
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Alim Ishraq
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Yam Sarah
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Klugman Susan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  - name: Gruber Dorota
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Tegay David
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: LaBella Andrea
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Onel Kenan
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Ostrer Harry
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '2022-04-01'
   tools: []
@@ -1185,8 +2006,63 @@
   sci: false
   xia_rank: 3
   n_authors: 9
-  authors: []
-  lab_authors: []
+  authors:
+  - name: Chilunda Vanessa
+    name_zh: ''
+    role: first_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Martinez-Aguado Pablo
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Xia Li C.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: lcx
+  - name: Cheney Laura
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Murphy Aniella
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Veksler Veronica
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Ruiz Vanessa
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Calderon Tina M.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  - name: Berman Joan W.
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: ''
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '2021-05-24'
   tools: []

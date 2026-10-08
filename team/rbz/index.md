@@ -20,6 +20,7 @@ github: Bren0314
 has_page: true
 site: true
 tools:
+- CTRhythm
 - sxEnzHier
 papers:
 - slug: YuHGGadv2025MtagHF
@@ -65,6 +66,35 @@ papers:
   pages: 217-227
   pdf: /papers/DuanXia2025EnzhierAccurateEnzymeFunction.pdf
   sort_key: '2026-01-01'
+- slug: LiangBIBM24ctRhythm
+  title: 'CTRhythm: Accurate Atrial Fibrillation Detection from Single-Lead ECG by CNN and Transformer
+    Integration'
+  venue: IEEE International Conference on Bioinformatics and Biomedicine
+  year: '2024'
+  url: https://doi.org/10.1109/BIBM62325.2024.10822563
+  status: Final
+  pi_track: lead
+  doi: 10.1109/BIBM62325.2024.10822563
+  published_on: '2024-12-03'
+  volume: ''
+  issue: ''
+  pages: 4452-4458
+  pdf: /papers/LiangXia2024CtrhythmAccurateAtrialFibrillation.pdf
+  sort_key: '2024-12-03'
+- slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
+  title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
+  venue: Frontiers in Microbiology
+  year: '2023'
+  url: https://doi.org/10.3389/fmicb.2023.1050130
+  status: Final
+  pi_track: lead
+  doi: 10.3389/fmicb.2023.1050130
+  published_on: '2023-03-30'
+  volume: '14'
+  issue: ''
+  pages: '1050130'
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
+  sort_key: '2023-03-30'
 avatar: /images/avatars/rbz.svg
 ---
 
