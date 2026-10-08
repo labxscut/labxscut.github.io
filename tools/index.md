@@ -28,20 +28,18 @@ nav:
 {{ tool.description }}
 
 {% assign version = tool.version | default: "" | strip %}
-{% assign language = tool.language | default: "" | strip %}
-{% assign license = tool.license | default: "" | strip %}
-{% unless version == "" and language == "" and license == "" %}
-<p>{% if version != "" %}Version: {{ version }}{% endif %}{% if language != "" %}{% if version != "" %} · {% endif %}{{ language }}{% endif %}{% if license != "" %}{% if version != "" or language != "" %} · {% endif %}{{ license }}{% endif %}</p>
+{% unless version == "" %}
+<p>Version: {{ version }}</p>
 {% endunless %}
 
 <div class="labx-tool-links">
-{% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Project / service</a>{% endif %}
+{% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
 {% if tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
+{% if tool.docs %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
 </div>
 
 {% include tool-papers.html papers=tool.papers %}
-{% include tool-provenance.html tool=tool %}
 
 </article>
 {% endfor %}
