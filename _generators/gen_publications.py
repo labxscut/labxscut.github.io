@@ -278,7 +278,9 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     # Citation metadata harvested from Crossref/OpenAlex and written back into
     # the registry as an appended `citation:` block (see labxManage/Paper).
     cite = doc.get("citation") or {}
-    published_on = clean(cite.get("published_on"))
+    # Stored dates are canonical YYYYMMDDHHMMSS (logic/sorting); the site shows
+    # the YYYYMMDD prefix via the *_display fields.
+    published_on = canonical_date(cite.get("published_on"))
 
     year = ""
     match = re.search(
@@ -308,6 +310,16 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     volume = clean(cite.get("volume"))
     issue = clean(cite.get("issue"))
     pages = clean(cite.get("pages"))
+    # Conference date ranges (`YYYY-MM-DD/YYYY-MM-DD` in the registry) render
+    # as `YYYYMMDD/YYYYMMDD`; the template turns the slash into an en dash.
+    venue_dates = clean(venue.get("dates"))
+    if "/" in venue_dates:
+        venue_dates = "/".join(
+            display_date(canonical_date(part)) or clean(part)
+            for part in venue_dates.split("/")
+        )
+    else:
+        venue_dates = display_date(canonical_date(venue_dates)) or venue_dates
     # A `pdf:` block points at the downloadable PDF: either a hosted file in
     # this repo (`site_path`) or an external open-access URL (`url`).
     pdf = doc.get("pdf") or {}
@@ -321,7 +333,7 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
         "venue_type": clean(venue.get("type")) or "journal",
         "venue_full": venue_name,
         "venue_location": clean(venue.get("location")),
-        "venue_dates": clean(venue.get("dates")),
+        "venue_dates": venue_dates,
         "presentation": presentation_type(doc, venue, status),
         "category": clean(doc.get("category")) or "other",
         "pi_role": clean(doc.get("role")),
@@ -346,21 +358,57 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     }
     entry["pi_track"] = pi_track(entry, cv_index)
     entry["sort_key"] = sort_key(entry)
+    # Display the YYYYMMDD prefix, but only when the source really knows the
+    # month (or better) — a year-only record falls back to the bare year in
+    # the templates rather than claiming a fabricated January 1. The
+    # "no date" sentinel also displays as empty.
+    raw_known = len(re.sub(r"\D", "", clean(cite.get("published_on"))))
+    entry["published_display"] = (
+        display_date(entry["sort_key"])
+        if raw_known >= 6 and entry["sort_key"] != "00000101000000"
+        else ""
+    )
     return entry
 
 
-def sort_key(entry: dict) -> str:
-    """ISO-ish date used to order the list newest-first.
+def canonical_date(raw) -> str:
+    """Expand a date of any precision to canonical ``YYYYMMDDHHMMSS``.
 
-    Prefers the harvested publication date (``citation.published_on``, which is
-    ``YYYY-MM`` or ``YYYY-MM-DD``) and falls back to the bare year so records
-    without citation data keep their place at the end of that year.
+    One fixed-width numeric form for every stored date: lexicographic order is
+    chronological order and no consumer has to guess a format. Accepts
+    ``YYYY``, ``YYYY-MM``, ``YYYY.MM``, ``YYYY-MM-DD``, ISO timestamps or bare
+    digits; unknown components default to their earliest value (``01``/``00``).
+    ``''`` when no year is readable.
     """
-    date = clean(entry.get("published_on"))
-    m = re.match(r"^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?", date)
-    if m:
-        return "%s-%s-%s" % (m.group(1), m.group(2) or "01", m.group(3) or "01")
-    return "%s-01-01" % (entry.get("year") or "0000")
+    val = str(raw or "").strip()
+    if not val:
+        return ""
+    digits = re.sub(r"\D", "", val)
+    if len(digits) < 4:
+        return ""
+    if len(digits) >= 14:
+        return digits[:14]
+    # Defaults for the missing components, indexed by how many digits we have:
+    # pos 4→MM=01, 6→DD=01, 8→HH=00, 10→MM=00, 12→SS=00.
+    return (digits + "0101000000"[len(digits) - 4:])[:14]
+
+
+def display_date(canonical: str) -> str:
+    """``YYYYMMDD`` for display; the time part is logic-only, never shown."""
+    return str(canonical or "")[:8]
+
+
+def sort_key(entry: dict) -> str:
+    """Canonical ``YYYYMMDDHHMMSS`` used to order the list newest-first.
+
+    Prefers the harvested publication date (``citation.published_on``) and
+    falls back to the bare year so records without citation data keep their
+    place at the start of that year.
+    """
+    date = canonical_date(entry.get("published_on"))
+    if date:
+        return date
+    return canonical_date(entry.get("year")) or "00000101000000"
 
 
 def publication_key(entry: dict) -> tuple[str, ...]:
@@ -395,7 +443,7 @@ def deduplicate(entries: list[dict]) -> tuple[list[dict], int]:
         if existing is None or entry_quality(entry) > entry_quality(existing):
             unique[key] = entry
     result = list(unique.values())
-    result.sort(key=lambda e: (e.get("sort_key") or "0000-01-01", e["title"]), reverse=True)
+    result.sort(key=lambda e: (e.get("sort_key") or "00000101000000", e["title"]), reverse=True)
     return result, len(entries) - len(result)
 
 

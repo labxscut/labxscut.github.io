@@ -30,12 +30,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1109/BIBM66473.2025.11356976
-  published_on: '2025-12-15'
+  published_on: '20251215000000'
+  published_display: '20251215'
   volume: ''
   issue: ''
   pages: 1278-1283
   pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
-  sort_key: '2025-12-15'
+  sort_key: '20251215000000'
 avatar: /images/avatars/wlp.svg
 ---
 

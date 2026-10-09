@@ -31,12 +31,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1016/j.xhgg.2025.100540
-  published_on: 2026-01
+  published_on: '20260101000000'
+  published_display: '20260101'
   volume: '7'
   issue: '1'
   pages: '100540'
   pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 - slug: RenICAITE26MultimodalMathExpl
   title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
   venue: International Conference on Artificial Intelligence Technology and Education
@@ -46,11 +47,12 @@ papers:
   pi_track: lead
   doi: ''
   published_on: ''
+  published_display: ''
   volume: ''
   issue: ''
   pages: ''
   pdf: ''
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
     Contrastive Learning'
@@ -60,12 +62,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1007/978-981-95-0695-8_18
-  published_on: '2026'
+  published_on: '20260101000000'
+  published_display: ''
   volume: ''
   issue: ''
   pages: 217-227
   pdf: /papers/DuanXia2025EnzhierAccurateEnzymeFunction.pdf
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 - slug: LiangBIBM24ctRhythm
   title: 'CTRhythm: Accurate Atrial Fibrillation Detection from Single-Lead ECG by CNN and Transformer
     Integration'
@@ -75,12 +78,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1109/BIBM62325.2024.10822563
-  published_on: '2024-12-03'
+  published_on: '20241203000000'
+  published_display: '20241203'
   volume: ''
   issue: ''
   pages: 4452-4458
   pdf: /papers/LiangXia2024CtrhythmAccurateAtrialFibrillation.pdf
-  sort_key: '2024-12-03'
+  sort_key: '20241203000000'
 - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
   title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
   venue: Frontiers in Microbiology
@@ -89,12 +93,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.3389/fmicb.2023.1050130
-  published_on: '2023-03-30'
+  published_on: '20230330000000'
+  published_display: '20230330'
   volume: '14'
   issue: ''
   pages: '1050130'
   pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
-  sort_key: '2023-03-30'
+  sort_key: '20230330000000'
 avatar: /images/avatars/rbz.svg
 ---
 

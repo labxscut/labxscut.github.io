@@ -30,12 +30,13 @@ papers:
   status: Published
   pi_track: lead
   doi: 10.1109/TCBBIO.2026.3697777
-  published_on: '2026'
+  published_on: '20260101000000'
+  published_display: ''
   volume: ''
   issue: ''
   pages: 1-14
   pdf: ''
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
   venue: Human Genetics and Genomics Advances
@@ -44,12 +45,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1016/j.xhgg.2025.100540
-  published_on: 2026-01
+  published_on: '20260101000000'
+  published_display: '20260101'
   volume: '7'
   issue: '1'
   pages: '100540'
   pdf: /papers/YuXia2025MultiTraitGenomeWide.pdf
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 - slug: NingJMIR2025Lymph
   title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
     Study of Regional and Temporal Trends'
@@ -59,12 +61,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.2196/80497
-  published_on: '2025-11-18'
+  published_on: '20251118000000'
+  published_display: '20251118'
   volume: '27'
   issue: ''
   pages: e80497
   pdf: /papers/NingXia2025OnlineHealthSeekingBehaviors.pdf
-  sort_key: '2025-11-18'
+  sort_key: '20251118000000'
 avatar: /images/avatars/lhl.svg
 ---
 

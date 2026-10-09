@@ -7,10 +7,11 @@
 
   Only team-lead papers (`lead=true`) link a PDF, and only when the PDF is a
   local copy in /papers/ — publisher PDFs are not linked. `published_on` is
-  kept in the data for sorting but never printed; the year is shown.
-  Team-lead papers also preview the citation metrics curated in the registry
-  (impact factor, JCR quartile, CCF rank) when present. Conference and
-  workshop entries print their location and dates, plus a
+  canonical `YYYYMMDDHHMMSS`, kept in the data for sorting but never printed;
+  the year is shown. Team-lead papers also preview the citation metrics curated
+  in the registry (impact factor, JCR quartile, CCF rank) when present.
+  Conference and workshop entries print their location and dates
+  (`venue_dates` is `YYYYMMDD/YYYYMMDD`), plus a
   regular/workshop/poster/abstract badge when the registry classifies them.
 
   Renders: **Venue** · volume(issue), pages · year · location dates ·

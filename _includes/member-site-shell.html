@@ -87,7 +87,7 @@
                 <h3>Team Lead Papers</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_lead %}
-                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_on != "" %}{{ paper.published_on }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
+                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
                 {% endfor %}
                 </ol>
               {% endif %}
@@ -95,7 +95,7 @@
                 <h3>Collaborative Papers</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_collaborative %}
-                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_on != "" %}{{ paper.published_on }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
+                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
                 {% endfor %}
                 </ol>
               {% endif %}
@@ -103,7 +103,7 @@
                 <h3>Book Chapters</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_chapters %}
-                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_on != "" %}{{ paper.published_on }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}</li>
+                  <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}</li>
                 {% endfor %}
                 </ol>
               {% endif %}

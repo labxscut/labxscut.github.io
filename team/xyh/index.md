@@ -32,12 +32,13 @@ papers:
   status: Published
   pi_track: lead
   doi: 10.1109/TCBBIO.2025.3613591
-  published_on: 2025-11
+  published_on: '20251101000000'
+  published_display: '20251101'
   volume: '22'
   issue: '6'
   pages: 3000-3016
   pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
-  sort_key: '2025-11-01'
+  sort_key: '20251101000000'
 - slug: YangQB24UGESgas
   title: Hierarchical learning of gastric cancer molecular subtypes by integrating multi-modal DNA-level
     omics data and clinical stratification
@@ -47,12 +48,13 @@ papers:
   status: Final
   pi_track: lead
   doi: 10.1002/qub2.45
-  published_on: 2024-06
+  published_on: '20240601000000'
+  published_display: '20240601'
   volume: '12'
   issue: '2'
   pages: 182-196
   pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
-  sort_key: '2024-06-01'
+  sort_key: '20240601000000'
 avatar: /images/avatars/xyh.svg
 ---
 

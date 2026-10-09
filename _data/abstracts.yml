@@ -15,7 +15,7 @@
   status: Meeting
   doi: 10.1158/1538-7445.AM2019-5022
   url: https://doi.org/10.1158/1538-7445.AM2019-5022
-  published_on: '2019-07-01'
+  published_on: '20190701000000'
   volume: '79'
   issue: 13_Supplement
   pages: 5022-5022
@@ -56,7 +56,8 @@
   - lcx
   - adm
   pi_track: lead
-  sort_key: '2019-07-01'
+  sort_key: '20190701000000'
+  published_display: '20190701'
   tools: []
 - slug: LeeCR2018Abstract438
   title: 'Abstract 438: High-quality CNV segments from low-coverage whole genome sequencing from FFPE
@@ -74,7 +75,7 @@
   status: Meeting
   doi: 10.1158/1538-7445.AM2018-438
   url: https://doi.org/10.1158/1538-7445.AM2018-438
-  published_on: '2018-07-01'
+  published_on: '20180701000000'
   volume: '78'
   issue: 13_Supplement
   pages: 438-438
@@ -185,7 +186,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2018-07-01'
+  sort_key: '20180701000000'
+  published_display: '20180701'
   tools: []
 - slug: XiaCR2018Abstract4334
   title: 'Abstract 4334: Linked read whole genome sequencing reveals pervasive chromosomal level instability
@@ -203,7 +205,7 @@
   status: Meeting
   doi: 10.1158/1538-7445.AM2018-4334
   url: https://doi.org/10.1158/1538-7445.AM2018-4334
-  published_on: '2018-07-01'
+  published_on: '20180701000000'
   volume: '78'
   issue: 13_Supplement
   pages: 4334-4334
@@ -273,7 +275,8 @@
   lab_authors:
   - lcx
   pi_track: lead
-  sort_key: '2018-07-01'
+  sort_key: '20180701000000'
+  published_display: '20180701'
   tools: []
 - slug: AndorCR2016Abstract2387
   title: 'Abstract 2387: Pan-cancer analysis of clonal evolution reveals the costs and adaptive benefits
@@ -291,7 +294,7 @@
   status: Meeting
   doi: 10.1158/1538-7445.AM2016-2387
   url: https://doi.org/10.1158/1538-7445.AM2016-2387
-  published_on: '2016-07-15'
+  published_on: '20160715000000'
   volume: '76'
   issue: 14_Supplement
   pages: 2387-2387
@@ -355,7 +358,8 @@
   lab_authors:
   - lcx
   pi_track: collaborative
-  sort_key: '2016-07-15'
+  sort_key: '20160715000000'
+  published_display: '20160715'
   tools: []
 - slug: XiaCR2015Abstract4871
   title: 'Abstract 4871: A new multiple feature approach for rapid and highly accurate somatic structural
@@ -373,7 +377,7 @@
   status: Meeting
   doi: 10.1158/1538-7445.AM2015-4871
   url: https://doi.org/10.1158/1538-7445.AM2015-4871
-  published_on: '2015-08-01'
+  published_on: '20150801000000'
   volume: '75'
   issue: 15_Supplement
   pages: 4871-4871
@@ -419,5 +423,6 @@
   lab_authors:
   - lcx
   pi_track: lead
-  sort_key: '2015-08-01'
+  sort_key: '20150801000000'
+  published_display: '20150801'
   tools: []

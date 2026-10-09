@@ -16,7 +16,7 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 {% assign latest_news = site.data.news | sort: "date" | reverse %}
 {% for item in latest_news limit:3 %}
-- **{{ item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
+- **{{ item.date_display | default: item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
 {% endfor %}
 
 {% include button.html text="All news" link="news/" icon="fa-solid fa-arrow-right" %}
@@ -62,7 +62,7 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 {% if site.data.activities.size > 0 %}
 {% for activity in site.data.activities limit:3 %}
-- **{{ activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
+- **{{ activity.date_display | default: activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
 {% endfor %}
 {% else %}
 No activities have been posted yet.

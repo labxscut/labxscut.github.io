@@ -15,7 +15,7 @@ nav:
 {% for activity in activities %}
 ## {{ activity.title }}
 
-{{ activity.date }}{% if activity.location %} · {{ activity.location }}{% endif %}
+{{ activity.date_display | default: activity.date }}{% if activity.location %} · {{ activity.location }}{% endif %}
 
 {{ activity.description }}
 

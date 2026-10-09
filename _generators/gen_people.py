@@ -308,6 +308,7 @@ def short_paper(entry: dict) -> dict:
         "pi_track": entry.get("pi_track", ""),
         "doi": entry.get("doi", ""),
         "published_on": entry.get("published_on", ""),
+        "published_display": entry.get("published_display", ""),
         "volume": entry.get("volume", ""),
         "issue": entry.get("issue", ""),
         "pages": entry.get("pages", ""),

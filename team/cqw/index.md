@@ -30,12 +30,13 @@ papers:
   status: Published
   pi_track: lead
   doi: 10.1109/TCBBIO.2026.3697777
-  published_on: '2026'
+  published_on: '20260101000000'
+  published_display: ''
   volume: ''
   issue: ''
   pages: 1-14
   pdf: ''
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 avatar: /images/avatars/cqw.svg
 ---
 

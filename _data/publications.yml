@@ -7,7 +7,7 @@
   venue_type: conference
   venue_full: 43rd International Conference on Machine Learning (ICML 2026)
   venue_location: Seoul, South Korea (COEX)
-  venue_dates: 2026-07-06/2026-07-11
+  venue_dates: 20260706/20260711
   presentation: regular
   category: other
   pi_role: 通讯作者
@@ -15,7 +15,7 @@
   status: Final
   doi: 10.48550/arxiv.2609.11918
   url: https://doi.org/10.48550/arxiv.2609.11918
-  published_on: '2026-09-10'
+  published_on: '20260910000000'
   volume: ''
   issue: ''
   pages: ''
@@ -44,7 +44,8 @@
   - chb
   - lcx
   pi_track: lead
-  sort_key: '2026-09-10'
+  sort_key: '20260910000000'
+  published_display: '20260910'
   tools: []
 - slug: Duan2025sxSNF
   title: 'sxSNF: Similarity Network Fusion-Guided Deep Graph Learning for Single-Cell Multimodal Integration'
@@ -61,7 +62,7 @@
   status: Published
   doi: 10.1109/TCBBIO.2026.3697777
   url: https://ieeexplore.ieee.org/document/11536776
-  published_on: '2026'
+  published_on: '20260101000000'
   volume: ''
   issue: ''
   pages: 1-14
@@ -123,7 +124,8 @@
   - lhl
   - lcx
   pi_track: lead
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
+  published_display: ''
   tools:
   - sxSNF
 - slug: YuHGGadv2025MtagHF
@@ -141,7 +143,7 @@
   status: Final
   doi: 10.1016/j.xhgg.2025.100540
   url: https://doi.org/10.1016/j.xhgg.2025.100540
-  published_on: 2026-01
+  published_on: '20260101000000'
   volume: '7'
   issue: '1'
   pages: '100540'
@@ -222,7 +224,8 @@
   - nkd
   - lcx
   pi_track: lead
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
+  published_display: '20260101'
   tools: []
 - slug: RenICAITE26MultimodalMathExpl
   title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
@@ -231,7 +234,7 @@
   venue_type: conference
   venue_full: International Conference on Artificial Intelligence Technology and Education (ICAITE 2026)
   venue_location: Nagasaki, Japan
-  venue_dates: 2026-12-06/2026-12-08
+  venue_dates: 20261206/20261208
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -275,7 +278,8 @@
   - pel
   - lcx
   pi_track: lead
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
+  published_display: ''
   tools: []
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
@@ -285,7 +289,7 @@
   venue_type: conference
   venue_full: International Symposium on Bioinformatics Research and Applications (ISBRA 2025)
   venue_location: Helsinki, Finland
-  venue_dates: 2025-08-03/2025-08-05
+  venue_dates: 20250803/20250805
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -293,7 +297,7 @@
   status: Final
   doi: 10.1007/978-981-95-0695-8_18
   url: https://doi.org/10.1007/978-981-95-0695-8_18
-  published_on: '2026'
+  published_on: '20260101000000'
   volume: ''
   issue: ''
   pages: 217-227
@@ -367,7 +371,8 @@
   - rbz
   - lcx
   pi_track: lead
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
+  published_display: ''
   tools:
   - sxEnzHier
 - slug: WangBIBM2024sxFusion
@@ -378,7 +383,7 @@
   venue_type: conference
   venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2025)
   venue_location: Wuhan, China
-  venue_dates: 2025-12-15/2025-12-18
+  venue_dates: 20251215/20251218
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -386,7 +391,7 @@
   status: Final
   doi: 10.1109/BIBM66473.2025.11356976
   url: https://doi.org/10.1109/BIBM66473.2025.11356976
-  published_on: '2025-12-15'
+  published_on: '20251215000000'
   volume: ''
   issue: ''
   pages: 1278-1283
@@ -461,7 +466,8 @@
   - nkd
   - lcx
   pi_track: lead
-  sort_key: '2025-12-15'
+  sort_key: '20251215000000'
+  published_display: '20251215'
   tools: []
 - slug: NingJMIR2025Lymph
   title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
@@ -479,7 +485,7 @@
   status: Final
   doi: 10.2196/80497
   url: https://doi.org/10.2196/80497
-  published_on: '2025-11-18'
+  published_on: '20251118000000'
   volume: '27'
   issue: ''
   pages: e80497
@@ -611,7 +617,8 @@
   - yxy
   - lhl
   pi_track: lead
-  sort_key: '2025-11-18'
+  sort_key: '20251118000000'
+  published_display: '20251118'
   tools: []
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -629,7 +636,7 @@
   status: Published
   doi: 10.1109/TCBBIO.2025.3613591
   url: https://ieeexplore.ieee.org/abstract/document/11176992
-  published_on: 2025-11
+  published_on: '20251101000000'
   volume: '22'
   issue: '6'
   pages: 3000-3016
@@ -707,7 +714,8 @@
   - nkd
   - lcx
   pi_track: lead
-  sort_key: '2025-11-01'
+  sort_key: '20251101000000'
+  published_display: '20251101'
   tools:
   - UGES
 - slug: ChenICML25DshiftShort
@@ -725,7 +733,7 @@
   status: Accept
   doi: 10.48550/arXiv.2506.12829
   url: https://doi.org/10.48550/arXiv.2506.12829
-  published_on: '2025-06-15'
+  published_on: '20250615000000'
   volume: ''
   issue: ''
   pages: ''
@@ -754,7 +762,8 @@
   - chb
   - lcx
   pi_track: lead
-  sort_key: '2025-06-15'
+  sort_key: '20250615000000'
+  published_display: '20250615'
   tools: []
 - slug: DuanAPBC2025SNF
   title: A Novel Single-Cell Multi-Modal Data Integration Method Combining Similarity Network Fusion and
@@ -787,7 +796,8 @@
   authors: []
   lab_authors: []
   pi_track: lead
-  sort_key: '2025-01-01'
+  sort_key: '20250101000000'
+  published_display: ''
   tools:
   - sxSNF
 - slug: LiangBIBM24ctRhythm
@@ -798,7 +808,7 @@
   venue_type: conference
   venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2024)
   venue_location: Lisbon, Portugal
-  venue_dates: 2024-12-03/2024-12-06
+  venue_dates: 20241203/20241206
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -806,7 +816,7 @@
   status: Final
   doi: 10.1109/BIBM62325.2024.10822563
   url: https://doi.org/10.1109/BIBM62325.2024.10822563
-  published_on: '2024-12-03'
+  published_on: '20241203000000'
   volume: ''
   issue: ''
   pages: 4452-4458
@@ -888,7 +898,8 @@
   - lxm
   - lcx
   pi_track: lead
-  sort_key: '2024-12-03'
+  sort_key: '20241203000000'
+  published_display: '20241203'
   tools:
   - CTRhythm
 - slug: YangQB24UGESgas
@@ -907,7 +918,7 @@
   status: Final
   doi: 10.1002/qub2.45
   url: https://doi.org/10.1002/qub2.45
-  published_on: 2024-06
+  published_on: '20240601000000'
   volume: '12'
   issue: '2'
   pages: 182-196
@@ -1014,7 +1025,8 @@
   - lqj
   - lcx
   pi_track: lead
-  sort_key: '2024-06-01'
+  sort_key: '20240601000000'
+  published_display: '20240601'
   tools:
   - HCG
 - slug: Feishu-2024-A-comparative-study-of-structural-variant-calli
@@ -1032,7 +1044,7 @@
   status: Final
   doi: 10.26508/lsa.202302181
   url: https://doi.org/10.26508/lsa.202302181
-  published_on: 2024-05
+  published_on: '20240501000000'
   volume: '7'
   issue: '5'
   pages: e202302181
@@ -1161,7 +1173,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2024-05-01'
+  sort_key: '20240501000000'
+  published_display: '20240501'
   tools: []
 - slug: Feishu-2024-Molecular-mechanism-of-NAD+-and-NMN-binding-to
   title: Molecular mechanism of NAD+ and NMN binding to the Nudix homology domains of DBC1
@@ -1178,7 +1191,7 @@
   status: Final
   doi: 10.1016/j.ijbiomac.2024.130131
   url: https://doi.org/10.1016/j.ijbiomac.2024.130131
-  published_on: 2024-03
+  published_on: '20240301000000'
   volume: '262'
   issue: ''
   pages: '130131'
@@ -1249,7 +1262,8 @@
   - yzy
   - lcx
   pi_track: collaborative
-  sort_key: '2024-03-01'
+  sort_key: '20240301000000'
+  published_display: '20240301'
   tools: []
 - slug: BaiNARGB24CCNMF
   title: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
@@ -1266,7 +1280,7 @@
   status: Final
   doi: 10.1093/nargab/lqae017
   url: https://doi.org/10.1093/nargab/lqae017
-  published_on: '2024-01-05'
+  published_on: '20240105000000'
   volume: '6'
   issue: '1'
   pages: lqae017
@@ -1308,7 +1322,8 @@
   - wln
   - lcx
   pi_track: lead
-  sort_key: '2024-01-05'
+  sort_key: '20240105000000'
+  published_display: '20240105'
   tools:
   - CCNMF
 - slug: Feishu-2023-Crystal-Structure-of-Fungal-Nonspecific-Phospho
@@ -1326,7 +1341,7 @@
   status: Final
   doi: 10.1021/acs.jafc.3c05155
   url: https://doi.org/10.1021/acs.jafc.3c05155
-  published_on: '2023-11-01'
+  published_on: '20231101000000'
   volume: '71'
   issue: '43'
   pages: 16352-16361
@@ -1384,7 +1399,8 @@
   lab_authors:
   - lcx
   pi_track: collaborative
-  sort_key: '2023-11-01'
+  sort_key: '20231101000000'
+  published_display: '20231101'
   tools: []
 - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
   title: 'Identifying local associations in biological time series: algorithms, statistical significance,
@@ -1402,7 +1418,7 @@
   status: Final
   doi: 10.1093/bib/bbad390
   url: https://doi.org/10.1093/bib/bbad390
-  published_on: '2023-09-22'
+  published_on: '20230922000000'
   volume: '24'
   issue: '6'
   pages: bbad390
@@ -1480,7 +1496,8 @@
   - xjm
   - liy
   pi_track: lead
-  sort_key: '2023-09-22'
+  sort_key: '20230922000000'
+  published_display: '20230922'
   tools:
   - elsa
 - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
@@ -1498,7 +1515,7 @@
   status: Final
   doi: 10.1016/j.compbiomed.2023.106774
   url: https://doi.org/10.1016/j.compbiomed.2023.106774
-  published_on: 2023-05
+  published_on: '20230501000000'
   volume: '157'
   issue: ''
   pages: '106774'
@@ -1557,7 +1574,8 @@
   - adm
   - lcx
   pi_track: lead
-  sort_key: '2023-05-01'
+  sort_key: '20230501000000'
+  published_display: '20230501'
   tools: []
 - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
   title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
@@ -1574,7 +1592,7 @@
   status: Final
   doi: 10.3389/fmicb.2023.1050130
   url: https://doi.org/10.3389/fmicb.2023.1050130
-  published_on: '2023-03-30'
+  published_on: '20230330000000'
   volume: '14'
   issue: ''
   pages: '1050130'
@@ -1648,7 +1666,8 @@
   - rbz
   - adm
   pi_track: lead
-  sort_key: '2023-03-30'
+  sort_key: '20230330000000'
+  published_display: '20230330'
   tools: []
 - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
   title: Regularized survival learning and cross-database analysis enabled identification of colorectal
@@ -1666,7 +1685,7 @@
   status: Final
   doi: 10.3389/fgene.2023.1148470
   url: https://doi.org/10.3389/fgene.2023.1148470
-  published_on: '2023-02-23'
+  published_on: '20230223000000'
   volume: '14'
   issue: ''
   pages: '1148470'
@@ -1725,7 +1744,8 @@
   - adm
   - lcx
   pi_track: lead
-  sort_key: '2023-02-23'
+  sort_key: '20230223000000'
+  published_display: '20230223'
   tools: []
 - slug: Feishu-2022-Progranulin-mutations-in-clinical-and-neuropath
   title: Progranulin mutations in clinical and neuropathological Alzheimer's disease
@@ -1742,7 +1762,7 @@
   status: Final
   doi: 10.1002/alz.12567
   url: https://doi.org/10.1002/alz.12567
-  published_on: 2022-12
+  published_on: '20221201000000'
   volume: '18'
   issue: '12'
   pages: 2458-2467
@@ -1757,7 +1777,8 @@
   authors: []
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2022-12-01'
+  sort_key: '20221201000000'
+  published_display: '20221201'
   tools: []
 - slug: Feishu-2022-Exploratory-genomic-analysis-of-high-grade-neur
   title: Exploratory genomic analysis of high-grade neuroendocrine neoplasms across diverse primary sites
@@ -1774,7 +1795,7 @@
   status: Final
   doi: 10.1530/ERC-22-0015
   url: https://doi.org/10.1530/ERC-22-0015
-  published_on: '2022-12-01'
+  published_on: '20221201000000'
   volume: '29'
   issue: '12'
   pages: 665-679
@@ -1850,7 +1871,8 @@
   lab_authors:
   - lcx
   pi_track: collaborative
-  sort_key: '2022-12-01'
+  sort_key: '20221201000000'
+  published_display: '20221201'
   tools: []
 - slug: Feishu-2022-A-locus-at-19q13.31-significantly-reduces-the-A
   title: A locus at 19q13.31 significantly reduces the ApoE ε4 risk for Alzheimer's Disease in African
@@ -1868,7 +1890,7 @@
   status: Final
   doi: 10.1371/journal.pgen.1009977
   url: https://doi.org/10.1371/journal.pgen.1009977
-  published_on: '2022-07-05'
+  published_on: '20220705000000'
   volume: '18'
   issue: '7'
   pages: e1009977
@@ -1883,7 +1905,8 @@
   authors: []
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2022-07-05'
+  sort_key: '20220705000000'
+  published_display: '20220705'
   tools: []
 - slug: AiFI2022JointAnalysisMicrobial
   title: Joint analysis of microbial and immune cell abundance in liver cancer tissue using a gene expression
@@ -1901,7 +1924,7 @@
   status: Final
   doi: 10.3389/fimmu.2022.853213
   url: https://doi.org/10.3389/fimmu.2022.853213
-  published_on: '2022-04-14'
+  published_on: '20220414000000'
   volume: '13'
   issue: ''
   pages: '853213'
@@ -1958,7 +1981,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2022-04-14'
+  sort_key: '20220414000000'
+  published_display: '20220414'
   tools: []
 - slug: Feishu-2022-Prediction-of-breast-cancer-risk-based-on-flow
   title: Prediction of breast cancer risk based on flow variant analysis of circulating peripheral blood
@@ -1976,7 +2000,7 @@
   status: Final
   doi: 10.1016/j.xhgg.2022.100085
   url: https://doi.org/10.1016/j.xhgg.2022.100085
-  published_on: 2022-04
+  published_on: '20220401000000'
   volume: '3'
   issue: '2'
   pages: '100085'
@@ -2052,7 +2076,8 @@
   lab_authors:
   - lcx
   pi_track: collaborative
-  sort_key: '2022-04-01'
+  sort_key: '20220401000000'
+  published_display: '20220401'
   tools: []
 - slug: Feishu-2022-Association-of-mitochondrial-variants-and-haplo
   title: Association of mitochondrial variants and haplogroups identified by whole exome sequencing with
@@ -2070,7 +2095,7 @@
   status: Final
   doi: 10.1002/alz.12396
   url: https://doi.org/10.1002/alz.12396
-  published_on: 2022-02
+  published_on: '20220201000000'
   volume: '18'
   issue: '2'
   pages: 294-306
@@ -2085,7 +2110,8 @@
   authors: []
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2022-02-01'
+  sort_key: '20220201000000'
+  published_display: '20220201'
   tools: []
 - slug: Feishu-2021-Transcriptional-changes-in-CD16+-monocytes-may
   title: Transcriptional changes in CD16+ monocytes may contribute to the pathogenesis of COVID-19
@@ -2102,7 +2128,7 @@
   status: Final
   doi: 10.3389/fimmu.2021.665773
   url: https://doi.org/10.3389/fimmu.2021.665773
-  published_on: '2021-05-24'
+  published_on: '20210524000000'
   volume: '12'
   issue: ''
   pages: '665773'
@@ -2172,7 +2198,8 @@
   lab_authors:
   - lcx
   pi_track: collaborative
-  sort_key: '2021-05-24'
+  sort_key: '20210524000000'
+  published_display: '20210524'
   tools: []
 - slug: Feishu-2021-Large-scale-sequencing-studies-expand-the-known
   title: Large-scale sequencing studies expand the known genetic architecture of Alzheimer's disease
@@ -2189,7 +2216,7 @@
   status: Final
   doi: 10.1002/dad2.12255
   url: https://doi.org/10.1002/dad2.12255
-  published_on: 2021-01
+  published_on: '20210101000000'
   volume: '13'
   issue: '1'
   pages: e12255
@@ -2204,7 +2231,8 @@
   authors: []
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2021-01-01'
+  sort_key: '20210101000000'
+  published_display: '20210101'
   tools: []
 - slug: BisMP2020WholeExomeSequencing
   title: Whole exome sequencing study identifies novel rare and common Alzheimer's-Associated variants
@@ -2222,7 +2250,7 @@
   status: Final
   doi: 10.1038/s41380-018-0112-7
   url: https://doi.org/10.1038/s41380-018-0112-7
-  published_on: '2020-08-01'
+  published_on: '20200801000000'
   volume: '25'
   issue: '8'
   pages: 1859-1875
@@ -2243,7 +2271,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2020-08-01'
+  sort_key: '20200801000000'
+  published_display: '20200801'
   tools: []
 - slug: XiaSR2020WholeGenomeAnalysis
   title: Whole genome analysis identifies the association of TP53 genomic deletions with lower survival
@@ -2261,7 +2290,7 @@
   status: Final
   doi: 10.1038/s41598-020-61643-6
   url: https://doi.org/10.1038/s41598-020-61643-6
-  published_on: '2020-03-19'
+  published_on: '20200319000000'
   volume: '10'
   issue: '1'
   pages: '5009'
@@ -2360,7 +2389,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2020-03-19'
+  sort_key: '20200319000000'
+  published_display: '20200319'
   tools: []
 - slug: SunJCO2020ComprehensiveGenomicSequencing
   title: Comprehensive genomic sequencing of high-grade neuroendocrine neoplasms
@@ -2377,7 +2407,7 @@
   status: Final
   doi: 10.1200/JCO.2020.38.4_suppl.624
   url: https://doi.org/10.1200/JCO.2020.38.4_suppl.624
-  published_on: '2020-02-01'
+  published_on: '20200201000000'
   volume: '38'
   issue: 4_suppl
   pages: 624-624
@@ -2446,7 +2476,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2020-02-01'
+  sort_key: '20200201000000'
+  published_display: '20200201'
   tools: []
 - slug: ShinNAR2019StructuralVariationHaplotypes
   title: Structural variation and haplotypes from CRISPR-targeted sequencing of intact sub-Megabase DNA
@@ -2463,7 +2494,7 @@
   status: Final
   doi: 10.1093/nar/gkz661
   url: https://doi.org/10.1093/nar/gkz661
-  published_on: '2019-11-04'
+  published_on: '20191104000000'
   volume: '47'
   issue: '19'
   pages: e115-e115
@@ -2514,7 +2545,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2019-11-04'
+  sort_key: '20191104000000'
+  published_display: '20191104'
   tools: []
 - slug: HuangSSB2019StatisticalPowerK
   title: The statistical power of k-mer based aggregative statistics for alignment-free detection of horizontal
@@ -2532,7 +2564,7 @@
   status: Final
   doi: 10.1016/j.synbio.2019.08.001
   url: https://doi.org/10.1016/j.synbio.2019.08.001
-  published_on: 2019-09
+  published_on: '20190901000000'
   volume: '4'
   issue: '3'
   pages: 150-156
@@ -2571,7 +2603,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-09-01'
+  sort_key: '20190901000000'
+  published_display: '20190901'
   tools: []
 - slug: MaJN2019AnalysisWholeExome
   title: Analysis of Whole-Exome Sequencing Data for Alzheimer Disease Stratified by APOE Genotype
@@ -2588,7 +2621,7 @@
   status: Final
   doi: 10.1001/jamaneurol.2019.1456
   url: https://doi.org/10.1001/jamaneurol.2019.1456
-  published_on: '2019-09-01'
+  published_on: '20190901000000'
   volume: '76'
   issue: '9'
   pages: '1099'
@@ -2615,7 +2648,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2019-09-01'
+  sort_key: '20190901000000'
+  published_display: '20190901'
   tools: []
 - slug: AiPeerJ2019AssociationNetworkAnalysis
   title: Association network analysis identifies enzymatic components of gut microbiota that significantly
@@ -2633,7 +2667,7 @@
   status: Final
   doi: 10.7717/peerj.7315
   url: https://doi.org/10.7717/peerj.7315
-  published_on: '2019-07-29'
+  published_on: '20190729000000'
   volume: '7'
   issue: ''
   pages: e7315
@@ -2678,7 +2712,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-07-29'
+  sort_key: '20190729000000'
+  published_display: '20190729'
   tools: []
 - slug: NajGenomi2019QualityControlIntegration
   title: Quality control and integration of genotypes from two calling pipelines for whole genome sequence
@@ -2696,7 +2731,7 @@
   status: Final
   doi: 10.1016/j.ygeno.2018.05.004
   url: https://doi.org/10.1016/j.ygeno.2018.05.004
-  published_on: 2019-07
+  published_on: '20190701000000'
   volume: '111'
   issue: '4'
   pages: 808-818
@@ -2717,7 +2752,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2019-07-01'
+  sort_key: '20190701000000'
+  published_display: '20190701'
   tools: []
 - slug: AiFM2019IdentifyingGutMicrobiota
   title: Identifying gut microbiota associated with colorectal cancer using a zero-inflated lognormal
@@ -2735,7 +2771,7 @@
   status: Final
   doi: 10.3389/fmicb.2019.00826
   url: https://doi.org/10.3389/fmicb.2019.00826
-  published_on: '2019-04-24'
+  published_on: '20190424000000'
   volume: '10'
   issue: ''
   pages: '826'
@@ -2786,7 +2822,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-04-24'
+  sort_key: '20190424000000'
+  published_display: '20190424'
   tools: []
 - slug: AiBG2019ExploreMediatedCo
   title: Explore mediated co-varying dynamics in microbial community using integrated local similarity
@@ -2804,7 +2841,7 @@
   status: Final
   doi: 10.1186/s12864-019-5469-8
   url: https://doi.org/10.1186/s12864-019-5469-8
-  published_on: 2019-04
+  published_on: '20190401000000'
   volume: '20'
   issue: S2
   pages: '185'
@@ -2855,7 +2892,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-04-01'
+  sort_key: '20190401000000'
+  published_display: '20190401'
   tools: []
 - slug: PatelJNO2019AssociationRareCoding
   title: Association of rare coding mutations with Alzheimer disease and other dementias among adults
@@ -2873,7 +2911,7 @@
   status: Final
   doi: 10.1001/jamanetworkopen.2019.1350
   url: https://doi.org/10.1001/jamanetworkopen.2019.1350
-  published_on: '2019-03-29'
+  published_on: '20190329000000'
   volume: '2'
   issue: '3'
   pages: e191350
@@ -2894,7 +2932,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2019-03-29'
+  sort_key: '20190329000000'
+  published_display: '20190329'
   tools: []
 - slug: AiGenes2019ConstructingMicrobialAssociat
   title: Constructing the microbial association network from large-scale time series data using Granger
@@ -2912,7 +2951,7 @@
   status: Final
   doi: 10.3390/genes10030216
   url: https://doi.org/10.3390/genes10030216
-  published_on: '2019-03-14'
+  published_on: '20190314000000'
   volume: '10'
   issue: '3'
   pages: '216'
@@ -2957,7 +2996,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-03-14'
+  sort_key: '20190314000000'
+  published_display: '20190314'
   tools: []
 - slug: ZhangASD2019RareMissenseVariant
   title: A rare missense variant of CASP7 is associated with familial late-onset Alzheimer's disease
@@ -2974,7 +3014,7 @@
   status: Final
   doi: 10.1016/j.jalz.2018.10.005
   url: https://doi.org/10.1016/j.jalz.2018.10.005
-  published_on: 2019-03
+  published_on: '20190301000000'
   volume: '15'
   issue: '3'
   pages: 441-452
@@ -3001,7 +3041,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2019-03-01'
+  sort_key: '20190301000000'
+  published_display: '20190301'
   tools: []
 - slug: AiGenes2019UsingDecisionTree
   title: Using decision tree aggregation with random forest model to identify gut microbes associated
@@ -3019,7 +3060,7 @@
   status: Final
   doi: 10.3390/genes10020112
   url: https://doi.org/10.3390/genes10020112
-  published_on: '2019-02-01'
+  published_on: '20190201000000'
   volume: '10'
   issue: '2'
   pages: '112'
@@ -3070,7 +3111,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2019-02-01'
+  sort_key: '20190201000000'
+  published_display: '20190201'
   tools: []
 - slug: HummelenCG2018LowCoverageWhole
   title: Low-coverage whole genome sequencing revealed a deletion on chromosome 17p, carrying TP53, that
@@ -3088,7 +3130,7 @@
   status: Final
   doi: 10.1016/j.cancergen.2018.04.084
   url: https://doi.org/10.1016/j.cancergen.2018.04.084
-  published_on: 2018-10
+  published_on: '20181001000000'
   volume: 226-227
   issue: ''
   pages: 44-45
@@ -3205,7 +3247,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2018-10-01'
+  sort_key: '20181001000000'
+  published_display: '20181001'
   tools: []
 - slug: XiaGigaSc2018SVEngineEfficientVersatile
   title: 'SVEngine: an efficient and versatile simulator of genome structural variations with features
@@ -3223,7 +3266,7 @@
   status: Final
   doi: 10.1093/gigascience/giy081
   url: https://doi.org/10.1093/gigascience/giy081
-  published_on: '2018-07-01'
+  published_on: '20180701000000'
   volume: '7'
   issue: '7'
   pages: giy081
@@ -3280,7 +3323,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2018-07-01'
+  sort_key: '20180701000000'
+  published_display: '20180701'
   tools:
   - svengine
 - slug: AiGenes2018CoreProbeNovelAlgorithm
@@ -3298,7 +3342,7 @@
   status: Final
   doi: 10.3390/genes9060313
   url: https://doi.org/10.3390/genes9060313
-  published_on: '2018-06-20'
+  published_on: '20180620000000'
   volume: '9'
   issue: '6'
   pages: '313'
@@ -3337,7 +3381,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2018-06-20'
+  sort_key: '20180620000000'
+  published_display: '20180620'
   tools: []
 - slug: NadauldJCO2018LossTp53As
   title: Loss of TP53 as a prognostic biomarker of poor survival in stage III colorectal cancer patients
@@ -3354,7 +3399,7 @@
   status: Final
   doi: 10.1200/JCO.2018.36.15_suppl.e15588
   url: https://doi.org/10.1200/JCO.2018.36.15_suppl.e15588
-  published_on: '2018-05-20'
+  published_on: '20180520000000'
   volume: '36'
   issue: 15_suppl
   pages: e15588-e15588
@@ -3387,7 +3432,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2018-05-20'
+  sort_key: '20180520000000'
+  published_display: '20180520'
   tools: []
 - slug: RaghavanACTN2018WholeExomeSequencing
   title: Whole‐exome sequencing in 20,197 persons for rare variants in Alzheimer's disease
@@ -3404,7 +3450,7 @@
   status: Final
   doi: 10.1002/acn3.582
   url: https://doi.org/10.1002/acn3.582
-  published_on: '2018-04-20'
+  published_on: '20180420000000'
   volume: ''
   issue: ''
   pages: ''
@@ -3425,7 +3471,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2018-04-20'
+  sort_key: '20180420000000'
+  published_display: '20180420'
   tools: []
 - slug: VardarajACTN2018WholeGenomeSequencing
   title: Whole genome sequencing of Caribbean Hispanic families with late‐onset Alzheimer's disease
@@ -3442,7 +3489,7 @@
   status: Final
   doi: 10.1002/acn3.537
   url: https://doi.org/10.1002/acn3.537
-  published_on: 2018-04
+  published_on: '20180401000000'
   volume: '5'
   issue: '4'
   pages: 406-417
@@ -3463,7 +3510,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2018-04-01'
+  sort_key: '20180401000000'
+  published_display: '20180401'
   tools: []
 - slug: XiaNAR2018IdentificationLargeRearrangeme
   title: Identification of large rearrangements in cancer genomes with barcode linked reads
@@ -3480,7 +3528,7 @@
   status: Final
   doi: 10.1093/nar/gkx1193
   url: https://doi.org/10.1093/nar/gkx1193
-  published_on: '2018-02-28'
+  published_on: '20180228000000'
   volume: '46'
   issue: '4'
   pages: e19-e19
@@ -3531,7 +3579,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2018-02-28'
+  sort_key: '20180228000000'
+  published_display: '20180228'
   tools: []
 - slug: BellNAR2017ChromosomeScaleMega
   title: Chromosome-scale mega-haplotypes enable digital karyotyping of cancer aneuploidy
@@ -3548,7 +3597,7 @@
   status: Final
   doi: 10.1093/nar/gkx712
   url: https://doi.org/10.1093/nar/gkx712
-  published_on: '2017-11-02'
+  published_on: '20171102000000'
   volume: '45'
   issue: '19'
   pages: e162-e162
@@ -3611,7 +3660,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2017-11-02'
+  sort_key: '20171102000000'
+  published_display: '20171102'
   tools: []
 - slug: ShinNC2017CrisprCas9Targeted
   title: CRISPR-Cas9-targeted fragmentation and selective sequencing enable massively parallel microsatellite
@@ -3629,7 +3679,7 @@
   status: Final
   doi: 10.1038/ncomms14291
   url: https://doi.org/10.1038/ncomms14291
-  published_on: '2017-02-07'
+  published_on: '20170207000000'
   volume: '8'
   issue: '1'
   pages: '14291'
@@ -3680,7 +3730,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2017-02-07'
+  sort_key: '20170207000000'
+  published_display: '20170207'
   tools: []
 - slug: AiBG2017IntegratedMetagenomicData
   title: Integrated metagenomic data analysis demonstrates that a loss of diversity in oral microbiota
@@ -3698,7 +3749,7 @@
   status: Final
   doi: 10.1186/s12864-016-3254-5
   url: https://doi.org/10.1186/s12864-016-3254-5
-  published_on: 2017-01
+  published_on: '20170101000000'
   volume: '18'
   issue: S1
   pages: '1041'
@@ -3749,7 +3800,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2017-01-01'
+  sort_key: '20170101000000'
+  published_display: '20170101'
   tools: []
 - slug: WeissIJ2016CorrelationDetectionStrategie
   title: Correlation detection strategies in microbial datasets vary widely in sensitivity and precision
@@ -3766,7 +3818,7 @@
   status: Final
   doi: 10.1038/ismej.2015.235
   url: https://doi.org/10.1038/ismej.2015.235
-  published_on: '2016-07-01'
+  published_on: '20160701000000'
   volume: '10'
   issue: '7'
   pages: 1669-1681
@@ -3883,7 +3935,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2016-07-01'
+  sort_key: '20160701000000'
+  published_display: '20160701'
   tools: []
 - slug: XiaNAR2016GenomeWideApproach
   title: A genome-wide approach for detecting the full spectrum of insertion-deletion variants
@@ -3900,7 +3953,7 @@
   status: Final
   doi: 10.1093/nar/gkw481
   url: https://doi.org/10.1093/nar/gkw481
-  published_on: '2016-06-20'
+  published_on: '20160620000000'
   volume: ''
   issue: ''
   pages: gkw481
@@ -3963,7 +4016,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2016-06-20'
+  sort_key: '20160620000000'
+  published_display: '20160620'
   tools: []
 - slug: ZhangAAS2016ScanStatisticsPoisson
   title: Scan statistics on Poisson random fields with applications in genomics
@@ -3980,7 +4034,7 @@
   status: Final
   doi: 10.1214/15-AOAS892
   url: https://doi.org/10.1214/15-AOAS892
-  published_on: '2016-06-01'
+  published_on: '20160601000000'
   volume: '10'
   issue: '2'
   pages: ''
@@ -4019,7 +4073,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2016-06-01'
+  sort_key: '20160601000000'
+  published_display: '20160601'
   tools: []
 - slug: AndorNM2016PanCancerAnalysis
   title: Pan-cancer analysis of the extent and consequences of intra-tumor heterogeneity
@@ -4036,7 +4091,7 @@
   status: Final
   doi: 10.1038/nm.3984
   url: https://doi.org/10.1038/nm.3984
-  published_on: 2016-01
+  published_on: '20160101000000'
   volume: '22'
   issue: '1'
   pages: 105-113
@@ -4099,7 +4154,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2016-01-01'
+  sort_key: '20160101000000'
+  published_display: '20160101'
   tools: []
 - slug: XiaBB2015StatisticalSignificanceApproxim
   title: Statistical significance approximation in local trend analysis of high-throughput time-series
@@ -4117,7 +4173,7 @@
   status: Final
   doi: 10.1186/s12859-015-0732-8
   url: https://doi.org/10.1186/s12859-015-0732-8
-  published_on: 2015-12
+  published_on: '20151201000000'
   volume: '16'
   issue: '1'
   pages: '301'
@@ -4168,7 +4224,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2015-12-01'
+  sort_key: '20151201000000'
+  published_display: '20151201'
   tools:
   - elsa
 - slug: CramIJ2015CrossDepthAnalysis
@@ -4186,7 +4243,7 @@
   status: Final
   doi: 10.1038/ismej.2015.76
   url: https://doi.org/10.1038/ismej.2015.76
-  published_on: '2015-12-01'
+  published_on: '20151201000000'
   volume: '9'
   issue: '12'
   pages: 2573-2586
@@ -4237,7 +4294,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2015-12-01'
+  sort_key: '20151201000000'
+  published_display: '20151201'
   tools: []
 - slug: CushingSR2015EmergenceHemagglutininMutat
   title: Emergence of hemagglutinin mutations during the course of Influenza infection
@@ -4254,7 +4312,7 @@
   status: Final
   doi: 10.1038/srep16178
   url: https://doi.org/10.1038/srep16178
-  published_on: '2015-11-05'
+  published_on: '20151105000000'
   volume: '5'
   issue: '1'
   pages: '16178'
@@ -4335,7 +4393,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2015-11-05'
+  sort_key: '20151105000000'
+  published_display: '20151105'
   tools: []
 - slug: SunEM2014ExtendedLocalSimilarity
   title: Extended local similarity analysis (ELSA) of biological data
@@ -4352,7 +4411,7 @@
   status: Final
   doi: 10.1007/978-1-4614-6418-1_722-5
   url: https://doi.org/10.1007/978-1-4614-6418-1_722-5
-  published_on: '2014'
+  published_on: '20140101000000'
   volume: ''
   issue: ''
   pages: 1-5
@@ -4379,7 +4438,8 @@
     nick: ''
   lab_authors: []
   pi_track: book-chapter
-  sort_key: '2014-01-01'
+  sort_key: '20140101000000'
+  published_display: ''
   tools:
   - elsa
 - slug: SunEM2014AccurateGenomeRelative
@@ -4397,7 +4457,7 @@
   status: Final
   doi: 10.1007/978-1-4614-6418-1_723-4
   url: https://doi.org/10.1007/978-1-4614-6418-1_723-4
-  published_on: '2014'
+  published_on: '20140101000000'
   volume: ''
   issue: ''
   pages: 1-5
@@ -4424,7 +4484,8 @@
     nick: ''
   lab_authors: []
   pi_track: book-chapter
-  sort_key: '2014-01-01'
+  sort_key: '20140101000000'
+  published_display: ''
   tools: []
 - slug: XiaBioinf2013EfficientStatisticalSignifi
   title: Efficient statistical significance approximation for local association analysis of high-throughput
@@ -4442,7 +4503,7 @@
   status: Final
   doi: 10.1093/bioinformatics/bts668
   url: https://doi.org/10.1093/bioinformatics/bts668
-  published_on: '2013-01-15'
+  published_on: '20130115000000'
   volume: '29'
   issue: '2'
   pages: 230-237
@@ -4487,7 +4548,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2013-01-15'
+  sort_key: '20130115000000'
+  published_display: '20130115'
   tools:
   - elsa
 - slug: WangGMR2013ThelperDifferentiation
@@ -4505,7 +4567,7 @@
   status: Published
   doi: 10.4238/2013.APRIL.2.13
   url: https://doi.org/10.4238/2013.APRIL.2.13
-  published_on: '2013'
+  published_on: '20130101000000'
   volume: '12'
   issue: '2'
   pages: 972-987
@@ -4556,7 +4618,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2013-01-01'
+  sort_key: '20130101000000'
+  published_display: ''
   tools: []
 - slug: XiaPO2011AccurateGenomeRelative
   title: Accurate genome relative abundance estimation based on shotgun metagenomic reads
@@ -4573,7 +4636,7 @@
   status: Final
   doi: 10.1371/journal.pone.0027992
   url: https://doi.org/10.1371/journal.pone.0027992
-  published_on: '2011-12-06'
+  published_on: '20111206000000'
   volume: '6'
   issue: '12'
   pages: e27992
@@ -4618,7 +4681,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2011-12-06'
+  sort_key: '20111206000000'
+  published_display: '20111206'
   tools: []
 - slug: XiaBSB2011ExtendedLocalSimilarity
   title: Extended local similarity analysis of microbial community and other time series data with replicates
@@ -4635,7 +4699,7 @@
   status: Final
   doi: 10.1186/1752-0509-5-s2-s15
   url: https://doi.org/10.1186/1752-0509-5-s2-s15
-  published_on: 2011-12
+  published_on: '20111201000000'
   volume: '5'
   issue: S2
   pages: S15
@@ -4698,7 +4762,8 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2011-12-01'
+  sort_key: '20111201000000'
+  published_display: '20111201'
   tools:
   - elsa
 - slug: SteeleIJ2011MarineBacterialArchaeal
@@ -4716,7 +4781,7 @@
   status: Final
   doi: 10.1038/ismej.2011.24
   url: https://doi.org/10.1038/ismej.2011.24
-  published_on: '2011-09-01'
+  published_on: '20110901000000'
   volume: '5'
   issue: '9'
   pages: 1414-1425
@@ -4827,7 +4892,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2011-09-01'
+  sort_key: '20110901000000'
+  published_display: '20110901'
   tools: []
 - slug: ZhangBB2010PPLookAutomatedData
   title: 'PPLook: an automated data mining tool for protein-protein interaction'
@@ -4844,7 +4910,7 @@
   status: Final
   doi: 10.1186/1471-2105-11-326
   url: https://doi.org/10.1186/1471-2105-11-326
-  published_on: 2010-12
+  published_on: '20101201000000'
   volume: '11'
   issue: '1'
   pages: '326'
@@ -4883,7 +4949,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2010-12-01'
+  sort_key: '20101201000000'
+  published_display: '20101201'
   tools: []
 - slug: HeCCHTS2007OligonucleotideProfilingDiscr
   title: Oligonucleotide profiling for discriminating bacteria in bacterial communities
@@ -4900,7 +4967,7 @@
   status: Final
   doi: 10.2174/138620707780636646
   url: https://doi.org/10.2174/138620707780636646
-  published_on: '2007-05-01'
+  published_on: '20070501000000'
   volume: '10'
   issue: '4'
   pages: 247-255
@@ -4927,7 +4994,8 @@
     nick: ''
   lab_authors: []
   pi_track: collaborative
-  sort_key: '2007-05-01'
+  sort_key: '20070501000000'
+  published_display: '20070501'
   tools: []
 - slug: XiaJSSC2007PhaseTransitionSequence
   title: Phase transition in sequence unique reconstruction
@@ -4944,7 +5012,7 @@
   status: Final
   doi: 10.1007/s11424-007-9001-x
   url: https://doi.org/10.1007/s11424-007-9001-x
-  published_on: 2007-03
+  published_on: '20070301000000'
   volume: '20'
   issue: '1'
   pages: 18-29
@@ -4971,5 +5039,6 @@
     nick: ''
   lab_authors: []
   pi_track: lead
-  sort_key: '2007-03-01'
+  sort_key: '20070301000000'
+  published_display: '20070301'
   tools: []

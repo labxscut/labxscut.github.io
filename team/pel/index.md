@@ -30,11 +30,12 @@ papers:
   pi_track: lead
   doi: ''
   published_on: ''
+  published_display: ''
   volume: ''
   issue: ''
   pages: ''
   pdf: ''
-  sort_key: '2026-01-01'
+  sort_key: '20260101000000'
 avatar: /images/avatars/pel.svg
 ---
 
