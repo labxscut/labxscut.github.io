@@ -78,6 +78,16 @@ and generator output whenever a section path changes.
   do not duplicate paper details in the Tools catalog.
 - Preserve existing public URLs where practical. If a URL must change, add and
   verify a redirect; do not assume a folder rename is URL-neutral.
+- **Date convention (site-wide):** every stored date in `_data/*.yml` and every
+  date used in program logic is fixed-width canonical `YYYYMMDDHHMMSS`
+  (zero-padded from whatever precision the source carries), so lexicographic
+  order is chronological order and no consumer parses formats. Display shows
+  only the `YYYYMMDD` prefix via a `*_display` field (`date_display`,
+  `published_display`) or a `slice: 0, 8` in Liquid; the time part is never
+  rendered. Year-only records sort at the start of their year but display the
+  bare year — never fabricate a month/day on display. Applies to news `date`,
+  publication `sort_key`/`published_on`/`venue_dates`, and tool provenance
+  `docs_ref_date`/`docs_release_ref_date`.
 
 ## Tool documentation ownership and agent-triggered publishing
 
