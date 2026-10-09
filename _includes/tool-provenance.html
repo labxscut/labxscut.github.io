@@ -6,13 +6,16 @@ written by scripts/sync_tool_docs.py; the stamp names that exact commit.  Any
 other tool may declare the same keys by hand to record where its metadata came
 from, otherwise the stamp falls back to the repository itself.
 
+Date convention: the *_date values are canonical YYYYMMDDHHMMSS (strings);
+this stamp displays only the YYYYMMDD prefix (slice 0, 8).
+
 Usage: {% include tool-provenance.html tool=tool %}
 {%- endcomment -%}
 {% assign repo = tool.docs_repo | default: "" %}
 {% assign ref = tool.docs_ref | default: "" %}
-{% assign date = tool.docs_ref_date | default: "" %}
+{% assign date = tool.docs_ref_date | default: "" | append: "" | slice: 0, 8 %}
 {% assign release_ref = tool.docs_release_ref | default: "" %}
-{% assign release_date = tool.docs_release_ref_date | default: "" %}
+{% assign release_date = tool.docs_release_ref_date | default: "" | append: "" | slice: 0, 8 %}
 {% if repo == "" and tool.repo %}
   {% assign parts = tool.repo | split: "/" %}
   {% assign repo = parts[-2] | append: "/" | append: parts[-1] %}

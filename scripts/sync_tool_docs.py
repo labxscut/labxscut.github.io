@@ -122,8 +122,19 @@ def fetch_refs(repo: Path) -> dict[str, str]:
 
 
 def commit_date(repo: Path, sha: str) -> str:
-    """Committer date (YYYY-MM-DD) of ``sha``; used for the provenance stamp."""
-    return git(repo, "show", "-s", "--date=short", "--format=%cd", sha).stdout.strip()
+    """Committer date of ``sha`` as canonical ``YYYYMMDDHHMMSS``.
+
+    Stored in full canonical form (site-wide date convention); the provenance
+    stamps display only the ``YYYYMMDD`` prefix.
+    """
+    return git(
+        repo, "show", "-s", "--date=format:%Y%m%d%H%M%S", "--format=%cd", sha
+    ).stdout.strip()
+
+
+def display_date(canonical: str) -> str:
+    """``YYYYMMDD`` for display; the time part is logic-only, never shown."""
+    return str(canonical or "")[:8]
 
 
 def provenance_html(
@@ -136,7 +147,7 @@ def provenance_html(
     return (
         '<p class="labx-provenance" lang="en">Tool data collected from '
         f'<a href="https://github.com/{repository}/tree/{sha}">'
-        f"{repository}@{sha[:12]}</a> ({branch}, {date}). "
+        f"{repository}@{sha[:12]}</a> ({branch}, {display_date(date)}). "
         f'<a href="{site_root}">Back to the LabX tools list</a>.</p>'
     )
 
@@ -258,8 +269,10 @@ def update_tool_metadata(
         raise SyncError(f"Missing docs URL field in _data/tools.yml entry {tool.key}")
     # The managed provenance keys are inserted right after the surviving
     # `docs:` line so the docs URL and its provenance stay grouped together.
+    # Canonical dates are quoted so YAML keeps them as strings, not integers.
     filtered[docs_line + 1 : docs_line + 1] = [
-        f"  {key}: {value}" for key, value in metadata.items()
+        f"  {key}: '{value}'" if key.endswith("_date") else f"  {key}: {value}"
+        for key, value in metadata.items()
     ]
     replacement = "\n".join(filtered)
     if block.endswith("\n"):
@@ -304,7 +317,7 @@ def stamp_provenance(
         "<span>Tool data collected from "
         f'<a href="https://github.com/{tool.repository}/tree/{sha}" '
         'style="color:#2b6cb0">'
-        f"{tool.repository}@{sha[:12]}</a> ({branch}, {date}). "
+        f"{tool.repository}@{sha[:12]}</a> ({branch}, {display_date(date)}). "
         '<a href="/tools/" style="color:#2b6cb0">All LabX tools</a>'
         "</span></div>"
     )
