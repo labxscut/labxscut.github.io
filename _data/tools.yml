@@ -8,8 +8,6 @@
     Multi-physicochemical sequence features with an XGBoost classifier, exposed
     as both a Python API and a command line tool for batch FASTA workflows.
   version: v1.0.5
-  language: Python
-  license: MIT
   repo: https://github.com/labxscut/sxLaep
   docs: https://labxscut.github.io/tools/sxlaep/
   docs_repo: labxscut/sxLaep
@@ -32,8 +30,6 @@
     conversion (mMTS), ResTran classification, and cancer score estimation - for
     early cancer detection from cfDNA methylation sequencing.
   version: ""
-  language: Python, R
-  license: ""
   repo: https://github.com/labxscut/DeepLB
   docs: https://labxscut.github.io/tools/deeplb/
   docs_repo: labxscut/DeepLB
@@ -56,15 +52,13 @@
     fusion, and self-supervised graph representation learning for single-cell
     multi-omics data.
   version: ""
-  language: Python
-  license: ""
   repo: https://github.com/labxscut/sxSNF
   docs: https://labxscut.github.io/tools/sxSNF/
   docs_repo: labxscut/sxSNF
   docs_ref: 7173692ad855a5db895254e37860e2038557e146
-  docs_ref_date: '20261008000000'
+  docs_ref_date: '20261008034404'
   docs_release_ref: cc8915e059f8963dd31bc14ab8a0248b744faf4c
-  docs_release_ref_date: '20261007000000'
+  docs_release_ref_date: '20261007232750'
   docs_path: docs/site
   docs_slug: sxSNF
   tags: [single-cell, similarity network fusion, graph learning]
@@ -79,7 +73,6 @@
     ESM-derived protein embeddings and hierarchical contrastive learning for
     enzyme functional annotation; the EnzHire service also exposes sequence
     prediction through a web interface and API.
-  language: Python
   repo: https://github.com/labxscut/sxEnzHier
   docs: https://sxwebenz.scutlabx.com/
   tags: [enzyme function, protein language models, EC classification]
@@ -93,7 +86,6 @@
   description: >-
     An R and Python workflow for identifying local changes in pairwise gene
     associations along single-cell pseudotime.
-  language: R, Python, C++
   repo: https://github.com/labxscut/sxELA
   docs: https://github.com/labxscut/sxELA
   tags: [single-cell, pseudotime, local association]
@@ -122,7 +114,6 @@
   description: >-
     A deep-learning framework combining disease-specific SNP dosage and
     multi-trait polygenic risk score features for disease-risk prediction.
-  language: Python
   repo: https://github.com/labxscut/sxSPRINT
   docs: https://github.com/labxscut/sxSPRINT
   tags: [genetic risk, SNP, polygenic risk score]
@@ -136,7 +127,6 @@
   description: >-
     A data-driven framework that jointly learns class hierarchies and sample
     labels for multi-class omics data.
-  language: Python
   repo: https://github.com/labxscut/DHMOC
   docs: https://github.com/labxscut/DHMOC
   tags: [omics, hierarchical classification, machine learning]
@@ -150,7 +140,6 @@
   description: >-
     Coupled-clone nonnegative matrix factorization for joint inference of
     clonal structure from paired single-cell genome and transcriptome data.
-  language: R
   repo: https://github.com/labxscut/CCNMF
   docs: https://github.com/labxscut/CCNMF
   tags: [single-cell, clonal inference, matrix factorization]
@@ -164,7 +153,6 @@
   description: >-
     A hierarchical classifier integrating DNA-level molecular alterations
     with clinical stratification for gastric cancer subtyping.
-  language: Python, R
   repo: https://github.com/labxscut/HCG
   docs: https://github.com/labxscut/HCG
   tags: [gastric cancer, molecular subtyping, multi-omics]
@@ -178,7 +166,6 @@
   description: >-
     A unified genetic and epigenetic model using hierarchical learning to
     predict breast cancer intrinsic subtypes from DNA-level multi-omics data.
-  language: R
   repo: https://github.com/labxscut/UGES
   docs: https://github.com/labxscut/UGES
   tags: [breast cancer, molecular subtyping, multi-omics]
