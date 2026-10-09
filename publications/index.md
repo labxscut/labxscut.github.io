@@ -33,18 +33,18 @@ nav:
 ## Team Lead Papers
 
 {% include intro.html value=intros.lead %}
-{% include publication-list.html papers=lead lead=true %}
+{% include publication-list.html papers=lead lead=true track="lead" %}
 
 ## Collaborative Papers
 
 {% include intro.html value=intros.collaborative %}
-{% include publication-list.html papers=collaborative %}
+{% include publication-list.html papers=collaborative track="collaborative" %}
 
 {% if chapters.size > 0 %}
 ## Book Chapters
 
 {% include intro.html value=intros.book_chapters %}
-{% include publication-list.html papers=chapters %}
+{% include publication-list.html papers=chapters track="chapters" %}
 {% endif %}
 
 {% if site.data.abstracts.size > 0 %}
@@ -53,5 +53,5 @@ nav:
 Meeting abstracts and posters, newest first. These are not counted as full
 papers.
 
-{% include publication-list.html papers=site.data.abstracts %}
+{% include publication-list.html papers=site.data.abstracts track="abstracts" %}
 {% endif %}

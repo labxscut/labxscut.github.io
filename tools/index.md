@@ -12,6 +12,7 @@ nav:
 {% include intro.html value=site.data.intros.tools.intro %}
 
 <div class="labx-tools-grid">
+
 {% for tool in site.data.tools %}
 <article class="labx-tool" markdown="1">
 
@@ -44,4 +45,5 @@ nav:
 
 </article>
 {% endfor %}
+
 </div>

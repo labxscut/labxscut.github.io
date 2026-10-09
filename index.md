@@ -5,6 +5,8 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 # AI for Science
 
+<img src="{{ '/images/hero.svg' | relative_url }}" alt="" class="labx-hero-art">
+
 {% include intro.html value=site.data.intros.home.hero %}
 
 {% include button.html text="Explore our research" link="about/" icon="fa-solid fa-arrow-right" %}
@@ -15,9 +17,13 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 ## Latest news
 
 {% assign latest_news = site.data.news | sort: "date" | reverse %}
+<div class="labx-news" markdown="1">
+
 {% for item in latest_news limit:3 %}
-- **{{ item.date_display | default: item.date }}** — {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
+- <span class="labx-news-date">{{ item.date_display | default: item.date }}</span> {% if item.url %}[{{ item.text }}]({{ item.url }}){% else %}{{ item.text }}{% endif %}
 {% endfor %}
+
+</div>
 
 {% include button.html text="All news" link="news/" icon="fa-solid fa-arrow-right" %}
 
@@ -56,17 +62,15 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 <!-- section break -->
 
+{% if site.data.activities.size > 0 %}
 ## Activities
 
 {% include intro.html value=site.data.intros.home.activities %}
 
-{% if site.data.activities.size > 0 %}
 {% for activity in site.data.activities limit:3 %}
 - **{{ activity.date_display | default: activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
 {% endfor %}
-{% else %}
-No activities have been posted yet.
-{% endif %}
 
 {% include button.html text="All activities" link="activities/" icon="fa-solid fa-arrow-right" %}
+{% endif %}
 

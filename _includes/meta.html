@@ -32,13 +32,14 @@
 
 {% assign description = description | xml_escape %}
 
-{% assign png = "images/icon.png" | file_exists %}
-{% assign jpg = "images/icon.jpg" | file_exists %}
-{% assign icon = png | default: jpg | default: "images/logo.png" | relative_url %}
-
-{% assign jpg = "images/share.jpg" | file_exists %}
-{% assign png = "images/share.png" | file_exists %}
-{% assign share = jpg | default: png | default: icon %}
+{% comment %}
+  Icon / share image. The template's `file_exists` plugin does not run on
+  GitHub Pages (safe mode ignores _plugins), so the fallback chain used to
+  pass the missing filename straight through and 404 (images/icon.png).
+  Reference the real files directly; keep them in images/.
+{% endcomment %}
+{% assign icon = "images/icon.png" | relative_url %}
+{% assign share = "images/share.png" | relative_url %}
 
 {% assign published = page.date | date_to_xmlschema %}
 {% assign updated = page.last_modified_at | date_to_xmlschema %}

@@ -227,6 +227,68 @@
   font-size: 0.85em;
 }
 
+/* ---- Front-end visual pass (2026-10-09) ---- */
+
+/* Home hero motif: theme-adaptive (currentColor picks up text color). */
+.labx-hero-art {
+  display: block;
+  width: min(560px, 90%);
+  margin: 0 auto 1.5rem;
+  color: var(--text-color-secondary);
+}
+
+/* News lists: left-aligned (global lists are justified) + date chips. */
+.labx-news ul {
+  text-align: left;
+}
+
+.labx-news li {
+  margin: 0.6rem 0;
+}
+
+.labx-news-date {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  margin-right: 0.45rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
+  background: var(--background-alt);
+  color: var(--text-color-secondary);
+  font-size: 0.82em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Tools catalog: responsive card grid instead of a single stacked column. */
+.labx-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.labx-tools-grid .labx-tool {
+  height: 100%;
+}
+
+/* Publication track accents: lead papers carry the lab color; other tracks
+   get quieter cues so the three lists read apart at a glance. */
+.labx-track-lead {
+  border-left: 4px solid var(--primary);
+}
+
+.labx-track-collaborative {
+  border-left: 4px solid var(--light-gray);
+}
+
+.labx-track-chapters {
+  border-left: 4px solid var(--text-color-secondary);
+}
+
+.labx-track-abstracts {
+  border-left: 4px dashed var(--light-gray);
+}
+
 @media (max-width: 760px) {
   .labx-profile {
     grid-template-columns: 1fr;

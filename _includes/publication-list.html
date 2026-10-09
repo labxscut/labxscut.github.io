@@ -8,6 +8,7 @@
   The list must already be filtered (track, status). Published entries come
   first within each year, accepted ones after them. `lead=true` marks a
   team-lead list, which is the only list allowed to link a local PDF.
+  `track` adds a visual accent class (lead/collaborative/chapters/abstracts).
 
   Keep the blank lines around every <article> block and do not add whitespace
   control ("-") to the loop tags: kramdown only expands markdown="1" content
@@ -20,7 +21,7 @@
 {% assign year_papers = papers | where: "year", year %}
 {% for paper in year_papers %}
 {% if paper.status == "Accept" or paper.status == "Accepted" %}{% continue %}{% endif %}
-<article class="labx-paper" id="{{ paper.slug | slugify }}" markdown="1">
+<article class="labx-paper labx-track-{{ include.track | default: 'other' }}" id="{{ paper.slug | slugify }}" markdown="1">
 
 #### {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %}
 
@@ -33,7 +34,7 @@
 {% endfor %}
 {% for paper in year_papers %}
 {% unless paper.status == "Accept" or paper.status == "Accepted" %}{% continue %}{% endunless %}
-<article class="labx-paper" id="{{ paper.slug | slugify }}" markdown="1">
+<article class="labx-paper labx-track-{{ include.track | default: 'other' }}" id="{{ paper.slug | slugify }}" markdown="1">
 
 #### {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %}
 
