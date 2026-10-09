@@ -34,9 +34,9 @@
   docs: https://labxscut.github.io/tools/deeplb/
   docs_repo: labxscut/DeepLB
   docs_ref: cfa6463893bb76dfbe3e128a9bc9dc8117bc4688
-  docs_ref_date: '20261008000000'
+  docs_ref_date: '20261008034401'
   docs_release_ref: 995f7a2afc403a4804de0e88ec676f65d2606136
-  docs_release_ref_date: '20261007000000'
+  docs_release_ref_date: '20261007230535'
   docs_path: docs/site
   docs_slug: deeplb
   tags: [cfDNA methylation, deep learning, cancer detection]
