@@ -49,6 +49,8 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 {% include intro.html value=site.data.intros.home.tools %}
 
 {% for tool in site.data.tools limit:3 %}
+{% if tool.logo %}<img class="labx-home-tool-logo" src="{{ tool.logo | relative_url }}" alt="">{% endif %}
+
 ### [{{ tool.name }}]({{ tool.docs }})
 
 {{ tool.tagline }}. {{ tool.description }}

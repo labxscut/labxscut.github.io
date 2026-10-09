@@ -237,6 +237,26 @@
   color: var(--text-color-secondary);
 }
 
+/* Home tool cards: show the tool logo above its name. */
+.labx-home-tool-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.5rem;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Team roster rows: small round avatar before the name. */
+.labx-row-avatar {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.4rem;
+  border-radius: 50%;
+  vertical-align: -8px;
+  object-fit: cover;
+}
+
 /* News lists: left-aligned (global lists are justified) + date chips. */
 .labx-news ul {
   text-align: left;
