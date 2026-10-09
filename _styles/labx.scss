@@ -257,6 +257,29 @@
   object-fit: cover;
 }
 
+/* About: keyword chips instead of one long dot-joined line. */
+.labx-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0.75rem 0 1rem;
+}
+
+.labx-tag {
+  padding: 0.15rem 0.65rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
+  background: var(--background-alt);
+  color: var(--text-color-secondary);
+  font-size: 0.85em;
+}
+
+/* Left-aligned lists where justified text hurts scannability. */
+.labx-left ul,
+.labx-left li {
+  text-align: left;
+}
+
 /* News lists: left-aligned (global lists are justified) + date chips. */
 .labx-news ul {
   text-align: left;
