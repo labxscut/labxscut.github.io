@@ -66,7 +66,7 @@
   volume: ''
   issue: ''
   pages: 1-14
-  pdf: ''
+  pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
   repo: https://github.com/labxscut/sxSNF
   if: '3.4'
   quartile: Q1
@@ -1422,7 +1422,7 @@
   volume: '24'
   issue: '6'
   pages: bbad390
-  pdf: ''
+  pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
   repo: ''
   if: '8.6'
   quartile: Q1
@@ -1519,7 +1519,7 @@
   volume: '157'
   issue: ''
   pages: '106774'
-  pdf: ''
+  pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
   repo: ''
   if: '7.0'
   quartile: Q1
@@ -2391,93 +2391,6 @@
   pi_track: lead
   sort_key: '20200319000000'
   published_display: '20200319'
-  tools: []
-- slug: SunJCO2020ComprehensiveGenomicSequencing
-  title: Comprehensive genomic sequencing of high-grade neuroendocrine neoplasms
-  venue: Journal of Clinical Oncology
-  venue_short: Journal of Clinical Oncology
-  venue_type: journal
-  venue_full: Journal of Clinical Oncology
-  venue_location: ''
-  venue_dates: ''
-  presentation: ''
-  category: collaborative
-  pi_role: ''
-  year: '2020'
-  status: Final
-  doi: 10.1200/JCO.2020.38.4_suppl.624
-  url: https://doi.org/10.1200/JCO.2020.38.4_suppl.624
-  published_on: '20200201000000'
-  volume: '38'
-  issue: 4_suppl
-  pages: 624-624
-  pdf: ''
-  repo: ''
-  if: ''
-  quartile: ''
-  ccf: ''
-  sci: false
-  xia_rank: 4
-  n_authors: 9
-  authors:
-  - name: TF Sun
-    name_zh: ''
-    role: first_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: PV Hummelen
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: B Martin
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: LC Xia
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: H Lee
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: L Zhao
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: K Hornbacker
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: H Ji
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: PL Kunz
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  lab_authors: []
-  pi_track: collaborative
-  sort_key: '20200201000000'
-  published_display: '20200201'
   tools: []
 - slug: ShinNAR2019StructuralVariationHaplotypes
   title: Structural variation and haplotypes from CRISPR-targeted sequencing of intact sub-Megabase DNA
@@ -3383,57 +3296,6 @@
   pi_track: lead
   sort_key: '20180620000000'
   published_display: '20180620'
-  tools: []
-- slug: NadauldJCO2018LossTp53As
-  title: Loss of TP53 as a prognostic biomarker of poor survival in stage III colorectal cancer patients
-  venue: Journal of Clinical Oncology
-  venue_short: Journal of Clinical Oncology
-  venue_type: journal
-  venue_full: Journal of Clinical Oncology
-  venue_location: ''
-  venue_dates: ''
-  presentation: ''
-  category: collaborative
-  pi_role: ''
-  year: '2018'
-  status: Final
-  doi: 10.1200/JCO.2018.36.15_suppl.e15588
-  url: https://doi.org/10.1200/JCO.2018.36.15_suppl.e15588
-  published_on: '20180520000000'
-  volume: '36'
-  issue: 15_suppl
-  pages: e15588-e15588
-  pdf: ''
-  repo: ''
-  if: ''
-  quartile: ''
-  ccf: ''
-  sci: false
-  xia_rank: 3
-  n_authors: 0
-  authors:
-  - name: L Nadauld
-    name_zh: ''
-    role: first_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: PV Hummelen
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  - name: LC Xia
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-  lab_authors: []
-  pi_track: collaborative
-  sort_key: '20180520000000'
-  published_display: '20180520'
   tools: []
 - slug: RaghavanACTN2018WholeExomeSequencing
   title: Whole‐exome sequencing in 20,197 persons for rare variants in Alzheimer's disease
@@ -4415,7 +4277,7 @@
   volume: ''
   issue: ''
   pages: 1-5
-  pdf: ''
+  pdf: /papers/SunXia2014ExtendedLocalSimilarityAnalysis.pdf
   repo: ''
   if: ''
   quartile: ''
