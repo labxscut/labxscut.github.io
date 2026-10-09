@@ -17,6 +17,9 @@
       <p><a href="{{ site.data.identity.affiliation.website }}">{{ site.data.identity.affiliation.unit_en }}</a></p>
       <p>{{ site.data.identity.affiliation.university_en }}</p>
     {% endif %}
+    {% if member.email %}
+      <p><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>
+    {% endif %}
     {% if member.years != "" %}
       {% if member.section == "alumni" %}
         <p>LabX {{ member.years }}</p>
@@ -32,9 +35,24 @@
         {% assign github_url = "https://github.com/" | append: member.github %}
         {% include button.html type="github" text="GitHub" link=github_url style="bare" %}
       {% endif %}
-      {% if member.nick == site.data.identity.pi.nick %}
+      {% if member.profiles.google_scholar %}
+        {% include button.html type="google-scholar" text="Google Scholar" link=member.profiles.google_scholar style="bare" %}
+      {% elsif member.nick == site.data.identity.pi.nick %}
         {% include button.html type="external" text="Google Scholar" link=site.data.identity.pi.scholar style="bare" %}
+      {% endif %}
+      {% if member.profiles.orcid %}
+        {% include button.html type="orcid" text="ORCID" link=member.profiles.orcid style="bare" %}
+      {% elsif member.nick == site.data.identity.pi.nick %}
         {% include button.html type="orcid" text="ORCID" link=site.data.identity.pi.orcid style="bare" %}
+      {% endif %}
+      {% if member.profiles.linkedin %}
+        {% include button.html type="external" text="LinkedIn" link=member.profiles.linkedin style="bare" %}
+      {% endif %}
+      {% if member.profiles.scholarmate %}
+        {% include button.html type="external" text="ScholarMate" link=member.profiles.scholarmate style="bare" %}
+      {% endif %}
+      {% if member.profiles.scut_page %}
+        {% include button.html type="external" text="SCUT page" link=member.profiles.scut_page style="bare" %}
       {% endif %}
     </div>
     {% if member.cv_url != nil and member.cv_url != "" %}
@@ -69,6 +87,13 @@
       <section>
         <h2>Profile</h2>
         {% include intro.html value=site.data.intros.profile.intro role=member.role %}
+        {% if member.bio_short %}
+          <p class="labx-profile-bio">{{ member.bio_short }}</p>
+        {% endif %}
+        {% if member.research_interests.size > 0 %}
+          <h3>Research interests</h3>
+          <p>{{ member.research_interests | join: " · " }}</p>
+        {% endif %}
       </section>
     {% else %}
       <section class="labx-member-section">
