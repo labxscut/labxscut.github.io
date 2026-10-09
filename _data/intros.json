@@ -24,7 +24,7 @@
   },
 
   "team": {
-    "intro": "LabX is led by Dr. {pi} ({pi_zh}) at the Department of Statistics and Financial Mathematics, {unit}, {university}. Personal pages link from members' names. Contact details are not published here."
+    "intro": "LabX is led by Dr. {pi} ({pi_zh}) at the Department of Statistics and Financial Mathematics, {unit}, {university}. Personal pages link from members' names; email and academic profile links appear only where members have provided them."
   },
 
   "publications": {
