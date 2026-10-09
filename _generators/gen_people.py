@@ -362,6 +362,16 @@ def _public_url(value: str) -> str:
     return value if parsed.scheme == "https" and parsed.netloc else ""
 
 
+def _filled(value) -> str:
+    """Return a scalar only when it carries a real value.
+
+    Empty strings and ``$field`` placeholders (used by profile stubs to mark
+    data still to be collected) both count as unset and never reach the site.
+    """
+    text = str(value or "").strip()
+    return "" if text.startswith("$") else text
+
+
 def sync_profile_headshot(nick: str, rel: str, profile_md: Path) -> str:
     """Copy a core/team headshot into the site avatars dir; return its site path.
 
@@ -397,7 +407,7 @@ def apply_profile(entry: dict, nick: str, section: str) -> None:
             f"profile nick mismatch: {profile_md} says {prof['nick']!r}, expected {nick!r}"
         )
 
-    email = (prof.get("email_public") or "").strip()
+    email = _filled(prof.get("email_public"))
     if email:
         entry["email"] = email
 
@@ -405,32 +415,32 @@ def apply_profile(entry: dict, nick: str, section: str) -> None:
     links: dict[str, str] = {}
     if isinstance(links_raw, dict):
         for key, raw_url in links_raw.items():
-            if clean := _public_url(str(raw_url)):
+            if clean := _public_url(_filled(raw_url)):
                 links[key] = clean
     if links:
         entry["profiles"] = links
 
-    bio_short = (prof.get("bio_short") or "").strip()
+    bio_short = _filled(prof.get("bio_short"))
     if bio_short:
         entry["bio_short"] = bio_short
-    bio_long = (prof.get("bio_long") or "").strip()
+    bio_long = _filled(prof.get("bio_long"))
     if bio_long:
         entry["bio_long"] = bio_long
 
     interests = [
-        str(item).strip()
+        text
         for item in (prof.get("research_interests") or [])
-        if str(item).strip()
+        if (text := _filled(item))
     ]
     if interests:
         entry["research_interests"] = interests
 
-    headshot = sync_profile_headshot(nick, str(prof.get("headshot") or ""), profile_md)
+    headshot = sync_profile_headshot(nick, _filled(prof.get("headshot")), profile_md)
     if headshot:
         entry["avatar"] = headshot
 
     # An explicit public https PDF link is the publication gate for CVs.
-    cv_public = _public_url(str(prof.get("cv_public") or ""))
+    cv_public = _public_url(_filled(prof.get("cv_public")))
     if cv_public and cv_public.lower().endswith(".pdf"):
         entry["cv_url"] = cv_public
 
