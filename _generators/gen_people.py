@@ -29,7 +29,7 @@ except ImportError:  # pragma: no cover
     lazy_pinyin = None
 
 from gen_avatars import AVATAR_ROOT, ensure_avatar
-from gen_publications import REPO, load_roster
+from gen_publications import REPO, load_roster, canonical_date
 
 OUT_DIR = REPO
 TEAM_DIR = "team"
@@ -313,7 +313,9 @@ def short_paper(entry: dict) -> dict:
         "issue": entry.get("issue", ""),
         "pages": entry.get("pages", ""),
         "pdf": entry.get("pdf", ""),
-        "sort_key": entry.get("sort_key", entry.get("year", "")),
+        # sort_key is always canonical YYYYMMDDHHMMSS from gen_publications;
+        # the fallback keeps that shape if a year-only value is ever passed.
+        "sort_key": entry.get("sort_key") or canonical_date(entry.get("year")) or "00000101000000",
     }
 
 

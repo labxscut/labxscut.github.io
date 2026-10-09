@@ -66,7 +66,9 @@ def rotate_log() -> None:
 
 
 def log(message: str) -> None:
-    stamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # Canonical YYYYMMDDHHMMSS stamp (site-wide date convention) — unambiguous,
+    # lexicographically sortable, no format parsing.
+    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
     line = f"[{stamp}] {message}"
     try:
         print(line, flush=True)
