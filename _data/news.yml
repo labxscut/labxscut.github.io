@@ -1,12 +1,133 @@
-# Only verifiable entries (paper records in advisee/hc/labxManage, repo history).
-- date: "2026-05-21"
-  text: >-
-    sxSNF is published in IEEE/ACM Transactions on Computational Biology and
-    Bioinformatics (DOI 10.1109/TCBBIO.2026.3697777).
-  url: https://doi.org/10.1109/TCBBIO.2026.3697777
-- date: "2026-05-18"
-  text: sxLaep v1.0.5 released, with the API reference published on this site.
-  url: https://labxscut.github.io/tools/sxlaep/
-- date: "2026-05-23"
+# Site news feed. Hand-written entries have no `source:` key; entries with
+# `source: labxManage/...` are managed by
+# agents/skills/labx-manage-sync/labxmanage_news_aggregate.py (labx_admin,
+# bi-weekly) — edit the labxManage record, not this file.
+- date: '2026-05-23'
   text: DeepLB pipeline documentation is published under /deeplb/.
   url: https://labxscut.github.io/deeplb/
+- date: '2026-05-23'
+  text: General Quantification of Covariate and Concept Shifts is published in International Conference
+    on Machine Learning.
+  source: labxManage/Paper/ChenICML26DataShiftRegular
+- date: '2026-05-21'
+  text: sxSNF is published in IEEE/ACM Transactions on Computational Biology and Bioinformatics (DOI 10.1109/TCBBIO.2026.3697777).
+  url: https://doi.org/10.1109/TCBBIO.2026.3697777
+- date: '2026-05-18'
+  text: sxLaep v1.0.5 released, with the API reference published on this site.
+  url: https://labxscut.github.io/tools/sxlaep/
+- date: 2026-01
+  text: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure is
+    published in Human Genetics and Genomics Advances (DOI 10.1016/j.xhgg.2025.100540).
+  source: labxManage/Paper/YuHGGadv2025MtagHF
+  url: https://doi.org/10.1016/j.xhgg.2025.100540
+- date: '2025-12-15'
+  text: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
+    of low-rank representation with clustering is published in IEEE International Conference on Bioinformatics
+    and Biomedicine (DOI 10.1109/BIBM66473.2025.11356976).'
+  source: labxManage/Paper/WangBIBM2024sxFusion
+  url: https://doi.org/10.1109/BIBM66473.2025.11356976
+- date: '2025-11-18'
+  text: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
+    Study of Regional and Temporal Trends is published in Journal of Medical Internet Research (DOI 10.2196/80497).'
+  source: labxManage/Paper/NingJMIR2025Lymph
+  url: https://doi.org/10.2196/80497
+- date: 2025-11
+  text: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
+    DNA-Level Multi-Omics Data and Hierarchical Learning is published in IEEE Transactions on Computational
+    Biology and Bioinformatics (DOI 10.1109/TCBBIO.2025.3613591).
+  source: labxManage/Paper/Feishu-2025-A-Unified-Genetic-and-Epigenetic-Model-to-Predi
+  url: https://doi.org/10.1109/TCBBIO.2025.3613591
+- date: 2025-08
+  text: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
+    Contrastive Learning is published in International Symposium on Bioinformatics Research and Applications
+    (ISBRA) 2025 (DOI 10.1007/978-981-95-0695-8_18).'
+  source: labxManage/Paper/Feishu-2025-EnzHier-Accurate-Enzyme-Function-Prediction-Th
+  url: https://doi.org/10.1007/978-981-95-0695-8_18
+- date: 2025-08
+  text: A Novel Single-Cell Multi-Modal Data Integration Method Combining Similarity Network Fusion and
+    Deep Graph Learning has been accepted in Asia Pacific Bioinformatics Conference (APBC) 2025.
+  source: labxManage/Paper/Feishu-2025-A-Novel-Single-Cell-Multi-Modal-Data-Integratio
+- date: '2024-12-03'
+  text: 'CTRhythm: Accurate Atrial Fibrillation Detection from Single-Lead ECG by CNN and Transformer
+    Integration is published in IEEE International Conference on Bioinformatics and Biomedicine (DOI 10.1109/BIBM62325.2024.10822563).'
+  source: labxManage/Paper/LiangBIBM24ctRhythm
+  url: https://doi.org/10.1109/BIBM62325.2024.10822563
+- date: 2024-06
+  text: Hierarchical learning of gastric cancer molecular subtypes by integrating multi-modal DNA-level
+    omics data and clinical stratification is published in Quantitative Biology (DOI 10.1002/qub2.45).
+  source: labxManage/Paper/YangQB24UGESgas
+  url: https://doi.org/10.1002/qub2.45
+- date: 2024-05
+  text: A comparative study of structural variant calling in WGS from Alzheimer’s disease families is
+    published in Life Science Alliance (DOI 10.26508/lsa.202302181).
+  source: labxManage/Paper/Feishu-2024-A-comparative-study-of-structural-variant-calli
+  url: https://doi.org/10.26508/lsa.202302181
+- date: 2024-03
+  text: Molecular mechanism of NAD+ and NMN binding to the Nudix homology domains of DBC1 is published
+    in International Journal of Biological Macromolecules (DOI 10.1016/j.ijbiomac.2024.130131).
+  source: labxManage/Paper/Feishu-2024-Molecular-mechanism-of-NAD+-and-NMN-binding-to
+  url: https://doi.org/10.1016/j.ijbiomac.2024.130131
+- date: '2024-01-05'
+  text: Joint inference of clonal structure using single-cell genome and transcriptome sequencing data
+    is published in NAR Genomics and Bioinformatics (DOI 10.1093/nargab/lqae017).
+  source: labxManage/Paper/Feishu-2024-Joint-inference-of-clonal-structure-using-singl
+  url: https://doi.org/10.1093/nargab/lqae017
+- date: '2023-11-01'
+  text: Crystal Structure of Fungal Nonspecific Phospholipase C Unveils a Distinct Catalytic Mechanism
+    is published in Journal of Agricultural and Food Chemistry (DOI 10.1021/acs.jafc.3c05155).
+  source: labxManage/Paper/Feishu-2023-Crystal-Structure-of-Fungal-Nonspecific-Phospho
+  url: https://doi.org/10.1021/acs.jafc.3c05155
+- date: '2023-09-22'
+  text: 'Identifying local associations in biological time series: algorithms, statistical significance,
+    and applications is published in Briefings in Bioinformatics (DOI 10.1093/bib/bbad390).'
+  source: labxManage/Paper/Feishu-2023-Identifying-local-associations-in-biological-ti
+  url: https://doi.org/10.1093/bib/bbad390
+- date: 2023-05
+  text: Tumor tissue microorganisms are closely associated with tumor immune subtypes is published in
+    Computers in Biology and Medicine (DOI 10.1016/j.compbiomed.2023.106774).
+  source: labxManage/Paper/Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
+  url: https://doi.org/10.1016/j.compbiomed.2023.106774
+- date: '2023-03-30'
+  text: LiuFiM23ksak is published in Frontiers in Microbiology (DOI 10.3389/fmicb.2023.1050130).
+  source: labxManage/Paper/LiuFiM23ksak
+  url: https://doi.org/10.3389/fmicb.2023.1050130
+- date: '2023-02-23'
+  text: Regularized survival learning and cross-database analysis enabled identification of colorectal
+    cancer prognosis-related immune genes is published in Frontiers in Genetics (DOI 10.3389/fgene.2023.1148470).
+  source: labxManage/Paper/Feishu-2023-Regularized-survival-learning-and-cross-databas
+  url: https://doi.org/10.3389/fgene.2023.1148470
+- date: '2022-12-01'
+  text: Exploratory genomic analysis of high-grade neuroendocrine neoplasms across diverse primary sites
+    is published in Endocrine-Related Cancer (DOI 10.1530/ERC-22-0015).
+  source: labxManage/Paper/Feishu-2022-Exploratory-genomic-analysis-of-high-grade-neur
+  url: https://doi.org/10.1530/ERC-22-0015
+- date: 2022-12
+  text: Progranulin mutations in clinical and neuropathological Alzheimer's disease is published in Alzheimer's
+    & Dementia (DOI 10.1002/alz.12567).
+  source: labxManage/Paper/Feishu-2022-Progranulin-mutations-in-clinical-and-neuropath
+  url: https://doi.org/10.1002/alz.12567
+- date: '2022-07-05'
+  text: A locus at 19q13.31 significantly reduces the ApoE ε4 risk for Alzheimer's Disease in African
+    Ancestry is published in PLoS Genetics (DOI 10.1371/journal.pgen.1009977).
+  source: labxManage/Paper/Feishu-2022-A-locus-at-19q13.31-significantly-reduces-the-A
+  url: https://doi.org/10.1371/journal.pgen.1009977
+- date: 2022-04
+  text: Prediction of breast cancer risk based on flow variant analysis of circulating peripheral blood
+    mononuclear cells is published in Human Genetics and Genomics Advances (DOI 10.1016/j.xhgg.2022.100085).
+  source: labxManage/Paper/Feishu-2022-Prediction-of-breast-cancer-risk-based-on-flow
+  url: https://doi.org/10.1016/j.xhgg.2022.100085
+- date: 2022-02
+  text: Association of mitochondrial variants and haplogroups identified by whole exome sequencing with
+    Alzheimer's disease is published in Alzheimer's & Dementia (DOI 10.1002/alz.12396).
+  source: labxManage/Paper/Feishu-2022-Association-of-mitochondrial-variants-and-haplo
+  url: https://doi.org/10.1002/alz.12396
+- date: '2021-05-24'
+  text: Transcriptional changes in CD16+ monocytes may contribute to the pathogenesis of COVID-19 is published
+    in Frontiers in Immunology (DOI 10.3389/fimmu.2021.665773).
+  source: labxManage/Paper/Feishu-2021-Transcriptional-changes-in-CD16+-monocytes-may
+  url: https://doi.org/10.3389/fimmu.2021.665773
+- date: 2021-01
+  text: 'Large-scale sequencing studies expand the known genetic architecture of Alzheimer''s disease
+    is published in Alzheimer''s & Dementia: Diagnosis, Assessment & Disease Monitoring (DOI 10.1002/dad2.12255).'
+  source: labxManage/Paper/Feishu-2021-Large-scale-sequencing-studies-expand-the-known
+  url: https://doi.org/10.1002/dad2.12255

@@ -8,7 +8,7 @@ nick: lxm
 title: Dr. Xuemei Liu
 name_en: Dr. Xuemei Liu
 name_zh: 刘雪梅
-role: Faculty
+role: Associate Professor
 degree: Faculty
 section: faculty
 start_year: ''

@@ -284,8 +284,8 @@
   venue_short: International Symposium on Bioinformatics Research and Applications
   venue_type: conference
   venue_full: International Symposium on Bioinformatics Research and Applications (ISBRA 2025)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Helsinki, Finland
+  venue_dates: 2025-08-03/2025-08-05
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -377,8 +377,8 @@
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
   venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2025)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Wuhan, China
+  venue_dates: 2025-12-15/2025-12-18
   presentation: ''
   category: other
   pi_role: 通讯作者
@@ -797,8 +797,8 @@
   venue_short: IEEE International Conference on Bioinformatics and Biomedicine
   venue_type: conference
   venue_full: IEEE International Conference on Bioinformatics and Biomedicine (BIBM 2024)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Lisbon, Portugal
+  venue_dates: 2024-12-03/2024-12-06
   presentation: ''
   category: other
   pi_role: 通讯作者

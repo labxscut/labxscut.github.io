@@ -8,12 +8,14 @@
   Only team-lead papers (`lead=true`) link a PDF, and only when the PDF is a
   local copy in /papers/ — publisher PDFs are not linked. `published_on` is
   kept in the data for sorting but never printed; the year is shown.
-  Conference and workshop entries also print their location and dates, plus a
+  Team-lead papers also preview the citation metrics curated in the registry
+  (impact factor, JCR quartile, CCF rank) when present. Conference and
+  workshop entries print their location and dates, plus a
   regular/workshop/poster/abstract badge when the registry classifies them.
 
   Renders: **Venue** · volume(issue), pages · year · location dates ·
-           [PDF] · [doi] · [Code]
+           metrics · [PDF] · [doi] · [Code]
   Missing metadata is skipped, so records without a harvested citation block
   still print exactly as before.
 {%- endcomment -%}
-**{{ paper.venue }}**{% if paper.volume != "" %} · {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% elsif paper.pages != "" %} · {{ paper.pages }}{% endif %} · {{ paper.year }}{% if paper.venue_location != "" %} · {{ paper.venue_location }}{% endif %}{% if paper.venue_dates != "" %}{% if paper.venue_location != "" %},{% endif %} {{ paper.venue_dates | replace: "/", "–" }}{% endif %}{% if paper.presentation != "" %} · <span class="labx-status">{{ paper.presentation | capitalize }}</span>{% endif %}{% if include.accepted %} <span class="labx-status">Accepted</span>{% endif %}{% if include.lead and paper.pdf != "" and paper.pdf contains "papers/" %} · [PDF]({{ paper.pdf }}){% endif %}{% if paper.doi != "" %} · [doi:{{ paper.doi }}](https://doi.org/{{ paper.doi }}){% endif %}{% unless include.accepted %}{% if paper.repo != "" %} · [Code]({{ paper.repo }}){% endif %}{% endunless %}
+**{{ paper.venue }}**{% if paper.volume != "" %} · {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% elsif paper.pages != "" %} · {{ paper.pages }}{% endif %} · {{ paper.year }}{% if paper.venue_location != "" %} · {{ paper.venue_location }}{% endif %}{% if paper.venue_dates != "" %}{% if paper.venue_location != "" %},{% endif %} {{ paper.venue_dates | replace: "/", "–" }}{% endif %}{% if paper.presentation != "" %} · <span class="labx-status">{{ paper.presentation | capitalize }}</span>{% endif %}{% if include.accepted %} <span class="labx-status">Accepted</span>{% endif %}{% if include.lead %}{% assign ifval = paper["if"] | default: "" | append: "" | strip %}{% assign quart = paper.quartile | default: "" | append: "" | strip %}{% assign ccfval = paper.ccf | default: "" | append: "" | strip %}{% if ifval != "" or quart != "" or ccfval != "" %} · <span class="labx-metrics">{% if ifval != "" %}IF {{ ifval }}{% endif %}{% if quart != "" %}{% if ifval != "" %} · {% endif %}{{ quart }}{% endif %}{% if ccfval != "" %}{% if ifval != "" or quart != "" %} · {% endif %}CCF {{ ccfval }}{% endif %}</span>{% endif %}{% endif %}{% if include.lead and paper.pdf != "" and paper.pdf contains "papers/" %} · [PDF]({{ paper.pdf }}){% endif %}{% if paper.doi != "" %} · [doi:{{ paper.doi }}](https://doi.org/{{ paper.doi }}){% endif %}{% unless include.accepted %}{% if paper.repo != "" %} · [Code]({{ paper.repo }}){% endif %}{% endunless %}

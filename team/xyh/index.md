@@ -8,7 +8,7 @@ nick: xyh
 title: Dr. Yunhui Xiong
 name_en: Dr. Yunhui Xiong
 name_zh: 熊赟晖
-role: Faculty
+role: Associate Professor
 degree: Faculty
 section: faculty
 start_year: ''

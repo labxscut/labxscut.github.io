@@ -27,10 +27,10 @@
     title: General Quantification of Covariate and Concept Shifts
     venue: International Conference on Machine Learning
     year: '2026'
-    url: ''
+    url: https://doi.org/10.48550/arxiv.2609.11918
     status: Final
     pi_track: lead
-    doi: ''
+    doi: 10.48550/arxiv.2609.11918
     published_on: '2026-09-10'
     volume: ''
     issue: ''
@@ -350,7 +350,7 @@
   title: Dr. Xuemei Liu
   name_en: Dr. Xuemei Liu
   name_zh: 刘雪梅
-  role: Faculty
+  role: Associate Professor
   degree: Faculty
   section: faculty
   start_year: ''
@@ -447,7 +447,7 @@
   title: Dr. Yunhui Xiong
   name_en: Dr. Yunhui Xiong
   name_zh: 熊赟晖
-  role: Faculty
+  role: Associate Professor
   degree: Faculty
   section: faculty
   start_year: ''
@@ -509,7 +509,7 @@
   has_page: false
   site: false
   tools:
-  - sxELA
+  - elsa
   papers:
   - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
     title: 'Identifying local associations in biological time series: algorithms, statistical significance,
@@ -1549,7 +1549,7 @@
   has_page: false
   site: false
   tools:
-  - sxELA
+  - elsa
   papers:
   - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
     title: 'Identifying local associations in biological time series: algorithms, statistical significance,
@@ -1754,7 +1754,7 @@
   tools:
   - HCG
   - UGES
-  - sxELA
+  - elsa
   papers:
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
@@ -2122,10 +2122,10 @@
     title: General Quantification of Covariate and Concept Shifts
     venue: International Conference on Machine Learning
     year: '2026'
-    url: ''
+    url: https://doi.org/10.48550/arxiv.2609.11918
     status: Final
     pi_track: lead
-    doi: ''
+    doi: 10.48550/arxiv.2609.11918
     published_on: '2026-09-10'
     volume: ''
     issue: ''

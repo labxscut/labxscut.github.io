@@ -31,10 +31,10 @@ papers:
   title: General Quantification of Covariate and Concept Shifts
   venue: International Conference on Machine Learning
   year: '2026'
-  url: ''
+  url: https://doi.org/10.48550/arxiv.2609.11918
   status: Final
   pi_track: lead
-  doi: ''
+  doi: 10.48550/arxiv.2609.11918
   published_on: '2026-09-10'
   volume: ''
   issue: ''
