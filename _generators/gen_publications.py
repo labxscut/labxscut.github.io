@@ -43,12 +43,12 @@ def load_roster() -> list[dict]:
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) < 14 or cells[0] in {"Nick", "----"} or set(cells[0]) <= {"-"}:
+        if len(cells) < 15 or cells[0] in {"Nick", "----"} or set(cells[0]) <= {"-"}:
             continue
         if cells[0] in {"lab", "xyz"}:
             continue
         nick, group, degree, year, status = cells[0], cells[1], cells[2], cells[3], cells[4]
-        affiliation, name_en, name_zh, note = cells[5], cells[6], cells[7], cells[13]
+        affiliation, name_en, name_zh, note = cells[5], cells[6], cells[7], cells[14]
         flags = parse_note(note)
         rows.append(
             {
