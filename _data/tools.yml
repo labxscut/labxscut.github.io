@@ -211,7 +211,21 @@
   docs: https://github.com/labxscut/grammy
   tags: [metagenomics, abundance estimation, read mapping]
   maintainers: []
-  papers: []
+  papers: [XiaPO2011AccurateGenomeRelative]
+
+- key: zoomx
+  name: ZoomX
+  logo: /images/tools/zoomx.svg
+  tagline: Base-resolution copy-number inference from sequencing depth
+  description: >-
+    A hidden-Markov-model method that segments read depth along the genome to
+    call copy-number and loss-of-heterozygosity states, down to the level of
+    individual bases and single cells.
+  repo: https://github.com/labxscut/zoomx
+  docs: https://github.com/labxscut/zoomx
+  tags: [copy number, structural variation, hidden Markov model]
+  maintainers: []
+  papers: [XiaNAR2018IdentificationLargeRearrangeme]
 
 - key: swan
   name: SWAN
@@ -225,4 +239,4 @@
   docs: https://github.com/labxscut/swan
   tags: [structural variation, copy number, NGS]
   maintainers: []
-  papers: []
+  papers: [XiaNAR2016GenomeWideApproach]
