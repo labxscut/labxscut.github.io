@@ -308,6 +308,25 @@
   white-space: nowrap;
 }
 
+/* About: collaborating-group cards (one per external group). */
+.labx-collab {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--light-gray);
+  text-align: left;
+}
+
+.labx-collab h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05em;
+}
+
+.labx-collab h3 + p {
+  margin: 0 0 0.35rem;
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
 /* News timeline: each entry is a dated narrative card with link chips. */
 .labx-news-item {
   display: flex;

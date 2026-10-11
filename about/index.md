@@ -42,3 +42,21 @@ nav:
 {{ theme.evidence_note }}
 {% endif %}
 {% endfor %}
+
+{% if site.data.collaborators.size > 0 %}
+## Collaborating groups
+
+{% include intro.html value=site.data.intros.about.collaborators %}
+
+{% for collab in site.data.collaborators %}
+<div class="labx-collab" markdown="1">
+
+### [{{ collab.name }}]({{ collab.link }})
+
+{{ collab.relationship }} · {{ collab.department }}, {{ collab.institution }}
+
+{{ collab.focus }}
+
+</div>
+{% endfor %}
+{% endif %}

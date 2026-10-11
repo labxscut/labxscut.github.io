@@ -1,0 +1,36 @@
+# Long-standing external collaborator groups, hand-curated for /about/.
+#
+# Institutions, departments and links were verified against each group's own
+# page on 2026-10-12 (HTTP 200, person named on page). The relationship labels
+# come from the lab wiki (core/share/wiki/labx), which records Fengzhu Sun as
+# the PI's doctoral advisor and Hanlee Ji and Nancy Zhang as postdoctoral
+# advisors; the PI's CV also lists Zhang and Ji as co-PIs on joint NIH awards.
+# Public-safe wording only.
+- name: Hanlee P. Ji
+  group: Ji Lab
+  institution: Stanford University School of Medicine
+  department: Department of Medicine
+  link: https://med.stanford.edu/profiles/hanlee-ji
+  relationship: Postdoctoral advisor
+  focus: >-
+    Cancer genomics and single-cell analysis of clonal structure, a
+    collaboration dating to the PI's postdoctoral work and continued through
+    joint NIH-funded projects.
+- name: Fengzhu Sun
+  group: Sun Lab
+  institution: University of Southern California
+  department: Quantitative and Computational Biology and Mathematics
+  link: https://dornsife.usc.edu/profile/fengzhu-sun/
+  relationship: Doctoral advisor
+  focus: >-
+    Microbial communities and statistical genomics, including the local
+    similarity analysis line of work.
+- name: Nancy R. Zhang
+  group: Zhang Lab
+  institution: University of Pennsylvania
+  department: Statistics and Data Science, Wharton School
+  link: https://statistics.wharton.upenn.edu/profile/nzh/
+  relationship: Postdoctoral advisor
+  focus: >-
+    Statistical methods for complex genomic variation, including structural
+    variation and clonal-mixture models.

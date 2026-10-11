@@ -20,7 +20,8 @@
   },
 
   "about": {
-    "intro": "We develop AI methods and apply them to biomedical sciences and emerging scientific fields."
+    "intro": "We develop AI methods and apply them to biomedical sciences and emerging scientific fields.",
+    "collaborators": "Much of this work is carried out with long-standing external collaborators, whose groups we thank here."
   },
 
   "team": {
