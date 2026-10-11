@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <rect width="1200" height="150" fill="#0d2746"/>
+  <g stroke="#1b3b60" stroke-width="1" opacity="0.7">
+    <line x1="0" y1="30" x2="1200" y2="30"/>
+    <line x1="0" y1="75" x2="1200" y2="75"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+  </g>
+  <rect x="140" y="26" width="150" height="60" rx="10" fill="none" stroke="#79b9ff" stroke-width="3" opacity="0.9"/><line x1="158" y1="48" x2="272" y2="48" stroke="#79b9ff" stroke-width="2" opacity="0.5"/><line x1="158" y1="64" x2="244" y2="64" stroke="#79b9ff" stroke-width="2" opacity="0.4"/><rect x="270" y="40" width="150" height="60" rx="10" fill="none" stroke="#4aa3d8" stroke-width="3" opacity="0.8"/><line x1="288" y1="62" x2="402" y2="62" stroke="#4aa3d8" stroke-width="2" opacity="0.5"/><line x1="288" y1="78" x2="374" y2="78" stroke="#4aa3d8" stroke-width="2" opacity="0.4"/><rect x="400" y="54" width="150" height="60" rx="10" fill="none" stroke="#58c26a" stroke-width="3" opacity="0.7"/><line x1="418" y1="76" x2="532" y2="76" stroke="#58c26a" stroke-width="2" opacity="0.5"/><line x1="418" y1="92" x2="504" y2="92" stroke="#58c26a" stroke-width="2" opacity="0.4"/><rect x="530" y="68" width="150" height="60" rx="10" fill="none" stroke="#f2b134" stroke-width="3" opacity="0.6"/><line x1="548" y1="90" x2="662" y2="90" stroke="#f2b134" stroke-width="2" opacity="0.5"/><line x1="548" y1="106" x2="634" y2="106" stroke="#f2b134" stroke-width="2" opacity="0.4"/><rect x="660" y="82" width="150" height="60" rx="10" fill="none" stroke="#d678c8" stroke-width="3" opacity="0.5"/><line x1="678" y1="104" x2="792" y2="104" stroke="#d678c8" stroke-width="2" opacity="0.5"/><line x1="678" y1="120" x2="764" y2="120" stroke="#d678c8" stroke-width="2" opacity="0.4"/>
+</svg>

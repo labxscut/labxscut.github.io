@@ -10,6 +10,8 @@ nav:
 
 # News
 
+{% include section-banner.html key="news" %}
+
 {% include intro.html value=site.data.intros.news.intro %}
 {% assign items = site.data.news | sort: "date" | reverse %}
 {%- if items.size > 0 -%}

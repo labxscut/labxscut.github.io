@@ -10,6 +10,8 @@ nav:
 
 # Team
 
+{% include section-banner.html key="team" %}
+
 {% include intro.html value=site.data.intros.team.intro %}
 
 {% assign sections = "pi:Principal investigator,faculty:Faculty,visiting:Visiting scholars,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni" | split: "," %}

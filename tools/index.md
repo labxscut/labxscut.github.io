@@ -9,6 +9,8 @@ nav:
 
 # Tools
 
+{% include section-banner.html key="tools" %}
+
 {% include intro.html value=site.data.intros.tools.intro %}
 
 <div class="labx-tools-grid">

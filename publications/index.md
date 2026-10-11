@@ -9,6 +9,8 @@ nav:
 
 # Publications
 
+{% include section-banner.html key="publications" %}
+
 {% assign lead = "" | split: "" %}
 {% assign collaborative = "" | split: "" %}
 {% assign chapters = "" | split: "" %}

@@ -243,6 +243,23 @@
   color: var(--text-color-secondary);
 }
 
+/* Section title banner: a wide, flat techno motif inset under each section's
+   H1 (see _includes/section-banner.html). Decorative, so it is aria-hidden. */
+.labx-banner {
+  margin: -1rem 0 1.75rem;
+  line-height: 0;
+}
+
+.labx-banner img {
+  display: block;
+  width: 100%;
+  height: 84px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+}
+
 /* Home tool cards: show the tool logo above its name. */
 .labx-home-tool-logo {
   display: block;

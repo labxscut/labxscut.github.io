@@ -10,6 +10,8 @@ nav:
 
 # Engage with LabX
 
+{% include section-banner.html key="engage" %}
+
 ## Postdoctoral, PhD, and MS opportunities
 
 {% include intro.html value=site.data.intros.engage.students %}

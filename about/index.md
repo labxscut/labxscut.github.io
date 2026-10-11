@@ -10,6 +10,8 @@ nav:
 
 # About
 
+{% include section-banner.html key="about" %}
+
 {% include intro.html value=site.data.intros.about.intro %}
 
 {% for theme in site.data.research %}
