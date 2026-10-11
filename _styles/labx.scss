@@ -308,6 +308,70 @@
   white-space: nowrap;
 }
 
+/* Publications "Browse by topic" cloud: size encodes frequency, clicking a
+   term filters the list below (see _scripts/keyword-cloud.js). */
+.labx-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem 0.8rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.labx-keyword {
+  line-height: 1.15;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.labx-keyword-sm {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.labx-keyword-md {
+  font-size: 1.05rem;
+}
+
+.labx-keyword-lg {
+  font-size: 1.35rem;
+  font-weight: var(--semi-bold);
+}
+
+.labx-keyword-xl {
+  font-size: 1.8rem;
+  font-weight: var(--bold);
+  color: var(--primary);
+}
+
+.labx-keyword:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.labx-keyword[data-active] {
+  color: var(--primary);
+  background: var(--background-alt);
+  border-radius: var(--rounded);
+  padding: 0 0.25rem;
+}
+
+.labx-cloud-status {
+  margin: 0.3rem 0 1rem;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--gray);
+}
+
+.labx-cloud-status a {
+  margin-left: 0.3rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
 /* About: collaborating-group cards (one per external group). */
 .labx-collab {
   margin: 1rem 0;

@@ -30,6 +30,21 @@ nav:
 {% assign intros = site.data.intros.publications %}
 {% include intro.html value=intros.intro published=published_count accepted=accepted.size %}
 
+{% if site.data.keywords.size > 0 %}
+## Browse by topic
+
+<div class="labx-cloud" id="labx-cloud">
+{% for kw in site.data.keywords -%}
+{%- if kw.count >= 12 -%}{%- assign lvl = "xl" -%}
+{%- elsif kw.count >= 8 -%}{%- assign lvl = "lg" -%}
+{%- elsif kw.count >= 5 -%}{%- assign lvl = "md" -%}
+{%- else -%}{%- assign lvl = "sm" -%}
+{%- endif -%}
+<a class="labx-keyword labx-keyword-{{ lvl }}" href="#labx-cloud" data-term="{{ kw.term | downcase }}">{{ kw.term }}</a>
+{% endfor -%}
+</div>
+{% endif %}
+
 ## Lead Papers
 
 {% include intro.html value=intros.lead %}
