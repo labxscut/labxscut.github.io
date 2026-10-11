@@ -1978,8 +1978,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20220414000000'
   published_display: '20220414'
@@ -2308,7 +2309,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: PV Hummelen
     name_zh: ''
     role: co_author
@@ -2387,7 +2388,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20200319000000'
   published_display: '20200319'
@@ -2437,7 +2439,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: J Zhou
     name_zh: ''
     role: co_author
@@ -2456,7 +2458,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20191104000000'
   published_display: '20191104'
@@ -2513,8 +2516,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190901000000'
   published_display: '20190901'
@@ -2622,8 +2626,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190729000000'
   published_display: '20190729'
@@ -2732,8 +2737,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190424000000'
   published_display: '20190424'
@@ -2802,8 +2808,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190401000000'
   published_display: '20190401'
@@ -2906,8 +2913,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190314000000'
   published_display: '20190314'
@@ -3021,8 +3029,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20190201000000'
   published_display: '20190201'
@@ -3067,7 +3076,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: HJ Lee
     name_zh: ''
     role: co_author
@@ -3158,7 +3167,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20181001000000'
   published_display: '20181001'
@@ -3197,7 +3207,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: DM Ai
     name_zh: ''
     role: co_author
@@ -3234,7 +3244,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20180701000000'
   published_display: '20180701'
@@ -3291,8 +3302,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20180620000000'
   published_display: '20180620'
@@ -3409,7 +3421,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: JM Bell
     name_zh: ''
     role: co_author
@@ -3440,7 +3452,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20180228000000'
   published_display: '20180228'
@@ -3503,7 +3516,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: ID Connolly
     name_zh: ''
     role: co_author
@@ -3522,7 +3535,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20171102000000'
   published_display: '20171102'
@@ -3585,14 +3599,15 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: HP Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20170207000000'
   published_display: '20170207'
@@ -3661,8 +3676,9 @@
     role: corresponding_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20170101000000'
   published_display: '20170101'
@@ -3736,7 +3752,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: Z Xu
     name_zh: ''
     role: co_author
@@ -3797,7 +3813,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20160701000000'
   published_display: '20160701'
@@ -3835,7 +3852,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: S Sakshuwong
     name_zh: ''
     role: co_author
@@ -3878,7 +3895,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20160620000000'
   published_display: '20160620'
@@ -3929,14 +3947,15 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: D Siegmund
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20160601000000'
   published_display: '20160601'
@@ -3992,7 +4011,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: C Aktipis
     name_zh: ''
     role: co_author
@@ -4017,7 +4036,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20160101000000'
   published_display: '20160101'
@@ -4056,7 +4076,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: DM Ai
     name_zh: ''
     role: co_author
@@ -4087,7 +4107,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20151201000000'
   published_display: '20151201'
@@ -4132,7 +4153,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: DM Needham
     name_zh: ''
     role: co_author
@@ -4157,7 +4178,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20151201000000'
   published_display: '20151201'
@@ -4231,7 +4253,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: NR Zhang
     name_zh: ''
     role: co_author
@@ -4256,7 +4278,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20151105000000'
   published_display: '20151105'
@@ -4300,8 +4323,9 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: book-chapter
   sort_key: '20140101000000'
   published_display: ''
@@ -4346,8 +4370,9 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: book-chapter
   sort_key: '20140101000000'
   published_display: ''
@@ -4386,7 +4411,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: DM Ai
     name_zh: ''
     role: first_author
@@ -4411,7 +4436,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20130115000000'
   published_display: '20130115'
@@ -4462,7 +4488,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: G. Wen
     name_zh: ''
     role: co_author
@@ -4481,7 +4507,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20130101000000'
   published_display: ''
@@ -4519,7 +4546,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: JA Cram
     name_zh: ''
     role: co_author
@@ -4544,7 +4571,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20111206000000'
   published_display: '20111206'
@@ -4583,7 +4611,7 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: JA Steele
     name_zh: ''
     role: co_author
@@ -4626,7 +4654,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20111201000000'
   published_display: '20111201'
@@ -4677,7 +4706,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: PD Vigil
     name_zh: ''
     role: co_author
@@ -4756,7 +4785,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20110901000000'
   published_display: '20110901'
@@ -4806,14 +4836,15 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: Q Pan
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20101201000000'
   published_display: '20101201'
@@ -4857,8 +4888,9 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20070501000000'
   published_display: '20070501'
@@ -4896,14 +4928,15 @@
     role: first_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: Chan Zhou
     name_zh: ''
     role: first_author
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: lead
   sort_key: '20070301000000'
   published_display: '20070301'

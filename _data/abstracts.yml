@@ -51,7 +51,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
   - name: H Lee
     name_zh: ''
     role: co_author
@@ -82,7 +82,8 @@
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20200201000000'
   published_display: '20200201'
@@ -410,8 +411,9 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
-  lab_authors: []
+    nick: lcx
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20180520000000'
   published_display: '20180520'

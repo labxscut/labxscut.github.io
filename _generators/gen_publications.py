@@ -139,6 +139,11 @@ def roster_lookup(rows: list[dict]) -> dict[str, dict]:
     The roster writes names surname-first ("Duan Hongyu") while the paper
     records write them given-first ("Hongyu Duan"), so compare sorted token
     sets with single-letter initials dropped ("Li C. Xia" == "Xia Li").
+
+    Also index a surname+given-initials key (`"xia lc"` for `"Li C. Xia"`) so
+    the CV-era author form (`"LC Xia"`, `"L.C. Xia"`) resolves. That key is kept
+    only when exactly one roster row produces it, so an ambiguous
+    surname+initials never links.
     """
     index: dict[str, dict] = {}
     for row in rows:
@@ -147,6 +152,27 @@ def roster_lookup(rows: list[dict]) -> dict[str, dict]:
             index.setdefault(key, row)
         if row["name_zh"]:
             index.setdefault(row["name_zh"].strip(), row)
+
+    # Uniqueness pass for the initials index. An initials key is published only
+    # when BOTH: exactly one roster row produces that key, and the surname is
+    # globally unique in the roster. The surname gate is what keeps a short full
+    # given name ("Li Xia") from aliasing a different person whose given name is
+    # a two-initial run; a shared surname ("Li", "Zhang", "Wang") is never
+    # resolved through this index at all.
+    surname_counts: dict[str, int] = {}
+    for row in rows:
+        tokens = re.findall(r"[A-Za-z]+", (row["name_en"] or "").lower())
+        if tokens:
+            surname_counts[tokens[-1]] = surname_counts.get(tokens[-1], 0) + 1
+
+    ini_counts: dict[str, list[dict]] = {}
+    for row in rows:
+        ikey = roster_initials_key(row["name_en"])
+        if ikey:
+            ini_counts.setdefault(ikey, []).append(row)
+    for ikey, matches in ini_counts.items():
+        if len(matches) == 1 and surname_counts.get(ikey.split()[0], 0) == 1:
+            index.setdefault(f"ini:{ikey}", matches[0])
     return index
 
 
@@ -155,10 +181,55 @@ def name_key(name: str) -> str:
     return " ".join(sorted(tokens))
 
 
+def roster_initials_key(name: str) -> str:
+    """Roster side: `'Li C. Xia'` -> `'xia lc'` (surname + first letter of each
+    given token). `''` when there is no given token."""
+    tokens = re.findall(r"[A-Za-z]+", (name or "").lower())
+    if len(tokens) < 2:
+        return ""
+    surname, heads = tokens[-1], tokens[:-1]
+    return f"{surname} {''.join(h[0] for h in heads)}"
+
+
+def author_initials_key(name: str) -> str:
+    """Author side: the concatenated-initial form `'LC Xia'` -> `'xia lc'`.
+
+    Deliberately narrow, because a wrong link publishes the wrong person:
+      * the leading tokens must be initial-like (each <= 3 letters), so full
+        given names ("Wen Chen", "Dongmei Ai") never resolve through here;
+      * the concatenated initials must be >= 2 letters, so a bare single initial
+        ("M. Li", "Y Li", "F Sun") is refused — with a common surname that form
+        cannot identify anyone;
+      * the letters must split into exactly one letter per given name, i.e. the
+        initials are a run of single letters or a concatenated pair. A multi
+        letter token that is not a clean initial run ("YS Wang", "FZ Sun") is
+        refused unless it splits to single letters.
+    """
+    tokens = re.findall(r"[A-Za-z]+", (name or "").lower())
+    if len(tokens) < 2:
+        return ""
+    surname, heads = tokens[-1], tokens[:-1]
+    if any(len(h) > 3 for h in heads):
+        return ""
+    joined = "".join(heads)
+    if len(joined) < 2:
+        return ""
+    # Already single-letter initials ("L. C. Xia") or one concatenated run
+    # ("LC Xia"); a run of letters maps to one initial per given name.
+    if all(len(h) == 1 for h in heads) or len(heads) == 1:
+        return f"{surname} {joined}"
+    return ""
+
+
 def lookup_author(name_en: str, name_zh: str, lookup: dict[str, dict]) -> dict | None:
     row = lookup.get(name_key(name_en))
     if not row and name_zh:
         row = lookup.get(name_zh.strip())
+    if not row:
+        # Concatenated-initials form used by CV-era author lists ("LC Xia").
+        akey = author_initials_key(name_en)
+        if akey:
+            row = lookup.get(f"ini:{akey}")
     return row
 
 
