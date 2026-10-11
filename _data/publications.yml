@@ -3184,7 +3184,7 @@
   issue: '7'
   pages: giy081
   pdf: https://europepmc.org/api/getPdf?pmcid=PMC6057526
-  repo: ''
+  repo: https://github.com/labxscut/svengine
   if: ''
   quartile: ''
   ccf: ''
@@ -3260,7 +3260,7 @@
   issue: '6'
   pages: '313'
   pdf: https://europepmc.org/api/getPdf?pmcid=PMC6027520
-  repo: ''
+  repo: https://github.com/labxscut/coreprobe
   if: ''
   quartile: ''
   ccf: ''
@@ -3296,7 +3296,8 @@
   pi_track: lead
   sort_key: '20180620000000'
   published_display: '20180620'
-  tools: []
+  tools:
+  - coreprobe
 - slug: RaghavanACTN2018WholeExomeSequencing
   title: Whole‐exome sequencing in 20,197 persons for rare variants in Alzheimer's disease
   venue: Annals of Clinical and Translational Neurology
@@ -3395,7 +3396,7 @@
   issue: '4'
   pages: e19-e19
   pdf: https://europepmc.org/api/getPdf?pmcid=PMC5829571
-  repo: ''
+  repo: https://github.com/labxscut/zoomx
   if: ''
   quartile: ''
   ccf: ''
@@ -3821,7 +3822,7 @@
   issue: ''
   pages: gkw481
   pdf: https://europepmc.org/api/getPdf?pmcid=PMC5009736
-  repo: ''
+  repo: https://github.com/labxscut/swan
   if: ''
   quartile: ''
   ccf: ''
@@ -4505,7 +4506,7 @@
   issue: '12'
   pages: e27992
   pdf: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0027992&type=printable
-  repo: ''
+  repo: https://github.com/labxscut/grammy
   if: ''
   quartile: ''
   ccf: ''

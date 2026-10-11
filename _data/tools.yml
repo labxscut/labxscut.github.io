@@ -213,6 +213,20 @@
   maintainers: []
   papers: [XiaPO2011AccurateGenomeRelative]
 
+- key: coreprobe
+  name: CoreProbe
+  logo: /images/tools/coreprobe.svg
+  tagline: Relative abundance estimation from metagenomic reads
+  description: >-
+    A read-alignment approach that scores candidate reference genomes against
+    shotgun metagenomic reads to estimate the relative abundance of the species
+    a sample contains.
+  repo: https://github.com/labxscut/coreprobe
+  docs: https://github.com/labxscut/coreprobe
+  tags: [metagenomics, abundance estimation, read alignment]
+  maintainers: []
+  papers: [AiGenes2018CoreProbeNovelAlgorithm]
+
 - key: zoomx
   name: ZoomX
   logo: /images/tools/zoomx.svg
