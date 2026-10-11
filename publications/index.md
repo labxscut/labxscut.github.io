@@ -30,7 +30,7 @@ nav:
 {% assign intros = site.data.intros.publications %}
 {% include intro.html value=intros.intro published=published_count accepted=accepted.size %}
 
-## Team Lead Papers
+## Lead Papers
 
 {% include intro.html value=intros.lead %}
 {% include publication-list.html papers=lead lead=true track="lead" %}

@@ -29,7 +29,7 @@
 
   "publications": {
     "intro": "See [{pi}'s Google Scholar profile]({scholar}) or other authors' Google Scholar profiles for their most recent publications.",
-    "lead": "Papers where {pi} is a (co-)first or (co-)corresponding author, newest first.",
+    "lead": "",
     "collaborative": "Papers where {pi} is a co-author or consortium member, newest first.",
     "book_chapters": "Chapters, encyclopaedia entries and other book contributions."
   },
