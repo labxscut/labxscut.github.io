@@ -852,7 +852,7 @@
     role: co_author
     level: ''
     affiliation: ''
-    nick: fymr
+    nick: fmr
   - name: Ren Bozhen
     name_zh: ''
     role: co_author
@@ -892,7 +892,7 @@
   lab_authors:
   - lzy
   - yzy
-  - fymr
+  - fmr
   - rbz
   - lqj
   - lxm
@@ -3443,7 +3443,8 @@
   pi_track: lead
   sort_key: '20180228000000'
   published_display: '20180228'
-  tools: []
+  tools:
+  - zoomx
 - slug: BellNAR2017ChromosomeScaleMega
   title: Chromosome-scale mega-haplotypes enable digital karyotyping of cancer aneuploidy
   venue: Nucleic Acids Research
@@ -3880,7 +3881,8 @@
   pi_track: lead
   sort_key: '20160620000000'
   published_display: '20160620'
-  tools: []
+  tools:
+  - swan
 - slug: ZhangAAS2016ScanStatisticsPoisson
   title: Scan statistics on Poisson random fields with applications in genomics
   venue: Annals of Applied Statistics
@@ -4545,7 +4547,8 @@
   pi_track: lead
   sort_key: '20111206000000'
   published_display: '20111206'
-  tools: []
+  tools:
+  - grammy
 - slug: XiaBSB2011ExtendedLocalSimilarity
   title: Extended local similarity analysis of microbial community and other time series data with replicates
   venue: BMC Systems Biology
