@@ -1,0 +1,71 @@
+{%- comment -%
+  One News entry as a narrative card.
+
+  Usage:  {% include news-item.html item=item %}
+
+  `item` is a _data/news.yml entry: canonical `date` (YYYYMMDDHHMMSS), a
+  `date_display`, `text`, optional `url`, and optional `source:
+  labxManage/Paper/<slug>`. When the source slug resolves to a publication or
+  abstract record, the card gains a venue line and chips that link the lab
+  authors (to their /team/ pages), the tools, and the record on /publications/.
+  Links are derived only from data already in the registry, never guessed.
+{%- endcomment -%}
+{%- assign d = item.date_display | default: item.date | append: "" -%}
+{%- assign y = d | slice: 0, 4 -%}
+{%- assign mo = d | slice: 4, 2 -%}
+{%- assign dy = d | slice: 6, 2 -%}
+{%- assign slug = "" -%}
+{%- if item.source contains "/Paper/" -%}
+  {%- assign slug = item.source | split: "/Paper/" | last -%}
+{%- endif -%}
+{%- assign paper = site.data.publications | where: "slug", slug | first -%}
+{%- unless paper -%}
+  {%- assign paper = site.data.abstracts | where: "slug", slug | first -%}
+{%- endunless -%}
+<article class="labx-news-item">
+  <div class="labx-news-stamp">
+    <span class="labx-news-year">{{ y }}</span>
+    {%- if mo != "" and mo != nil -%}
+    <span class="labx-news-md">{{ mo }}/{{ dy }}</span>
+    {%- endif -%}
+  </div>
+  <div class="labx-news-body">
+    <h3 class="labx-news-head">
+      {%- assign head = item.text | strip -%}
+      {%- if paper -%}{%- assign head = paper.title | strip -%}{%- endif -%}
+      {%- if item.url -%}<a href="{{ item.url }}">{{ head }}</a>{%- else -%}{{ head }}{%- endif -%}
+    </h3>
+    {%- if paper -%}
+      {%- assign venue = paper.venue_short | default: paper.venue -%}
+      {%- if paper.status == "Accept" or paper.status == "Accepted" -%}
+        {%- assign verb = "Accepted at" -%}
+      {%- elsif paper.presentation == "poster" -%}
+        {%- assign verb = "Poster at" -%}
+      {%- elsif paper.presentation == "abstract" -%}
+        {%- assign verb = "Abstract at" -%}
+      {%- elsif paper.venue_type == "journal" -%}
+        {%- assign verb = "Published in" -%}
+      {%- else -%}
+        {%- assign verb = "Published at" -%}
+      {%- endif -%}
+    <p class="labx-news-venue">{{ verb }} <em>{{ venue }}</em>{% if paper.year != "" %} · {{ paper.year }}{% endif %}</p>
+    <div class="labx-news-chips">
+      {%- for author in paper.authors -%}
+        {%- if author.nick != "" -%}
+          {%- assign person = site.data.people | where: "nick", author.nick | first -%}
+          {%- if person -%}
+      <a class="labx-chip labx-chip-person" href="/team/{{ person.nick }}/">{{ person.name_en }}</a>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- for key in paper.tools -%}
+        {%- assign tool = site.data.tools | where: "key", key | first -%}
+        {%- if tool -%}
+      <a class="labx-chip labx-chip-tool" href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      <a class="labx-chip labx-chip-link" href="/publications/#{{ paper.slug | slugify }}">Publication</a>
+    </div>
+    {%- endif -%}
+  </div>
+</article>

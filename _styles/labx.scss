@@ -308,6 +308,87 @@
   white-space: nowrap;
 }
 
+/* News timeline: each entry is a dated narrative card with link chips. */
+.labx-news-item {
+  display: flex;
+  gap: 1rem;
+  margin: 1.1rem 0;
+  text-align: left;
+}
+
+.labx-news-stamp {
+  flex: none;
+  width: 4.5rem;
+  text-align: right;
+  line-height: 1.15;
+}
+
+.labx-news-year {
+  display: block;
+  font-size: 1.15em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.labx-news-md {
+  display: block;
+  font-size: 0.78em;
+  font-variant-numeric: tabular-nums;
+  color: var(--gray);
+}
+
+.labx-news-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--light-gray);
+}
+
+.labx-news-head {
+  margin: 0 0 0.3rem;
+  font-size: 1.05em;
+  line-height: 1.35;
+}
+
+.labx-news-venue {
+  margin: 0 0 0.45rem;
+  font-size: 0.9em;
+  color: var(--gray);
+}
+
+.labx-news-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.labx-chip {
+  display: inline-block;
+  padding: 0.12rem 0.6rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 999px;
+  background: var(--background-alt);
+  color: var(--gray);
+  font-size: 0.78em;
+  line-height: 1.5;
+}
+
+.labx-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .labx-news-item {
+    gap: 0.6rem;
+  }
+
+  .labx-news-stamp {
+    width: 3.2rem;
+  }
+}
+
 /* Tools catalog: responsive card grid instead of a single stacked column. */
 .labx-tools-grid {
   display: grid;
