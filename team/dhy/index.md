@@ -38,7 +38,7 @@ papers:
   volume: ''
   issue: ''
   pages: 1-14
-  pdf: ''
+  pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
   sort_key: '20260101000000'
 - slug: DuanISBRA2025EnzHier
   title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical

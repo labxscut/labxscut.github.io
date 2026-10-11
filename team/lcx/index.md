@@ -55,7 +55,7 @@ papers:
   volume: ''
   issue: ''
   pages: 1-14
-  pdf: ''
+  pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
   sort_key: '20260101000000'
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
@@ -240,7 +240,7 @@ papers:
   volume: '157'
   issue: ''
   pages: '106774'
-  pdf: ''
+  pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
   sort_key: '20230501000000'
 - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
   title: Regularized survival learning and cross-database analysis enabled identification of colorectal

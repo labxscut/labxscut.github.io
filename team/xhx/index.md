@@ -16,7 +16,7 @@ end_year: ''
 years: 25i
 status: active
 affiliation: ''
-github: ''
+github: xhx-labxscut
 has_page: true
 site: true
 tools: []

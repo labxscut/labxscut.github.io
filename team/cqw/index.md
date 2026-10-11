@@ -35,7 +35,7 @@ papers:
   volume: ''
   issue: ''
   pages: 1-14
-  pdf: ''
+  pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
   sort_key: '20260101000000'
 avatar: /images/avatars/cqw.svg
 ---

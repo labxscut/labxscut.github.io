@@ -52,7 +52,7 @@
     volume: ''
     issue: ''
     pages: 1-14
-    pdf: ''
+    pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
@@ -237,7 +237,7 @@
     volume: '157'
     issue: ''
     pages: '106774'
-    pdf: ''
+    pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
     sort_key: '20230501000000'
   - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
     title: Regularized survival learning and cross-database analysis enabled identification of colorectal
@@ -361,7 +361,7 @@
     volume: ''
     issue: ''
     pages: 1-14
-    pdf: ''
+    pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
   - slug: YuHGGadv2025MtagHF
     title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
@@ -580,7 +580,7 @@
     volume: '24'
     issue: '6'
     pages: bbad390
-    pdf: ''
+    pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
     sort_key: '20230922000000'
   - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
     title: Tumor tissue microorganisms are closely associated with tumor immune subtypes
@@ -595,7 +595,7 @@
     volume: '157'
     issue: ''
     pages: '106774'
-    pdf: ''
+    pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
     sort_key: '20230501000000'
   - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
     title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
@@ -908,7 +908,7 @@
     volume: ''
     issue: ''
     pages: 1-14
-    pdf: ''
+    pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
   - slug: DuanISBRA2025EnzHier
     title: 'EnzHier: Accurate Enzyme Function Prediction Through Multi-scale Feature Integration and Hierarchical
@@ -1149,7 +1149,7 @@
     volume: ''
     issue: ''
     pages: 1-14
-    pdf: ''
+    pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
   avatar: /images/avatars/cqw.svg
 - nick: njt
@@ -1214,7 +1214,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: xhx-labxscut
   has_page: true
   site: true
   tools: []
@@ -1367,7 +1367,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: cxyx2007
   has_page: false
   site: false
   tools: []
@@ -1384,7 +1384,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: Yuuuiii27
   has_page: false
   site: false
   tools: []
@@ -1401,7 +1401,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: lengangfs
   has_page: false
   site: false
   tools: []
@@ -1418,7 +1418,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: scmodric
   has_page: false
   site: false
   tools: []
@@ -1435,7 +1435,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: Yihyx
   has_page: false
   site: false
   tools: []
@@ -1452,7 +1452,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: Bunny4048
   has_page: false
   site: false
   tools: []
@@ -1469,7 +1469,7 @@
   years: 25i
   status: active
   affiliation: ''
-  github: ''
+  github: ZYQ-2020
   has_page: false
   site: false
   tools: []
@@ -1646,7 +1646,7 @@
     volume: '24'
     issue: '6'
     pages: bbad390
-    pdf: ''
+    pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
     sort_key: '20230922000000'
   alumni_group: Master's
 - nick: tay
@@ -1889,7 +1889,7 @@
     volume: '24'
     issue: '6'
     pages: bbad390
-    pdf: ''
+    pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
     sort_key: '20230922000000'
   - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
     title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
@@ -2155,7 +2155,7 @@
   years: 22i–25o
   status: alumni
   affiliation: ''
-  github: ''
+  github: AutoTomorin
   has_page: false
   site: false
   tools: []
@@ -2245,7 +2245,7 @@
     sort_key: '20250615000000'
   alumni_group: Undergraduates
   now: PhD applicant@overseas
-- nick: fymr
+- nick: fmr
   title: Yinmingren Fu
   name_en: Yinmingren Fu
   name_zh: 符尹铭人
@@ -2350,7 +2350,7 @@
     volume: ''
     issue: ''
     pages: 1-14
-    pdf: ''
+    pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
   alumni_group: Undergraduates
   now: 中山大学
@@ -2624,7 +2624,7 @@
     pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
     sort_key: '20240601000000'
   alumni_group: Undergraduates
-- nick: lziyi
+- nick: luz
   title: Ziyi Lu
   name_en: Ziyi Lu
   name_zh: 陆梓怡
@@ -2790,24 +2790,6 @@
   name_zh: 余悦
   role: Undergraduate
   degree: Under
-  section: alumni
-  start_year: ''
-  end_year: ''
-  years: ''
-  status: alumni
-  affiliation: ''
-  github: ''
-  has_page: false
-  site: false
-  tools: []
-  papers: []
-  alumni_group: Undergraduates
-- nick: pxy
-  title: Xingyue Pan
-  name_en: Xingyue Pan
-  name_zh: 潘星玥
-  role: Alumni
-  degree: —
   section: alumni
   start_year: ''
   end_year: ''

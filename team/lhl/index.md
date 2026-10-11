@@ -35,7 +35,7 @@ papers:
   volume: ''
   issue: ''
   pages: 1-14
-  pdf: ''
+  pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
   sort_key: '20260101000000'
 - slug: YuHGGadv2025MtagHF
   title: Multi-trait genome-wide analysis identified risk loci and candidate drugs for heart failure
