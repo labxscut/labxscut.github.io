@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
-"""Quick QA on the generated site data (author matching, page counts, gaps)."""
+"""Quick QA on the generated site data (author matching, page counts, gaps).
+
+Offline by default. Pass ``--check-repos`` to also verify that every catalogued
+tool's repository is publicly reachable, because ``_data/tools.yml`` renders its
+``repo``/``docs`` links on the public /tools/ page and a private repo 404s for
+every visitor. Add ``--strict`` to make that check fail the run.
+"""
 from __future__ import annotations
 
+import json
+import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -69,3 +78,69 @@ print("unmatched author names (no roster hit, no affiliation):", len(unmatched_a
 for name in unmatched_authors[:25]:
     print("   -", name)
 print("sample person:", pages[0], "->", next(p for p in people if p["nick"] == pages[0]))
+
+
+def public_repo_status(url: str) -> tuple[str, str]:
+    """Reachability of a GitHub repo URL as ('public'|'private'|'skip', name).
+
+    Uses the authenticated ``gh`` CLI: an unauthenticated probe is rate-limited
+    to 60 requests/hour and a flaky network returns no status at all, so an
+    anonymous curl cannot tell "private" from "rate-limited" and would report
+    false positives. ``gh`` answers ``private`` only on a definitive 404 and
+    ``skip`` on any transport/rate-limit failure, which is never treated as a
+    defect.
+    """
+    name = (url or "").rstrip("/").split("github.com/")[-1]
+    if not name or "/" not in name:
+        return "skip", f"not a github.com repo URL: {url!r}"
+    try:
+        proc = subprocess.run(
+            ["gh", "api", f"repos/{name}", "--jq", ".private"],
+            capture_output=True, text=True, timeout=60,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return "skip", name
+    out = (proc.stdout or "").strip()
+    err = (proc.stderr or "")
+    if proc.returncode == 0 and out == "false":
+        return "public", name
+    if proc.returncode == 0 and out == "true":
+        return "private", name
+    # 404 on an authenticated call means the repo is private or gone: both are
+    # invisible to a site visitor, which is the condition we care about.
+    if "404" in err or "Could not resolve to a Repository" in err:
+        return "private", name
+    return "skip", name
+
+
+if "--check-repos" in sys.argv:
+    print()
+    print("catalogued tool repositories (visibility):")
+    private = []
+    skipped = []
+    for tool in tools:
+        for field in ("repo", "docs"):
+            url = str(tool.get(field) or "")
+            if "github.com/" not in url:
+                continue  # a hosted docs site, not a repo — out of scope here
+            status, name = public_repo_status(url)
+            if status == "private":
+                private.append((tool["key"], field, name))
+            elif status == "skip":
+                skipped.append((tool["key"], field, name))
+    if private:
+        print(f"   NOT publicly reachable: {len(private)} link(s)")
+        for key, field, name in private:
+            print(f"      {key}.{field} = github.com/{name} — /tools/ shows a dead link")
+        if "--strict" in sys.argv:
+            raise ValueError(
+                "catalogued tools must link publicly reachable repositories; "
+                "make the repo public or drop the catalog entry"
+            )
+    else:
+        print("   every catalogued repo/docs link is publicly reachable")
+    if skipped:
+        print(f"   could not verify (network/rate limit, not a defect): {len(skipped)}")
+        for key, field, name in skipped:
+            print(f"      {key}.{field} = {name}")
