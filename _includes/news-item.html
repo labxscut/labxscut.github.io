@@ -53,8 +53,10 @@
       {%- for author in paper.authors -%}
         {%- if author.nick != "" -%}
           {%- assign person = site.data.people | where: "nick", author.nick | first -%}
-          {%- if person -%}
+          {%- if person and person.has_page -%}
       <a class="labx-chip labx-chip-person" href="/team/{{ person.nick }}/">{{ person.name_en }}</a>
+          {%- elsif person -%}
+      <span class="labx-chip labx-chip-person">{{ person.name_en }}</span>
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}

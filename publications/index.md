@@ -42,7 +42,25 @@ nav:
 {%- elsif kw.count >= 5 -%}{%- assign lvl = "md" -%}
 {%- else -%}{%- assign lvl = "sm" -%}
 {%- endif -%}
-<a class="labx-keyword labx-keyword-{{ lvl }}" href="#labx-cloud" data-term="{{ kw.term | downcase }}">{{ kw.term }}</a>
+{%- comment -%}
+  Jump to the first paper that carries the term. `kw.slugs` comes from
+  gen_keywords.py and holds publication/abstract slugs, which publication-list.html
+  renders as anchors on this page; a term with no resolvable slug stays plain text
+  rather than linking to a dead anchor.
+{%- endcomment -%}
+{%- assign target = "" -%}
+{%- for slug in kw.slugs -%}
+  {%- if target == "" -%}
+    {%- assign match = site.data.publications | where: "slug", slug | first -%}
+    {%- unless match -%}{%- assign match = site.data.abstracts | where: "slug", slug | first -%}{%- endunless -%}
+    {%- if match -%}{%- assign target = slug | slugify -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if target != "" -%}
+<a class="labx-keyword labx-keyword-{{ lvl }}" href="#{{ target }}" data-term="{{ kw.term | downcase }}" data-tooltip="{{ kw.count }} papers">{{ kw.term }}</a>
+{%- else -%}
+<span class="labx-keyword labx-keyword-{{ lvl }}" data-term="{{ kw.term | downcase }}" data-tooltip="{{ kw.count }} papers">{{ kw.term }}</span>
+{%- endif -%}
 {% endfor -%}
 </div>
 {% endif %}
