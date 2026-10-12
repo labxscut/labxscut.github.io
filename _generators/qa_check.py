@@ -9,6 +9,7 @@ every visitor. Add ``--strict`` to make that check fail the run.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -95,6 +96,59 @@ print("unmatched author names (no roster hit, no affiliation):", len(unmatched_a
 for name in unmatched_authors[:25]:
     print("   -", name)
 print("sample person:", pages[0], "->", next(p for p in people if p["nick"] == pages[0]))
+
+
+def audit_css_variables() -> list[str]:
+    """Report every var(--x) that no stylesheet or template defines.
+
+    An undefined custom property is a silent failure: Sass compiles it happily,
+    Jekyll builds, and the declaration simply behaves as if absent (or, for a
+    non-inherited property, as `unset`). Three real defects of this class were
+    found by hand -- --text-color-secondary (muted text rendered at full body
+    colour), --theme-light (<details> panels rendered transparent) and --white.
+
+    Definitions are collected from _styles/*.scss and also from _includes/ and
+    _layouts/, because templates set some variables inline (content.html emits
+    style="--image: url(...)" per section).
+    """
+    defined: set[str] = set()
+    used: dict[str, list[str]] = {}
+    roots = [
+        (Path(REPO) / "_styles", "*.scss"),
+        (Path(REPO) / "_includes", "*.html"),
+        (Path(REPO) / "_layouts", "*.html"),
+    ]
+    for folder, pattern in roots:
+        for path in sorted(folder.glob(pattern)):
+            text = path.read_text(encoding="utf-8")
+            rel = path.relative_to(REPO).as_posix()
+            # Strip comments first: an explanatory comment that mentions a
+            # removed variable must not count as a use (or as a definition).
+            text = re.sub(r"/\*.*?\*/", " ", text, flags=re.S)
+            # (?<!:) keeps `https://` inside url() from being read as a comment.
+            text = re.sub(r"(?<!:)//[^\n]*", " ", text)
+            text = re.sub(r"\{%\s*comment\s*%\}.*?\{%\s*endcomment\s*%\}", " ", text, flags=re.S)
+            text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+            for name in re.findall(r"(--[a-zA-Z0-9-]+)\s*:", text):
+                defined.add(name)
+            for name in re.findall(r"var\(\s*(--[a-zA-Z0-9-]+)", text):
+                used.setdefault(name, []).append(rel)
+    undefined = sorted(name for name in used if name not in defined)
+    for name in undefined:
+        sites = ", ".join(sorted(set(used[name]))[:4])
+        print(f"   UNDEFINED {name} used in {sites}")
+    print(f"css variables: {len(used)} used, {len(defined)} defined, {len(undefined)} undefined")
+    return undefined
+
+
+print()
+undefined_css_vars = audit_css_variables()
+if undefined_css_vars and "--strict" in sys.argv:
+    raise ValueError(
+        "every var(--x) must be defined in _styles/ or set inline by a template; "
+        f"undefined: {undefined_css_vars}"
+    )
+
 
 
 def public_repo_status(url: str) -> tuple[str, str]:
