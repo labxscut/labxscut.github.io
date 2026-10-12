@@ -25,13 +25,29 @@
   --overlay: #ffffff10;
 }
 
-:root {
+// Colour aliases. Declared against [data-dark] rather than :root on purpose:
+// a var() inside a custom property is substituted on the element that DECLARES
+// it, so an alias declared on :root would freeze the <html> theme's value and
+// leak it into any <section data-dark="..."> that overrides the theme locally
+// (content.html supports that per-section override). Declaring it here makes the
+// alias resolve against the nearest data-dark ancestor, which is what callers
+// expect. Both themes share the same expression, hence the selector list.
+[data-dark="false"],
+[data-dark="true"] {
   // Muted text (provenance stamps, tool taglines, news dates, metrics, ...).
   // labx.scss refers to this name in ten places; without a definition every one
   // of them silently inherited the body colour instead of rendering muted.
-  // --gray is already theme-aware (blue-gray in dark, brown-gray in light).
   --text-color-secondary: var(--gray);
 
+  // Panel fill for <details>. details.scss has always referenced this name but it
+  // was never defined, so the panel rendered transparent. No themed page contains
+  // a <details> yet (the four that do are standalone docs pages shipping their own
+  // scripts_docs.css), which is why this went unnoticed. --background-alt is the
+  // site's existing panel idiom: a light-gray border plus an alt fill.
+  --theme-light: var(--background-alt);
+}
+
+:root {
   // font families
   --title: "Barlow", sans-serif;
   --heading: "Barlow", sans-serif;

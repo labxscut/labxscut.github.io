@@ -32,7 +32,15 @@ div.highlighter-rouge {
       min-width: 100%;
       margin: 0;
       padding: 20px;
-      color: var(--white);
+      // No `color` here on purpose. The pygments CDN sheet sets
+      // `.highlight pre { color: #cccccc !important }`, so any colour declared
+      // here loses regardless of specificity (verified: even an inline colour
+      // does not apply). This used to read `color: var(--white)`, but --white
+      // was never defined, so the declaration was invalid at computed-value
+      // time and fell back to `inherit` -- which is exactly the graceful
+      // behaviour we want if the CDN is ever blocked (dark text on the light
+      // page background). Defining --white would have turned that fallback into
+      // white-on-light, i.e. invisible code.
     }
   }
 }
