@@ -88,6 +88,9 @@
     associations along single-cell pseudotime.
   repo: https://github.com/labxscut/sxELA
   docs: https://github.com/labxscut/sxELA
+  # The repository is private, so /tools/ must not link it (a visitor gets a
+  # 404). Set to false or remove the key once the repo is made public.
+  private: true
   tags: [single-cell, pseudotime, local association]
   maintainers: []
   papers: []
@@ -116,6 +119,8 @@
     multi-trait polygenic risk score features for disease-risk prediction.
   repo: https://github.com/labxscut/sxSPRINT
   docs: https://github.com/labxscut/sxSPRINT
+  # Private repository — /tools/ must not link it (visitors get a 404).
+  private: true
   tags: [genetic risk, SNP, polygenic risk score]
   maintainers: []
   papers: [Li2025sprint]
@@ -129,6 +134,8 @@
     labels for multi-class omics data.
   repo: https://github.com/labxscut/DHMOC
   docs: https://github.com/labxscut/DHMOC
+  # Private repository — /tools/ must not link it (visitors get a 404).
+  private: true
   tags: [omics, hierarchical classification, machine learning]
   maintainers: []
   papers: []

@@ -20,6 +20,7 @@ from gen_publications import REPO
 data = Path(REPO) / "_data"
 people = yaml.safe_load((data / "people.yml").read_text(encoding="utf-8")) or []
 pubs = yaml.safe_load((data / "publications.yml").read_text(encoding="utf-8")) or []
+abstracts = yaml.safe_load((data / "abstracts.yml").read_text(encoding="utf-8")) or []
 tools = yaml.safe_load((data / "tools.yml").read_text(encoding="utf-8")) or []
 
 sections: dict[str, int] = {}
@@ -32,6 +33,18 @@ pages = sorted(
     if "layout: profile" in p.read_text(encoding="utf-8")
 )
 matched = [p for p in pubs if p.get("lab_authors")]
+# An author nick that is not in people.yml renders as plain text (correct for a
+# roster row marked hide:true), but it also inflates the "linked lab author"
+# count, so surface it instead of leaving it silent.
+people_nicks = {p["nick"] for p in people}
+dangling_nicks = sorted(
+    {
+        (a["nick"], paper["slug"])
+        for paper in pubs + abstracts
+        for a in (paper.get("authors") or [])
+        if a.get("nick") and a["nick"] not in people_nicks
+    }
+)
 unmatched_authors = sorted(
     {
         a["name"]
@@ -45,6 +58,10 @@ print("sections:", sections)
 print("personal pages:", len(pages))
 print("nested profiles:", ", ".join(pages))
 print(f"pubs with >=1 linked lab author: {len(matched)}/{len(pubs)}")
+if dangling_nicks:
+    print(f"author nicks not in people.yml (render as plain text, inflate the count above): {len(dangling_nicks)}")
+    for nick, slug in dangling_nicks:
+        print(f"   - {nick} in {slug}")
 print("pubs with repo:", sum(1 for p in pubs if p.get("repo")), "with doi:", sum(1 for p in pubs if p.get("doi")))
 print("pubs missing year:", sum(1 for p in pubs if not p.get("year")))
 pub_slugs = {paper["slug"] for paper in pubs}
@@ -119,26 +136,40 @@ if "--check-repos" in sys.argv:
     print("catalogued tool repositories (visibility):")
     private = []
     skipped = []
+    declared = []
     for tool in tools:
+        # `private: true` is the catalog's own declaration that the repository is
+        # not public, so the templates suppress its links. Report it as declared,
+        # not as a defect — but still verify the declaration is true, because a
+        # stale flag would hide a link that could be shown.
+        is_declared = bool(tool.get("private"))
         for field in ("repo", "docs"):
             url = str(tool.get(field) or "")
             if "github.com/" not in url:
                 continue  # a hosted docs site, not a repo — out of scope here
             status, name = public_repo_status(url)
             if status == "private":
-                private.append((tool["key"], field, name))
+                (declared if is_declared else private).append((tool["key"], field, name))
             elif status == "skip":
                 skipped.append((tool["key"], field, name))
+            elif is_declared:
+                print(f"      STALE FLAG: {tool['key']}.{field} = github.com/{name} "
+                      f"is public but tools.yml says private: true")
+    if declared:
+        print(f"   private as declared in tools.yml (links suppressed on site): {len(declared)}")
+        for key, field, name in declared:
+            print(f"      {key}.{field} = github.com/{name}")
     if private:
-        print(f"   NOT publicly reachable: {len(private)} link(s)")
+        print(f"   NOT publicly reachable and NOT declared: {len(private)} link(s)")
         for key, field, name in private:
             print(f"      {key}.{field} = github.com/{name} — /tools/ shows a dead link")
         if "--strict" in sys.argv:
             raise ValueError(
                 "catalogued tools must link publicly reachable repositories; "
-                "make the repo public or drop the catalog entry"
+                "make the repo public, drop the catalog entry, or mark it "
+                "`private: true` so the templates suppress the link"
             )
-    else:
+    elif not declared:
         print("   every catalogued repo/docs link is publicly reachable")
     if skipped:
         print(f"   could not verify (network/rate limit, not a defect): {len(skipped)}")

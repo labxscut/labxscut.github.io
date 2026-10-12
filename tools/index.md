@@ -59,12 +59,27 @@ nav:
 <p class="labx-tool-by">Built by {% for person in by %}{% if person.has_page %}<a href="/team/{{ person.nick }}/">{{ person.name_en }}</a>{% else %}{{ person.name_en }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
 {% endif %}
 
+{% comment %}
+  A tool whose repository is private must not be linked: /tools/ is public, so
+  the link 404s for every visitor. `_data/tools.yml` marks those with
+  `private: true`. The catalog entry itself stays (the tool is real work and its
+  papers still link), only the unreachable URLs are suppressed. A `docs` URL that
+  differs from `repo` is a separate hosted site and stays linkable.
+{% endcomment %}
+{% assign repo_public = true %}
+{% if tool.private %}{% assign repo_public = false %}{% endif %}
+{% assign docs_public = repo_public %}
+{% if tool.docs != tool.repo %}{% assign docs_public = true %}{% endif %}
+{% if repo_public or docs_public or tool.client %}
 <div class="labx-tool-links">
-{% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
-{% if tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
+{% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
+{% if repo_public and tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
-{% if tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
+{% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
 </div>
+{% elsif tool.repo %}
+<p class="labx-tool-private">Source code is not publicly released.</p>
+{% endif %}
 
 {% include tool-papers.html papers=tool.papers %}
 

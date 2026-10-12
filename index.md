@@ -48,7 +48,13 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 {% include intro.html value=site.data.intros.home.tools %}
 
-{% for tool in site.data.tools limit:3 %}
+{% comment %}
+  Only publicly released tools belong on the landing page: a `private: true`
+  catalog entry would render a link that 404s for visitors. `where_exp` keeps the
+  first three *public* tools, so reordering tools.yml cannot surface a private one.
+{% endcomment %}
+{% assign home_tools = site.data.tools | where_exp: "t", "t.private != true" %}
+{% for tool in home_tools limit:3 %}
 {% if tool.logo %}<img class="labx-home-tool-logo" src="{{ tool.logo | relative_url }}" alt="">{% endif %}
 
 ### [{{ tool.name }}]({{ tool.docs }})

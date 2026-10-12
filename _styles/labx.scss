@@ -206,6 +206,13 @@
   gap: 0.25rem 1rem;
 }
 
+/* A tool whose repository is private: no link, just a quiet note. */
+p.labx-tool-private {
+  margin: 0.75rem 0 0;
+  color: var(--text-color-secondary);
+  font-size: 0.88em;
+}
+
 .labx-tool-papers {
   margin: 0.75rem 0 0;
   font-size: 0.88em;

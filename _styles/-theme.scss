@@ -26,6 +26,12 @@
 }
 
 :root {
+  // Muted text (provenance stamps, tool taglines, news dates, metrics, ...).
+  // labx.scss refers to this name in ten places; without a definition every one
+  // of them silently inherited the body colour instead of rendering muted.
+  // --gray is already theme-aware (blue-gray in dark, brown-gray in light).
+  --text-color-secondary: var(--gray);
+
   // font families
   --title: "Barlow", sans-serif;
   --heading: "Barlow", sans-serif;

@@ -162,7 +162,7 @@
               <ul>
                 {% for key in member.tools %}
                   {% assign tool = site.data.tools | where: "key", key | first %}
-                  {% if tool %}<li><a href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a> — {{ tool.tagline }}{% if tool.repo != "" %} (<a href="{{ tool.repo }}">repository</a>){% endif %}</li>{% endif %}
+                  {% if tool %}<li><a href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a> — {{ tool.tagline }}{% if tool.repo != "" and tool.private != true %} (<a href="{{ tool.repo }}">repository</a>){% endif %}</li>{% endif %}
                 {% endfor %}
               </ul>
             {% else %}
