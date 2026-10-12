@@ -22,6 +22,31 @@
 {%- unless paper -%}
   {%- assign paper = site.data.abstracts | where: "slug", slug | first -%}
 {%- endunless -%}
+{%- comment -%}
+  The news aggregator records the registry folder it announced, but
+  gen_publications.py collapses Feishu/git twin records by DOI, so that folder
+  slug is often not the slug the site publishes. Fall back to the entry's own
+  DOI, which is unique across the site data (verified: no DOI maps to more than
+  one record), so the card still gets its venue line and chips.
+{%- endcomment -%}
+{%- unless paper -%}
+  {%- if item.url contains "doi.org/" -%}
+    {%- comment -%}
+      No case folding: Liquid `where` is a case-sensitive exact match and the
+      registry stores DOIs in publisher case (e.g. 10.1109/TCBBIO.2025.3613591),
+      byte-identical to the doi.org URL form, so downcasing would break the match.
+    {%- endcomment -%}
+    {%- assign doi = item.url | split: "doi.org/" | last -%}
+    {%- if doi != "" -%}
+      {%- assign matches = site.data.publications | where: "doi", doi -%}
+      {%- assign paper = matches | first -%}
+      {%- unless paper -%}
+        {%- assign matches = site.data.abstracts | where: "doi", doi -%}
+        {%- assign paper = matches | first -%}
+      {%- endunless -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endunless -%}
 <article class="labx-news-item">
   <div class="labx-news-stamp">
     <span class="labx-news-year">{{ y }}</span>
