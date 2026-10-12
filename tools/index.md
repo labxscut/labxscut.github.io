@@ -64,18 +64,23 @@ nav:
   the link 404s for every visitor. `_data/tools.yml` marks those with
   `private: true`. The catalog entry itself stays (the tool is real work and its
   papers still link), only the unreachable URLs are suppressed. A `docs` URL that
-  differs from `repo` is a separate hosted site and stays linkable.
+  differs from `repo` is a separate hosted site and stays linkable, and
+  `benchmarks` are extra public repositories (e.g. a review paper's companion
+  data/code), so either keeps the links block alive on its own. `.size > 0`
+  rather than a bare truthiness test because Liquid treats an empty array as
+  truthy, which would emit an empty links div.
 {% endcomment %}
 {% assign repo_public = true %}
 {% if tool.private %}{% assign repo_public = false %}{% endif %}
 {% assign docs_public = repo_public %}
 {% if tool.docs != tool.repo %}{% assign docs_public = true %}{% endif %}
-{% if repo_public or docs_public or tool.client %}
+{% if repo_public or docs_public or tool.client or tool.benchmarks.size > 0 %}
 <div class="labx-tool-links">
 {% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
 {% if repo_public and tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
 {% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
+{% for extra in tool.benchmarks %}<a href="{{ extra.url }}">{{ extra.label | default: "Benchmark" }}</a>{% endfor %}
 </div>
 {% elsif tool.repo %}
 <p class="labx-tool-private">Source code is not publicly released.</p>

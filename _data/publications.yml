@@ -1443,7 +1443,7 @@
   issue: '6'
   pages: bbad390
   pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
-  repo: ''
+  repo: https://github.com/labxscut/lsareview
   if: '8.6'
   quartile: Q1
   ccf: ''

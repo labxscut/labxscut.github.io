@@ -106,6 +106,12 @@
     approximations built in.
   repo: https://github.com/labxscut/elsa
   docs: https://github.com/labxscut/elsa
+  # Extra code repositories that are not the tool itself. `label` is the link
+  # text on /tools/; `url` must be publicly reachable (qa_check --check-repos
+  # verifies github.com links).
+  benchmarks:
+    - label: Benchmark
+      url: https://github.com/labxscut/lsareview
   tags: [time series, local similarity analysis, microbiome]
   maintainers: []
   papers: [XiaBSB2011ExtendedLocalSimilarity, XiaBioinf2013EfficientStatisticalSignifi, XiaBB2015StatisticalSignificanceApproxim, SunEM2014ExtendedLocalSimilarity, Feishu-2023-Identifying-local-associations-in-biological-ti]

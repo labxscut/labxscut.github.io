@@ -155,6 +155,19 @@ if "--check-repos" in sys.argv:
             elif is_declared:
                 print(f"      STALE FLAG: {tool['key']}.{field} = github.com/{name} "
                       f"is public but tools.yml says private: true")
+        # Extra repositories (e.g. a review paper's benchmark companion) are
+        # always linked, so they must always be public — `private: true` does not
+        # excuse them.
+        for extra in (tool.get("benchmarks") or []):
+            url = str(extra.get("url") or "")
+            if "github.com/" not in url:
+                continue
+            label = f"benchmarks[{extra.get('label') or '?'}]"
+            status, name = public_repo_status(url)
+            if status == "private":
+                private.append((tool["key"], label, name))
+            elif status == "skip":
+                skipped.append((tool["key"], label, name))
     if declared:
         print(f"   private as declared in tools.yml (links suppressed on site): {len(declared)}")
         for key, field, name in declared:
