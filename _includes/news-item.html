@@ -24,11 +24,38 @@
 {%- endunless -%}
 {%- comment -%}
   The news aggregator records the registry folder it announced, but
-  gen_publications.py collapses Feishu/git twin records by DOI, so that folder
-  slug is often not the slug the site publishes. Fall back to the entry's own
-  DOI, which is unique across the site data (verified: no DOI maps to more than
-  one record), so the card still gets its venue line and chips.
+  gen_publications.py collapses Feishu/git twin records and keeps the survivor's
+  slug, so that folder name is often not the slug the site publishes. Resolve it
+  two ways, both derived only from registry data (never guessed):
+    1. `alias_slugs` — the exact list of twin slugs the generator collapsed into
+       each published record (the authoritative mapping);
+    2. the entry's own DOI, which is unique across the site data.
 {%- endcomment -%}
+{%- unless paper -%}
+  {%- comment -%}
+    Plain loop rather than `where_exp … contains`: the runtime is Liquid 4.0 and
+    most records have no `alias_slugs` at all, so `nil contains x` would have to
+    be trusted. An explicit guard is unambiguous on any version.
+  {%- endcomment -%}
+  {%- if slug != "" -%}
+    {%- for candidate in site.data.publications -%}
+      {%- if paper == nil and candidate.alias_slugs -%}
+        {%- for alias in candidate.alias_slugs -%}
+          {%- if alias == slug -%}{%- assign paper = candidate -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if paper == nil -%}
+      {%- for candidate in site.data.abstracts -%}
+        {%- if paper == nil and candidate.alias_slugs -%}
+          {%- for alias in candidate.alias_slugs -%}
+            {%- if alias == slug -%}{%- assign paper = candidate -%}{%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endunless -%}
 {%- unless paper -%}
   {%- if item.url contains "doi.org/" -%}
     {%- comment -%}

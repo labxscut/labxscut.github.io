@@ -227,6 +227,8 @@
   sort_key: '20260101000000'
   published_display: '20260101'
   tools: []
+  alias_slugs:
+  - Feishu-2025-Multi-trait-genome-wide-analysis-identified-ris
 - slug: RenICAITE26MultimodalMathExpl
   title: Generation and Evaluation of Generative AI-Enabled Multimodal Mathematics Explanations
   venue: International Conference on Artificial Intelligence Technology and Education (ICAITE 2026)
@@ -375,6 +377,8 @@
   published_display: ''
   tools:
   - sxEnzHier
+  alias_slugs:
+  - Feishu-2025-EnzHier-Accurate-Enzyme-Function-Prediction-Th
 - slug: WangBIBM2024sxFusion
   title: 'sxFusion: a novel single-cell analysis tool based on cell feature fusion and co-optimization
     of low-rank representation with clustering'
@@ -469,6 +473,8 @@
   sort_key: '20251215000000'
   published_display: '20251215'
   tools: []
+  alias_slugs:
+  - Feishu-2025-sxFusion-a-novel-single-cell-analysis-tool-bas
 - slug: NingJMIR2025Lymph
   title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
     Study of Regional and Temporal Trends'
@@ -620,6 +626,8 @@
   sort_key: '20251118000000'
   published_display: '20251118'
   tools: []
+  alias_slugs:
+  - Feishu-2025-Online-Health-Seeking-Behaviors-and-Information
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
     DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -718,6 +726,8 @@
   published_display: '20251101'
   tools:
   - UGES
+  alias_slugs:
+  - Feishu-2025-A-Unified-Genetic-and-Epigenetic-Model-to-Predi
 - slug: ChenICML25DshiftShort
   title: General and Estimable Learning Bound Unifying Covariate and Concept Shifts
   venue: ICML 2025 DataWorld Workshop
@@ -765,6 +775,8 @@
   sort_key: '20250615000000'
   published_display: '20250615'
   tools: []
+  alias_slugs:
+  - Feishu-2025-General-and-Estimable-Learning-Bound-Unifying-C
 - slug: DuanAPBC2025SNF
   title: A Novel Single-Cell Multi-Modal Data Integration Method Combining Similarity Network Fusion and
     Deep Graph Learning
@@ -800,6 +812,8 @@
   published_display: ''
   tools:
   - sxSNF
+  alias_slugs:
+  - Feishu-2025-A-Novel-Single-Cell-Multi-Modal-Data-Integratio
 - slug: LiangBIBM24ctRhythm
   title: 'CTRhythm: Accurate Atrial Fibrillation Detection from Single-Lead ECG by CNN and Transformer
     Integration'
@@ -902,6 +916,8 @@
   published_display: '20241203'
   tools:
   - CTRhythm
+  alias_slugs:
+  - Feishu-2024-CTRhythm-Accurate-Atrial-Fibrillation-Detectio
 - slug: YangQB24UGESgas
   title: Hierarchical learning of gastric cancer molecular subtypes by integrating multi-modal DNA-level
     omics data and clinical stratification
@@ -1029,6 +1045,8 @@
   published_display: '20240601'
   tools:
   - HCG
+  alias_slugs:
+  - Feishu-2024-Hierarchical-learning-of-gastric-cancer-molecul
 - slug: Feishu-2024-A-comparative-study-of-structural-variant-calli
   title: A comparative study of structural variant calling in WGS from Alzheimer’s disease families
   venue: Life Science Alliance
@@ -1326,6 +1344,8 @@
   published_display: '20240105'
   tools:
   - CCNMF
+  alias_slugs:
+  - Feishu-2024-Joint-inference-of-clonal-structure-using-singl
 - slug: Feishu-2023-Crystal-Structure-of-Fungal-Nonspecific-Phospho
   title: Crystal Structure of Fungal Nonspecific Phospholipase C Unveils a Distinct Catalytic Mechanism
   venue: Journal of Agricultural and Food Chemistry

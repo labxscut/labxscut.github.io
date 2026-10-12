@@ -507,13 +507,28 @@ def entry_quality(entry: dict) -> tuple[int, ...]:
 
 
 def deduplicate(entries: list[dict]) -> tuple[list[dict], int]:
+    """Collapse duplicate records, keeping the highest-quality one.
+
+    The losing records' slugs are preserved on the survivor as ``alias_slugs``.
+    Other pipelines address a paper by its registry folder name — the news
+    aggregator writes ``source: labxManage/Paper/<slug>`` for whichever twin it
+    announced — and without the alias list that name stops resolving once the
+    twin is collapsed here, which silently strips the venue line and author /
+    tool / publication chips from that news card.
+    """
     unique: dict[tuple[str, ...], dict] = {}
+    aliases: dict[tuple[str, ...], list[str]] = {}
     for entry in entries:
         key = publication_key(entry)
+        aliases.setdefault(key, []).append(entry["slug"])
         existing = unique.get(key)
         if existing is None or entry_quality(entry) > entry_quality(existing):
             unique[key] = entry
     result = list(unique.values())
+    for key, entry in unique.items():
+        others = sorted(s for s in aliases[key] if s != entry["slug"])
+        if others:
+            entry["alias_slugs"] = others
     result.sort(key=lambda e: (e.get("sort_key") or "00000101000000", e["title"]), reverse=True)
     return result, len(entries) - len(result)
 
