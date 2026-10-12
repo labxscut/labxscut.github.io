@@ -137,6 +137,7 @@ if "--check-repos" in sys.argv:
     private = []
     skipped = []
     declared = []
+    reachable = []
     for tool in tools:
         # `private: true` is the catalog's own declaration that the repository is
         # not public, so the templates suppress its links. Report it as declared,
@@ -155,6 +156,8 @@ if "--check-repos" in sys.argv:
             elif is_declared:
                 print(f"      STALE FLAG: {tool['key']}.{field} = github.com/{name} "
                       f"is public but tools.yml says private: true")
+            else:
+                reachable.append((tool["key"], field, name))
         # Extra repositories (e.g. a review paper's benchmark companion) are
         # always linked, so they must always be public — `private: true` does not
         # excuse them.
@@ -168,6 +171,8 @@ if "--check-repos" in sys.argv:
                 private.append((tool["key"], label, name))
             elif status == "skip":
                 skipped.append((tool["key"], label, name))
+            else:
+                reachable.append((tool["key"], label, name))
     if declared:
         print(f"   private as declared in tools.yml (links suppressed on site): {len(declared)}")
         for key, field, name in declared:
@@ -182,8 +187,13 @@ if "--check-repos" in sys.argv:
                 "make the repo public, drop the catalog entry, or mark it "
                 "`private: true` so the templates suppress the link"
             )
-    elif not declared:
-        print("   every catalogued repo/docs link is publicly reachable")
+    # List what WAS verified so a silent section can never be mistaken for a pass
+    # (e.g. a renamed `benchmarks` field would otherwise check nothing at all).
+    print(f"   publicly reachable: {len(reachable)}")
+    for key, field, name in reachable:
+        print(f"      {key}.{field} = github.com/{name}")
+    if not private and not skipped:
+        print("   every catalogued repo/docs/benchmark link is publicly reachable")
     if skipped:
         print(f"   could not verify (network/rate limit, not a defect): {len(skipped)}")
         for key, field, name in skipped:
