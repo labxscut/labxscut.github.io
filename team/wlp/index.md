@@ -5,8 +5,8 @@ redirect_from:
 - /wlp/
 - /people/wlp/
 nick: wlp
-title: Dr. Linping Wang
-name_en: Dr. Linping Wang
+title: Linping Wang
+name_en: Linping Wang
 name_zh: 王林萍
 role: PhD student
 degree: PhD

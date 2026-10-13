@@ -5,8 +5,8 @@ redirect_from:
 - /rbz/
 - /people/rbz/
 nick: rbz
-title: Dr. Bozhen Ren
-name_en: Dr. Bozhen Ren
+title: Bozhen Ren
+name_en: Bozhen Ren
 name_zh: 任伯桢
 role: PhD student
 degree: PhD

@@ -1518,8 +1518,8 @@
     pdf: /papers/ChangXia2025AUnifiedGeneticAnd.pdf
     sort_key: '20251101000000'
 - nick: rbz
-  title: Dr. Bozhen Ren
-  name_en: Dr. Bozhen Ren
+  title: Bozhen Ren
+  name_en: Bozhen Ren
   name_zh: 任伯桢
   role: PhD student
   degree: PhD
@@ -1615,8 +1615,8 @@
     sort_key: '20230330000000'
   avatar: /images/avatars/rbz.svg
 - nick: dhy
-  title: Dr. Hongyu Duan
-  name_en: Dr. Hongyu Duan
+  title: Hongyu Duan
+  name_en: Hongyu Duan
   name_zh: 段宏宇
   role: PhD student
   degree: PhD
@@ -1684,8 +1684,8 @@
     sort_key: '20251101000000'
   avatar: /images/avatars/dhy.svg
 - nick: wlp
-  title: Dr. Linping Wang
-  name_en: Dr. Linping Wang
+  title: Linping Wang
+  name_en: Linping Wang
   name_zh: 王林萍
   role: PhD student
   degree: PhD
@@ -1717,26 +1717,9 @@
     pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
     sort_key: '20251215000000'
   avatar: /images/avatars/wlp.svg
-- nick: wxy
-  title: Dr. Xiaoyang Wang
-  name_en: Dr. Xiaoyang Wang
-  name_zh: 王晓阳
-  role: PhD student
-  degree: PhD
-  section: phd
-  start_year: '2024'
-  end_year: ''
-  years: 24i
-  status: active
-  affiliation: ''
-  github: ''
-  has_page: false
-  site: false
-  tools: []
-  papers: []
 - nick: hxy
-  title: Dr. Xinyu Han
-  name_en: Dr. Xinyu Han
+  title: Xinyu Han
+  name_en: Xinyu Han
   name_zh: 韩欣宇
   role: PhD student
   degree: PhD
@@ -1753,26 +1736,9 @@
   - sxLaep
   papers: []
   avatar: /images/avatars/hxy.svg
-- nick: lzm
-  title: Dr. Zhimin Li
-  name_en: Dr. Zhimin Li
-  name_zh: 李智敏
-  role: PhD student
-  degree: PhD
-  section: phd
-  start_year: '2025'
-  end_year: ''
-  years: 25i
-  status: active
-  affiliation: ''
-  github: ZhiminLiMei
-  has_page: false
-  site: false
-  tools: []
-  papers: []
 - nick: kxf
-  title: Dr. Xufeng Kong
-  name_en: Dr. Xufeng Kong
+  title: Xufeng Kong
+  name_en: Xufeng Kong
   name_zh: 孔栩丰
   role: PhD student
   degree: PhD
@@ -1790,8 +1756,8 @@
   papers: []
   avatar: /images/avatars/kxf.svg
 - nick: sqh
-  title: Dr. Qihua Shen
-  name_en: Dr. Qihua Shen
+  title: Qihua Shen
+  name_en: Qihua Shen
   name_zh: 沈启华
   role: PhD student
   degree: PhD
@@ -1868,11 +1834,11 @@
   start_year: '2025'
   end_year: ''
   years: 25i
-  status: active
+  status: inactive
   affiliation: ''
   github: Cqianwen
-  has_page: true
-  site: true
+  has_page: false
+  site: false
   tools:
   - sxSNF
   papers:
@@ -1891,7 +1857,6 @@
     pages: 1-14
     pdf: /papers/DuanXia2026SxsnfSimilarityNetworkFusion.pdf
     sort_key: '20260101000000'
-  avatar: /images/avatars/cqw.svg
 - nick: njt
   title: Jingtai Ning
   name_en: Jingtai Ning

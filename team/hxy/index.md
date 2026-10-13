@@ -5,8 +5,8 @@ redirect_from:
 - /hxy/
 - /people/hxy/
 nick: hxy
-title: Dr. Xinyu Han
-name_en: Dr. Xinyu Han
+title: Xinyu Han
+name_en: Xinyu Han
 name_zh: 韩欣宇
 role: PhD student
 degree: PhD
