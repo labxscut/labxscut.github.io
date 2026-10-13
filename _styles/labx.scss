@@ -232,6 +232,28 @@ p.labx-tool-private {
   white-space: nowrap;
 }
 
+/* Live citation checks appended by _scripts/citation-checks.js. */
+.labx-cite-citedby,
+.labx-cite-scholar {
+  color: var(--text-color-secondary);
+  font-size: 0.9em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.labx-cite-citedby:hover,
+.labx-cite-scholar:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.labx-citations-note {
+  margin-top: 2rem;
+  color: var(--text-color-secondary);
+  font-size: 0.85em;
+  font-weight: var(--semi-bold);
+}
+
 .labx-status {
   display: inline-block;
   padding: 0.15rem 0.5rem;
