@@ -23,6 +23,17 @@ from pathlib import Path
 
 import yaml
 
+# Author-name formats have exactly ONE implementation, in the shared backend
+# library agents/hermes/lib/author_name.py (SOP:
+# agents/sop/labxscut-backend-specs.md § Author names). It is imported rather
+# than copied so this generator, harvest_author_names.py, gen_people.py and the
+# author-name MCP server can never disagree about what a name means.
+from author_name_soT import author_name as _an
+
+first_last = _an.first_last
+strip_honorific = _an.strip_honorific
+display_name = _an.display_name
+
 WORK = Path(os.environ.get("LABX_WORK", "/mnt/d/work"))
 REPO = WORK / "labxscut" / "labxscut.github.io"
 PAPERS = WORK / "advisee" / "hc" / "labxManage" / "Paper"
@@ -237,6 +248,23 @@ def clean(value) -> str:
     return str(value).strip() if value is not None else ""
 
 
+def author_display_name(registry_name: str, name_zh: str, harvest: dict | None,
+                        roster_row: dict | None) -> tuple[str, str]:
+    """Resolve one author's display name through the canonical precedence rule.
+
+    Thin adapter over ``author_name.canonical_author`` that takes the roster row
+    this module already has, instead of its two name fields. See the canonical
+    module for why the roster beats the publisher for lab members.
+    """
+    return _an.canonical_author(
+        registry_name=registry_name,
+        name_zh=name_zh,
+        harvest=harvest,
+        roster_name_en=clean(roster_row.get("name_en")) if roster_row else "",
+        roster_name_zh=clean(roster_row.get("name_zh")) if roster_row else "",
+    )
+
+
 def read_record(path: Path) -> dict:
     """Load a publication.yaml, tolerating the Feishu placeholders (source: ??)."""
     text = path.read_text(encoding="utf-8")
@@ -327,28 +355,51 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     indexing = doc.get("indexing") or {}
     authorship = doc.get("authorship") or {}
 
+    # Citation metadata harvested from Crossref/OpenAlex and written back into
+    # the registry as an appended `citation:` block (see labxManage/Paper).
+    # `citation.authors` is the publisher-authoritative given/family split
+    # harvested by _generators/harvest_author_names.py; each entry carries the
+    # `index` of the registry author it belongs to, so the pairing survives even
+    # if a record ever holds an unnamed placeholder row.
+    cite = doc.get("citation") or {}
+    harvest_by_index: dict[int, dict] = {}
+    if isinstance(cite.get("authors"), list):
+        for h in cite["authors"]:
+            if isinstance(h, dict) and isinstance(h.get("index"), int):
+                harvest_by_index[h["index"]] = h
+
     authors: list[dict] = []
     lab_authors: list[str] = []
-    for author in doc.get("authors") or []:
+    for author_index, author in enumerate(doc.get("authors") or []):
         name_en = clean(author.get("name_en"))
         if not name_en:
             continue
-        match = lookup_author(name_en, clean(author.get("name_zh")), lookup)
+        name_zh = clean(author.get("name_zh"))
+        # Resolve the roster row from the REGISTRY spelling first: that is the
+        # string the guarded lookup was built and tested against (name_key plus
+        # the uniqueness-gated initials index). Falling back to the canonical
+        # spelling can only add a link, never move one.
+        match = lookup_author(name_en, name_zh, lookup)
+        harvest = harvest_by_index.get(author_index)
+        display, name_source = author_display_name(name_en, name_zh, harvest, match)
+        if not match and display != name_en:
+            match = lookup_author(display, name_zh, lookup)
         entry = {
-            "name": name_en,
-            "name_zh": clean(author.get("name_zh")),
+            "name": display,
+            "name_zh": name_zh,
             "role": clean(author.get("role")),
             "level": clean(author.get("level")),
             "affiliation": clean(author.get("affiliation")),
             "nick": match["nick"] if match else "",
+            # Provenance of the displayed name: roster (lab member, curated),
+            # publisher (Crossref/DataCite given+family) or registry (as written,
+            # no fuller evidence available). Never rendered; used by qa_check.
+            "name_source": name_source,
         }
         authors.append(entry)
         if entry["nick"] and entry["nick"] not in lab_authors:
             lab_authors.append(entry["nick"])
 
-    # Citation metadata harvested from Crossref/OpenAlex and written back into
-    # the registry as an appended `citation:` block (see labxManage/Paper).
-    cite = doc.get("citation") or {}
     # Stored dates are canonical YYYYMMDDHHMMSS (logic/sorting); the site shows
     # the YYYYMMDD prefix via the *_display fields.
     published_on = canonical_date(cite.get("published_on"))

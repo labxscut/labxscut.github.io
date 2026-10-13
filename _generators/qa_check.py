@@ -18,6 +18,14 @@ import yaml
 
 from gen_publications import REPO
 
+# Ceiling on authors that fall back to the raw registry string, enforced by
+# --strict. Set from the verified state after the first full harvest (13 names,
+# all inside two records that genuinely cannot align: XiaBB2015 has a registry
+# typo "Fuhrmann" vs the publisher's "Fuhrman", SunJCO2020 has "TF Sun" vs
+# "Thomas Yang Sun"). Raising it requires re-running the harvester and
+# confirming each new fallback is a real non-alignment, not a regression.
+REGISTRY_FALLBACK_BUDGET = 13
+
 data = Path(REPO) / "_data"
 people = yaml.safe_load((data / "people.yml").read_text(encoding="utf-8")) or []
 pubs = yaml.safe_load((data / "publications.yml").read_text(encoding="utf-8")) or []
@@ -149,6 +157,102 @@ if undefined_css_vars and "--strict" in sys.argv:
         f"undefined: {undefined_css_vars}"
     )
 
+
+
+def audit_author_names() -> tuple[list[str], int]:
+    """Enforce the canonical author-name transform on every generated record.
+
+    Publisher imports MUST pass through the shared name transform
+    (agents/hermes/lib/author_name.py, SOP: agents/sop/labxscut-backend-specs.md
+    § Author names). This is the gate that makes "must" mean something: an
+    import that skips the transform, or a generator edit that bypasses
+    ``canonical_author``, leaves a name here in the untransformed registry shape
+    and fails the run instead of silently shipping "DM Ai" next to "Dongmei Ai"
+    for the same person.
+
+    Three things are checked, and the distinctions matter:
+
+    * ``name_source`` must be present on every author. It is the audit trail for
+      which evidence won (roster / publisher / registry), so a record without it
+      means the transform never ran.
+    * A name that DID resolve (roster or publisher) must have canonical SHAPE:
+      every token is either a word or a dotted single letter, with no all-caps
+      abbreviation run, no bracket and no doubled space. Shape is tested rather
+      than re-rendered, because re-splitting "Dongmei Ai" into surname+given is
+      genuinely ambiguous -- both tokens are surname candidates -- so a
+      round-trip check would false-positive on every ordinary two-word name.
+    * ``registry`` names are the documented fallback: the record had no usable
+      DOI, or the publisher list would not align positionally with the registry
+      list, so there is no fuller evidence to prefer and the registry string is
+      kept verbatim (backlog 3.20's own fallback). Those are COUNTED, not
+      failed -- 13 today, all in two records that genuinely cannot align. A jump
+      in that count means the harvester regressed, so --strict gates it.
+    """
+    problems: list[str] = []
+    fallbacks = 0
+    # An all-caps run of 2+ letters is the untransformed registry shape ("DM",
+    # "LC"). A bare single letter with no dot is an initial that lost its dot.
+    caps_run = re.compile(r"(?<![A-Za-z])[A-Z]{2,}(?![A-Za-z])")
+    bracket = re.compile(r"[\(\)\[\]\{\}]")
+    for rel, records in (("_data/publications.yml", pubs), ("_data/abstracts.yml", abstracts)):
+        for paper in records:
+            slug = paper.get("slug") or "?"
+            for i, a in enumerate(paper.get("authors") or []):
+                name = str(a.get("name") or "")
+                source = str(a.get("name_source") or "")
+                if not source:
+                    problems.append(f"{rel} {slug}[{i}] {name!r}: no name_source "
+                                    "(the canonical transform never ran)")
+                    continue
+                if source == "registry":
+                    fallbacks += 1
+                    continue
+                why = ""
+                if not name.strip():
+                    why = "empty name"
+                elif bracket.search(name):
+                    why = f"bracket left in the name: {bracket.search(name).group()!r}"
+                elif name != " ".join(name.split()):
+                    why = "doubled or leading/trailing space"
+                elif caps_run.search(name):
+                    why = f"all-caps abbreviation run {caps_run.search(name).group()!r}"
+                else:
+                    for tok in name.split():
+                        core = tok.strip(".")
+                        if len(core) == 1 and not core.isalpha():
+                            why = f"non-letter token {tok!r}"
+                            break
+                        if len(core) == 1 and not tok.endswith("."):
+                            why = f"undotted initial {tok!r}"
+                            break
+                if why:
+                    problems.append(f"{rel} {slug}[{i}] {name!r}: {why} ({source})")
+    for p in problems[:30]:
+        print("   NONCANONICAL", p)
+    if len(problems) > 30:
+        print(f"   ... and {len(problems) - 30} more")
+    print(f"author names: {len(problems)} non-canonical, {fallbacks} registry fallbacks")
+    return problems, fallbacks
+
+
+print()
+name_problems, name_fallbacks = audit_author_names()
+if "--strict" in sys.argv:
+    if name_problems:
+        raise ValueError(
+            "every author name that resolved from the roster or a publisher "
+            "harvest must be in canonical `First M. Last` form; run "
+            "_generators/harvest_author_names.py and regenerate. Offenders: "
+            + "; ".join(name_problems[:5])
+        )
+    if name_fallbacks > REGISTRY_FALLBACK_BUDGET:
+        raise ValueError(
+            f"{name_fallbacks} authors fell back to the raw registry string, "
+            f"above the budget of {REGISTRY_FALLBACK_BUDGET}. The fallback is "
+            "legitimate only when a record has no usable DOI or its publisher "
+            "list will not align; a jump means the harvester regressed. Run "
+            "_generators/harvest_author_names.py --dry-run to see why."
+        )
 
 
 def public_repo_status(url: str) -> tuple[str, str]:

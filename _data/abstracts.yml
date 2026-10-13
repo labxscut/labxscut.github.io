@@ -34,54 +34,63 @@
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: PV Hummelen
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: B Martin
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  - name: LC Xia
+    name_source: registry
+  - name: Li C. Xia
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   - name: H Lee
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: L Zhao
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: K Hornbacker
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: H Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   - name: PL Kunz
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: registry
   lab_authors:
   - lcx
   pi_track: collaborative
@@ -122,24 +131,28 @@
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   - name: Dongmei Ai
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: adm
+    name_source: roster
   - name: Man Guo
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Hanlee Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   lab_authors:
   - lcx
   - adm
@@ -182,97 +195,114 @@
     level: ''
     affiliation: ''
     nick: ''
-  - name: Li Charlie Xia
+    name_source: publisher
+  - name: Li C. Xia
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
-    nick: ''
+    nick: lcx
+    name_source: publisher
   - name: Stephanie Greer
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: John Bell
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Sue M. Grimes
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  - name: Christina Wood Bouwens
+    name_source: publisher
+  - name: Christina W. Bouwens
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Giwon Shin
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  - name: Billy TC Lau
+    name_source: publisher
+  - name: Billy T. C. Lau
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Lucas Johnson
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Noemi Andor
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Kenneth Day
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Mickey Miller
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Helaman Escobar
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Lincoln Nadauld
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Hanlee P. Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Paul Van Hummelen
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  lab_authors: []
+    name_source: publisher
+  lab_authors:
+  - lcx
   pi_track: collaborative
   sort_key: '20180701000000'
   published_display: '20180701'
@@ -312,54 +342,63 @@
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   - name: John M. Bell
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Christina Wood-Bouwens
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Daniel A. King
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: GiWon Shin
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Stephanie Greer
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Ian D. Connolly
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Melanie H. Gephart
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Hanlee P. Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   lab_authors:
   - lcx
   pi_track: lead
@@ -394,24 +433,27 @@
   xia_rank: 3
   n_authors: 3
   authors:
-  - name: L Nadauld
+  - name: Lincoln Nadauld
     name_zh: ''
     role: first_author
     level: ''
     affiliation: ''
     nick: ''
-  - name: PV Hummelen
+    name_source: publisher
+  - name: Paul Van Hummelen
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-  - name: LC Xia
+    name_source: publisher
+  - name: Li C. Xia
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   lab_authors:
   - lcx
   pi_track: collaborative
@@ -453,48 +495,56 @@
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Trevor A. Graham
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Marnix Jansen
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Li C. Xia
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   - name: Athena Aktipis
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Claudia Petritsch
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Hanlee P. Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Carlo C. Maley
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   lab_authors:
   - lcx
   pi_track: collaborative
@@ -536,30 +586,35 @@
     level: ''
     affiliation: ''
     nick: lcx
+    name_source: roster
   - name: John Bell
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Jiamin Chen
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Nancy R. Zhang
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   - name: Hanlee P. Ji
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
+    name_source: publisher
   lab_authors:
   - lcx
   pi_track: lead
