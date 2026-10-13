@@ -122,5 +122,15 @@
       <a class="labx-chip labx-chip-link" href="/publications/#{{ paper.slug | slugify }}">Publication</a>
     </div>
     {%- endif -%}
+    {%- if item.image and item.image != "" -%}
+    <p class="labx-news-image"><img src="{{ item.image }}" alt="{{ item.alt | default: item.text }}" loading="lazy"></p>
+    {%- endif -%}
+    {%- if item.attachments.size > 0 -%}
+    <div class="labx-news-attachments">
+      {%- for att in item.attachments -%}
+      <a class="labx-chip labx-chip-file" href="{{ att.url }}">{{ att.label | default: "Attachment" }}</a>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
   </div>
 </article>

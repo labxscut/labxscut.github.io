@@ -505,10 +505,25 @@ p.labx-tool-private {
   color: var(--primary);
 }
 
-.labx-news-chips {
+.labx-news-chips,
+.labx-news-attachments {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+}
+
+.labx-news-attachments {
+  margin-top: 0.5rem;
+}
+
+.labx-news-image {
+  margin: 0.6rem 0 0;
+}
+
+.labx-news-image img {
+  max-width: min(22rem, 100%);
+  height: auto;
+  border-radius: var(--rounded);
 }
 
 .labx-chip {
