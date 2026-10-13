@@ -75,6 +75,7 @@
     prediction through a web interface and API.
   repo: https://github.com/labxscut/sxEnzHier
   docs: https://sxwebenz.scutlabx.com/
+  documentation: https://sxwebenz.scutlabx.com/docs
   tags: [enzyme function, protein language models, EC classification]
   maintainers: [dhy]
   papers: [DuanISBRA2025EnzHier, DuanopenRxiv2024EnzHier, Duan2025sxEnzHier]

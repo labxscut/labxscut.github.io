@@ -74,12 +74,19 @@ nav:
 {% if tool.private %}{% assign repo_public = false %}{% endif %}
 {% assign docs_public = repo_public %}
 {% if tool.docs != tool.repo %}{% assign docs_public = true %}{% endif %}
+{% comment %}
+  A hosted service can carry a `documentation` URL distinct from its `docs`
+  homepage (sxEnzHier: the EnzHire service root is the predictor, /docs is its
+  manual). `docs` alone keeps both labels pointing at the same place, which is
+  what the site-hosted docs pages (sxLaep, DeepLB, sxSNF) want.
+{% endcomment %}
+{% assign doc_url = tool.documentation | default: tool.docs %}
 {% if repo_public or docs_public or tool.client or tool.benchmarks.size > 0 %}
 <div class="labx-tool-links">
 {% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Service</a>{% endif %}
 {% if repo_public and tool.repo %}<a href="{{ tool.repo }}">Repository</a>{% endif %}
 {% if tool.client %}<a href="{{ tool.client }}">API client</a>{% endif %}
-{% if docs_public and tool.docs and tool.docs != tool.repo %}<a href="{{ tool.docs }}">Documentation</a>{% endif %}
+{% if docs_public and doc_url and doc_url != tool.repo %}<a href="{{ doc_url }}">Documentation</a>{% endif %}
 {% for extra in tool.benchmarks %}<a href="{{ extra.url }}">{{ extra.label | default: "Benchmark" }}</a>{% endfor %}
 </div>
 {% elsif tool.repo %}
