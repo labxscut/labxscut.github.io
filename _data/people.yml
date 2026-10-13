@@ -122,6 +122,22 @@
     pages: 1278-1283
     pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
     sort_key: '20251215000000'
+  - slug: NingJMIR2025Lymph
+    title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
+      Study of Regional and Temporal Trends'
+    venue: Journal of Medical Internet Research
+    year: '2025'
+    url: https://doi.org/10.2196/80497
+    status: Final
+    pi_track: lead
+    doi: 10.2196/80497
+    published_on: '20251118000000'
+    published_display: '20251118'
+    volume: '27'
+    issue: ''
+    pages: e80497
+    pdf: /papers/NingXia2025OnlineHealthSeekingBehaviors.pdf
+    sort_key: '20251118000000'
   - slug: ChangTCBB2025UGESdeng
     title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
       DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -185,6 +201,21 @@
     pages: 182-196
     pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
     sort_key: '20240601000000'
+  - slug: Feishu-2024-A-comparative-study-of-structural-variant-calli
+    title: A comparative study of structural variant calling in WGS from Alzheimer’s disease families
+    venue: Life Science Alliance
+    year: '2024'
+    url: https://doi.org/10.26508/lsa.202302181
+    status: Final
+    pi_track: collaborative
+    doi: 10.26508/lsa.202302181
+    published_on: '20240501000000'
+    published_display: '20240501'
+    volume: '7'
+    issue: '5'
+    pages: e202302181
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC10902710
+    sort_key: '20240501000000'
   - slug: Feishu-2024-Molecular-mechanism-of-NAD+-and-NMN-binding-to
     title: Molecular mechanism of NAD+ and NMN binding to the Nudix homology domains of DBC1
     venue: International Journal of Biological Macromolecules
@@ -230,6 +261,22 @@
     pages: 16352-16361
     pdf: ''
     sort_key: '20231101000000'
+  - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
+    title: 'Identifying local associations in biological time series: algorithms, statistical significance,
+      and applications'
+    venue: Briefings in Bioinformatics
+    year: '2023'
+    url: https://doi.org/10.1093/bib/bbad390
+    status: Final
+    pi_track: lead
+    doi: 10.1093/bib/bbad390
+    published_on: '20230922000000'
+    published_display: '20230922'
+    volume: '24'
+    issue: '6'
+    pages: bbad390
+    pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
+    sort_key: '20230922000000'
   - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
     title: Tumor tissue microorganisms are closely associated with tumor immune subtypes
     venue: Computers in Biology and Medicine
@@ -245,6 +292,21 @@
     pages: '106774'
     pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
     sort_key: '20230501000000'
+  - slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
+    title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
+    venue: Frontiers in Microbiology
+    year: '2023'
+    url: https://doi.org/10.3389/fmicb.2023.1050130
+    status: Final
+    pi_track: lead
+    doi: 10.3389/fmicb.2023.1050130
+    published_on: '20230330000000'
+    published_display: '20230330'
+    volume: '14'
+    issue: ''
+    pages: '1050130'
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
+    sort_key: '20230330000000'
   - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
     title: Regularized survival learning and cross-database analysis enabled identification of colorectal
       cancer prognosis-related immune genes
@@ -1081,7 +1143,9 @@
   has_page: false
   site: false
   tools:
+  - coreprobe
   - elsa
+  - svengine
   papers:
   - slug: Feishu-2023-Identifying-local-associations-in-biological-ti
     title: 'Identifying local associations in biological time series: algorithms, statistical significance,
@@ -1145,6 +1209,165 @@
     pages: '1148470'
     pdf: https://www.frontiersin.org/articles/10.3389/fgene.2023.1148470/pdf
     sort_key: '20230223000000'
+  - slug: AiFI2022JointAnalysisMicrobial
+    title: Joint analysis of microbial and immune cell abundance in liver cancer tissue using a gene expression
+      profile deconvolution algorithm combined with foreign read remapping
+    venue: Frontiers in Immunology
+    year: '2022'
+    url: https://doi.org/10.3389/fimmu.2022.853213
+    status: Final
+    pi_track: lead
+    doi: 10.3389/fimmu.2022.853213
+    published_on: '20220414000000'
+    published_display: '20220414'
+    volume: '13'
+    issue: ''
+    pages: '853213'
+    pdf: https://www.frontiersin.org/articles/10.3389/fimmu.2022.853213/pdf
+    sort_key: '20220414000000'
+  - slug: AiPeerJ2019AssociationNetworkAnalysis
+    title: Association network analysis identifies enzymatic components of gut microbiota that significantly
+      differ between colorectal cancer patients and healthy controls
+    venue: PeerJ
+    year: '2019'
+    url: https://doi.org/10.7717/peerj.7315
+    status: Final
+    pi_track: lead
+    doi: 10.7717/peerj.7315
+    published_on: '20190729000000'
+    published_display: '20190729'
+    volume: '7'
+    issue: ''
+    pages: e7315
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC6673421
+    sort_key: '20190729000000'
+  - slug: AiFM2019IdentifyingGutMicrobiota
+    title: Identifying gut microbiota associated with colorectal cancer using a zero-inflated lognormal
+      model
+    venue: Frontiers in Microbiology
+    year: '2019'
+    url: https://doi.org/10.3389/fmicb.2019.00826
+    status: Final
+    pi_track: lead
+    doi: 10.3389/fmicb.2019.00826
+    published_on: '20190424000000'
+    published_display: '20190424'
+    volume: '10'
+    issue: ''
+    pages: '826'
+    pdf: https://www.frontiersin.org/articles/10.3389/fmicb.2019.00826/pdf
+    sort_key: '20190424000000'
+  - slug: AiBG2019ExploreMediatedCo
+    title: Explore mediated co-varying dynamics in microbial community using integrated local similarity
+      and liquid association analysis
+    venue: BMC Genomics
+    year: '2019'
+    url: https://doi.org/10.1186/s12864-019-5469-8
+    status: Final
+    pi_track: lead
+    doi: 10.1186/s12864-019-5469-8
+    published_on: '20190401000000'
+    published_display: '20190401'
+    volume: '20'
+    issue: S2
+    pages: '185'
+    pdf: https://bmcgenomics.biomedcentral.com/track/pdf/10.1186/s12864-019-5469-8
+    sort_key: '20190401000000'
+  - slug: AiGenes2019ConstructingMicrobialAssociat
+    title: Constructing the microbial association network from large-scale time series data using Granger
+      causality
+    venue: Genes
+    year: '2019'
+    url: https://doi.org/10.3390/genes10030216
+    status: Final
+    pi_track: lead
+    doi: 10.3390/genes10030216
+    published_on: '20190314000000'
+    published_display: '20190314'
+    volume: '10'
+    issue: '3'
+    pages: '216'
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC6471626
+    sort_key: '20190314000000'
+  - slug: AiGenes2019UsingDecisionTree
+    title: Using decision tree aggregation with random forest model to identify gut microbes associated
+      with colorectal cancer
+    venue: Genes
+    year: '2019'
+    url: https://doi.org/10.3390/genes10020112
+    status: Final
+    pi_track: lead
+    doi: 10.3390/genes10020112
+    published_on: '20190201000000'
+    published_display: '20190201'
+    volume: '10'
+    issue: '2'
+    pages: '112'
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC6410271
+    sort_key: '20190201000000'
+  - slug: XiaGigaSc2018SVEngineEfficientVersatile
+    title: 'SVEngine: an efficient and versatile simulator of genome structural variations with features
+      of cancer clonal evolution'
+    venue: GigaScience
+    year: '2018'
+    url: https://doi.org/10.1093/gigascience/giy081
+    status: Final
+    pi_track: lead
+    doi: 10.1093/gigascience/giy081
+    published_on: '20180701000000'
+    published_display: '20180701'
+    volume: '7'
+    issue: '7'
+    pages: giy081
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC6057526
+    sort_key: '20180701000000'
+  - slug: AiGenes2018CoreProbeNovelAlgorithm
+    title: 'CoreProbe: a novel algorithm for estimating relative abundance based on metagenomic reads'
+    venue: Genes
+    year: '2018'
+    url: https://doi.org/10.3390/genes9060313
+    status: Final
+    pi_track: lead
+    doi: 10.3390/genes9060313
+    published_on: '20180620000000'
+    published_display: '20180620'
+    volume: '9'
+    issue: '6'
+    pages: '313'
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC6027520
+    sort_key: '20180620000000'
+  - slug: AiBG2017IntegratedMetagenomicData
+    title: Integrated metagenomic data analysis demonstrates that a loss of diversity in oral microbiota
+      is associated with Periodontitis
+    venue: BMC Genomics
+    year: '2017'
+    url: https://doi.org/10.1186/s12864-016-3254-5
+    status: Final
+    pi_track: lead
+    doi: 10.1186/s12864-016-3254-5
+    published_on: '20170101000000'
+    published_display: '20170101'
+    volume: '18'
+    issue: S1
+    pages: '1041'
+    pdf: https://bmcgenomics.biomedcentral.com/counter/pdf/10.1186/s12864-016-3254-5
+    sort_key: '20170101000000'
+  - slug: XiaBioinf2013EfficientStatisticalSignifi
+    title: Efficient statistical significance approximation for local association analysis of high-throughput
+      time series data
+    venue: Bioinformatics
+    year: '2013'
+    url: https://doi.org/10.1093/bioinformatics/bts668
+    status: Final
+    pi_track: lead
+    doi: 10.1093/bioinformatics/bts668
+    published_on: '20130115000000'
+    published_display: '20130115'
+    volume: '29'
+    issue: '2'
+    pages: 230-237
+    pdf: https://europepmc.org/api/getPdf?pmcid=PMC4990825
+    sort_key: '20130115000000'
 - nick: lqj
   title: Dr. Qingjiao Li
   name_en: Dr. Qingjiao Li

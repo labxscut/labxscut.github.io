@@ -125,6 +125,22 @@ papers:
   pages: 1278-1283
   pdf: /papers/WangXia2025SxfusionANovelSingle.pdf
   sort_key: '20251215000000'
+- slug: NingJMIR2025Lymph
+  title: 'Online Health-Seeking Behaviors and Information Needs Among Patients With Lymphoma in China:
+    Study of Regional and Temporal Trends'
+  venue: Journal of Medical Internet Research
+  year: '2025'
+  url: https://doi.org/10.2196/80497
+  status: Final
+  pi_track: lead
+  doi: 10.2196/80497
+  published_on: '20251118000000'
+  published_display: '20251118'
+  volume: '27'
+  issue: ''
+  pages: e80497
+  pdf: /papers/NingXia2025OnlineHealthSeekingBehaviors.pdf
+  sort_key: '20251118000000'
 - slug: ChangTCBB2025UGESdeng
   title: A Unified Genetic and Epigenetic Model to Predict Breast Cancer Intrinsic Subtypes Using Large
     DNA-Level Multi-Omics Data and Hierarchical Learning
@@ -188,6 +204,21 @@ papers:
   pages: 182-196
   pdf: /papers/YangXia2024HierarchicalLearningOfGastric.pdf
   sort_key: '20240601000000'
+- slug: Feishu-2024-A-comparative-study-of-structural-variant-calli
+  title: A comparative study of structural variant calling in WGS from Alzheimer’s disease families
+  venue: Life Science Alliance
+  year: '2024'
+  url: https://doi.org/10.26508/lsa.202302181
+  status: Final
+  pi_track: collaborative
+  doi: 10.26508/lsa.202302181
+  published_on: '20240501000000'
+  published_display: '20240501'
+  volume: '7'
+  issue: '5'
+  pages: e202302181
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10902710
+  sort_key: '20240501000000'
 - slug: Feishu-2024-Molecular-mechanism-of-NAD+-and-NMN-binding-to
   title: Molecular mechanism of NAD+ and NMN binding to the Nudix homology domains of DBC1
   venue: International Journal of Biological Macromolecules
@@ -233,6 +264,22 @@ papers:
   pages: 16352-16361
   pdf: ''
   sort_key: '20231101000000'
+- slug: Feishu-2023-Identifying-local-associations-in-biological-ti
+  title: 'Identifying local associations in biological time series: algorithms, statistical significance,
+    and applications'
+  venue: Briefings in Bioinformatics
+  year: '2023'
+  url: https://doi.org/10.1093/bib/bbad390
+  status: Final
+  pi_track: lead
+  doi: 10.1093/bib/bbad390
+  published_on: '20230922000000'
+  published_display: '20230922'
+  volume: '24'
+  issue: '6'
+  pages: bbad390
+  pdf: /papers/AiXia2023IdentifyingLocalAssociationsIn.pdf
+  sort_key: '20230922000000'
 - slug: Feishu-2023-Tumor-tissue-microorganisms-are-closely-associa
   title: Tumor tissue microorganisms are closely associated with tumor immune subtypes
   venue: Computers in Biology and Medicine
@@ -248,6 +295,21 @@ papers:
   pages: '106774'
   pdf: /papers/AiXia2023TumorTissueMicroorganismsAre.pdf
   sort_key: '20230501000000'
+- slug: Feishu-2023-Ksak-A-high-throughput-tool-for-alignment-free
+  title: 'Ksak: A high-throughput tool for alignment-free phylogenetics'
+  venue: Frontiers in Microbiology
+  year: '2023'
+  url: https://doi.org/10.3389/fmicb.2023.1050130
+  status: Final
+  pi_track: lead
+  doi: 10.3389/fmicb.2023.1050130
+  published_on: '20230330000000'
+  published_display: '20230330'
+  volume: '14'
+  issue: ''
+  pages: '1050130'
+  pdf: https://europepmc.org/api/getPdf?pmcid=PMC10098151
+  sort_key: '20230330000000'
 - slug: Feishu-2023-Regularized-survival-learning-and-cross-databas
   title: Regularized survival learning and cross-database analysis enabled identification of colorectal
     cancer prognosis-related immune genes
