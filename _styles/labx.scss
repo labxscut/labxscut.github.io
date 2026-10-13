@@ -464,6 +464,25 @@ p.labx-tool-private {
   color: var(--gray);
 }
 
+/* Kudo line: credits the (co-)first and (co-)corresponding authors of an
+   announced paper as @-mentions. Sits between the venue line and the chips, so
+   it reads as part of the announcement rather than as another chip row. */
+.labx-kudo {
+  margin: 0 0 0.45rem;
+  font-size: 0.88em;
+  line-height: 1.5;
+  color: var(--text-color-secondary);
+}
+
+.labx-kudo-mention {
+  font-weight: var(--semi-bold);
+  white-space: nowrap;
+}
+
+.labx-kudo-mention:hover {
+  color: var(--primary);
+}
+
 .labx-news-chips {
   display: flex;
   flex-wrap: wrap;

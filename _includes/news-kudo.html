@@ -1,0 +1,100 @@
+{%- comment -%}
+  Kudo line for a paper announcement: credits the (co-)first and
+  (co-)corresponding authors as @-mentions that link to their /team/ pages.
+
+  Usage:  {% include news-kudo.html paper=paper %}
+
+  Roles are read from the publication record's own `authors[].role`, never from
+  the broadcast prose in labxManage `message.pa.md`. That distinction is
+  load-bearing: the PA text is written before the version of record and goes
+  stale. Duan2025sxSNF's PA credits Chen/Wang as co-first authors, while the
+  registry — corrected from the published VoR and Crossref — records them as
+  co-authors, with Liu + Xia as co-corresponding. Deriving from the record means
+  the public site can never contradict /publications/.
+
+  Role vocabulary (registry): first_author, co_first_author,
+  corresponding_author, sole_author, co_author. Only the credited roles are
+  named here; co-authors are already listed on the card's author chips, so
+  repeating them would bury the credit this line exists to give.
+
+  A paper whose record carries no credited role gets no kudo line: claiming a
+  first author the registry does not assert would be fabrication.
+{%- endcomment -%}
+{%- assign kudo_paper = include.paper -%}
+{%- assign kudo_first = kudo_paper.authors | where: "role", "first_author" -%}
+{%- assign kudo_cofirst = kudo_paper.authors | where: "role", "co_first_author" -%}
+{%- assign kudo_corres = kudo_paper.authors | where: "role", "corresponding_author" -%}
+{%- assign kudo_sole = kudo_paper.authors | where: "role", "sole_author" -%}
+{%- assign kudo_groups = 0 -%}
+{%- if kudo_first.size > 0 -%}{%- assign kudo_groups = kudo_groups | plus: 1 -%}{%- endif -%}
+{%- if kudo_cofirst.size > 0 -%}{%- assign kudo_groups = kudo_groups | plus: 1 -%}{%- endif -%}
+{%- if kudo_corres.size > 0 -%}{%- assign kudo_groups = kudo_groups | plus: 1 -%}{%- endif -%}
+{%- if kudo_sole.size > 0 -%}{%- assign kudo_groups = kudo_groups | plus: 1 -%}{%- endif -%}
+{%- if kudo_groups > 0 -%}
+{%- assign kudo_line = "" -%}
+{%- assign kudo_done = 0 -%}
+{%- comment -%}
+  Precomputed rather than written as `kudo_done == kudo_groups | minus: 1`:
+  a filter inside a comparison relies on Liquid's precedence rules, and getting
+  it wrong silently drops the serial comma before the last group.
+{%- endcomment -%}
+{%- assign kudo_last = kudo_groups | minus: 1 -%}
+{%- comment -%}
+  Each group renders as "<label> <mentions>". Mentions join as "A, B and C";
+  groups join the same way, so the sentence reads naturally for one credited
+  author or several.
+{%- endcomment -%}
+{%- for kudo_group in (1..4) -%}
+  {%- if kudo_group == 1 -%}
+    {%- assign kudo_list = kudo_sole -%}{%- assign kudo_label = "sole author" -%}
+  {%- elsif kudo_group == 2 -%}
+    {%- assign kudo_list = kudo_first -%}{%- assign kudo_label = "first author" -%}
+  {%- elsif kudo_group == 3 -%}
+    {%- assign kudo_list = kudo_cofirst -%}
+    {%- if kudo_cofirst.size > 1 -%}{%- assign kudo_label = "co-first authors" -%}
+    {%- else -%}{%- assign kudo_label = "co-first author" -%}{%- endif -%}
+  {%- else -%}
+    {%- assign kudo_list = kudo_corres -%}
+    {%- if kudo_corres.size > 1 -%}{%- assign kudo_label = "corresponding authors" -%}
+    {%- else -%}{%- assign kudo_label = "corresponding author" -%}{%- endif -%}
+  {%- endif -%}
+  {%- if kudo_list.size > 0 -%}
+    {%- assign kudo_mentions = "" -%}
+    {%- for kudo_author in kudo_list -%}
+      {%- comment -%}
+        Guard the empty nick explicitly: `where: "nick", ""` matches every person
+        whose nick is blank rather than none, so an unguarded lookup could link
+        an external author to an arbitrary profile. A wrong link publishes the
+        wrong person, which is worse than no link.
+      {%- endcomment -%}
+      {%- assign kudo_person = nil -%}
+      {%- if kudo_author.nick != "" -%}
+        {%- assign kudo_person = site.data.people | where: "nick", kudo_author.nick | first -%}
+      {%- endif -%}
+      {%- if kudo_person and kudo_person.has_page -%}
+        {%- capture kudo_one -%}<a class="labx-kudo-mention" href="/team/{{ kudo_person.nick }}/">@{{ kudo_author.name }}</a>{%- endcapture -%}
+      {%- else -%}
+        {%- capture kudo_one -%}@{{ kudo_author.name }}{%- endcapture -%}
+      {%- endif -%}
+      {%- unless forloop.first -%}
+        {%- if forloop.last -%}{%- assign kudo_mentions = kudo_mentions | append: " and " -%}
+        {%- else -%}{%- assign kudo_mentions = kudo_mentions | append: ", " -%}{%- endif -%}
+      {%- endunless -%}
+      {%- assign kudo_mentions = kudo_mentions | append: kudo_one -%}
+    {%- endfor -%}
+    {%- unless kudo_done == 0 -%}
+      {%- if kudo_done == kudo_last -%}
+        {%- comment -%}
+          The serial comma before "and" only reads correctly with three or more
+          groups; with two, "first author X, and corresponding author Y" is wrong.
+        {%- endcomment -%}
+        {%- if kudo_groups > 2 -%}{%- assign kudo_line = kudo_line | append: ", and " -%}
+        {%- else -%}{%- assign kudo_line = kudo_line | append: " and " -%}{%- endif -%}
+      {%- else -%}{%- assign kudo_line = kudo_line | append: ", " -%}{%- endif -%}
+    {%- endunless -%}
+    {%- assign kudo_line = kudo_line | append: kudo_label | append: " " | append: kudo_mentions -%}
+    {%- assign kudo_done = kudo_done | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+<p class="labx-kudo">Kudos to {{ kudo_line }}.</p>
+{%- endif -%}

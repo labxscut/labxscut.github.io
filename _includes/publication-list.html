@@ -28,7 +28,7 @@
 {% for author in paper.authors %}{% assign person = site.data.people | where: "nick", author.nick | first %}{% if person and person.has_page %}[{{ author.name }}](/team/{{ author.nick }}/){% else %}{{ author.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
 
 {% include citation-line.html paper=paper lead=include.lead %}
-{% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
+{% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}{% include news-anchor.html paper=paper %}
 
 </article>
 {% endfor %}
@@ -42,6 +42,7 @@
 
 {% include citation-line.html paper=paper accepted=true lead=include.lead %}
 {% if paper.tools.size > 0 %}{% for key in paper.tools %}{% assign tool = site.data.tools | where: "key", key | first %}{% if tool %} · [{{ tool.name }}](/tools/#{{ tool.key | slugify }}){% endif %}{% endfor %}{% endif %}
+{% include news-anchor.html paper=paper %}
 
 </article>
 {% endfor %}

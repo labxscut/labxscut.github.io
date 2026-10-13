@@ -74,7 +74,7 @@
     {%- endif -%}
   {%- endif -%}
 {%- endunless -%}
-<article class="labx-news-item">
+<article class="labx-news-item"{% if paper %} id="news-{{ paper.slug | slugify }}"{% endif %}>
   <div class="labx-news-stamp">
     <span class="labx-news-year">{{ y }}</span>
     {%- if mo != "" and mo != nil -%}
@@ -101,6 +101,7 @@
         {%- assign verb = "Published at" -%}
       {%- endif -%}
     <p class="labx-news-venue">{{ verb }} <em>{{ venue }}</em>{% if paper.year != "" %} · {{ paper.year }}{% endif %}</p>
+      {%- include news-kudo.html paper=paper -%}
     <div class="labx-news-chips">
       {%- for author in paper.authors -%}
         {%- if author.nick != "" -%}

@@ -1,0 +1,52 @@
+{%- comment -%}
+  Link a publication to its news announcement, when one exists.
+
+  Usage:  {% include news-anchor.html paper=paper %}
+
+  Emits ` · [Announcement](/news/#news-<slug>)` or nothing at all. The anchor is
+  the `id` news-item.html puts on the card, so this is the reverse of the chips
+  that card already renders (author → /team/, tool → /tools/, Publication →
+  /publications/#slug) and closes the loop both ways.
+
+  Resolution mirrors news-item.html exactly — the news aggregator records the
+  registry folder it announced, which is often a twin slug that
+  gen_publications.py collapsed, so match on this record's slug, then its
+  `alias_slugs`, then its DOI. Emitting nothing when no entry resolves is what
+  keeps this from producing a dead anchor: a link to a nonexistent fragment is
+  worse than no link.
+{%- endcomment -%}
+{%- assign na_found = false -%}
+{%- for na_item in site.data.news -%}
+  {%- unless na_found -%}
+    {%- comment -%}
+      Explicit nil guards rather than `na_item.source contains "/Paper/"`:
+      hand-written news entries carry no `source` and no `url`, and `nil contains
+      x` is implementation-dependent in Liquid. news-item.html avoids it for the
+      same reason.
+    {%- endcomment -%}
+    {%- assign na_source = na_item.source | default: "" | append: "" -%}
+    {%- assign na_url = na_item.url | default: "" | append: "" -%}
+    {%- if na_source contains "/Paper/" -%}
+      {%- assign na_slug = na_source | split: "/Paper/" | last -%}
+      {%- if na_slug == paper.slug -%}
+        {%- assign na_found = true -%}
+      {%- else -%}
+        {%- for na_alias in paper.alias_slugs -%}
+          {%- if na_alias == na_slug -%}{%- assign na_found = true -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- comment -%}
+      No case folding on the DOI: Liquid `where`/`==` are case-sensitive and the
+      registry stores DOIs in publisher case, byte-identical to the doi.org URL
+      form, so downcasing either side would break the match.
+    {%- endcomment -%}
+    {%- unless na_found -%}
+      {%- if paper.doi != "" and na_url contains "doi.org/" -%}
+        {%- assign na_doi = na_url | split: "doi.org/" | last -%}
+        {%- if na_doi == paper.doi -%}{%- assign na_found = true -%}{%- endif -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- if na_found %} · [Announcement](/news/#news-{{ paper.slug | slugify }}){%- endif -%}
