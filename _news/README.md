@@ -15,6 +15,8 @@ python _generators/gen_news.py --write
 
 `<stem>.md`, where `<stem>` becomes the entry's `source: news/<stem>`. Use a
 date-prefixed stem so files sort chronologically, e.g. `20260518-sxlaep-release.md`.
+Copy `_TEMPLATE-award.md` for an award announcement (files starting with `_` or
+`.`, and `README.md`, are skipped by the generator).
 
 ```markdown
 ---
