@@ -855,9 +855,9 @@
   venue_short: Asia Pacific Bioinformatics Conference
   venue_type: conference
   venue_full: Asia Pacific Bioinformatics Conference (APBC 2025)
-  venue_location: ''
-  venue_dates: ''
-  presentation: ''
+  venue_location: Nanjing, China
+  venue_dates: 20250919/20250922
+  presentation: regular
   category: other
   pi_role: 通讯作者
   year: '2025'
