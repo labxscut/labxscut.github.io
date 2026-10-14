@@ -229,34 +229,44 @@ only verified profile data.
 - Tool documentation pages under `tools/<slug>/` use `layout: null` and are
   copied verbatim from each tool repository, so they do **not** load analytics.
   Adding it there would mean editing generated output — do not.
-- **The public visitor counter is OFF and cannot be enabled with the API
-  token.** `https://labxscut.goatcounter.com/counter/<path>.json` returns
-  `403: Need to enable the 'allow using the visitor counter' setting`. That
-  setting is `settings.allow_counter` on the site (id `116336`).
-  - The `S-GoatCounter-API` token has permissions `67` = Stats(64) + Count(1).
-    It lacks site-read(8) and site-update(32), so
-    `PATCH /api/v0/sites/{id}` returns `403 requires 'site-update'
-    permissions`. Do not retry — it will never work with that token.
-  - Enabling it therefore needs an interactive login at
-    `https://labxscut.goatcounter.com/` → Settings → “Allow adding visitor
-    counts on your website”. Login is rate-limited to 20 attempts/60s.
-  - As of 2026-10-14 the password in vault row `S-GoatCounter` does **not**
-    match: the login POST redirects to `/user/new?email=…`, which in
-    `handlers/user.go requestLogin` is specifically the bcrypt-mismatch branch
-    (a missing account redirects to `/user/new` with no `email` param; an
-    account with no password redirects to `/user/forgot`). Fix the vault row
-    before automating this.
-  - If automating the form: `handlers/settings.go mainSave` assigns
-    `site.Settings = args.Settings` — a **full replace**, not a merge. A
-    partial POST silently blanks `data_retention`, `ignore_ips`, the collect
-    flags, and the public-dashboard secret. Parse the live form and resubmit
-    every field, changing only `settings.allow_counter`.
-- Turning the counter on is a **public data disclosure**: it exposes per-page
-  view counts to anyone who fetches the counter URL. Decide that deliberately.
-- **Reading counts back does not need that setting.** The `/counter/<path>.json`
-  badge endpoint is blocked, but the authenticated admin API is not:
-  `GET /api/v0/stats/hits?start=YYYY-MM-DD&end=YYYY-MM-DD&limit=1000` returns
-  every path with its total (`hits[].path`, `.count`, `.event`). Both
+- **The public visitor counter is ON** (enabled 2026-10-14).
+  `https://labxscut.goatcounter.com/counter/<path>.json` returns the count, and
+  the `.svg` / `.png` / `.html` badge variants all serve 200. The setting is
+  `settings.allow_counter` on the site (id `116336`); the special path `TOTAL`
+  gives the site total. Responses are cached up to four hours, so new pageviews
+  do not appear immediately.
+  - **This is a public data disclosure by design**: anyone can read per-page
+    view counts from that URL. The internal dashboard is unaffected and stays
+    private. Turn it back off in Settings → “Allow adding visitor counts on
+    your website” if that is ever unwanted.
+  - The `S-GoatCounter-API` token **cannot** change this setting. It has
+    permissions `67` = Stats(64) + Count(1) and lacks site-read(8) and
+    site-update(32), so `PATCH /api/v0/sites/{id}` returns
+    `403 requires 'site-update' permissions`. Do not retry — it will never work
+    with that token. Changing site settings needs the `S-GoatCounter` web login.
+  - Login is rate-limited to 20 attempts/60s. A failed login is diagnosable
+    from its redirect: `/user/new?email=…` is specifically the bcrypt-mismatch
+    branch in `handlers/user.go requestLogin` (a missing account redirects to
+    `/user/new` with no `email` param; an account with no password redirects to
+    `/user/forgot`). That is how the stale vault password was identified.
+  - If automating the settings form, two traps:
+    - `handlers/settings.go mainSave` assigns `site.Settings = args.Settings` —
+      a **full replace**, not a merge. A partial POST silently blanks
+      `data_retention`, `ignore_ips`, the collect flags, and the public-dashboard
+      secret. Parse the live form and resubmit every field.
+    - `allow_counter` uses the checkbox + hidden-fallback pattern
+      (`<input type=checkbox>` immediately followed by
+      `<input type=hidden value=off>`). A browser with the box ticked submits
+      `on` **then** `off` in document order and the server keeps the first
+      value. Appending `on` at the end of the field list sends `[off, on]` and
+      silently no-ops, so the value must be injected at the checkbox's own
+      position.
+- **Reading counts back works two ways.** The public `/counter/<path>.json`
+  badge endpoint (now that `allow_counter` is on), and the authenticated admin
+  API: `GET /api/v0/stats/hits?start=YYYY-MM-DD&end=YYYY-MM-DD&limit=1000`
+  returns every path with its total (`hits[].path`, `.count`, `.event`). The
+  generator uses the API, not the badge endpoint, because the API returns all
+  paths in one call and needs no public disclosure. Both
   `Authorization: Bearer <token>` and HTTP Basic with an **empty username and
   the token as the password** are accepted; the token as the *username* is a
   `401`. Dates must be date-only — appending `T00:00` returns `400`, not a
