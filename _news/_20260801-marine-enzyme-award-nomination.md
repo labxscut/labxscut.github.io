@@ -5,6 +5,12 @@ text: A marine enzyme preparation project co-authored by LabX entered public
   nomination.
 ---
 
+<!-- HIDDEN 2026-10-15 at PI request: the leading "_" in this filename makes
+     gen_news.py skip it, so it is absent from _data/news.yml and /news/. The
+     content is kept ready — rename to 20260801-marine-enzyme-award-nomination.md
+     and re-run gen_news.py --write to republish. Do not treat this file as a
+     template (that is _TEMPLATE-award.md) and do not delete it. -->
+
 The project "海洋生物来源高附加值酶制剂的创制及工业化应用" (Creation and
 Industrial Application of High Value-Added Enzymes from Marine Biological
 Resources) entered public notice (公示) on 2026-08-01 as a recommended entry for

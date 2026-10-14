@@ -9,11 +9,6 @@
 # record or the _news/ file, not this generated file.
 # Date convention: `date` is canonical YYYYMMDDHHMMSS (sorting/logic only);
 # `date_display` is the YYYYMMDD shown on the site.
-- date: '20260801000000'
-  date_display: '20260801'
-  text: A marine enzyme preparation project co-authored by LabX entered public notice (公示) as a 2026 Natural
-    Resources Science and Technology Award nomination.
-  source: news/20260801-marine-enzyme-award-nomination
 - date: '20260523000000'
   date_display: '20260523'
   text: DeepLB pipeline documentation is published under /deeplb/.
