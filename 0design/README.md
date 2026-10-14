@@ -229,6 +229,30 @@ only verified profile data.
 - Tool documentation pages under `tools/<slug>/` use `layout: null` and are
   copied verbatim from each tool repository, so they do **not** load analytics.
   Adding it there would mean editing generated output — do not.
+- **The public visitor counter is OFF and cannot be enabled with the API
+  token.** `https://labxscut.goatcounter.com/counter/<path>.json` returns
+  `403: Need to enable the 'allow using the visitor counter' setting`. That
+  setting is `settings.allow_counter` on the site (id `116336`).
+  - The `S-GoatCounter-API` token has permissions `67` = Stats(64) + Count(1).
+    It lacks site-read(8) and site-update(32), so
+    `PATCH /api/v0/sites/{id}` returns `403 requires 'site-update'
+    permissions`. Do not retry — it will never work with that token.
+  - Enabling it therefore needs an interactive login at
+    `https://labxscut.goatcounter.com/` → Settings → “Allow adding visitor
+    counts on your website”. Login is rate-limited to 20 attempts/60s.
+  - As of 2026-10-14 the password in vault row `S-GoatCounter` does **not**
+    match: the login POST redirects to `/user/new?email=…`, which in
+    `handlers/user.go requestLogin` is specifically the bcrypt-mismatch branch
+    (a missing account redirects to `/user/new` with no `email` param; an
+    account with no password redirects to `/user/forgot`). Fix the vault row
+    before automating this.
+  - If automating the form: `handlers/settings.go mainSave` assigns
+    `site.Settings = args.Settings` — a **full replace**, not a merge. A
+    partial POST silently blanks `data_retention`, `ignore_ips`, the collect
+    flags, and the public-dashboard secret. Parse the live form and resubmit
+    every field, changing only `settings.allow_counter`.
+- Turning the counter on is a **public data disclosure**: it exposes per-page
+  view counts to anyone who fetches the counter URL. Decide that deliberately.
 
 ## Build and deployment
 
