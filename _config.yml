@@ -17,6 +17,17 @@ goatcounter:
   code: labxscut
   allow_local: false
 
+# Popularity marks derived from the GoatCounter clicks above.
+#
+# `_data/clicks.yml` is baked locally by `_generators/gen_clicks.py`, which reads
+# the admin API with the vault token; the token never enters this repo, so Pages
+# stays static. Nothing renders until the counter crosses `min_events` -- with a
+# handful of clicks a "top 3" would only rank noise. Raise the threshold (or set
+# `enabled: false`) to hide the marks again.
+clicks:
+  enabled: true
+  min_events: 30
+
 defaults:
   - scope:
       path: ""

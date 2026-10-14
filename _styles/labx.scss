@@ -262,6 +262,23 @@ p.labx-tool-private {
   font-size: 0.85em;
 }
 
+/* Popularity mark from _data/clicks.yml (see _includes/hot-mark.html). A warm
+   accent so it reads as "traffic" rather than the neutral status pills; the
+   count that follows is secondary text. */
+.labx-hot {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: #c0562f;
+  color: #fff;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  vertical-align: 0.1em;
+}
+
 /* ---- Front-end visual pass (2026-10-09) ---- */
 
 /* Home hero motif: theme-adaptive (currentColor picks up text color). */

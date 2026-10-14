@@ -1,0 +1,26 @@
+{%- comment -%
+  Popularity mark for one tool or publication.
+
+  Usage:  {% include hot-mark.html id=tool.key hot=site.data.clicks.hot_tools counts=site.data.clicks.counts.tools %}
+          {% include hot-mark.html id=paper.slug hot=site.data.clicks.hot_papers counts=site.data.clicks.counts.papers %}
+
+  Emits nothing unless every gate passes:
+
+    1. `clicks.enabled` is set in _config.yml;
+    2. the counter has totalled at least `clicks.min_events` tracked events
+       (gen_clicks.py writes _data/clicks.yml). Until real traffic accrues a
+       "top 3" would only rank noise, so the whole feature stays invisible;
+    3. this item is in the hot list (the top three by clicks, each with at
+       least one click).
+
+  The click count is printed next to the mark so the ranking is legible rather
+  than decorative. `counts` is a map keyed by the same id, so an item that is
+  hot but somehow missing from the map still gets its mark with no number.
+{%- endcomment -%}
+{%- assign cfg = site.clicks -%}
+{%- assign data = site.data.clicks -%}
+{%- if cfg.enabled != false and data and data.totals.events >= cfg.min_events and include.hot contains include.id -%}
+<span class="labx-hot" title="Top {{ include.hot | size }} by clicks">Hot</span>
+{%- assign n = include.counts[include.id] -%}
+{%- if n > 1 %} · {{ n }} clicks{%- elsif n == 1 %} · 1 click{%- endif %}
+{%- endif -%}
