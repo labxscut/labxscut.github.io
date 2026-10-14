@@ -176,6 +176,60 @@ Generated section pages use `member-section` and the section definitions in
 for hand-maintained pages. Treat the roster as the source of truth and show
 only verified profile data.
 
+## Analytics
+
+- Click counting is client-side only: GitHub Pages has no server or database, so
+  nothing can be counted at build or request time. `_includes/analytics.html`
+  (first include in `head.html`) is the single hook; it emits the GoatCounter
+  `count.js` tag and nothing else.
+- GoatCounter was chosen because it is the only option that is both free-hosted
+  and explicitly permitted for non-commercial sites, needs no cookie banner
+  (no cookies, no persistent identifiers), and adds ~3.5 KB. Plausible has no
+  free hosted tier; Umami Cloud free tier caps retention and sites; GA4 needs a
+  consent banner and is the most blocked by ad blockers.
+- Configuration lives in `_config.yml` under `goatcounter:` (`code`,
+  `allow_local`). **While `code` is unset the include renders nothing** and no
+  data leaves the visitor's browser — this is deliberate so local previews and
+  an unconfigured deploy stay silent. Do not hardcode an endpoint in the
+  include.
+- The `code: labxscut` counter is a real GoatCounter account (site code
+  `labxscut`, verified admin email `lcxia@scut.edu.cn`); the dashboard is
+  `https://labxscut.goatcounter.com/`. Admin login and a scoped API token
+  (record pageviews + read statistics, this site only) live in the account
+  vault as rows **`S-GoatCounter`** and **`S-GoatCounter-API`** — never in git
+  (`agents/sop/account-vault-path.md`). If hits stop arriving, check that the
+  counter still exists at that URL: a missing account returns
+  `error 400: no site at this domain`, which the beacon swallows silently.
+- `_scripts/goatcounter-events.js` sends the custom events: `keyword:<term>`
+  (publications topic cloud), `paper:<file>.pdf` (local PDF opens), and
+  `outbound:<host><path>` (links leaving the site). Event names must not start
+  with `/` and use `no_session` so every click counts. It keys off the
+  `script[data-goatcounter]` tag, so it is inert when analytics are off, and it
+  queues events until the `async` counter script has loaded.
+- GoatCounter's own `count.js` filters `localhost`, private ranges, `file://`,
+  frames, prerender, and headless browsers; `allow_local: true` lifts only the
+  local-address filter. Ad blockers still under-count (commonly 10–40%), so
+  treat event totals as relative, not absolute.
+- **The counter script is vendored** at `assets/goatcounter/count.js` and served
+  same-origin, not loaded from the documented `//gc.zgo.at/count.js`. That host
+  does not resolve correctly from mainland-China networks (it answers with
+  unrelated IPs and the request times out), so the documented integration would
+  silently collect nothing from most of this lab's visitors. The vendored copy
+  is byte-identical to upstream `public/count.js` (ISC license, git blob
+  `3b5f6bc87a35c67875fd3efe52e75f8317949d85`). Only the hit beacons still go to
+  `<code>.goatcounter.com`, which does resolve and answer correctly here.
+  Refresh the vendored file deliberately from upstream; never hand-edit it.
+  `assets/` is tracked (`/vendor/` is gitignored for the Ruby bundler tree, so
+  do not put site assets there).
+- Verified end to end in a real browser against the live counter: pageview,
+  `keyword:`, `paper:`, and `outbound:` beacons all returned HTTP 200; internal
+  links, in-page anchors, and `mailto:` sent nothing; with `allow_local` absent
+  localhost sent nothing and `count.js` logged
+  `not counting because of: localhost`.
+- Tool documentation pages under `tools/<slug>/` use `layout: null` and are
+  copied verbatim from each tool repository, so they do **not** load analytics.
+  Adding it there would mean editing generated output — do not.
+
 ## Build and deployment
 
 - GitHub Pages is configured for the legacy `main` branch, repository root

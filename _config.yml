@@ -13,6 +13,10 @@ links:
   github: labxscut
   google-scholar: e1GOPw0AAAAJ
 
+goatcounter:
+  code: labxscut
+  allow_local: false
+
 defaults:
   - scope:
       path: ""

@@ -1,3 +1,47 @@
-<!--
-  put your analytics (e.g. Google Analytics) tracking code here
--->
+{%- comment -%}
+  GoatCounter (https://www.goatcounter.com) — privacy-friendly, cookie-free
+  analytics. Free hosted tier for non-commercial sites, which covers this lab.
+
+  Configure in _config.yml:
+
+    goatcounter:
+      code: mycode        # -> https://mycode.goatcounter.com/count
+      allow_local: false  # true also counts localhost/LAN previews
+
+  `code` may also be a full endpoint URL. Leaving it empty renders nothing at
+  all, so an unconfigured or local build sends no data and
+  _scripts/goatcounter-events.js stays inert (it keys off the
+  `script[data-goatcounter]` tag written below).
+
+  count.js filters localhost, private IPs, file://, frames, and prerender by
+  itself; `allow_local: true` lifts only the local-address filter. Visitors can
+  opt themselves out with the `#toggle-goatcounter` hash.
+
+  The counter script is vendored at assets/goatcounter/count.js rather than
+  loaded from the documented //gc.zgo.at/count.js. That host does not resolve
+  correctly from mainland-China networks (it answers with unrelated IPs and
+  times out), which would silently collect nothing from most of this lab's
+  visitors. The vendored copy is byte-identical to upstream `public/count.js`
+  (ISC license, git blob 3b5f6bc87a35c67875fd3efe52e75f8317949d85) and is served
+  same-origin. Only the hit beacons still go to <code>.goatcounter.com.
+  Refresh it deliberately; do not hand-edit it.
+
+  This include must stay first in head.html: goatcounter-events.js looks for
+  the tag below, and count.js reads its endpoint from it.
+{%- endcomment -%}
+{%- assign gc = site.goatcounter -%}
+{%- if gc.code and gc.code != "" -%}
+  {%- if gc.code contains "://" -%}
+    {%- assign endpoint = gc.code -%}
+  {%- else -%}
+    {%- assign endpoint = "https://" | append: gc.code | append: ".goatcounter.com/count" -%}
+  {%- endif -%}
+  <script
+    data-goatcounter="{{ endpoint | xml_escape }}"
+    {%- if gc.allow_local %}
+    data-goatcounter-settings='{"allow_local": true}'
+    {%- endif %}
+    async
+    src="{{ '/assets/goatcounter/count.js' | relative_url }}"
+  ></script>
+{%- endif -%}
