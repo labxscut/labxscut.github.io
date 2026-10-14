@@ -94,6 +94,22 @@
           <h3>Research interests</h3>
           <p>{{ member.research_interests | join: " · " }}</p>
         {% endif %}
+        {% assign mkw = site.data.member_keywords | where: "nick", member.nick | first %}
+        {% if mkw.terms.size > 0 %}
+          <h3>Research topics</h3>
+          {% assign maxc = mkw.terms.first.count | times: 1.0 %}
+          <div class="labx-cloud labx-cloud-member">
+          {%- for t in mkw.terms -%}
+            {%- assign ratio = t.count | times: 1.0 | divided_by: maxc -%}
+            {%- if ratio >= 0.8 and t.count >= 2 -%}{%- assign lvl = "xl" -%}
+            {%- elsif ratio >= 0.6 -%}{%- assign lvl = "lg" -%}
+            {%- elsif ratio >= 0.45 -%}{%- assign lvl = "md" -%}
+            {%- else -%}{%- assign lvl = "sm" -%}
+            {%- endif -%}
+            <span class="labx-keyword labx-keyword-{{ lvl }}" data-tooltip="{{ t.count }} papers">{{ t.term }}</span>
+          {%- endfor -%}
+          </div>
+        {% endif %}
       </section>
     {% else %}
       <section class="labx-member-section">

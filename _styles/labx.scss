@@ -365,6 +365,21 @@ p.labx-tool-private {
   margin: 1rem 0 0.5rem;
 }
 
+/* Member profile sidebar: left-aligned, tighter, so the cloud fits the column. */
+.labx-cloud-member {
+  justify-content: flex-start;
+  gap: 0.25rem 0.6rem;
+  margin: 0.5rem 0 0;
+}
+
+.labx-cloud-member .labx-keyword {
+  cursor: default;
+}
+
+.labx-cloud-member .labx-keyword:hover {
+  text-decoration: none;
+}
+
 .labx-keyword {
   line-height: 1.15;
   color: var(--text);
