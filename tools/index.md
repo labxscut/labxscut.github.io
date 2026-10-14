@@ -13,9 +13,31 @@ nav:
 
 {% include intro.html value=site.data.intros.tools.intro %}
 
+{% comment %}
+  Popularity sort. When the counter has crossed `clicks.min_events` (and
+  `clicks.enabled` is not false), list tools in the click order baked into
+  _data/clicks.yml by gen_clicks.py; otherwise keep the curated order in
+  _data/tools.yml. `tool_order` already contains every key, so the grid is
+  never missing a tool -- unclicked ones simply fall to the back.
+{% endcomment %}
+{%- assign clicks = site.data.clicks -%}
+{%- assign use_order = false -%}
+{%- if site.clicks.enabled != false and clicks and clicks.totals.events >= site.clicks.min_events -%}
+  {%- assign use_order = true -%}
+{%- endif -%}
+{%- assign ordered_tools = "" | split: "" -%}
+{%- if use_order -%}
+  {%- for tkey in clicks.tool_order -%}
+    {%- assign t = site.data.tools | where: "key", tkey | first -%}
+    {%- if t -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- assign ordered_tools = site.data.tools -%}
+{%- endif -%}
+
 <div class="labx-tools-grid">
 
-{% for tool in site.data.tools %}
+{% for tool in ordered_tools %}
 <article class="labx-tool" markdown="1">
 
 <div class="labx-tool-head">
@@ -24,7 +46,7 @@ nav:
 
 <h2 id="{{ tool.key | slugify }}">{{ tool.name }}</h2>
 
-<span class="labx-tool-tagline">{{ tool.tagline }}</span>
+<span class="labx-tool-tagline">{{ tool.tagline }}{% include hot-mark.html id=tool.key hot=clicks.hot_tools counts=clicks.counts.tools %}</span>
 
 </div>
 </div>
