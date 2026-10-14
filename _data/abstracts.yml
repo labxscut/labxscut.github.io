@@ -2,12 +2,12 @@
 # Source: advisee/hc/labxManage/Paper/<slug>/publication.yaml (meeting abstracts and posters).
 - slug: SunJCO2020ComprehensiveGenomicSequencing
   title: Comprehensive genomic sequencing of high-grade neuroendocrine neoplasms
-  venue: Journal of Clinical Oncology
-  venue_short: Journal of Clinical Oncology
+  venue: ASCO Genitourinary Cancers Symposium 2020 Abstracts (Journal of Clinical Oncology)
+  venue_short: ASCO Genitourinary Cancers Symposium
   venue_type: conference
-  venue_full: Journal of Clinical Oncology
-  venue_location: ''
-  venue_dates: ''
+  venue_full: ASCO Genitourinary Cancers Symposium 2020 Abstracts (Journal of Clinical Oncology)
+  venue_location: San Francisco, California
+  venue_dates: 20200213/20200215
   presentation: abstract
   category: collaborative
   pi_role: ''
@@ -103,8 +103,8 @@
   venue_short: AACR Annual Meeting
   venue_type: conference
   venue_full: AACR Annual Meeting 2019 Abstracts (Cancer Research)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Atlanta, Georgia
+  venue_dates: 20190329/20190403
   presentation: abstract
   category: research
   pi_role: first_author
@@ -167,8 +167,8 @@
   venue_short: AACR Annual Meeting
   venue_type: conference
   venue_full: AACR Annual Meeting 2018 Abstracts (Cancer Research)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Chicago, Illinois
+  venue_dates: 20180414/20180418
   presentation: abstract
   category: collaborative
   pi_role: co_author
@@ -314,8 +314,8 @@
   venue_short: AACR Annual Meeting
   venue_type: conference
   venue_full: AACR Annual Meeting 2018 Abstracts (Cancer Research)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Chicago, Illinois
+  venue_dates: 20180414/20180418
   presentation: abstract
   category: research
   pi_role: first_author
@@ -407,12 +407,12 @@
   tools: []
 - slug: NadauldJCO2018LossTp53As
   title: Loss of TP53 as a prognostic biomarker of poor survival in stage III colorectal cancer patients
-  venue: Journal of Clinical Oncology
-  venue_short: Journal of Clinical Oncology
+  venue: ASCO Annual Meeting 2018 Abstracts (Journal of Clinical Oncology)
+  venue_short: ASCO Annual Meeting
   venue_type: conference
-  venue_full: Journal of Clinical Oncology
-  venue_location: ''
-  venue_dates: ''
+  venue_full: ASCO Annual Meeting 2018 Abstracts (Journal of Clinical Oncology)
+  venue_location: Chicago, Illinois
+  venue_dates: 20180601/20180605
   presentation: abstract
   category: collaborative
   pi_role: ''
@@ -467,8 +467,8 @@
   venue_short: AACR Annual Meeting
   venue_type: conference
   venue_full: AACR Annual Meeting 2016 Abstracts (Cancer Research)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: New Orleans, Louisiana
+  venue_dates: 20160416/20160420
   presentation: abstract
   category: collaborative
   pi_role: co_author
@@ -558,8 +558,8 @@
   venue_short: AACR Annual Meeting
   venue_type: conference
   venue_full: AACR Annual Meeting 2015 Abstracts (Cancer Research)
-  venue_location: ''
-  venue_dates: ''
+  venue_location: Philadelphia, Pennsylvania
+  venue_dates: 20150418/20150422
   presentation: abstract
   category: research
   pi_role: first_author
