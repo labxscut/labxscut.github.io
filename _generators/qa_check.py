@@ -255,6 +255,100 @@ if "--strict" in sys.argv:
         )
 
 
+def audit_news() -> tuple[list[str], list[str], int]:
+    """Enforce the two news-feed rules the PI set, on the committed data.
+
+    The lead-only rule is applied by the aggregator when it WRITES news.yml, and
+    a hand-written ``_news/*.md`` entry never passes through that gate at all.
+    Without this audit the rule is only a convention: adding a collaborative
+    paper by hand would ship it silently.
+
+    Returns ``(collaborative_announcements, dead_announcement_links, n_entries)``.
+
+    Resolution mirrors ``_includes/news-item.html`` and ``news-anchor.html``
+    exactly — slug, then the site's recorded ``alias_slugs``, then the DOI —
+    because the feed stores the registry FOLDER, which is often a twin slug
+    gen_publications.py collapsed. A lookup that differs from the templates'
+    would flag entries the site cannot resolve, or miss ones it can.
+    """
+    news = yaml.safe_load((data / "news.yml").read_text(encoding="utf-8")) or []
+    rows = news if isinstance(news, list) else next(
+        (v for v in news.values() if isinstance(v, list)), [])
+
+    by_slug: dict[str, dict] = {}
+    by_alias: dict[str, dict] = {}
+    by_doi: dict[str, dict] = {}
+    for rec in list(pubs) + list(abstracts):
+        if not isinstance(rec, dict) or not rec.get("slug"):
+            continue
+        by_slug[str(rec["slug"])] = rec
+        doi = str(rec.get("doi") or "").strip()
+        if doi:
+            by_doi.setdefault(doi.lower(), rec)
+        for alias in rec.get("alias_slugs") or []:
+            by_alias.setdefault(str(alias), rec)
+
+    def resolve(item: dict) -> dict | None:
+        src = str(item.get("source") or "")
+        if "/Paper/" in src:
+            slug = src.split("/Paper/")[-1]
+            rec = by_slug.get(slug) or by_alias.get(slug)
+            if rec:
+                return rec
+        url = str(item.get("url") or "")
+        if "doi.org/" in url:
+            return by_doi.get(url.split("doi.org/")[-1].lower())
+        return None
+
+    offenders: list[str] = []
+    announced_by: dict[str, list[str]] = {}
+    for item in rows:
+        rec = resolve(item)
+        if rec is None:
+            continue
+        announced_by.setdefault(str(rec["slug"]), []).append(
+            str(item.get("source") or item.get("text")))
+        if str(rec.get("pi_track")) == "collaborative":
+            offenders.append(
+                f"{item.get('source') or item.get('text')} -> {rec['slug']} "
+                f"(pi_track=collaborative)")
+
+    # news-item.html stamps id="news-<slug>" from the record it resolved, so two
+    # feed entries pointing at ONE record emit duplicate ids on /news/, and the
+    # reverse "Announcement" link from the paper card becomes ambiguous. The
+    # aggregator dedups by DOI/title and gen_news yields to a managed URL, but a
+    # hand-written _news/*.md file sharing a DOI with another _news file is not
+    # covered by either -- so check it here.
+    duplicates = [f"{slug} announced by {len(srcs)}: {srcs}"
+                  for slug, srcs in sorted(announced_by.items()) if len(srcs) > 1]
+
+    print(f"news: {len(rows)} entries, {len(announced_by)} resolve to a record, "
+          f"{len(offenders)} collaborative announcement(s), {len(duplicates)} duplicate(s)")
+    for o in offenders:
+        print(f"   COLLABORATIVE ANNOUNCED: {o}")
+    for d in duplicates:
+        print(f"   DUPLICATE ANCHOR: {d}")
+    return offenders, duplicates, len(rows)
+
+
+print()
+news_offenders, news_dupes, news_count = audit_news()
+if "--strict" in sys.argv and news_offenders:
+    raise ValueError(
+        "/news/ must announce PI-led papers only (PI directive 2026-10-14). "
+        "Collaborative work belongs on /publications/. Offenders: "
+        f"{news_offenders}. Remove the entry (or its _news/*.md file), or "
+        "re-run the aggregator AFTER gen_publications.py so its lead-only "
+        "gate applies."
+    )
+if "--strict" in sys.argv and news_dupes:
+    raise ValueError(
+        "two /news/ entries resolve to the same paper, so /news/ would render "
+        f"duplicate id=news-<slug> anchors: {news_dupes}. Collapse them to one "
+        "entry (a _news/*.md sharing a DOI with another, or a duplicate source)."
+    )
+
+
 def public_repo_status(url: str) -> tuple[str, str]:
     """Reachability of a GitHub repo URL as ('public'|'private'|'skip', name).
 
