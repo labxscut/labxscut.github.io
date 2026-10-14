@@ -4465,43 +4465,44 @@
     affiliation: ''
     nick: lcx
     name_source: roster
-  - name: DM Ai
+  - name: Dongmei Ai
+    name_zh: ''
+    role: co_author
+    level: ''
+    affiliation: ''
+    nick: adm
+    name_source: publisher
+  - name: Jacob A. Cram
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-    name_source: registry
-  - name: JA Cram
+    name_source: publisher
+  - name: Xiaoyi Liang
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-    name_source: registry
-  - name: XY Liang
+    name_source: publisher
+  - name: Jed A. Fuhrman
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-    name_source: registry
-  - name: JA Fuhrmann
+    name_source: publisher
+  - name: Fengzhu Sun
     name_zh: ''
     role: co_author
     level: ''
     affiliation: ''
     nick: ''
-    name_source: registry
-  - name: FZ Sun
-    name_zh: ''
-    role: co_author
-    level: ''
-    affiliation: ''
-    nick: ''
-    name_source: registry
+    name_source: publisher
   lab_authors:
   - lcx
+  - adm
   pi_track: lead
   sort_key: '20151201000000'
   published_display: '20151201'

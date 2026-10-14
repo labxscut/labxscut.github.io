@@ -19,12 +19,16 @@ import yaml
 from gen_publications import REPO
 
 # Ceiling on authors that fall back to the raw registry string, enforced by
-# --strict. Set from the verified state after the first full harvest (13 names,
-# all inside two records that genuinely cannot align: XiaBB2015 has a registry
-# typo "Fuhrmann" vs the publisher's "Fuhrman", SunJCO2020 has "TF Sun" vs
-# "Thomas Yang Sun"). Raising it requires re-running the harvester and
-# confirming each new fallback is a real non-alignment, not a regression.
-REGISTRY_FALLBACK_BUDGET = 13
+# --strict. Set from the verified state after the first full harvest. XiaBB2015
+# (registry typo "Fuhrmann" vs the publisher's "Fuhrman") was corrected in the
+# registry on 2026-10-14, which let its 6 authors align to Crossref, so the
+# budget dropped 13 -> 8: the only remaining fallbacks are SunJCO2020's 9
+# authors, of which 8 fall back (its registry "TF Sun" cannot reconcile with the
+# publisher's "Thomas Yang Sun" -- F is not an initial of Thomas Yang, so this is
+# a genuine registry/publisher discrepancy, not something to overwrite). Raising
+# the budget requires re-running the harvester and confirming each new fallback
+# is a real non-alignment, not a regression.
+REGISTRY_FALLBACK_BUDGET = 8
 
 data = Path(REPO) / "_data"
 people = yaml.safe_load((data / "people.yml").read_text(encoding="utf-8")) or []
