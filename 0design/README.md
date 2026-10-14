@@ -253,6 +253,40 @@ only verified profile data.
     every field, changing only `settings.allow_counter`.
 - Turning the counter on is a **public data disclosure**: it exposes per-page
   view counts to anyone who fetches the counter URL. Decide that deliberately.
+- **Reading counts back does not need that setting.** The `/counter/<path>.json`
+  badge endpoint is blocked, but the authenticated admin API is not:
+  `GET /api/v0/stats/hits?start=YYYY-MM-DD&end=YYYY-MM-DD&limit=1000` returns
+  every path with its total (`hits[].path`, `.count`, `.event`). Both
+  `Authorization: Bearer <token>` and HTTP Basic with an **empty username and
+  the token as the password** are accepted; the token as the *username* is a
+  `401`. Dates must be date-only — appending `T00:00` returns `400`, not a
+  narrower range.
+- **A `401` here usually means a stale token, not a wrong scheme.** Every
+  scheme was rejected until the token was re-read from the vault; probing
+  schemes against a stale secret just produces a list of false negatives.
+- `_generators/gen_clicks.py` is the only reader. It resolves the token from the
+  vault (`S-GoatCounter-API`), never prints it, and writes the derived
+  `_data/clicks.yml`. Pages stays static: no secret is needed at render time,
+  because the counts are baked in at generation time.
+- Attribution rule the generator implements: a tool is credited with
+  `outbound:github.com/<owner>/<repo>` clicks plus pageviews of its hosted
+  `/tools/<slug>/` docs; a paper with its `paper:<file>.pdf` events plus
+  `outbound:doi.org/<doi>`. Matching is case-insensitive because the URL API
+  lowercases hosts but preserves paths, and DOIs arrive mixed-case.
+- **The feature is threshold-gated by design.** `_config.yml` carries
+  `clicks: {enabled, min_events}` and `_includes/hot-mark.html` renders nothing
+  until tracked events reach `min_events` (30 today, against 8 actual). With a
+  handful of clicks a "top 3" would only rank noise, so shipping the pipeline
+  now changes nothing visible. Lower `min_events` when traffic accrues; set
+  `enabled: false` to hide the marks again.
+- `/publications/ keeps its year grouping and only gains the mark. Reordering a
+  design-governed page by popularity is a PI decision, not a default.
+- **Refresh cadence is manual** — run it before a release, not on a schedule:
+  `wsl: python3 _generators/gen_clicks.py` (idempotent; reports `UNCHANGED`).
+  Nothing regenerates it automatically, so `_data/clicks.yml` quietly ages; the
+  `generated:` stamp is there to notice. `tools/index.md` appends any tool
+  missing from `tool_order`, so a stale file can mis-order the grid but can
+  never drop an entry.
 
 ## Build and deployment
 
