@@ -66,12 +66,25 @@ before spending time on optional profile details.
 
 ## Latest deployment
 
-- Commit `9a0b042` is pushed to `main`; GitHub Pages build and deployment run
-  [#34](https://github.com/labxscut/labxscut.github.io/actions/runs/37559440646)
+- Commit `c2a2bd8` is pushed to `main`; GitHub Pages build and deployment run
+  [#131](https://github.com/labxscut/labxscut.github.io/actions/runs/38540914229)
   passed.
-- Live checks passed for `/team/lcx/`, `/team/lcx/teaching/`, and `/about/`:
-  one profile shell per member page, no malformed wrapper/artifact, PNG logo
-  rendered, course links present, and ordinary content sections preserved.
+- That commit enabled GoatCounter analytics. Live checks passed in a real
+  browser against the deployed site: `/assets/goatcounter/count.js` and
+  `/_scripts/goatcounter-events.js` both serve 200 and match the repository
+  blobs byte-for-byte, and the pageview plus all three custom events
+  (`keyword:`, `paper:`, `outbound:`) returned HTTP 200 from
+  `labxscut.goatcounter.com`. Internal links, in-page anchors, and `mailto:`
+  correctly send nothing. The analytics tag is present on all eight canonical
+  section pages and absent from the three `layout: null` tool-docs pages, as
+  designed. Legacy `/deeplb/`, `/blog/`, and `/people/` meta-refresh redirects
+  are intact.
+- The counter script is vendored rather than loaded from `//gc.zgo.at/count.js`
+  because that host does not resolve from mainland-China networks; see the
+  Analytics section of `0design/README.md`.
+- `_config.yml` ships `allow_local: false`, so local previews are not counted.
+  Note the `c2a2bd8` commit *message* says `allow_local=true`; the committed
+  file says `false`. The message is wrong, the file is right.
 - A local Jekyll build remains unavailable because Ruby/Bundler are not on
   the Windows PATH; the successful GitHub Pages build is the deployment
   authority.
