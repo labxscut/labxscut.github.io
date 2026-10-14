@@ -31,6 +31,17 @@ nav:
     {%- assign t = site.data.tools | where: "key", tkey | first -%}
     {%- if t -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
   {%- endfor -%}
+  {%- comment -%}
+    `tool_order` is baked from _data/tools.yml, so a tool added there without
+    re-running gen_clicks.py is absent from it. Appending the leftovers keeps the
+    grid complete -- a stale clicks file may order the list badly, but it must
+    never delete a tool.
+  {%- endcomment -%}
+  {%- for t in site.data.tools -%}
+    {%- unless clicks.tool_order contains t.key -%}
+      {%- assign ordered_tools = ordered_tools | push: t -%}
+    {%- endunless -%}
+  {%- endfor -%}
 {%- else -%}
   {%- assign ordered_tools = site.data.tools -%}
 {%- endif -%}
