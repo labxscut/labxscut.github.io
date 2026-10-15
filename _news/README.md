@@ -47,6 +47,13 @@ Free prose here is for humans reading the file. Only the front matter is used.
   rather than as a broken image on the site.
 - One item = one file = one clean diff. Deleting the file removes the entry on
   the next run.
+- **To hide an item without losing it, rename it with a leading `_`.** The
+  generator skips `_`/`.` files, so `_20260801-foo.md` stays in the repo, keeps
+  its front matter, and simply leaves the feed — then rename it back and re-run
+  to republish. Prefer this over deleting when the item may return (an award
+  still in 公示, a note held for a PI ruling). Regenerate with
+  `python _generators/gen_news.py --write`, and re-check the aggregator's
+  `--dry-run` says "(no changes)" so nothing silently re-adds it.
 
 ## How the three feed writers coexist
 
