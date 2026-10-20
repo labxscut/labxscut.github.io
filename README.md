@@ -6,6 +6,12 @@ South China University of Technology. The group site uses the
 individual profile pages use an al-folio-inspired academic homepage structure
 while sharing the lab template's styles and assets.
 
+## Agent guidance
+
+Before changing site structure, navigation, member pages, or deployment, read
+[`0design/README.md`](./0design/README.md). Keep the design handoff private
+and out of the generated GitHub Pages site.
+
 ## Layout
 
 | Path | Role |
