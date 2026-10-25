@@ -7,3 +7,11 @@
 /vendor/
 __pycache__/
 *.py[cod]
+
+# agent scratch + temp logs (see sop/hc.any-agent.repo-scripts-tmp)
+tmp/
+logs/
+[0-9A-Za-z]tmp/
+[0-9A-Za-z]logs/
+[0-9A-Za-z][0-9A-Za-z]tmp/
+[0-9A-Za-z][0-9A-Za-z]logs/
