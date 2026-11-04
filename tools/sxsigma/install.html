@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; SIGMA 0.3.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="static/sigma.css?v=d2c367f1" />
+
+  
+      <script src="static/jquery.js?v=5d32c60e"></script>
+      <script src="static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="static/documentation_options.js?v=71d9d8e6"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="static/copybutton.js?v=fd10adb8"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples/index.html" />
+    <link rel="prev" title="Home" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SIGMA
+              <img src="static/sigma-logo.png" class="logo" alt="Logo"/>
+          </a><div class="version">0.3.2</div>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/index.html">API and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SIGMA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/install.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>Install the SIGMA Python package before running the notebooks. Its distribution
+name is <code class="docutils literal notranslate"><span class="pre">sigma-spatial</span></code>, and its Python import name is <code class="docutils literal notranslate"><span class="pre">sigma</span></code>.
+Python 3.10–3.12 and R with <code class="docutils literal notranslate"><span class="pre">mclust</span></code> are required.</p>
+<section id="create-an-environment">
+<h2>1. Create an environment<a class="headerlink" href="#create-an-environment" title="Link to this heading"></a></h2>
+<p>With Conda installed, create an environment containing Python and R/mclust:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>sigma<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10<span class="w"> </span>pip<span class="w"> </span>r-base<span class="w"> </span>r-mclust<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>sigma
+<span class="nb">export</span><span class="w"> </span><span class="nv">R_HOME</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>R<span class="w"> </span>RHOME<span class="k">)</span><span class="s2">"</span>
+</pre></div>
+</div>
+<p>R and <code class="docutils literal notranslate"><span class="pre">mclust</span></code> are separate from the Python dependencies and are needed for
+clustering through <code class="docutils literal notranslate"><span class="pre">rpy2</span></code>. A C/C++ compiler must be available if pip builds
+dependencies such as <code class="docutils literal notranslate"><span class="pre">annoy</span></code> from source.</p>
+<p>For NVIDIA GPU training, install a compatible PyTorch build in this environment
+before the next step. SIGMA requires <code class="docutils literal notranslate"><span class="pre">torch&gt;=2.3,&lt;2.6</span></code>; select a build compatible
+with your NVIDIA driver from the
+<a class="reference external" href="https://pytorch.org/get-started/previous-versions/">official PyTorch installation commands</a>.</p>
+</section>
+<section id="install-sigma-and-the-notebook-tools">
+<h2>2. Install SIGMA and the notebook tools<a class="headerlink" href="#install-sigma-and-the-notebook-tools" title="Link to this heading"></a></h2>
+<p>If you received the complete source distribution from the restricted website or
+submission materials, extract it and install from that directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-xzf<span class="w"> </span>sigma_spatial-0.3.2.tar.gz
+<span class="nb">cd</span><span class="w"> </span>sigma_spatial-0.3.2
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'.[notebooks]'</span>
+</pre></div>
+</div>
+<p>Alternatively, clone this repository and enter the directory containing <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/labxscut/sxSIGMA.git
+<span class="nb">cd</span><span class="w"> </span>sxSIGMA
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>ipykernel
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>sigma<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">"Python (SIGMA)"</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code> installs <strong>SIGMA itself and all declared Python
+dependencies</strong>. The dependencies and version constraints are maintained in
+<a class="reference external" href="https://github.com/labxscut/sxSIGMA/blob/main/pyproject.toml">pyproject.toml</a>:</p>
+<ul class="simple">
+<li><p>Model training: <code class="docutils literal notranslate"><span class="pre">torch</span></code>, <code class="docutils literal notranslate"><span class="pre">scvi-tools</span></code>, <code class="docutils literal notranslate"><span class="pre">optuna</span></code>.</p></li>
+<li><p>Data processing and integration: <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">anndata</span></code>,
+<code class="docutils literal notranslate"><span class="pre">scanpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, <code class="docutils literal notranslate"><span class="pre">h5py</span></code>, <code class="docutils literal notranslate"><span class="pre">muon</span></code>, <code class="docutils literal notranslate"><span class="pre">harmonypy</span></code>, <code class="docutils literal notranslate"><span class="pre">harmony-pytorch</span></code>,
+<code class="docutils literal notranslate"><span class="pre">annoy</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-misc</span></code>.</p></li>
+<li><p>Clustering, evaluation and plotting: <code class="docutils literal notranslate"><span class="pre">rpy2</span></code>, <code class="docutils literal notranslate"><span class="pre">igraph</span></code>, <code class="docutils literal notranslate"><span class="pre">leidenalg</span></code>, <code class="docutils literal notranslate"><span class="pre">scib</span></code>,
+<code class="docutils literal notranslate"><span class="pre">umap-learn</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p></li>
+</ul>
+</section>
+<section id="check-the-installation">
+<h2>3. Check the installation<a class="headerlink" href="#check-the-installation" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>check
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import sigma; print(sigma.__version__)"</span>
+sigma<span class="w"> </span>doctor
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">doctor</span></code> checks the model imports and R/mclust; each reported entry should
+have <code class="docutils literal notranslate"><span class="pre">&quot;ok&quot;:</span> <span class="pre">true</span></code> before running the workflows.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Home" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples/index.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

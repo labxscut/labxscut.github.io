@@ -1,0 +1,4 @@
+/* Preserve the standard Read the Docs layout used by uniPort. */
+.wy-side-nav-search > a img.logo { width: 250px; height: auto; padding: 0; }
+.wy-nav-content .overview { width: 100%; height: auto; }
+.rst-content img { height: auto; }

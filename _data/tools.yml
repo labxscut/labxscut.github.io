@@ -75,6 +75,13 @@
   version: "0.3.2"
   repo: https://github.com/labxscut/sxSIGMA
   docs: https://labxscut.github.io/tools/sxsigma/
+  docs_repo: labxscut/sxSIGMA
+  docs_ref: ff0271f5e9dcf3946359a3d8900dc3508bf045c0
+  docs_ref_date: '20261104143612'
+  docs_release_ref: ff0271f5e9dcf3946359a3d8900dc3508bf045c0
+  docs_release_ref_date: '20261104143612'
+  docs_path: docs/site
+  docs_slug: sxsigma
   tags: [spatial multi-omics, integration]
   maintainers: [wlp]
 

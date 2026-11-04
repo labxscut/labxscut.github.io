@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproducibility &mdash; SIGMA 0.3.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="static/sigma.css?v=d2c367f1" />
+
+  
+      <script src="static/jquery.js?v=5d32c60e"></script>
+      <script src="static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="static/documentation_options.js?v=71d9d8e6"></script>
+      <script src="static/doctools.js?v=9bcbadda"></script>
+      <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="static/copybutton.js?v=fd10adb8"></script>
+    <script src="static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Release" href="release.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SIGMA
+              <img src="static/sigma-logo.png" class="logo" alt="Logo"/>
+          </a><div class="version">0.3.2</div>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/index.html">API and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducibility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SIGMA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Reproducibility</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="sources/reproducibility.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="reproducibility">
+<h1>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h1>
+<p>This release is organized against the <a class="reference external" href="https://www.nature.com/documents/Computational_tools_reporting_guidelines.pdf">Nature computational tools reporting guidance</a>. This document records evidence and remaining requirements; it is not a certification of editorial compliance.</p>
+<section id="source-and-installation">
+<h2>Source and installation<a class="headerlink" href="#source-and-installation" title="Link to this heading"></a></h2>
+<p>SIGMA.1025 is the source snapshot. Only the top-level Python files in its <code class="docutils literal notranslate"><span class="pre">mosaic</span></code> and <code class="docutils literal notranslate"><span class="pre">brain</span></code> directories were used for the algorithm modules; <code class="docutils literal notranslate"><span class="pre">brain</span></code> is packaged as <code class="docutils literal notranslate"><span class="pre">sigma.vertical</span></code>. The source and packaged SHA-256 values are recorded in <code class="docutils literal notranslate"><span class="pre">reproducibility/source_manifest.json</span></code>. Existing dependency implementations and their upstream licenses are retained. Packaging changes concern scoped imports, configurable input/output paths, process isolation, and the public run interface.</p>
+<p>Install the package, Python dependencies and R/mclust as described in <a class="reference internal" href="install.html"><span class="std std-doc">Installation</span></a>. The distribution is <code class="docutils literal notranslate"><span class="pre">sigma-spatial</span></code>; the Python import is <code class="docutils literal notranslate"><span class="pre">sigma</span></code>. Use Python 3.10–3.12; the scientific validation recorded here used Python 3.10.21. The environment snapshot records the tested versions, rather than asserting that every allowed dependency combination was tested.</p>
+</section>
+<section id="tests-and-validation-levels">
+<h2>Tests and validation levels<a class="headerlink" href="#tests-and-validation-levels" title="Link to this heading"></a></h2>
+<p>From the extracted release directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
+sigma<span class="w"> </span>doctor
+python<span class="w"> </span>scripts/verifysources.py
+python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-v
+python<span class="w"> </span>scripts/smoke_models.py
+</pre></div>
+</div>
+<p>The synthetic model test creates 384 observations in memory, trains each model branch for one epoch on CPU, and checks finite model parameters and joint representations. It requires no biological data. The matrix-assembly regression tests check section-specific row selection, observation order, unchanged inputs and invalid mappings. Public API tests check configuration, input/output separation, and isolated worker dispatch.</p>
+<p>Installation tests, one-epoch model tests (performed for 0.3.0; algorithm modules are unchanged in 0.3.2), re-executed visualization notebooks and end-to-end biological training are distinct validation levels. A successful smoke test is not evidence of converged training, benchmark superiority or reproduction of the manuscript’s numerical results.</p>
+<p>The validation environment uses Python 3.10.21, NumPy 1.26.4, PyTorch 2.3.0,
+scvi-tools 1.3.3, R 4.3.3 and mclust 6.1.2 on Linux x86-64. The test host has an
+Intel Core i9-12900K CPU. Notebook execution uses CPU UMAP with one job; thread
+pools are limited to four. Exact versions and execution times are stored under
+<code class="docutils literal notranslate"><span class="pre">reproducibility/environment.json</span></code> and <code class="docutils literal notranslate"><span class="pre">reproducibility/notebook_execution.json</span></code>.
+The package was installed into an isolated environment layered over an existing
+research environment and passed <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">check</span></code>; a clean-machine installation time
+has not been measured.</p>
+<p>The original selected training records report 1,113.221 s for Simulation,
+324.221 s for Lymph, 1,261.845 s for Embryo and 584.013 s for Brain on NVIDIA
+RTX 3090 hardware. These are archived training durations, not total preprocessing
+or installation times and not new measurements made during this release.</p>
+</section>
+<section id="preprocessing-and-model-fitting">
+<h2>Preprocessing and model fitting<a class="headerlink" href="#preprocessing-and-model-fitting" title="Link to this heading"></a></h2>
+<p>Mosaic input files contain modality-specific AnnData matrices, spatial coordinates, observation identities and section assignments. Missing modalities are represented through explicit masks. Section-specific preprocessing settings are stored in the runner definitions and saved process manifests. Brain uses precomputed RNA <code class="docutils literal notranslate"><span class="pre">X_scVI</span></code> and Hi-C <code class="docutils literal notranslate"><span class="pre">X_fh</span></code> representations; reproducing those upstream representations requires their original preparation code and inputs, beyond this package’s integration step.</p>
+<p>The adaptive spatial procedure uses the <code class="docutils literal notranslate"><span class="pre">structured_quadratic_residual_permutation</span></code> configuration, 128 null permutations, 20 latent dimensions and a section-proportional spatial-grid SVD sample capped at 12,000 observations. SIGMA.1025 assembles each observation from the spatial matrix corresponding to its section’s inferred lambda. Inspect the saved adaptive-lambda records for the fitted values; do not substitute a single global value.</p>
+<p>The runners reset the random seed to 1234. The packaged model defaults to at most 200 training epochs, a batch size of 256, and early stopping on validation reconstruction loss with patience 10. A specified <code class="docutils literal notranslate"><span class="pre">max_epochs</span></code> overrides the default. The default spot split is 90% training and 10% validation, using the scvi-tools splitter; section-aware batch composition is applied separately within the training and validation indices. There is no independent test split by default. This is a transductive integration analysis, not evidence of generalization to held-out donors or sections. Preprocessing and spatial graphs use the input dataset; this must be considered when interpreting validation scores.</p>
+<p>The fixed-parameter API keeps the selected <code class="docutils literal notranslate"><span class="pre">integ</span></code> and <code class="docutils literal notranslate"><span class="pre">contrastive</span></code> values and a contrastive mix ratio of 0.3. The source runners also contain Optuna search variants. Report the actual search space, number of completed trials, selection criterion and evaluation reuse for manuscript results; selected-trial figures alone do not establish an unbiased model-selection protocol.</p>
+</section>
+<section id="evaluation-and-figure-identity">
+<h2>Evaluation and figure identity<a class="headerlink" href="#evaluation-and-figure-identity" title="Link to this heading"></a></h2>
+<p>Figures must use the same saved trial, observation IDs, section assignments and predicted partition as their referenced panel. Native predictions must not be altered to improve a metric. Display annotations and refinements must be identified separately from the native partition. Record any reference-label-based colour matching. A one-section Brain UMAP does not measure between-section batch mixing.</p>
+<p>Simulation and Lymph references are under <code class="docutils literal notranslate"><span class="pre">SIGMA.1025/results/yzzpanel</span></code>; Embryo uses <code class="docutils literal notranslate"><span class="pre">SIGMA.1025/results/panel/Embryo/1101/wlp/banksy_refined</span></code>. Brain uses the approved <code class="docutils literal notranslate"><span class="pre">/nfs/hb236/wlp/code/yzz/output/brain_r11_panel_20261102/code/brain_r11_panel_up_v19.py</span></code>. Each tutorial asset directory contains the exact panel and trial paths, SHA-256 values and display mapping (including per-spot display annotations for Embryo and Brain v19). Full result paths are provenance, not required local working paths.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dataset</p></th>
+<th class="head"><p>Integration / contrastive / mix</p></th>
+<th class="head"><p>Native clusters</p></th>
+<th class="head"><p>Panel reference</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Simulation</p></td>
+<td><p>230 / 0.8 / 0.3</p></td>
+<td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Simulation-rna-0.1-12-adt-2.1-seed3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Lymph</p></td>
+<td><p>950 / 0.35 / 0.3</p></td>
+<td><p>8 occupied, 10 requested</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Lymph-S1-S2-S3/20261102_3088_compact/code/render_3088_style.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Embryo</p></td>
+<td><p>195 / 0.9 / 0.3</p></td>
+<td><p>15</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Embryo_SIGMA_panel_v2_BANKSY_refined.png</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Brain</p></td>
+<td><p>145 / 0.85 / 0.3</p></td>
+<td><p>12</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">brain_r11_panel_up_v19.py</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Lymph retains the compact panel’s lightness factor 0.90 and saturation factor 1.12. Its anatomical display labels are the frozen reference correspondence. Embryo uses <code class="docutils literal notranslate"><span class="pre">results/panel/Embryo/1101/wlp/banksy_refined/Embryo_SIGMA_panel_v2_BANKSY_refined.png</span></code>, the approved current panel, with its I–XV putative anatomical annotations and palette. In Sections 4–7 its display applies one 18-neighbor BANKSY refine_once-style majority-vote pass and residual VII/IX brown-speckle cleanup: 617, 567, 532 and 494 changed spots, respectively (2,210 total). This is display postprocessing, not BANKSY model training. The exporter re-executes the original pure drawing function and checks every change against the panel audit. Native predictions, embeddings and archived metrics remain unchanged; <code class="docutils literal notranslate"><span class="pre">native_clusters</span></code>, <code class="docutils literal notranslate"><span class="pre">display_labels</span></code> and <code class="docutils literal notranslate"><span class="pre">display_changed_mask</span></code> distinguish the two layers. Brain reproduces v19 exactly, including its neighborhood-refined display labels, reference alignment, local polygon recoloring and CA2 ROI overlay. Consequently its I–XII anatomical display legend and per-spot colors are not a one-to-one mapping of native clusters. The unmodified native prediction vector is stored separately; archived clustering metrics are not recalculated from the display annotations. The exporter records source hashes and the affected spot counts. Simulation retains the panel’s reference-matched display colors and saved UMAP coordinates. These display correspondences do not provide independent validation.</p>
+<p>For the other three tutorials, UMAP is computed from the saved <code class="docutils literal notranslate"><span class="pre">X_multiview</span></code> representation using 15 neighbors, Euclidean distance, <code class="docutils literal notranslate"><span class="pre">min_dist=0.5</span></code> and <code class="docutils literal notranslate"><span class="pre">random_state=1234</span></code>. UMAP geometry is illustrative and is not used to calculate the archived integration metrics. All maps use equal coordinate aspect ratios. The exact native prediction vector remains in <code class="docutils literal notranslate"><span class="pre">results.npz</span></code>, including when multiple domains have the same color.</p>
+<p>The notebooks use <code class="docutils literal notranslate"><span class="pre">RUN_TRAINING</span> <span class="pre">=</span> <span class="pre">False</span></code> by default. This mode reproduces the selected figures with the included small input bundles. Enabling training additionally writes a fresh run to a separate directory; reference visualization cells continue to read the checksum-verified selected trial. A new stochastic training run need not reproduce a saved embedding or partition byte-for-byte.</p>
+<p>Use the stored trial metrics and evaluation settings when describing saved results. Clustering agreement, spatial continuity and integration metrics measure different properties. Numerical comparisons require the same population, input processing and metric definitions. Baseline and ablation results, convergence evidence and uncertainty analyses belong with the manuscript claims and cannot be inferred from these tutorial figures.</p>
+</section>
+<section id="access-for-editors-and-reviewers">
+<h2>Access for editors and reviewers<a class="headerlink" href="#access-for-editors-and-reviewers" title="Link to this heading"></a></h2>
+<p>The working repository and documentation site currently have restricted access. The five-person website allowlist does not automatically grant access to editors or anonymous reviewers. Before submission, provide the exact release archive and required test inputs through the journal submission system or an editor-approved private review mechanism. A GitHub URL requiring an unavailable account is insufficient.</p>
+<p>For publication, the authors must finalize durable code and data access, appropriate licensing, any access restrictions, and the manuscript’s Code Availability and Data Availability statements. No public release, DOI, reviewer invitation or data-deposition claim is made by this package.</p>
+<p>Nature Communications policy references: <a class="reference external" href="https://www.nature.com/ncomms/submit/policy">Policy guide</a>, <a class="reference external" href="https://www.nature.com/ncomms/submit/how-to-submit">How to submit</a>.</p>
+</section>
+<section id="submission-evidence-and-remaining-requirements">
+<h2>Submission evidence and remaining requirements<a class="headerlink" href="#submission-evidence-and-remaining-requirements" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Included evidence</p></th>
+<th class="head"><p>Remaining work before submission</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code and installation</p></td>
+<td><p>Installable wheel/source distribution, dependency ranges, CLI checks, source hashes</p></td>
+<td><p>Confirm authors’ licensing and exact frozen submission version</p></td>
+</tr>
+<tr class="row-odd"><td><p>Worked example</p></td>
+<td><p>Four executable notebooks, compact saved-result inputs, expected embedded figures</p></td>
+<td><p>Provide full training inputs or an approved access route</p></td>
+</tr>
+<tr class="row-even"><td><p>Software and hardware</p></td>
+<td><p>Tested environment snapshot; archived original trial runtime/device records; notebook execution times</p></td>
+<td><p>Report the exact environment and resources used for manuscript claims</p></td>
+</tr>
+<tr class="row-odd"><td><p>Algorithm validation</p></td>
+<td><p>API and spatial-assembly tests; one-epoch model tests</p></td>
+<td><p>Supply convergence evidence and full analysis validation for central claims</p></td>
+</tr>
+<tr class="row-even"><td><p>Preprocessing</p></td>
+<td><p>Integration runners and adaptive spatial code</p></td>
+<td><p>Include provenance/code for the upstream Brain representations</p></td>
+</tr>
+<tr class="row-odd"><td><p>Evaluation</p></td>
+<td><p>Native predictions, selected parameters and unmodified archived trial metrics</p></td>
+<td><p>Document trial selection, independent validation where applicable, baseline and uncertainty analyses</p></td>
+</tr>
+<tr class="row-even"><td><p>Reviewer access</p></td>
+<td><p>Offline source distribution includes code and a small executable plot example</p></td>
+<td><p>Attach it at submission or arrange approved reviewer access; private links alone are insufficient</p></td>
+</tr>
+</tbody>
+</table>
+<p>No DOI, open-source license, public repository availability or full end-to-end biological rerun is asserted by this release. The package’s tests and examples support reproducibility within their documented scope; they do not replace the additional evidence needed for manuscript claims.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="release.html" class="btn btn-neutral float-left" title="Release" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

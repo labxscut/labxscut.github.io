@@ -1,0 +1,80 @@
+sigma.run
+=========
+
+.. py:function:: sigma.run(config, *, prepare_only=False, dry_run=False, resume=False, log_file=None)
+
+   Execute a SIGMA preset through isolated Python worker processes.
+
+   :param config: Configuration dictionary or path to a JSON configuration
+                  file. See :py:func:`sigma.validate_config` for supported
+                  fields and path resolution.
+   :type config: dict, str, or pathlib.Path
+   :param bool prepare_only: Run preprocessing without training. Default:
+                             ``False``.
+   :param bool dry_run: Return the resolved configuration and worker command
+                       without executing the workflow. Default: ``False``.
+   :param bool resume: Allow reuse of a nonempty output directory when its
+                      saved configuration matches exactly. Default: ``False``.
+   :param log_file: Optional path for worker stdout and stderr. Its parent
+                    directory is created if needed. When omitted, output is
+                    displayed in the current terminal or notebook. Relative
+                    log paths are relative to the current working directory.
+   :type log_file: str, pathlib.Path, or None
+   :returns: With ``dry_run=True``, a dictionary containing ``config`` (the
+             resolved configuration) and ``command`` (a list of command
+             arguments). Otherwise, a ``subprocess.CompletedProcess`` for
+             the completed worker.
+   :rtype: dict or subprocess.CompletedProcess
+   :raises FileNotFoundError: The input directory does not exist when executing
+                             the workflow.
+   :raises FileExistsError: The output directory is nonempty and ``resume`` is
+                            ``False``.
+   :raises ValueError: Configuration validation fails, or resumption cannot
+                       match the saved configuration.
+   :raises subprocess.CalledProcessError: The worker exits unsuccessfully.
+   :raises RuntimeError: A training run does not produce successful trial
+                         reports.
+
+Examples
+--------
+
+.. code-block:: python
+
+   from sigma import run
+
+   config = {
+       "preset": "lymph",
+       "data_root": "data/Lymph-S1-S2-S3",
+       "output": "results/lymph",
+       "device": "cpu",
+   }
+
+   planned = run(config, dry_run=True)
+   print(planned["command"])
+
+   run(config, prepare_only=True, log_file="results/lymph/preprocessing.log")
+   result = run(config, resume=True, log_file="results/lymph/training.log")
+
+Outputs and resumption
+----------------------
+
+The function writes ``sigma_run_config.json`` under the output directory and
+passes the same resolved settings to the workers. Preprocessed data are stored
+under ``assets/``; training results are stored under ``runs/``. The integration
+notebooks demonstrate loading the saved representations and clustering results.
+
+The return value is a process result; embeddings and AnnData objects are read
+from the saved files. For training runs, ``run`` checks that trial reports exist
+and that their statuses are ``"ok"``. The preprocessing-only path does not
+perform this training-report check.
+
+``dry_run=True`` does not check that the input directory or individual input
+files exist. It resolves and validates settings without creating the output
+directory or starting a worker.
+
+When resuming a nonempty output directory, its saved ``sigma_run_config.json``
+must match the current resolved configuration exactly. Use a new output
+directory for another parameter combination.
+
+`View source
+<https://github.com/labxscut/sxSIGMA/blob/main/src/sigma/api.py#L69>`_

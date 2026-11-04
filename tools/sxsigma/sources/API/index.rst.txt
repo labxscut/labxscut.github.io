@@ -1,0 +1,54 @@
+API and modules
+===============
+
+The public Python interface provides configuration validation and workflow
+execution. Import these functions from ``sigma``:
+
+.. code-block:: python
+
+   from sigma import run, validate_config
+
+.. toctree::
+   :maxdepth: 1
+
+   sigma.run
+   sigma.validate_config
+   modules
+
+Command-line interface
+----------------------
+
+The installed package also provides the ``sigma`` command. Save the following
+configuration as ``config.json``, adjusting the paths to your input data and a
+new output directory:
+
+.. code-block:: json
+
+   {
+     "preset": "lymph",
+     "data_root": "data/Lymph-S1-S2-S3",
+     "output": "results/lymph",
+     "device": "cpu"
+   }
+
+Check the installation, inspect the resolved command, and run preprocessing and
+training:
+
+.. code-block:: bash
+
+   sigma doctor
+   sigma run --config config.json --dry-run
+   sigma run --config config.json --prepare-only
+   sigma run --config config.json --resume
+
+Paths in a JSON configuration are relative to that file. ``--dry-run`` validates
+the configuration without executing the pipeline. ``--resume`` requires the
+same resolved configuration as the saved run. Change the output directory when
+changing experiment settings.
+
+``sigma doctor`` reports Python/model import checks and the availability of
+R/mclust. Every reported entry should have ``"ok": true`` before running a
+workflow. Use ``sigma --version`` to display the installed package version.
+
+See the `command-line source
+<https://github.com/labxscut/sxSIGMA/blob/main/src/sigma/cli.py>`_.

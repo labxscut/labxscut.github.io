@@ -1,0 +1,71 @@
+Examples
+========
+
+The tutorials show preprocessing, training, a sample-coloured UMAP and a row of
+spatial-domain plots. The notebooks were re-executed from the selected SIGMA.1025
+panel inputs; native partitions and display colors are retained. The default run
+reproduces plots. Set ``RUN_TRAINING = True`` to additionally run the model on
+separately supplied raw inputs. The website build does not train models.
+
+.. toctree::
+   :maxdepth: 2
+
+   mosaic/index
+   vertical/index
+
+Download the notebooks
+----------------------
+
+Download the complete release from :doc:`/release` to obtain the notebooks, their
+saved-result inputs and the package together. One notebook alone is insufficient
+unless its ``../assets/<dataset>`` directory is already present.
+
+Keep the original ``integration_examples/mosaic`` or
+``integration_examples/vertical`` directory when running a downloaded notebook;
+its paths are relative to that directory. Activate the SIGMA environment and
+select the **Python (SIGMA)** kernel.
+
+* :download:`Simulation <../../integration_examples/mosaic/Simulations.ipynb>`
+* :download:`Human lymph node <../../integration_examples/mosaic/Human_lymph.ipynb>`
+* :download:`Mouse embryo <../../integration_examples/mosaic/Mouse_embryo.ipynb>`
+* :download:`Brain <../../integration_examples/vertical/Brain.ipynb>`
+
+Input files
+-----------
+
+The included ``integration_examples/assets`` files contain saved representations,
+spatial coordinates, sample identities, native clusters and panel color mappings.
+They are sufficient for the default visualization mode. They do not contain raw
+expression matrices or upstream Brain representation training.
+
+Place the files below in the corresponding ``data_root`` directory. Mosaic
+inputs are AnnData files with spatial coordinates in ``obsm["spatial"]``.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 18 82
+
+   * - Dataset
+     - Required files
+   * - Simulation
+     - ``S1_RNA.h5ad``, ``S1_ADT.h5ad``, ``S2_RNA.h5ad``, ``S3_ADT.h5ad``.
+   * - Human lymph node
+     - ``S1/ad_rna.h5ad``, ``S1/ad_adt.h5ad``, ``S2/ad_rna.h5ad``, ``S3/ad_adt.h5ad``.
+   * - Mouse embryo
+     - ``<section>/ad_<modality>.h5ad`` for the section/modality combinations below.
+   * - Brain
+     - ``annotated_full_gene.h5ad`` with aligned ``obsm["X_scVI"]`` (RNA),
+       ``obsm["X_fh"]`` (Hi-C) and ``obsm["spatial"]`` arrays.
+
+Embryo sections and modalities:
+
+* ``SRA``: ``rna``, ``atac``.
+* ``SAT``: ``atac``.
+* ``Mux4``: ``rna``, ``atac``, ``h3k4me3``, ``h3k27me3``.
+* ``Mux2``: ``h3k27me3``, ``h3k27ac``.
+* ``Cut-H3K4me3``: ``h3k4me3``.
+* ``Cut-H3K27me3``: ``h3k27me3``.
+* ``Cut-H3K27ac``: ``h3k27ac``.
+
+The Brain workflow consumes precomputed RNA and Hi-C representations.
+All arrays must correspond to the same observation IDs.

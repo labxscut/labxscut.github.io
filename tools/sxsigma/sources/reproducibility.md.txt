@@ -1,0 +1,93 @@
+# Reproducibility
+
+This release is organized against the [Nature computational tools reporting guidance](https://www.nature.com/documents/Computational_tools_reporting_guidelines.pdf). This document records evidence and remaining requirements; it is not a certification of editorial compliance.
+
+## Source and installation
+
+SIGMA.1025 is the source snapshot. Only the top-level Python files in its `mosaic` and `brain` directories were used for the algorithm modules; `brain` is packaged as `sigma.vertical`. The source and packaged SHA-256 values are recorded in `reproducibility/source_manifest.json`. Existing dependency implementations and their upstream licenses are retained. Packaging changes concern scoped imports, configurable input/output paths, process isolation, and the public run interface.
+
+Install the package, Python dependencies and R/mclust as described in [Installation](install.md). The distribution is `sigma-spatial`; the Python import is `sigma`. Use Python 3.10–3.12; the scientific validation recorded here used Python 3.10.21. The environment snapshot records the tested versions, rather than asserting that every allowed dependency combination was tested.
+
+## Tests and validation levels
+
+From the extracted release directory:
+
+```bash
+python -m pip install .
+sigma doctor
+python scripts/verifysources.py
+python -m unittest discover -s tests -v
+python scripts/smoke_models.py
+```
+
+The synthetic model test creates 384 observations in memory, trains each model branch for one epoch on CPU, and checks finite model parameters and joint representations. It requires no biological data. The matrix-assembly regression tests check section-specific row selection, observation order, unchanged inputs and invalid mappings. Public API tests check configuration, input/output separation, and isolated worker dispatch.
+
+Installation tests, one-epoch model tests (performed for 0.3.0; algorithm modules are unchanged in 0.3.2), re-executed visualization notebooks and end-to-end biological training are distinct validation levels. A successful smoke test is not evidence of converged training, benchmark superiority or reproduction of the manuscript's numerical results.
+
+
+The validation environment uses Python 3.10.21, NumPy 1.26.4, PyTorch 2.3.0,
+scvi-tools 1.3.3, R 4.3.3 and mclust 6.1.2 on Linux x86-64. The test host has an
+Intel Core i9-12900K CPU. Notebook execution uses CPU UMAP with one job; thread
+pools are limited to four. Exact versions and execution times are stored under
+`reproducibility/environment.json` and `reproducibility/notebook_execution.json`.
+The package was installed into an isolated environment layered over an existing
+research environment and passed `pip check`; a clean-machine installation time
+has not been measured.
+
+The original selected training records report 1,113.221 s for Simulation,
+324.221 s for Lymph, 1,261.845 s for Embryo and 584.013 s for Brain on NVIDIA
+RTX 3090 hardware. These are archived training durations, not total preprocessing
+or installation times and not new measurements made during this release.
+
+## Preprocessing and model fitting
+
+Mosaic input files contain modality-specific AnnData matrices, spatial coordinates, observation identities and section assignments. Missing modalities are represented through explicit masks. Section-specific preprocessing settings are stored in the runner definitions and saved process manifests. Brain uses precomputed RNA `X_scVI` and Hi-C `X_fh` representations; reproducing those upstream representations requires their original preparation code and inputs, beyond this package's integration step.
+
+The adaptive spatial procedure uses the `structured_quadratic_residual_permutation` configuration, 128 null permutations, 20 latent dimensions and a section-proportional spatial-grid SVD sample capped at 12,000 observations. SIGMA.1025 assembles each observation from the spatial matrix corresponding to its section's inferred lambda. Inspect the saved adaptive-lambda records for the fitted values; do not substitute a single global value.
+
+The runners reset the random seed to 1234. The packaged model defaults to at most 200 training epochs, a batch size of 256, and early stopping on validation reconstruction loss with patience 10. A specified `max_epochs` overrides the default. The default spot split is 90% training and 10% validation, using the scvi-tools splitter; section-aware batch composition is applied separately within the training and validation indices. There is no independent test split by default. This is a transductive integration analysis, not evidence of generalization to held-out donors or sections. Preprocessing and spatial graphs use the input dataset; this must be considered when interpreting validation scores.
+
+The fixed-parameter API keeps the selected `integ` and `contrastive` values and a contrastive mix ratio of 0.3. The source runners also contain Optuna search variants. Report the actual search space, number of completed trials, selection criterion and evaluation reuse for manuscript results; selected-trial figures alone do not establish an unbiased model-selection protocol.
+
+## Evaluation and figure identity
+
+Figures must use the same saved trial, observation IDs, section assignments and predicted partition as their referenced panel. Native predictions must not be altered to improve a metric. Display annotations and refinements must be identified separately from the native partition. Record any reference-label-based colour matching. A one-section Brain UMAP does not measure between-section batch mixing.
+
+Simulation and Lymph references are under `SIGMA.1025/results/yzzpanel`; Embryo uses `SIGMA.1025/results/panel/Embryo/1101/wlp/banksy_refined`. Brain uses the approved `/nfs/hb236/wlp/code/yzz/output/brain_r11_panel_20261102/code/brain_r11_panel_up_v19.py`. Each tutorial asset directory contains the exact panel and trial paths, SHA-256 values and display mapping (including per-spot display annotations for Embryo and Brain v19). Full result paths are provenance, not required local working paths.
+
+| Dataset | Integration / contrastive / mix | Native clusters | Panel reference |
+| --- | --- | --- | --- |
+| Simulation | 230 / 0.8 / 0.3 | 5 | `Simulation-rna-0.1-12-adt-2.1-seed3` |
+| Lymph | 950 / 0.35 / 0.3 | 8 occupied, 10 requested | `Lymph-S1-S2-S3/20261102_3088_compact/code/render_3088_style.py` |
+| Embryo | 195 / 0.9 / 0.3 | 15 | `Embryo_SIGMA_panel_v2_BANKSY_refined.png` |
+| Brain | 145 / 0.85 / 0.3 | 12 | `brain_r11_panel_up_v19.py` |
+
+Lymph retains the compact panel's lightness factor 0.90 and saturation factor 1.12. Its anatomical display labels are the frozen reference correspondence. Embryo uses `results/panel/Embryo/1101/wlp/banksy_refined/Embryo_SIGMA_panel_v2_BANKSY_refined.png`, the approved current panel, with its I–XV putative anatomical annotations and palette. In Sections 4–7 its display applies one 18-neighbor BANKSY refine_once-style majority-vote pass and residual VII/IX brown-speckle cleanup: 617, 567, 532 and 494 changed spots, respectively (2,210 total). This is display postprocessing, not BANKSY model training. The exporter re-executes the original pure drawing function and checks every change against the panel audit. Native predictions, embeddings and archived metrics remain unchanged; `native_clusters`, `display_labels` and `display_changed_mask` distinguish the two layers. Brain reproduces v19 exactly, including its neighborhood-refined display labels, reference alignment, local polygon recoloring and CA2 ROI overlay. Consequently its I–XII anatomical display legend and per-spot colors are not a one-to-one mapping of native clusters. The unmodified native prediction vector is stored separately; archived clustering metrics are not recalculated from the display annotations. The exporter records source hashes and the affected spot counts. Simulation retains the panel's reference-matched display colors and saved UMAP coordinates. These display correspondences do not provide independent validation.
+
+For the other three tutorials, UMAP is computed from the saved `X_multiview` representation using 15 neighbors, Euclidean distance, `min_dist=0.5` and `random_state=1234`. UMAP geometry is illustrative and is not used to calculate the archived integration metrics. All maps use equal coordinate aspect ratios. The exact native prediction vector remains in `results.npz`, including when multiple domains have the same color.
+
+The notebooks use `RUN_TRAINING = False` by default. This mode reproduces the selected figures with the included small input bundles. Enabling training additionally writes a fresh run to a separate directory; reference visualization cells continue to read the checksum-verified selected trial. A new stochastic training run need not reproduce a saved embedding or partition byte-for-byte.
+
+Use the stored trial metrics and evaluation settings when describing saved results. Clustering agreement, spatial continuity and integration metrics measure different properties. Numerical comparisons require the same population, input processing and metric definitions. Baseline and ablation results, convergence evidence and uncertainty analyses belong with the manuscript claims and cannot be inferred from these tutorial figures.
+
+## Access for editors and reviewers
+
+The working repository and documentation site currently have restricted access. The five-person website allowlist does not automatically grant access to editors or anonymous reviewers. Before submission, provide the exact release archive and required test inputs through the journal submission system or an editor-approved private review mechanism. A GitHub URL requiring an unavailable account is insufficient.
+
+For publication, the authors must finalize durable code and data access, appropriate licensing, any access restrictions, and the manuscript's Code Availability and Data Availability statements. No public release, DOI, reviewer invitation or data-deposition claim is made by this package.
+
+Nature Communications policy references: [Policy guide](https://www.nature.com/ncomms/submit/policy), [How to submit](https://www.nature.com/ncomms/submit/how-to-submit).
+
+## Submission evidence and remaining requirements
+
+| Item | Included evidence | Remaining work before submission |
+| --- | --- | --- |
+| Code and installation | Installable wheel/source distribution, dependency ranges, CLI checks, source hashes | Confirm authors' licensing and exact frozen submission version |
+| Worked example | Four executable notebooks, compact saved-result inputs, expected embedded figures | Provide full training inputs or an approved access route |
+| Software and hardware | Tested environment snapshot; archived original trial runtime/device records; notebook execution times | Report the exact environment and resources used for manuscript claims |
+| Algorithm validation | API and spatial-assembly tests; one-epoch model tests | Supply convergence evidence and full analysis validation for central claims |
+| Preprocessing | Integration runners and adaptive spatial code | Include provenance/code for the upstream Brain representations |
+| Evaluation | Native predictions, selected parameters and unmodified archived trial metrics | Document trial selection, independent validation where applicable, baseline and uncertainty analyses |
+| Reviewer access | Offline source distribution includes code and a small executable plot example | Attach it at submission or arrange approved reviewer access; private links alone are insufficient |
+
+No DOI, open-source license, public repository availability or full end-to-end biological rerun is asserted by this release. The package's tests and examples support reproducibility within their documented scope; they do not replace the additional evidence needed for manuscript claims.

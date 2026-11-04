@@ -1,0 +1,12 @@
+Mosaic integration
+==================
+
+Integrate sections with partially overlapping modalities using the existing
+mosaic workflows.
+
+.. toctree::
+   :maxdepth: 1
+
+   Simulation <Simulations>
+   Human lymph node <Human_lymph>
+   Mouse embryo <Mouse_embryo>

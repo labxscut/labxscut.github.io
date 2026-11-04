@@ -1,0 +1,3 @@
+{
+  "path": "../../../integration_examples/mosaic/Simulations.ipynb"
+}

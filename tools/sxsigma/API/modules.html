@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules &mdash; SIGMA 0.3.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../static/sigma.css?v=d2c367f1" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=71d9d8e6"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../static/copybutton.js?v=fd10adb8"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release" href="../release.html" />
+    <link rel="prev" title="sigma.validate_config" href="sigma.validate_config.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SIGMA
+              <img src="../static/sigma-logo.png" class="logo" alt="Logo"/>
+          </a><div class="version">0.3.2</div>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API and modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sigma.run.html">sigma.run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigma.validate_config.html">sigma.validate_config</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reproducibility.html">Reproducibility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIGMA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API and modules</a></li>
+      <li class="breadcrumb-item active">Modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/API/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modules">
+<h1>Modules<a class="headerlink" href="#modules" title="Link to this heading"></a></h1>
+<p>SIGMA contains separate implementations for mosaic integration
+(<code class="docutils literal notranslate"><span class="pre">sigma.mosaic</span></code>) and the Brain vertical integration workflow
+(<code class="docutils literal notranslate"><span class="pre">sigma.vertical</span></code>). Use <a class="reference internal" href="sigma.run.html#sigma.run" title="sigma.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">sigma.run()</span></code></a> to configure and execute a
+workflow. The modules below contain the implementation used by its workers.</p>
+<section id="shared-module-names">
+<h2>Shared module names<a class="headerlink" href="#shared-module-names" title="Link to this heading"></a></h2>
+<p>Both branches contain modules with the following roles:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Role</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">preprocessing</span></code></p></td>
+<td><p>Input loading, modality-specific preprocessing, and preparation of
+representations for spatial feature construction.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">spatial_features</span></code></p></td>
+<td><p>Spatial-neighbourhood feature construction, PCA, and optional Harmony
+correction.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">data_assembly</span></code></p></td>
+<td><p>Organisation of modality-specific AnnData objects into a shared data
+layout.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
+<td><p>Multi-view variational model with contrastive and mutual-nearest-neighbour
+loss components.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">contrastive_training</span></code></p></td>
+<td><p>Contrastive training integration, batch samplers, and posterior export.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">contrastive_loss</span></code></p></td>
+<td><p>Batch layout handling and contrastive loss calculation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mnn_loss</span></code></p></td>
+<td><p>Modality-specific mutual-nearest-neighbour graphs and batch loss.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clustering</span></code></p></td>
+<td><p>Mclust and Leiden clustering helpers and associated plotting routines.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">evaluation</span></code></p></td>
+<td><p>Clustering, spatial, batch-mixing, and paired-modality evaluation helpers.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="workflow-entry-modules">
+<h2>Workflow entry modules<a class="headerlink" href="#workflow-entry-modules" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55.0%" />
+<col style="width: 45.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Preset</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma.mosaic.run_simulation</span></code></p></td>
+<td><p>Simulation RNA/ADT integration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sigma.mosaic.run_lymph</span></code></p></td>
+<td><p>Human lymph node RNA/ADT integration.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigma.mosaic.run_embryo</span></code></p></td>
+<td><p>Mouse embryo integration across RNA, ATAC, and histone-mark modalities.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sigma.vertical.run_brain</span></code></p></td>
+<td><p>Brain integration using aligned precomputed RNA and Hi-C representations.</p></td>
+</tr>
+</tbody>
+</table>
+<p>These entry modules receive their settings from the public orchestration API.
+For command-line runs, use <code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">run</span> <span class="pre">--config</span> <span class="pre">config.json</span></code> as described in
+<a class="reference internal" href="index.html"><span class="doc">API and modules</span></a>.</p>
+<p>Source code: <a class="reference external" href="https://github.com/labxscut/sxSIGMA/tree/main/src/sigma/mosaic">mosaic</a>
+and <a class="reference external" href="https://github.com/labxscut/sxSIGMA/tree/main/src/sigma/vertical">vertical</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sigma.validate_config.html" class="btn btn-neutral float-left" title="sigma.validate_config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../release.html" class="btn btn-neutral float-right" title="Release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

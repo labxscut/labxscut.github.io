@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API and modules &mdash; SIGMA 0.3.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../static/sigma.css?v=d2c367f1" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=71d9d8e6"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../static/copybutton.js?v=fd10adb8"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sigma.run" href="sigma.run.html" />
+    <link rel="prev" title="Brain" href="../examples/vertical/Brain.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SIGMA
+              <img src="../static/sigma-logo.png" class="logo" alt="Logo"/>
+          </a><div class="version">0.3.2</div>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API and modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sigma.run.html">sigma.run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigma.validate_config.html">sigma.validate_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reproducibility.html">Reproducibility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIGMA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API and modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/API/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api-and-modules">
+<h1>API and modules<a class="headerlink" href="#api-and-modules" title="Link to this heading"></a></h1>
+<p>The public Python interface provides configuration validation and workflow
+execution. Import these functions from <code class="docutils literal notranslate"><span class="pre">sigma</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sigma</span><span class="w"> </span><span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">validate_config</span>
+</pre></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sigma.run.html">sigma.run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigma.validate_config.html">sigma.validate_config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+</ul>
+</div>
+<section id="command-line-interface">
+<h2>Command-line interface<a class="headerlink" href="#command-line-interface" title="Link to this heading"></a></h2>
+<p>The installed package also provides the <code class="docutils literal notranslate"><span class="pre">sigma</span></code> command. Save the following
+configuration as <code class="docutils literal notranslate"><span class="pre">config.json</span></code>, adjusting the paths to your input data and a
+new output directory:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"preset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lymph"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"data_root"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data/Lymph-S1-S2-S3"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"output"</span><span class="p">:</span><span class="w"> </span><span class="s2">"results/lymph"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"device"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cpu"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Check the installation, inspect the resolved command, and run preprocessing and
+training:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sigma<span class="w"> </span>doctor
+sigma<span class="w"> </span>run<span class="w"> </span>--config<span class="w"> </span>config.json<span class="w"> </span>--dry-run
+sigma<span class="w"> </span>run<span class="w"> </span>--config<span class="w"> </span>config.json<span class="w"> </span>--prepare-only
+sigma<span class="w"> </span>run<span class="w"> </span>--config<span class="w"> </span>config.json<span class="w"> </span>--resume
+</pre></div>
+</div>
+<p>Paths in a JSON configuration are relative to that file. <code class="docutils literal notranslate"><span class="pre">--dry-run</span></code> validates
+the configuration without executing the pipeline. <code class="docutils literal notranslate"><span class="pre">--resume</span></code> requires the
+same resolved configuration as the saved run. Change the output directory when
+changing experiment settings.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">doctor</span></code> reports Python/model import checks and the availability of
+R/mclust. Every reported entry should have <code class="docutils literal notranslate"><span class="pre">&quot;ok&quot;:</span> <span class="pre">true</span></code> before running a
+workflow. Use <code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">--version</span></code> to display the installed package version.</p>
+<p>See the <a class="reference external" href="https://github.com/labxscut/sxSIGMA/blob/main/src/sigma/cli.py">command-line source</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../examples/vertical/Brain.html" class="btn btn-neutral float-left" title="Brain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sigma.run.html" class="btn btn-neutral float-right" title="sigma.run" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

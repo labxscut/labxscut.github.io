@@ -1,0 +1,114 @@
+sigma.validate_config
+=====================
+
+.. py:function:: sigma.validate_config(config)
+
+   Resolve and validate a SIGMA workflow configuration.
+
+   :param config: A configuration dictionary, or a string/``Path`` pointing to
+                  a JSON configuration file.
+   :type config: dict, str, or pathlib.Path
+   :returns: A new dictionary containing the supplied settings, preset
+             defaults, and absolute input/output paths.
+   :rtype: dict
+   :raises TypeError: ``config`` is not a dictionary or supported path type.
+   :raises ValueError: Settings are unknown, missing, or invalid.
+
+This function does not train a model, create output directories, or validate
+the contents of the input data. For JSON input, relative ``data_root`` and
+``output`` paths are resolved against the directory containing the JSON file.
+For dictionary input, they are resolved against the current working directory.
+
+Configuration fields
+--------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 22 78
+
+   * - Field
+     - Description
+   * - ``preset``
+     - Required. One of ``simulation``, ``lymph``, ``embryo``, or ``brain``.
+   * - ``data_root``
+     - Required. Directory containing the input files for the selected preset.
+   * - ``output``
+     - Required. Output directory. It must be outside ``data_root``.
+   * - ``dataset``
+     - Dataset name registered by the selected workflow. Defaults to the name
+       in the preset table below.
+   * - ``integ``
+     - Integration weight; a finite positive number. Defaults are preset-specific.
+   * - ``contrastive``
+     - Contrastive weight; a finite nonnegative number. Defaults are preset-specific.
+   * - ``max_epochs``
+     - Positive integer, or ``None`` (default) to retain the model's epoch default.
+   * - ``device``
+     - ``"cpu"`` (default) or ``"cuda"``.
+   * - ``gpu_index``
+     - Nonnegative integer GPU index. Default: ``0``.
+   * - ``label_key``
+     - Optional observation-label key used by the workflow's evaluation step.
+       When omitted, the workflow's dataset setting is retained.
+   * - ``n_clusters``
+     - Optional positive integer overriding the workflow's clustering count.
+   * - ``source_h5ad``
+     - Brain source H5AD filename or absolute path. Relative names are resolved
+       under ``data_root`` by the Brain worker. The Brain default is
+       ``annotated_full_gene.h5ad``.
+   * - ``dataset_config``
+     - Optional custom mosaic dataset definition. Requires ``name``,
+       ``modalities``, and ``pairs``. Its ``base`` is set to ``data_root`` and its
+       ``name`` replaces ``dataset``. Not supported for the Brain preset.
+
+Unknown top-level fields are rejected. The contrastive mixing ratio is fixed at
+``0.3`` in these workflows; it is not a configurable field in this interface.
+
+Preset defaults
+---------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 15 55 15 15
+
+   * - Preset
+     - Dataset
+     - ``integ``
+     - ``contrastive``
+   * - ``simulation``
+     - ``Simulation-rna-0.1-12-adt-2.1-seed3``
+     - 230
+     - 0.8
+   * - ``lymph``
+     - ``Lymph-S1-S2-S3``
+     - 950
+     - 0.35
+   * - ``embryo``
+     - ``Embryo``
+     - 195
+     - 0.9
+   * - ``brain``
+     - ``brain_r11``
+     - 145
+     - 0.85
+
+Example
+-------
+
+.. code-block:: python
+
+   from sigma import validate_config
+
+   config = validate_config({
+       "preset": "lymph",
+       "data_root": "data/Lymph-S1-S2-S3",
+       "output": "results/lymph",
+   })
+
+   print(config["dataset"])       # Lymph-S1-S2-S3
+   print(config["integ"])         # 950.0
+   print(config["contrastive"])   # 0.35
+   print(config["device"])        # cpu
+
+`View source
+<https://github.com/labxscut/sxSIGMA/blob/main/src/sigma/api.py#L16>`_

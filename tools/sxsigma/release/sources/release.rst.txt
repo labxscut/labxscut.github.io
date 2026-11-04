@@ -1,0 +1,58 @@
+Release
+=======
+
+0.3.2
+-----
+
+* Align the Embryo spatial display with the approved v2 BANKSY-refined panel,
+  including its I–XV anatomical legend, palette and display refinement.
+* Verify all 2,210 display changes in Sections 4–7 against the panel audit.
+  Preserve native predictions, embeddings and archived metrics at 195 / 0.9 / 0.3.
+* Re-execute the Embryo notebook; retain the other datasets, including Brain v19.
+* Include the updated SIGMA framework figure.
+
+Downloads
+~~~~~~~~~
+
+The complete source distribution includes code, notebooks, plotting inputs,
+documentation and tests. A wheel installs the Python package only.
+
+* `Complete source distribution <static/releases/sigma_spatial-0.3.2.tar.gz>`_
+* `Python wheel <static/releases/sigma_spatial-0.3.2-py3-none-any.whl>`_
+* `SHA-256 checksums <static/releases/SHA256SUMS>`_
+
+These downloads use the same access controls as the documentation website.
+
+0.3.1
+-----
+
+* Align the Brain preset, saved input bundle, notebook and website with the
+  approved complete v19 panel: integration 145, contrastive 0.85, mix 0.3.
+* Reproduce v19 spatial coordinates, per-spot colors and I–XII anatomical legend.
+  Preserve native model predictions separately from the panel display annotations.
+* Retain the other three datasets and their selected results.
+
+0.3.0
+-----
+
+* Installable ``sigma-spatial`` package from the 29 top-level SIGMA.1025 sources:
+  18 mosaic files and 11 brain files, packaged as ``sigma.mosaic`` and ``sigma.vertical``.
+* Four re-executed integration notebooks with verified selected-panel inputs,
+  sample-colored UMAPs and spatial-domain maps arranged in one row.
+* Selected integration/contrastive weights: Simulation 230/0.8, Lymph 950/0.35,
+  Embryo 195/0.9 and Brain 120/0.9. Mixing ratio: 0.3.
+* Source provenance, tested environment, model smoke tests and reproducibility
+  documentation, with explicit limits on full-training and submission readiness.
+
+0.2.6
+-----
+
+Source-only refresh from SIGMA.1025. Example notebook outputs and the website
+were not updated in that release.
+
+0.2.5
+-----
+
+Previous SIGMA.1020 package and integration examples.
+
+Source code: `GitHub <https://github.com/labxscut/sxSIGMA/tree/main>`_.

@@ -1,0 +1,68 @@
+# Installation
+
+Install the SIGMA Python package before running the notebooks. Its distribution
+name is `sigma-spatial`, and its Python import name is `sigma`.
+Python 3.10–3.12 and R with `mclust` are required.
+
+## 1. Create an environment
+
+With Conda installed, create an environment containing Python and R/mclust:
+
+```bash
+conda create -n sigma -c conda-forge python=3.10 pip r-base r-mclust -y
+conda activate sigma
+export R_HOME="$(R RHOME)"
+```
+
+R and `mclust` are separate from the Python dependencies and are needed for
+clustering through `rpy2`. A C/C++ compiler must be available if pip builds
+dependencies such as `annoy` from source.
+
+For NVIDIA GPU training, install a compatible PyTorch build in this environment
+before the next step. SIGMA requires `torch>=2.3,<2.6`; select a build compatible
+with your NVIDIA driver from the
+[official PyTorch installation commands](https://pytorch.org/get-started/previous-versions/).
+
+## 2. Install SIGMA and the notebook tools
+
+If you received the complete source distribution from the restricted website or
+submission materials, extract it and install from that directory:
+
+```bash
+tar -xzf sigma_spatial-0.3.2.tar.gz
+cd sigma_spatial-0.3.2
+python -m pip install '.[notebooks]'
+```
+
+Alternatively, clone this repository and enter the directory containing `pyproject.toml`.
+
+```bash
+git clone https://github.com/labxscut/sxSIGMA.git
+cd sxSIGMA
+python -m pip install .
+python -m pip install jupyterlab ipykernel
+python -m ipykernel install --user --name sigma --display-name "Python (SIGMA)"
+```
+
+`python -m pip install .` installs **SIGMA itself and all declared Python
+dependencies**. The dependencies and version constraints are maintained in
+[pyproject.toml](https://github.com/labxscut/sxSIGMA/blob/main/pyproject.toml):
+
+- Model training: `torch`, `scvi-tools`, `optuna`.
+- Data processing and integration: `numpy`, `scipy`, `pandas`, `anndata`,
+  `scanpy`, `scikit-learn`, `h5py`, `muon`, `harmonypy`, `harmony-pytorch`,
+  `annoy`, `scikit-misc`.
+- Clustering, evaluation and plotting: `rpy2`, `igraph`, `leidenalg`, `scib`,
+  `umap-learn`, `matplotlib`, `seaborn`.
+
+## 3. Check the installation
+
+```bash
+python -m pip check
+python -c "import sigma; print(sigma.__version__)"
+sigma doctor
+```
+
+`sigma doctor` checks the model imports and R/mclust; each reported entry should
+have `"ok": true` before running the workflows.
+

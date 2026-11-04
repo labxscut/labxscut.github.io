@@ -1,0 +1,68 @@
+Modules
+=======
+
+SIGMA contains separate implementations for mosaic integration
+(``sigma.mosaic``) and the Brain vertical integration workflow
+(``sigma.vertical``). Use :py:func:`sigma.run` to configure and execute a
+workflow. The modules below contain the implementation used by its workers.
+
+Shared module names
+-------------------
+
+Both branches contain modules with the following roles:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Module
+     - Role
+   * - ``preprocessing``
+     - Input loading, modality-specific preprocessing, and preparation of
+       representations for spatial feature construction.
+   * - ``spatial_features``
+     - Spatial-neighbourhood feature construction, PCA, and optional Harmony
+       correction.
+   * - ``data_assembly``
+     - Organisation of modality-specific AnnData objects into a shared data
+       layout.
+   * - ``model``
+     - Multi-view variational model with contrastive and mutual-nearest-neighbour
+       loss components.
+   * - ``contrastive_training``
+     - Contrastive training integration, batch samplers, and posterior export.
+   * - ``contrastive_loss``
+     - Batch layout handling and contrastive loss calculation.
+   * - ``mnn_loss``
+     - Modality-specific mutual-nearest-neighbour graphs and batch loss.
+   * - ``clustering``
+     - Mclust and Leiden clustering helpers and associated plotting routines.
+   * - ``evaluation``
+     - Clustering, spatial, batch-mixing, and paired-modality evaluation helpers.
+
+Workflow entry modules
+----------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 55 45
+
+   * - Module
+     - Preset
+   * - ``sigma.mosaic.run_simulation``
+     - Simulation RNA/ADT integration.
+   * - ``sigma.mosaic.run_lymph``
+     - Human lymph node RNA/ADT integration.
+   * - ``sigma.mosaic.run_embryo``
+     - Mouse embryo integration across RNA, ATAC, and histone-mark modalities.
+   * - ``sigma.vertical.run_brain``
+     - Brain integration using aligned precomputed RNA and Hi-C representations.
+
+These entry modules receive their settings from the public orchestration API.
+For command-line runs, use ``sigma run --config config.json`` as described in
+:doc:`index`.
+
+Source code: `mosaic
+<https://github.com/labxscut/sxSIGMA/tree/main/src/sigma/mosaic>`_
+and `vertical
+<https://github.com/labxscut/sxSIGMA/tree/main/src/sigma/vertical>`_.

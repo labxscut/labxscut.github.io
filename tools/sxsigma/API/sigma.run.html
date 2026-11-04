@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sigma.run &mdash; SIGMA 0.3.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../static/sigma.css?v=d2c367f1" />
+
+  
+      <script src="../static/jquery.js?v=5d32c60e"></script>
+      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../static/documentation_options.js?v=71d9d8e6"></script>
+      <script src="../static/doctools.js?v=9bcbadda"></script>
+      <script src="../static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../static/copybutton.js?v=fd10adb8"></script>
+    <script src="../static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="sigma.validate_config" href="sigma.validate_config.html" />
+    <link rel="prev" title="API and modules" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980b9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SIGMA
+              <img src="../static/sigma-logo.png" class="logo" alt="Logo"/>
+          </a><div class="version">0.3.2</div>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API and modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sigma.run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sigma.validate_config.html">sigma.validate_config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reproducibility.html">Reproducibility</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980b9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SIGMA</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">API and modules</a></li>
+      <li class="breadcrumb-item active">sigma.run</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../sources/API/sigma.run.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sigma-run">
+<h1>sigma.run<a class="headerlink" href="#sigma-run" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="sigma.run">
+<span class="sig-prename descclassname"><span class="pre">sigma.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepare_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dry_run</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma.run" title="Link to this definition"></a></dt>
+<dd><p>Execute a SIGMA preset through isolated Python worker processes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config</strong> (<em>dict</em><em>, </em><em>str</em><em>, or </em><em>pathlib.Path</em>) – Configuration dictionary or path to a JSON configuration
+file. See <a class="reference internal" href="sigma.validate_config.html#sigma.validate_config" title="sigma.validate_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">sigma.validate_config()</span></code></a> for supported
+fields and path resolution.</p></li>
+<li><p><strong>prepare_only</strong> (<em>bool</em>) – Run preprocessing without training. Default:
+<code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>dry_run</strong> (<em>bool</em>) – Return the resolved configuration and worker command
+without executing the workflow. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>resume</strong> (<em>bool</em>) – Allow reuse of a nonempty output directory when its
+saved configuration matches exactly. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>pathlib.Path</em><em>, or </em><em>None</em>) – Optional path for worker stdout and stderr. Its parent
+directory is created if needed. When omitted, output is
+displayed in the current terminal or notebook. Relative
+log paths are relative to the current working directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>With <code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code>, a dictionary containing <code class="docutils literal notranslate"><span class="pre">config</span></code> (the
+resolved configuration) and <code class="docutils literal notranslate"><span class="pre">command</span></code> (a list of command
+arguments). Otherwise, a <code class="docutils literal notranslate"><span class="pre">subprocess.CompletedProcess</span></code> for
+the completed worker.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or subprocess.CompletedProcess</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – The input directory does not exist when executing
+the workflow.</p></li>
+<li><p><strong>FileExistsError</strong> – The output directory is nonempty and <code class="docutils literal notranslate"><span class="pre">resume</span></code> is
+<code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>ValueError</strong> – Configuration validation fails, or resumption cannot
+match the saved configuration.</p></li>
+<li><p><strong>subprocess.CalledProcessError</strong> – The worker exits unsuccessfully.</p></li>
+<li><p><strong>RuntimeError</strong> – A training run does not produce successful trial
+reports.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sigma</span><span class="w"> </span><span class="kn">import</span> <span class="n">run</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"preset"</span><span class="p">:</span> <span class="s2">"lymph"</span><span class="p">,</span>
+    <span class="s2">"data_root"</span><span class="p">:</span> <span class="s2">"data/Lymph-S1-S2-S3"</span><span class="p">,</span>
+    <span class="s2">"output"</span><span class="p">:</span> <span class="s2">"results/lymph"</span><span class="p">,</span>
+    <span class="s2">"device"</span><span class="p">:</span> <span class="s2">"cpu"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">planned</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">planned</span><span class="p">[</span><span class="s2">"command"</span><span class="p">])</span>
+
+<span class="n">run</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">prepare_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="s2">"results/lymph/preprocessing.log"</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">resume</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_file</span><span class="o">=</span><span class="s2">"results/lymph/training.log"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="outputs-and-resumption">
+<h2>Outputs and resumption<a class="headerlink" href="#outputs-and-resumption" title="Link to this heading"></a></h2>
+<p>The function writes <code class="docutils literal notranslate"><span class="pre">sigma_run_config.json</span></code> under the output directory and
+passes the same resolved settings to the workers. Preprocessed data are stored
+under <code class="docutils literal notranslate"><span class="pre">assets/</span></code>; training results are stored under <code class="docutils literal notranslate"><span class="pre">runs/</span></code>. The integration
+notebooks demonstrate loading the saved representations and clustering results.</p>
+<p>The return value is a process result; embeddings and AnnData objects are read
+from the saved files. For training runs, <code class="docutils literal notranslate"><span class="pre">run</span></code> checks that trial reports exist
+and that their statuses are <code class="docutils literal notranslate"><span class="pre">&quot;ok&quot;</span></code>. The preprocessing-only path does not
+perform this training-report check.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dry_run=True</span></code> does not check that the input directory or individual input
+files exist. It resolves and validates settings without creating the output
+directory or starting a worker.</p>
+<p>When resuming a nonempty output directory, its saved <code class="docutils literal notranslate"><span class="pre">sigma_run_config.json</span></code>
+must match the current resolved configuration exactly. Use a new output
+directory for another parameter combination.</p>
+<p><a class="reference external" href="https://github.com/labxscut/sxSIGMA/blob/main/src/sigma/api.py#L69">View source</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="API and modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sigma.validate_config.html" class="btn btn-neutral float-right" title="sigma.validate_config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

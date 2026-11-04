@@ -1,0 +1,19 @@
+Vertical integration
+====================
+
+The Brain example integrates RNA and Hi-C representations from matched spots.
+
+.. toctree::
+   :maxdepth: 1
+
+   Brain <Brain>
+
+The displayed Brain result uses integration weight **145**, contrastive weight
+**0.85**, mixing ratio **0.3**, and the saved native model partition. One sample
+is present; its UMAP is an embedding overview, not a between-batch mixing assessment.
+
+The spatial display reproduces ``brain_r11_panel_up_v19.py``: the same coordinates,
+I–XII anatomical legend, neighborhood-refined display labels, local polygon
+recoloring and CA2 ROI overlay. These display annotations are distinct from the
+native model clusters. The input bundle preserves the original prediction vector
+separately; display colors are not used to calculate the archived metrics.
