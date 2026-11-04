@@ -65,6 +65,19 @@
   maintainers: [dhy]
   papers: [Duan2025sxSNF, DuanAPBC2025SNF]
 
+- key: sxSIGMA
+  name: sxSIGMA
+  logo: /images/tools/sxSIGMA.svg
+  tagline: Spatial multi-omics integration
+  description: >-
+    Spatial multi-omics integration. The Python package imports as sigma
+    and distributes as sigma-spatial.
+  version: "0.3.2"
+  repo: https://github.com/labxscut/sxSIGMA
+  docs: https://labxscut.github.io/tools/sxsigma/
+  tags: [spatial multi-omics, integration]
+  maintainers: [wlp]
+
 - key: sxEnzHier
   name: sxEnzHier / EnzHire
   logo: /images/tools/sxEnzHier.svg

@@ -31,7 +31,7 @@ SITE_ROOT = Path(__file__).resolve().parents[1]
 STATE_ROOT = SITE_ROOT.parent / "logs"
 DEFAULT_LOG = STATE_ROOT / "auto_retry_sync.log"
 DEFAULT_LOCK = STATE_ROOT / "auto_retry_sync.lock"
-TOOLS = ("sxLaep", "sxSNF", "deeplb")
+TOOLS = ("sxLaep", "sxSNF", "deeplb", "sxSIGMA")
 TRAILER = "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
 # A half-open SSH/TLS connection over flaky WiFi can hang git push / ls-remote

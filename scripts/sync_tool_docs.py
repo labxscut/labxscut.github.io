@@ -39,11 +39,13 @@ TOOLS = {
     "deeplb": Tool("deeplb", "labxscut/DeepLB", "DeepLB", "deeplb"),
     "sxLaep": Tool("sxLaep", "labxscut/sxLaep", "sxLaep", "sxlaep"),
     "sxSNF": Tool("sxSNF", "labxscut/sxSNF", "sxSNF", "sxSNF"),
+    "sxSIGMA": Tool("sxSIGMA", "labxscut/sxSIGMA", "sxSIGMA", "sxsigma"),
 }
 LEGACY_ROUTES = {
     "deeplb": ("/deeplb/",),
     "sxLaep": ("/sxLaep/",),
     "sxSNF": ("/sxSNF/",),
+    "sxSIGMA": (),
 }
 SOURCE_PATH = PurePosixPath("docs/site")
 # `docs:` itself stays in the catalog as the anchor line that the managed
