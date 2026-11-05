@@ -93,6 +93,9 @@ before spending time on optional profile details.
 
 - Google Pages uses the repository root on `main` (`main:/`). A successful
   Pages deployment is required before describing a change as live.
+- Before a live website check, remind the owner: (1) merge the PR to `main`
+  and wait for the Pages deployment; (2) clear the browser cache. An open PR
+  is not live, and a cached browser can show the old page.
 - The live GitHub Pages runtime is Jekyll 3.10/Liquid 4.0/Sass 3.7. Avoid
   compound `where_exp` expressions and Sass `max()`/`min()` around `calc()`.
 - The profile generator is `_generators/gen_people.py`; generated

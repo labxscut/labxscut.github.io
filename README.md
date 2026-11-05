@@ -154,7 +154,9 @@ artifacts are ignored locally.
 
 The public GitHub Pages source is the repository root on `main` (`main:/`).
 Pushing to `main` triggers the Pages build and deployment; a tag alone does not
-deploy. The repository is temporarily excluded from the hourly
+deploy. Before checking the live site, merge the pull request into `main` and
+wait for that deployment, then clear the browser cache. An open pull request is
+not live, and a cached tab can keep showing the old page. The repository is temporarily excluded from the hourly
 `htworkrepos-sync` job; remove its entry from
 `~/work/agents/scripts/sync-work-repos.conf` when automatic sync should resume.
 
