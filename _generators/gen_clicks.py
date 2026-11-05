@@ -147,9 +147,17 @@ def load_yml(name: str):
         return yaml.safe_load(fh)
 
 
+def on_site(entry: dict) -> bool:
+    """True unless the entry is published_on_site noshow or false."""
+    value = entry.get("published_on_site")
+    return value is not False and value != "noshow"
+
+
 def build(token: str, days: int) -> dict:
-    tools = load_yml("tools.yml") or []
-    pubs = load_yml("publications.yml") or []
+    # Non-display tools and papers stay out of this generated file so a
+    # popularity sort cannot put them back on a listing.
+    tools = [t for t in (load_yml("tools.yml") or []) if on_site(t)]
+    pubs = [p for p in (load_yml("publications.yml") or []) if on_site(p)]
 
     hits = fetch_hits(token, days)
 
@@ -196,8 +204,9 @@ def build(token: str, days: int) -> dict:
             paper_counts[s] = paper_counts.get(s, 0) + count
 
     # Order keys/papers by clicks (desc, then name for a stable tie-break). Every
-    # registered tool and paper appears, so the templates can sort the full grid
-    # -- not just the ones with clicks -- without a second lookup.
+    # displayed tool and paper appears, so the templates can sort the full grid
+    # -- not just the ones with clicks -- without a second lookup. Non-display
+    # entries are omitted above.
     def rank(mapping: dict[str, int], all_keys: list[str]) -> list[str]:
         return sorted(all_keys, key=lambda k: (-mapping.get(k, 0), k.lower()))
 

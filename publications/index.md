@@ -11,11 +11,18 @@ nav:
 
 {% include section-banner.html key="publications" %}
 
+{% comment %}
+  published_on_site: noshow (or false) drops a record that is still in the data
+  file. The filter is the listing gate on this build; no generator has to run
+  first. Meeting abstracts use the same term.
+{% endcomment %}
+{% assign publications = site.data.publications | where_exp: "paper", "paper.published_on_site != false" | where_exp: "paper", "paper.published_on_site != 'noshow'" %}
+{% assign abstracts = site.data.abstracts | where_exp: "paper", "paper.published_on_site != false" | where_exp: "paper", "paper.published_on_site != 'noshow'" %}
 {% assign lead = "" | split: "" %}
 {% assign collaborative = "" | split: "" %}
 {% assign chapters = "" | split: "" %}
 {% assign accepted = "" | split: "" %}
-{% for paper in site.data.publications %}
+{% for paper in publications %}
   {% if paper.status == "Accept" or paper.status == "Accepted" %}
     {% assign accepted = accepted | push: paper %}
   {% endif %}
@@ -28,7 +35,7 @@ nav:
       {% assign collaborative = collaborative | push: paper %}
   {% endcase %}
 {% endfor %}
-{% assign published_count = site.data.publications | size | minus: accepted.size %}
+{% assign published_count = publications | size | minus: accepted.size %}
 {% assign intros = site.data.intros.publications %}
 {% include intro.html value=intros.intro published=published_count accepted=accepted.size %}
 
@@ -51,8 +58,8 @@ nav:
 {%- assign target = "" -%}
 {%- for slug in kw.slugs -%}
   {%- if target == "" -%}
-    {%- assign match = site.data.publications | where: "slug", slug | first -%}
-    {%- unless match -%}{%- assign match = site.data.abstracts | where: "slug", slug | first -%}{%- endunless -%}
+    {%- assign match = publications | where: "slug", slug | first -%}
+    {%- unless match -%}{%- assign match = abstracts | where: "slug", slug | first -%}{%- endunless -%}
     {%- if match -%}{%- assign target = slug | slugify -%}{%- endif -%}
   {%- endif -%}
 {%- endfor -%}
@@ -82,11 +89,11 @@ nav:
 {% include publication-list.html papers=chapters track="chapters" %}
 {% endif %}
 
-{% if site.data.abstracts.size > 0 %}
+{% if abstracts.size > 0 %}
 ## Conference Abstracts and Posters
 
 Meeting abstracts and posters, newest first. These are not counted as full
 papers.
 
-{% include publication-list.html papers=site.data.abstracts track="abstracts" %}
+{% include publication-list.html papers=abstracts track="abstracts" %}
 {% endif %}

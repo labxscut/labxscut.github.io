@@ -41,6 +41,16 @@ CONTACT = WORK / "advisee" / "core" / "database" / "contact.md"
 OUT = REPO / "_data" / "publications.yml"
 ABSTRACTS_OUT = REPO / "_data" / "abstracts.yml"
 
+def _noshow(value) -> bool:
+    """True when a site entry is hidden.
+
+    The term is ``noshow``. ``false`` means the same thing and is what older
+    publication records already store. Either value is enough; callers do not
+    wait for another rewrite of the record.
+    """
+    return value is False or value == "noshow"
+
+
 PUBLIC_STATUS = {"Published", "Final", "Accept", "Accepted"}
 # Meeting abstracts and conference posters are published separately, at the
 # bottom of the publications page, so they never mix with full papers.
@@ -335,12 +345,15 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     is_abstract = status in ABSTRACT_STATUS
     if status not in PUBLIC_STATUS and not is_abstract:
         return None
-    # Scholar/CV backfill records opt in explicitly; preprints and theses stay
-    # in the registry only until a human promotes them. Meeting abstracts and
-    # posters are exempt: they always render in the separate abstracts section,
-    # but only once they carry a resolvable DOI (records flagged "resolve
-    # before publishing" stay out).
-    if doc.get("published_on_site") is False and not is_abstract:
+    # published_on_site is the site-wide display switch (README, "What is shown
+    # on the site"). The term is noshow; false means the same thing. Scholar/CV
+    # backfill records opt in explicitly; preprints and theses stay in the
+    # registry only until a human promotes them. Meeting abstracts and posters
+    # are the one exemption: they still render in the abstracts section once
+    # they carry a resolvable DOI (records flagged "resolve before publishing"
+    # stay out). noshow on a full paper keeps that paper out of
+    # _data/publications.yml without deleting the registry copy.
+    if _noshow(doc.get("published_on_site")) and not is_abstract:
         return None
 
     title = clean(doc.get("title"))
@@ -629,6 +642,10 @@ def tools_by_paper() -> dict[str, list[str]]:
     records = yaml.safe_load(path.read_text(encoding="utf-8")) or []
     result: dict[str, list[str]] = {}
     for tool in records:
+        # A non-display tool stays in tools.yml but must not be written onto
+        # the public publication records.
+        if _noshow(tool.get("published_on_site")):
+            continue
         for slug in tool.get("papers") or []:
             result.setdefault(slug, []).append(tool["key"])
     return result

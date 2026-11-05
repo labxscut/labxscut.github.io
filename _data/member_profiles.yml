@@ -1,3 +1,9 @@
 # Curated public member material that is not part of the roster.
 # Add only verified public PDF links; keep access-controlled CVs out of the site.
+#
+# Display switch (README, "What is shown on the site"):
+#   - nick: example
+#     published_on_site: noshow
+# gen_people.py copies that onto _data/people.yml and writes published: false
+# on team/<nick>/, so the profile is not built. Omit the key to keep showing them.
 []

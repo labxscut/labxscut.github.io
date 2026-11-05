@@ -45,8 +45,12 @@ each section page's `nav.order`. The old News URL `/blog/` redirects to
   adds records found only in the CV, and `_generators/backfill_scholar_papers.py` adds records
   found only on Google Scholar / ORCID / Crossref (book chapters, theses, conference abstracts,
   preprints). Those extra records carry `visibility`, `published_on_site`, and `origin`, and stay
-  out of the site bibliography while `published_on_site: false`; promote one by flipping the flag
-  (and giving it a published lifecycle status) once the item is formally published.
+  out of the site bibliography while `published_on_site` is `noshow` or `false`;
+  promote one by clearing that term (and giving it a published lifecycle status)
+  once the item is formally published.
+  The same `published_on_site` term is the display switch for tools, people, and
+  activities. See **What is shown on the site** below. `visibility` only records
+  where a bibliography gap came from; it does not hide or show a page.
   Every entry carries the CV track it belongs to: `category` (the registry's own
   label), `pi_role` (the PI authorship note), and `pi_track` — `lead` for
   (co)-first/(co)-corresponding author work, `collaborative`, or `book-chapter`.
@@ -83,6 +87,45 @@ The publications index is based on the LabX paper registry and is not guaranteed
 to include the PI's full Google Scholar bibliography. The tools catalog lists a
 tool's papers as links into `/publications/` only; the bibliographic details
 live in the publication records.
+
+## What is shown on the site
+
+`published_on_site` marks a **tool**, **person**, **publication**, or **activity**
+as displayed or not. Leave the key out, or set it to `true`, and the entry is
+shown. Set it to `noshow` and the entry stays in the repository but drops out of
+listings, index cards, cross-links, navigation chips, generated click order,
+and the sitemap on the next site build. `false` means the same thing; older
+publication records already use it. No generator has to run before a `noshow`
+value already stored in `_data` takes effect. The source is not deleted.
+
+This is not the tool `private: true` flag. A private tool is still listed; only
+its unreachable repository URL is withheld. It is also not publication
+`visibility`, which classifies a bibliography gap as `registry` or `scholar-only`.
+News stays on its own switch: rename the file with a leading `_` (`_news/README.md`).
+
+GitHub Pages builds this site in safe mode and does not load `_plugins`, so the
+switch is data plus Liquid plus Jekyll's own publish controls. Every listing
+keeps an entry unless `published_on_site` is `noshow` or `false`. A direct URL
+for a noshow entry is not built, so it 404s.
+
+| Kind | Where the flag is set | What remains in the repo | What a visitor gets |
+| --- | --- | --- | --- |
+| Tool | `_data/tools.yml` | The catalog entry and, when the tool has hosted docs, `tools/<docs_slug>/` | No card on `/` or `/tools/`, and no link from a paper, news chip, or member tools tab. Add `tools/<docs_slug>` to `_config.yml` `exclude` so `/tools/<docs_slug>/` (and its `release/` copy) is not emitted and is absent from `sitemap.xml`. |
+| Person | `_data/member_profiles.yml`, as `nick` plus `published_on_site: noshow` | The roster row, copied onto `_data/people.yml` by `gen_people.py` | No row on `/team/` and no profile link. The generator writes `published: false` on `team/<nick>/`, so those pages 404 and stay out of the sitemap. A `noshow` already present on the people row is omitted from `/team/` on the next build. |
+| Publication | `published_on_site: noshow` (or `false`) on the labxManage `publication.yaml` | The registry record | `gen_publications.py` omits a full paper from `_data/publications.yml`, so it has no listing and no anchor. There is no per-paper HTML page. Meeting abstracts and posters that have a DOI still render; that existing exemption is unchanged. A record that already carries `noshow` or `false` in site data is dropped by the publications template on this build. |
+| Activity | `_data/activities.yml` | The activity entry | Omitted from `/` and `/activities/`. An activity has no page of its own. |
+
+`_generators/qa_check.py` fails if a noshow tool with a `docs_slug` is
+missing from `exclude`, or if a displayed tool's docs directory is excluded.
+It also fails if a noshow person still has `has_page: true` or a profile
+page without `published: false`.
+
+**sxSIGMA** is `noshow`: `_data/tools.yml` sets `published_on_site: noshow`,
+and `_config.yml` excludes `tools/sxsigma`. Both are already in the tree, so
+the next Pages build drops the card and the docs URL with no generator step.
+The documentation tree stays in the repository. Delete the term and the exclude
+entry to show it again. `images/tools/sxSIGMA.svg` is still copied with the
+other static images; no page links to it.
 
 ## Regenerating
 

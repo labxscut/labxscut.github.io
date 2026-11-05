@@ -5,7 +5,7 @@
   Usage:  {% include team-alumni.html %}
 {%- endcomment -%}
 {%- assign groups = "Visiting scholars,Postdocs,PhD,Master's,Undergraduates" | split: "," -%}
-{%- assign alumni = site.data.people | where: "section", "alumni" -%}
+{%- assign alumni = site.data.people | where: "section", "alumni" | where_exp: "person", "person.published_on_site != false" | where_exp: "person", "person.published_on_site != 'noshow'" -%}
 {%- for label in groups -%}
   {%- assign subset = alumni | where: "alumni_group", label -%}
   {%- if label == "Undergraduates" -%}

@@ -67,6 +67,11 @@
 
 - key: sxSIGMA
   name: sxSIGMA
+  # noshow: kept in this catalog and under tools/sxsigma/, omitted from
+  # listings, cross-links, and the built site on the next Pages build.
+  # See README, "What is shown on the site".
+  # To show it again, delete this line and remove tools/sxsigma from _config.yml exclude.
+  published_on_site: noshow
   logo: /images/tools/sxSIGMA.svg
   tagline: Spatial multi-omics integration
   description: >-

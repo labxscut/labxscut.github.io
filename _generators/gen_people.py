@@ -19,6 +19,11 @@ Rule for individual pages: current group members get a page at /team/<nick>/
 only when verified CV, publication, teaching, or tool material is available.
 Alumni and external collaborators are listed on /team/ only.
 
+Display switch: a `_data/member_profiles.yml` entry with `published_on_site: noshow`
+(or `false`) keeps the roster row in `_data/people.yml` and writes
+`published: false` on `team/<nick>/`, so listings omit the person and the
+profile URL is not built. See the site README, "What is shown on the site".
+
 Usage (WSL):  python3 _generators/gen_people.py
 """
 from __future__ import annotations
@@ -33,7 +38,7 @@ from urllib.parse import urlsplit
 import yaml
 
 from gen_avatars import AVATAR_ROOT, AVATAR_DIR, PHOTO_SUFFIXES, ensure_avatar
-from gen_publications import REPO, WORK, load_roster, canonical_date
+from gen_publications import REPO, WORK, _noshow, load_roster, canonical_date
 
 # Author-name formats have exactly ONE implementation, in the shared backend
 # library agents/hermes/lib/author_name.py (SOP:
@@ -438,6 +443,57 @@ def tracked_profile_nicks() -> set[str]:
     }
 
 
+def unpublished_nicks(profiles: list[dict], roster_nicks: set[str]) -> set[str]:
+    """Members marked published_on_site noshow (or false) in member_profiles.yml.
+
+    The term is the durable in-repo switch. gen_people copies it onto
+    people.yml; a hand edit of people.yml would be overwritten on the next run.
+    """
+    hidden: set[str] = set()
+    for item in profiles:
+        if not isinstance(item, dict) or not _noshow(item.get("published_on_site")):
+            continue
+        nick = item.get("nick")
+        if not nick:
+            raise ValueError(
+                f"published_on_site: noshow in {MEMBER_PROFILES} needs a nick"
+            )
+        if nick not in roster_nicks:
+            raise ValueError(f"unknown member in {MEMBER_PROFILES}: {nick}")
+        hidden.add(nick)
+    return hidden
+
+
+def ensure_unpublished(profile_dir: Path) -> None:
+    """Keep generated profile files, but stop Jekyll from emitting them.
+
+    Hand-maintained pages (no generator marker) are left untouched; qa_check
+    reports them if they would still be built.
+    """
+    if not profile_dir.exists():
+        return
+    for page in profile_dir.rglob("index.md"):
+        text = page.read_text(encoding="utf-8")
+        if PAGE_MARKER not in text or not text.startswith("---"):
+            continue
+        parts = text.split("---", 2)
+        if len(parts) < 3:
+            continue
+        front = yaml.safe_load(parts[1]) or {}
+        if front.get("published") is False and _noshow(front.get("published_on_site")):
+            continue
+        front["published"] = False
+        front["published_on_site"] = "noshow"
+        front["has_page"] = False
+        page.write_text(
+            "---\n"
+            + yaml.safe_dump(front, allow_unicode=True, sort_keys=False, width=100).strip()
+            + "\n---"
+            + parts[2],
+            encoding="utf-8",
+        )
+
+
 def cv_links_by_member(
     profiles: list[dict], roster_nicks: set[str]
 ) -> dict[str, str]:
@@ -504,11 +560,18 @@ def main() -> int:
     member_profile_docs = yaml.safe_load(
         MEMBER_PROFILES.read_text(encoding="utf-8")
     ) or []
-    cv_by_member = cv_links_by_member(
-        member_profile_docs, {row["nick"] for row in roster}
-    )
+    roster_nicks = {row["nick"] for row in roster}
+    cv_by_member = cv_links_by_member(member_profile_docs, roster_nicks)
+    hidden_nicks = unpublished_nicks(member_profile_docs, roster_nicks)
+    displayed_tool_keys = {
+        tool["key"]
+        for tool in tool_docs
+        if tool.get("key") and not _noshow(tool.get("published_on_site"))
+    }
     tools_by_member: dict[str, set[str]] = {}
     for tool in tool_docs:
+        if tool.get("key") not in displayed_tool_keys:
+            continue
         for nick in tool.get("maintainers") or []:
             tools_by_member.setdefault(nick, set()).add(tool["key"])
     teaching_by_member: dict[str, list[dict]] = {}
@@ -536,12 +599,16 @@ def main() -> int:
         section = section_for(row)
         papers = [short_paper(p) for p in pub_docs if nick in (p.get("lab_authors") or [])]
         tools = sorted(
-            {
-                key
-                for paper in pub_docs
-                if nick in (paper.get("lab_authors") or [])
-                for key in (paper.get("tools") or [])
-            } | tools_by_member.get(nick, set())
+            (
+                {
+                    key
+                    for paper in pub_docs
+                    if nick in (paper.get("lab_authors") or [])
+                    for key in (paper.get("tools") or [])
+                    if key in displayed_tool_keys
+                }
+                | tools_by_member.get(nick, set())
+            )
         )
         cv_url = cv_by_member.get(nick, row.get("cv_url", ""))
         teaching = teaching_by_member.get(nick, []) if row["degree"] == "Faculty" else []
@@ -562,6 +629,13 @@ def main() -> int:
             and row.get("site") != "false"
             and any(section_material.values())
         )
+        # published_on_site: noshow keeps the row and the generated files, and
+        # takes the profile out of the build. has_page stays false so listings
+        # do not link a URL that 404s.
+        eligible_for_page = has_page
+        on_site = nick not in hidden_nicks
+        if not on_site:
+            has_page = False
         if row["nick"] == PI_NICK:
             # The PI's roster title wins ("Professor"); the section label is only
             # a fallback for when the roster carries no title at all.
@@ -652,11 +726,13 @@ def main() -> int:
                 entry["now"] = affil
                 # The affiliation only fed the "now" line; showing it twice is noise.
                 entry["affiliation"] = ""
+        if not on_site:
+            entry["published_on_site"] = "noshow"
         if cv_url:
             entry["cv_url"] = cv_url
         # Public-facing enrichment from core/team/<bucket>/<nick>/0profile.
         apply_profile(entry, nick, section)
-        if has_page:
+        if eligible_for_page:
             explicit = (row.get("avatar") or "").strip()
             if explicit:
                 entry["avatar"] = f"{AVATAR_ROOT}/{explicit}"
@@ -664,13 +740,15 @@ def main() -> int:
                 entry["avatar"] = ensure_avatar(nick)
         people.append(entry)
 
-        if has_page:
+        if eligible_for_page:
             front = {
                 "layout": "profile",
                 "permalink": f"/team/{nick}/",
                 "redirect_from": [f"/{nick}/", f"/people/{nick}/"],
                 **entry,
             }
+            if not on_site:
+                front["published"] = False
             profile_dir = PROFILE_ROOT / nick
             profile_dir.mkdir(parents=True, exist_ok=True)
             page_path = profile_dir / "index.md"
@@ -697,6 +775,8 @@ def main() -> int:
                     "profile_section": section_key,
                     "title": f"{entry['name_en']} - {section.get('label', section_key)}",
                 }
+                if not on_site:
+                    section_front["published"] = False
                 if section_page.exists() and PAGE_MARKER not in section_page.read_text(encoding="utf-8"):
                     raise RuntimeError(f"refusing to overwrite hand-maintained profile section: {section_page}")
                 section_page.write_text(
@@ -716,7 +796,10 @@ def main() -> int:
                 section_key = old_section.get("profile_section")
                 if section_key and not section_material.get(section_key, False):
                     section_page.unlink()
-            pages += 1
+            if on_site:
+                pages += 1
+        if not on_site:
+            ensure_unpublished(PROFILE_ROOT / nick)
 
     # Remove only the empty, generated collection pages from the old layout.
     for legacy_page in LEGACY_OUT_DIR.glob("*.md"):
@@ -756,6 +839,8 @@ def main() -> int:
         except (IndexError, yaml.YAMLError):
             continue
         if old_profile.get("nick") not in active_nicks:
+            if old_profile.get("nick") in hidden_nicks:
+                continue
             for generated_page in profile_page.parent.rglob("index.md"):
                 if generated_page != profile_page and PAGE_MARKER in generated_page.read_text(encoding="utf-8"):
                     generated_page.unlink()
@@ -768,7 +853,7 @@ def main() -> int:
                     directory.rmdir()
             write_team_redirect(profile_page, old_profile["nick"])
 
-    for nick in previous_profiles - active_nicks:
+    for nick in previous_profiles - active_nicks - hidden_nicks:
         write_team_redirect(PROFILE_ROOT / nick / "index.md", nick)
 
     for nick in nonfaculty_nicks:

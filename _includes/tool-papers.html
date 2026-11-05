@@ -11,7 +11,7 @@ Usage: {% include tool-papers.html papers=tool.papers %}
 {%- assign related = "" | split: "" -%}
 {%- for slug in slugs -%}
   {%- assign paper = site.data.publications | where: "slug", slug | first -%}
-  {%- if paper -%}
+  {%- if paper and paper.published_on_site != false and paper.published_on_site != "noshow" -%}
     {%- assign related = related | push: paper -%}
   {%- endif -%}
 {%- endfor -%}

@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from gen_publications import REPO
+from gen_publications import REPO, _noshow
 
 # Ceiling on authors that fall back to the raw registry string, enforced by
 # --strict. Set from the verified state after the first full harvest. XiaBB2015
@@ -78,6 +78,84 @@ if dangling_nicks:
 print("pubs with repo:", sum(1 for p in pubs if p.get("repo")), "with doi:", sum(1 for p in pubs if p.get("doi")))
 print("pubs missing year:", sum(1 for p in pubs if not p.get("year")))
 pub_slugs = {paper["slug"] for paper in pubs}
+
+
+def audit_display() -> list[str]:
+    """published_on_site noshow (or false) must stay out of the built site.
+
+    Listings filter the flag in Liquid. Tool documentation is unpublished by
+    listing ``tools/<docs_slug>`` in ``_config.yml`` ``exclude``, because
+    GitHub Pages does not load ``_plugins``. People profiles use front matter
+    ``published: false``. Both leave the source files in the repository.
+    """
+    problems: list[str] = []
+    config = yaml.safe_load((Path(REPO) / "_config.yml").read_text(encoding="utf-8")) or {}
+    excluded = {str(item).strip().strip("/") for item in (config.get("exclude") or [])}
+    hidden_tools: list[str] = []
+    for tool in tools:
+        key = str(tool.get("key") or "")
+        slug = str(tool.get("docs_slug") or "").strip().strip("/")
+        docs_path = f"tools/{slug}" if slug else ""
+        hidden = _noshow(tool.get("published_on_site"))
+        if hidden:
+            hidden_tools.append(key)
+            if docs_path and docs_path not in excluded:
+                problems.append(
+                    f"{key} is noshow but {docs_path} is not in "
+                    "_config.yml exclude, so its docs would still be built"
+                )
+        elif docs_path and docs_path in excluded:
+            problems.append(
+                f"{key} is displayed but {docs_path} is in _config.yml exclude, "
+                "so its documentation URL would 404"
+            )
+    hidden_people = [p for p in people if _noshow(p.get("published_on_site"))]
+    for person in hidden_people:
+        nick = str(person.get("nick") or "")
+        if person.get("has_page"):
+            problems.append(f"{nick} is non-display but has_page is true")
+        root = Path(REPO) / "team" / nick
+        if not nick or not root.exists():
+            continue
+        for page in sorted(root.rglob("*.md")):
+            text = page.read_text(encoding="utf-8")
+            front: dict = {}
+            if text.startswith("---"):
+                parts = text.split("---", 2)
+                if len(parts) >= 3:
+                    front = yaml.safe_load(parts[1]) or {}
+            if front.get("published") is not False:
+                rel = page.relative_to(Path(REPO)).as_posix()
+                problems.append(f"{rel} would still be built; set published: false")
+    hidden_pubs = [p.get("slug") for p in pubs if _noshow(p.get("published_on_site"))]
+    hidden_abs = [p.get("slug") for p in abstracts if _noshow(p.get("published_on_site"))]
+    activities = yaml.safe_load((data / "activities.yml").read_text(encoding="utf-8")) or []
+    hidden_act = [
+        (a.get("title") or a.get("date"))
+        for a in activities
+        if isinstance(a, dict) and _noshow(a.get("published_on_site"))
+    ]
+    print(
+        "non-display:",
+        f"tools={hidden_tools or []}",
+        f"people={[p.get('nick') for p in hidden_people] or []}",
+        f"publications={hidden_pubs or []}",
+        f"abstracts={hidden_abs or []}",
+        f"activities={hidden_act or []}",
+    )
+    for problem in problems:
+        print(f"   DISPLAY: {problem}")
+    return problems
+
+
+print()
+display_problems = audit_display()
+if display_problems:
+    raise ValueError(
+        "published_on_site must agree with _config.yml exclude and "
+        "published: false on profile pages: " + "; ".join(display_problems)
+    )
+
 # Registry folders that are not (yet) rendered on the site: preprints, meeting
 # abstracts and theses.  Tools may already cite them; they simply do not render
 # a link until the record is promoted to a public status.
