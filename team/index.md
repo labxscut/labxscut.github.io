@@ -17,7 +17,7 @@ nav:
 {% assign sections = "pi:Principal investigator,faculty:Faculty,visiting:Visiting scholars,phd:PhD students,master:Master's students,under:Undergraduate researchers,alumni:Alumni" | split: "," %}
 {% for entry in sections %}
   {% assign pair = entry | split: ":" %}
-  {% assign group = site.data.people | where: "section", pair[0] | where_exp: "person", "person.published_on_site != false" %}
+  {% assign group = site.data.people | where: "section", pair[0] | where_exp: "person", "person.published_on_site != false" | where_exp: "person", "person.published_on_site != 'noshow'" %}
   {% assign visible = group %}
   {% if visible.size > 0 %}
 

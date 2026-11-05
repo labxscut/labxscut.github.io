@@ -16,7 +16,7 @@ from pathlib import Path
 
 import yaml
 
-from gen_publications import REPO
+from gen_publications import REPO, _noshow
 
 # Ceiling on authors that fall back to the raw registry string, enforced by
 # --strict. Set from the verified state after the first full harvest. XiaBB2015
@@ -81,7 +81,7 @@ pub_slugs = {paper["slug"] for paper in pubs}
 
 
 def audit_display() -> list[str]:
-    """published_on_site: false must stay out of the built site.
+    """published_on_site noshow (or false) must stay out of the built site.
 
     Listings filter the flag in Liquid. Tool documentation is unpublished by
     listing ``tools/<docs_slug>`` in ``_config.yml`` ``exclude``, because
@@ -96,12 +96,12 @@ def audit_display() -> list[str]:
         key = str(tool.get("key") or "")
         slug = str(tool.get("docs_slug") or "").strip().strip("/")
         docs_path = f"tools/{slug}" if slug else ""
-        hidden = tool.get("published_on_site") is False
+        hidden = _noshow(tool.get("published_on_site"))
         if hidden:
             hidden_tools.append(key)
             if docs_path and docs_path not in excluded:
                 problems.append(
-                    f"{key} has published_on_site: false but {docs_path} is not in "
+                    f"{key} is noshow but {docs_path} is not in "
                     "_config.yml exclude, so its docs would still be built"
                 )
         elif docs_path and docs_path in excluded:
@@ -109,7 +109,7 @@ def audit_display() -> list[str]:
                 f"{key} is displayed but {docs_path} is in _config.yml exclude, "
                 "so its documentation URL would 404"
             )
-    hidden_people = [p for p in people if p.get("published_on_site") is False]
+    hidden_people = [p for p in people if _noshow(p.get("published_on_site"))]
     for person in hidden_people:
         nick = str(person.get("nick") or "")
         if person.get("has_page"):
@@ -127,13 +127,13 @@ def audit_display() -> list[str]:
             if front.get("published") is not False:
                 rel = page.relative_to(Path(REPO)).as_posix()
                 problems.append(f"{rel} would still be built; set published: false")
-    hidden_pubs = [p.get("slug") for p in pubs if p.get("published_on_site") is False]
-    hidden_abs = [p.get("slug") for p in abstracts if p.get("published_on_site") is False]
+    hidden_pubs = [p.get("slug") for p in pubs if _noshow(p.get("published_on_site"))]
+    hidden_abs = [p.get("slug") for p in abstracts if _noshow(p.get("published_on_site"))]
     activities = yaml.safe_load((data / "activities.yml").read_text(encoding="utf-8")) or []
     hidden_act = [
         (a.get("title") or a.get("date"))
         for a in activities
-        if isinstance(a, dict) and a.get("published_on_site") is False
+        if isinstance(a, dict) and _noshow(a.get("published_on_site"))
     ]
     print(
         "non-display:",

@@ -19,25 +19,25 @@ nav:
   _data/clicks.yml by gen_clicks.py; otherwise keep the curated order in
   _data/tools.yml. `tool_order` already contains every displayed key, so the
   grid is never missing a tool that is on the site -- unclicked ones simply
-  fall to the back. `published_on_site: false` is left out on purpose.
+  fall to the back. `published_on_site: noshow` (or `false`) is left out on purpose.
 {% endcomment %}
 {%- assign clicks = site.data.clicks -%}
 {%- assign use_order = false -%}
 {%- if site.clicks.enabled != false and clicks and clicks.totals.events >= site.clicks.min_events -%}
   {%- assign use_order = true -%}
 {%- endif -%}
-{%- assign catalog = site.data.tools | where_exp: "t", "t.published_on_site != false" -%}
+{%- assign catalog = site.data.tools | where_exp: "t", "t.published_on_site != false" | where_exp: "t", "t.published_on_site != 'noshow'" -%}
 {%- assign ordered_tools = "" | split: "" -%}
 {%- if use_order -%}
   {%- for tkey in clicks.tool_order -%}
     {%- assign t = site.data.tools | where: "key", tkey | first -%}
-    {%- if t and t.published_on_site != false -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
+    {%- if t and t.published_on_site != false and t.published_on_site != "noshow" -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
   {%- endfor -%}
   {%- comment -%}
     `tool_order` is baked from displayed tools, so a tool added there without
     re-running gen_clicks.py is absent from it. Appending the leftovers keeps the
     grid complete -- a stale clicks file may order the list badly, but it must
-    never drop a displayed tool. Non-display tools stay out of both passes.
+    never drop a displayed tool. A noshow tool stays out of both passes.
   {%- endcomment -%}
   {%- for t in catalog -%}
     {%- unless clicks.tool_order contains t.key -%}
@@ -88,7 +88,7 @@ nav:
 {% assign by = "" | split: "" %}
 {% for nick in nicks %}
   {% assign person = site.data.people | where: "nick", nick | first %}
-  {% if person and person.published_on_site != false %}{% assign by = by | push: person %}{% endif %}
+  {% if person and person.published_on_site != false and person.published_on_site != "noshow" %}{% assign by = by | push: person %}{% endif %}
 {% endfor %}
 {% if by.size > 0 %}
 <p class="labx-tool-by">Built by {% for person in by %}{% if person.has_page %}<a href="/team/{{ person.nick }}/">{{ person.name_en }}</a>{% else %}{{ person.name_en }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>

@@ -12,7 +12,7 @@ nav:
 {% include section-banner.html key="activities" %}
 
 {% include intro.html value=site.data.intros.activities.intro %}
-{% assign activities = site.data.activities | where_exp: "item", "item.published_on_site != false" | sort: "date" | reverse %}
+{% assign activities = site.data.activities | where_exp: "item", "item.published_on_site != false" | where_exp: "item", "item.published_on_site != 'noshow'" | sort: "date" | reverse %}
 {% if activities.size > 0 %}
 {% for activity in activities %}
 ## {{ activity.title }}

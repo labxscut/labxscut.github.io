@@ -148,8 +148,9 @@ def load_yml(name: str):
 
 
 def on_site(entry: dict) -> bool:
-    """True unless the entry is explicitly published_on_site: false."""
-    return entry.get("published_on_site") is not False
+    """True unless the entry is published_on_site noshow or false."""
+    value = entry.get("published_on_site")
+    return value is not False and value != "noshow"
 
 
 def build(token: str, days: int) -> dict:

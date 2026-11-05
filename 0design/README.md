@@ -69,13 +69,14 @@ and generator output whenever a section path changes.
   Do not invent biographies, credentials, photos, or funding availability.
 - The publication list includes records marked published/accepted after
   deduplication; it is not a claim of a complete Google Scholar bibliography.
-- `published_on_site: false` hides a tool, person, publication, or activity
-  without deleting it. Listings, cross-links, generated click order, and the
-  sitemap omit it. Its page is not built: tool docs by an `_config.yml`
-  `exclude` of `tools/<docs_slug>`, people by `published: false` written from
-  `_data/member_profiles.yml`. `private: true` and publication `visibility` do
-  not mean this. The site README section "What is shown on the site" is the
-  convention. sxSIGMA is hidden this way (`exclude: tools/sxsigma`).
+- `published_on_site: noshow` hides a tool, person, publication, or activity
+  without deleting it (`false` means the same thing). Listings, cross-links,
+  generated click order, and the sitemap omit it on the next build. Its page
+  is not built: tool docs by an `_config.yml` `exclude` of `tools/<docs_slug>`,
+  people by `published: false` written from `_data/member_profiles.yml`.
+  `private: true` and publication `visibility` do not mean this. The site README
+  section "What is shown on the site" is the convention. sxSIGMA is `noshow`
+  (`exclude: tools/sxsigma`).
 - Google Scholar is the reference for the PI's full publication list. Current
   automated requests return incomplete pages; do not claim the registry is
   complete or add guessed records. Request an owner-provided BibTeX/CSV export

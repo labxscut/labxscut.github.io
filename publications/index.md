@@ -12,12 +12,12 @@ nav:
 {% include section-banner.html key="publications" %}
 
 {% comment %}
-  published_on_site: false drops a record that is still in the data file.
-  gen_publications.py usually omits those records entirely; this filter is the
-  listing gate when one is present. Meeting abstracts use the same flag.
+  published_on_site: noshow (or false) drops a record that is still in the data
+  file. The filter is the listing gate on this build; no generator has to run
+  first. Meeting abstracts use the same term.
 {% endcomment %}
-{% assign publications = site.data.publications | where_exp: "paper", "paper.published_on_site != false" %}
-{% assign abstracts = site.data.abstracts | where_exp: "paper", "paper.published_on_site != false" %}
+{% assign publications = site.data.publications | where_exp: "paper", "paper.published_on_site != false" | where_exp: "paper", "paper.published_on_site != 'noshow'" %}
+{% assign abstracts = site.data.abstracts | where_exp: "paper", "paper.published_on_site != false" | where_exp: "paper", "paper.published_on_site != 'noshow'" %}
 {% assign lead = "" | split: "" %}
 {% assign collaborative = "" | split: "" %}
 {% assign chapters = "" | split: "" %}

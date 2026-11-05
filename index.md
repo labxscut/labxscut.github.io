@@ -50,11 +50,11 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 {% comment %}
   Only publicly released, displayed tools belong on the landing page. `private:
-  true` would render a repository link that 404s. `published_on_site: false`
-  is omitted entirely (the entry stays in tools.yml). Two separate where_exp
-  filters avoid a compound expression on the GitHub Pages Liquid runtime.
+  true` would render a repository link that 404s. `published_on_site: noshow`
+  (or `false`) is omitted entirely (the entry stays in tools.yml). Separate
+  where_exp filters avoid a compound expression on the GitHub Pages Liquid runtime.
 {% endcomment %}
-{% assign home_tools = site.data.tools | where_exp: "t", "t.private != true" | where_exp: "t", "t.published_on_site != false" %}
+{% assign home_tools = site.data.tools | where_exp: "t", "t.private != true" | where_exp: "t", "t.published_on_site != false" | where_exp: "t", "t.published_on_site != 'noshow'" %}
 {% for tool in home_tools limit:3 %}
 {% if tool.logo %}<img class="labx-home-tool-logo" src="{{ tool.logo | relative_url }}" alt="">{% endif %}
 
@@ -71,7 +71,7 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 <!-- section break -->
 
-{% assign home_activities = site.data.activities | where_exp: "item", "item.published_on_site != false" %}
+{% assign home_activities = site.data.activities | where_exp: "item", "item.published_on_site != false" | where_exp: "item", "item.published_on_site != 'noshow'" %}
 {% if home_activities.size > 0 %}
 ## Activities
 

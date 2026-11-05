@@ -3,7 +3,7 @@
 #
 # Display switch (README, "What is shown on the site"):
 #   - nick: example
-#     published_on_site: false
+#     published_on_site: noshow
 # gen_people.py copies that onto _data/people.yml and writes published: false
 # on team/<nick>/, so the profile is not built. Omit the key to keep showing them.
 []

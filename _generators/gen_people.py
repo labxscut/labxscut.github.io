@@ -19,10 +19,10 @@ Rule for individual pages: current group members get a page at /team/<nick>/
 only when verified CV, publication, teaching, or tool material is available.
 Alumni and external collaborators are listed on /team/ only.
 
-Display switch: a `_data/member_profiles.yml` entry with `published_on_site: false`
-keeps the roster row in `_data/people.yml` and writes `published: false` on
-`team/<nick>/`, so listings omit the person and the profile URL is not built.
-See the site README, "What is shown on the site".
+Display switch: a `_data/member_profiles.yml` entry with `published_on_site: noshow`
+(or `false`) keeps the roster row in `_data/people.yml` and writes
+`published: false` on `team/<nick>/`, so listings omit the person and the
+profile URL is not built. See the site README, "What is shown on the site".
 
 Usage (WSL):  python3 _generators/gen_people.py
 """
@@ -38,7 +38,7 @@ from urllib.parse import urlsplit
 import yaml
 
 from gen_avatars import AVATAR_ROOT, AVATAR_DIR, PHOTO_SUFFIXES, ensure_avatar
-from gen_publications import REPO, WORK, load_roster, canonical_date
+from gen_publications import REPO, WORK, _noshow, load_roster, canonical_date
 
 # Author-name formats have exactly ONE implementation, in the shared backend
 # library agents/hermes/lib/author_name.py (SOP:
@@ -444,19 +444,19 @@ def tracked_profile_nicks() -> set[str]:
 
 
 def unpublished_nicks(profiles: list[dict], roster_nicks: set[str]) -> set[str]:
-    """Members marked published_on_site: false in member_profiles.yml.
+    """Members marked published_on_site noshow (or false) in member_profiles.yml.
 
-    The flag is the durable in-repo switch. gen_people copies it onto
+    The term is the durable in-repo switch. gen_people copies it onto
     people.yml; a hand edit of people.yml would be overwritten on the next run.
     """
     hidden: set[str] = set()
     for item in profiles:
-        if not isinstance(item, dict) or item.get("published_on_site") is not False:
+        if not isinstance(item, dict) or not _noshow(item.get("published_on_site")):
             continue
         nick = item.get("nick")
         if not nick:
             raise ValueError(
-                f"published_on_site: false in {MEMBER_PROFILES} needs a nick"
+                f"published_on_site: noshow in {MEMBER_PROFILES} needs a nick"
             )
         if nick not in roster_nicks:
             raise ValueError(f"unknown member in {MEMBER_PROFILES}: {nick}")
@@ -480,10 +480,10 @@ def ensure_unpublished(profile_dir: Path) -> None:
         if len(parts) < 3:
             continue
         front = yaml.safe_load(parts[1]) or {}
-        if front.get("published") is False and front.get("published_on_site") is False:
+        if front.get("published") is False and _noshow(front.get("published_on_site")):
             continue
         front["published"] = False
-        front["published_on_site"] = False
+        front["published_on_site"] = "noshow"
         front["has_page"] = False
         page.write_text(
             "---\n"
@@ -566,7 +566,7 @@ def main() -> int:
     displayed_tool_keys = {
         tool["key"]
         for tool in tool_docs
-        if tool.get("key") and tool.get("published_on_site") is not False
+        if tool.get("key") and not _noshow(tool.get("published_on_site"))
     }
     tools_by_member: dict[str, set[str]] = {}
     for tool in tool_docs:
@@ -629,7 +629,7 @@ def main() -> int:
             and row.get("site") != "false"
             and any(section_material.values())
         )
-        # published_on_site: false keeps the row and the generated files, and
+        # published_on_site: noshow keeps the row and the generated files, and
         # takes the profile out of the build. has_page stays false so listings
         # do not link a URL that 404s.
         eligible_for_page = has_page
@@ -727,7 +727,7 @@ def main() -> int:
                 # The affiliation only fed the "now" line; showing it twice is noise.
                 entry["affiliation"] = ""
         if not on_site:
-            entry["published_on_site"] = False
+            entry["published_on_site"] = "noshow"
         if cv_url:
             entry["cv_url"] = cv_url
         # Public-facing enrichment from core/team/<bucket>/<nick>/0profile.
