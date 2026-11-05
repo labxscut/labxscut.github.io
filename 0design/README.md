@@ -317,6 +317,12 @@ only verified profile data.
   or WSL rather than assuming a local build succeeded.
 - Verify the generated site and the GitHub Pages deployment run before
   describing a change as live.
+- When checking the public website, remind the owner and do both steps before
+  treating the browser as evidence:
+  1. Merge the pull request into `main` and wait until that Pages deployment
+     succeeds. An open pull request is not what visitors see.
+  2. Clear the browser cache, or use a fresh private window. A cached tab can
+     keep showing the previous page after the deploy.
 - Do not stage all files, discard changes, or rewrite tags to make deployment
   easier. Inspect the working tree and publish only the intended site changes.
 
