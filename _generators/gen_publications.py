@@ -335,11 +335,13 @@ def build_entry(slug: str, doc: dict, lookup: dict[str, dict], cv_index: dict[st
     is_abstract = status in ABSTRACT_STATUS
     if status not in PUBLIC_STATUS and not is_abstract:
         return None
-    # Scholar/CV backfill records opt in explicitly; preprints and theses stay
-    # in the registry only until a human promotes them. Meeting abstracts and
-    # posters are exempt: they always render in the separate abstracts section,
-    # but only once they carry a resolvable DOI (records flagged "resolve
-    # before publishing" stay out).
+    # published_on_site is the site-wide display switch (README, "What is shown
+    # on the site"). Scholar/CV backfill records opt in explicitly; preprints
+    # and theses stay in the registry only until a human promotes them.
+    # Meeting abstracts and posters are the one exemption: they still render in
+    # the abstracts section once they carry a resolvable DOI (records flagged
+    # "resolve before publishing" stay out). A false flag on a full paper keeps
+    # that paper out of _data/publications.yml without deleting the registry copy.
     if doc.get("published_on_site") is False and not is_abstract:
         return None
 
@@ -629,6 +631,10 @@ def tools_by_paper() -> dict[str, list[str]]:
     records = yaml.safe_load(path.read_text(encoding="utf-8")) or []
     result: dict[str, list[str]] = {}
     for tool in records:
+        # A non-display tool stays in tools.yml but must not be written onto
+        # the public publication records.
+        if tool.get("published_on_site") is False:
+            continue
         for slug in tool.get("papers") or []:
             result.setdefault(slug, []).append(tool["key"])
     return result

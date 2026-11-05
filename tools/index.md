@@ -17,33 +17,35 @@ nav:
   Popularity sort. When the counter has crossed `clicks.min_events` (and
   `clicks.enabled` is not false), list tools in the click order baked into
   _data/clicks.yml by gen_clicks.py; otherwise keep the curated order in
-  _data/tools.yml. `tool_order` already contains every key, so the grid is
-  never missing a tool -- unclicked ones simply fall to the back.
+  _data/tools.yml. `tool_order` already contains every displayed key, so the
+  grid is never missing a tool that is on the site -- unclicked ones simply
+  fall to the back. `published_on_site: false` is left out on purpose.
 {% endcomment %}
 {%- assign clicks = site.data.clicks -%}
 {%- assign use_order = false -%}
 {%- if site.clicks.enabled != false and clicks and clicks.totals.events >= site.clicks.min_events -%}
   {%- assign use_order = true -%}
 {%- endif -%}
+{%- assign catalog = site.data.tools | where_exp: "t", "t.published_on_site != false" -%}
 {%- assign ordered_tools = "" | split: "" -%}
 {%- if use_order -%}
   {%- for tkey in clicks.tool_order -%}
     {%- assign t = site.data.tools | where: "key", tkey | first -%}
-    {%- if t -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
+    {%- if t and t.published_on_site != false -%}{%- assign ordered_tools = ordered_tools | push: t -%}{%- endif -%}
   {%- endfor -%}
   {%- comment -%}
-    `tool_order` is baked from _data/tools.yml, so a tool added there without
+    `tool_order` is baked from displayed tools, so a tool added there without
     re-running gen_clicks.py is absent from it. Appending the leftovers keeps the
     grid complete -- a stale clicks file may order the list badly, but it must
-    never delete a tool.
+    never drop a displayed tool. Non-display tools stay out of both passes.
   {%- endcomment -%}
-  {%- for t in site.data.tools -%}
+  {%- for t in catalog -%}
     {%- unless clicks.tool_order contains t.key -%}
       {%- assign ordered_tools = ordered_tools | push: t -%}
     {%- endunless -%}
   {%- endfor -%}
 {%- else -%}
-  {%- assign ordered_tools = site.data.tools -%}
+  {%- assign ordered_tools = catalog -%}
 {%- endif -%}
 
 <div class="labx-tools-grid">
@@ -86,7 +88,7 @@ nav:
 {% assign by = "" | split: "" %}
 {% for nick in nicks %}
   {% assign person = site.data.people | where: "nick", nick | first %}
-  {% if person %}{% assign by = by | push: person %}{% endif %}
+  {% if person and person.published_on_site != false %}{% assign by = by | push: person %}{% endif %}
 {% endfor %}
 {% if by.size > 0 %}
 <p class="labx-tool-by">Built by {% for person in by %}{% if person.has_page %}<a href="/team/{{ person.nick }}/">{{ person.name_en }}</a>{% else %}{{ person.name_en }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>

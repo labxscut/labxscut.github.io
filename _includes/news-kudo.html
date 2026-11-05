@@ -71,7 +71,7 @@
       {%- if kudo_author.nick != "" -%}
         {%- assign kudo_person = site.data.people | where: "nick", kudo_author.nick | first -%}
       {%- endif -%}
-      {%- if kudo_person and kudo_person.has_page -%}
+      {%- if kudo_person and kudo_person.has_page and kudo_person.published_on_site != false -%}
         {%- capture kudo_one -%}<a class="labx-kudo-mention" href="/team/{{ kudo_person.nick }}/">@{{ kudo_author.name }}</a>{%- endcapture -%}
       {%- else -%}
         {%- capture kudo_one -%}@{{ kudo_author.name }}{%- endcapture -%}

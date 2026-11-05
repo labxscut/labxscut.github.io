@@ -1,1 +1,5 @@
+# Group activities. Omit published_on_site, or set it true, to list an entry.
+# published_on_site: false keeps the entry here and drops it from /activities/,
+# the home page, and other listings. An activity has no page of its own.
+# See README, "What is shown on the site".
 []

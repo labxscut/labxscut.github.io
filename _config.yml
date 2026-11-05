@@ -52,6 +52,8 @@ include:
   - _scripts
 
 # Everything below stays tracked in git but is NOT published to the site.
+# tools/<docs_slug> entries here are the page half of published_on_site: false
+# (README, "What is shown on the site"). qa_check.py requires the two to match.
 exclude:
   - README.md
   - AGENTS.md
@@ -66,3 +68,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - requirements.txt
+  - tools/sxsigma

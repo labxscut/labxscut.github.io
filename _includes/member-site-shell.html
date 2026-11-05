@@ -71,7 +71,14 @@
           {% when "teaching" %}
             {% if member.degree != "Faculty" or teaching_items.size == 0 %}{% assign show_tab = false %}{% endif %}
           {% when "tools" %}
-            {% if member.tools.size == 0 %}{% assign show_tab = false %}{% endif %}
+            {% assign shown_tool_count = 0 %}
+            {% for key in member.tools %}
+              {% assign tool = site.data.tools | where: "key", key | first %}
+              {% if tool and tool.published_on_site != false %}
+                {% assign shown_tool_count = shown_tool_count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% if shown_tool_count == 0 %}{% assign show_tab = false %}{% endif %}
         {% endcase %}
         {% if show_tab %}
           {% assign tab_url = profile_root | append: tab.path %}
@@ -128,7 +135,10 @@
                 <h3>Lead Papers</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_lead %}
+                  {% assign live = site.data.publications | where: "slug", paper.slug | first %}
+                  {% if live and live.published_on_site != false %}
                   <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
+                  {% endif %}
                 {% endfor %}
                 </ol>
               {% endif %}
@@ -136,7 +146,10 @@
                 <h3>Collaborative Papers</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_collaborative %}
+                  {% assign live = site.data.publications | where: "slug", paper.slug | first %}
+                  {% if live and live.published_on_site != false %}
                   <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}{% if paper.status == "Accept" or paper.status == "Accepted" %} <span class="labx-status">Accepted</span>{% endif %}</li>
+                  {% endif %}
                 {% endfor %}
                 </ol>
               {% endif %}
@@ -144,7 +157,10 @@
                 <h3>Book Chapters</h3>
                 <ol class="labx-member-papers">
                 {% for paper in member_chapters %}
+                  {% assign live = site.data.publications | where: "slug", paper.slug | first %}
+                  {% if live and live.published_on_site != false %}
                   <li>{% if paper.url != "" %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %} — <em>{{ paper.venue }}</em>{% if paper.volume != "" %}, {{ paper.volume }}{% if paper.issue != "" %}({{ paper.issue }}){% endif %}{% if paper.pages != "" %}, {{ paper.pages }}{% endif %}{% endif %}, {% if paper.published_display != "" %}{{ paper.published_display }}{% else %}{{ paper.year }}{% endif %}{% if paper.pdf != "" %} · <a href="{{ paper.pdf }}">PDF</a>{% endif %}</li>
+                  {% endif %}
                 {% endfor %}
                 </ol>
               {% endif %}
@@ -178,7 +194,7 @@
               <ul>
                 {% for key in member.tools %}
                   {% assign tool = site.data.tools | where: "key", key | first %}
-                  {% if tool %}<li><a href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a> — {{ tool.tagline }}{% if tool.repo != "" and tool.private != true %} (<a href="{{ tool.repo }}">repository</a>){% endif %}</li>{% endif %}
+                  {% if tool and tool.published_on_site != false %}<li><a href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a> — {{ tool.tagline }}{% if tool.repo != "" and tool.private != true %} (<a href="{{ tool.repo }}">repository</a>){% endif %}</li>{% endif %}
                 {% endfor %}
               </ul>
             {% else %}

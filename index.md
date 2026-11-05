@@ -49,11 +49,12 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 {% include intro.html value=site.data.intros.home.tools %}
 
 {% comment %}
-  Only publicly released tools belong on the landing page: a `private: true`
-  catalog entry would render a link that 404s for visitors. `where_exp` keeps the
-  first three *public* tools, so reordering tools.yml cannot surface a private one.
+  Only publicly released, displayed tools belong on the landing page. `private:
+  true` would render a repository link that 404s. `published_on_site: false`
+  is omitted entirely (the entry stays in tools.yml). Two separate where_exp
+  filters avoid a compound expression on the GitHub Pages Liquid runtime.
 {% endcomment %}
-{% assign home_tools = site.data.tools | where_exp: "t", "t.private != true" %}
+{% assign home_tools = site.data.tools | where_exp: "t", "t.private != true" | where_exp: "t", "t.published_on_site != false" %}
 {% for tool in home_tools limit:3 %}
 {% if tool.logo %}<img class="labx-home-tool-logo" src="{{ tool.logo | relative_url }}" alt="">{% endif %}
 
@@ -70,12 +71,13 @@ description: "LabX is an AI-for-Science group at the School of Mathematics, Sout
 
 <!-- section break -->
 
-{% if site.data.activities.size > 0 %}
+{% assign home_activities = site.data.activities | where_exp: "item", "item.published_on_site != false" %}
+{% if home_activities.size > 0 %}
 ## Activities
 
 {% include intro.html value=site.data.intros.home.activities %}
 
-{% for activity in site.data.activities limit:3 %}
+{% for activity in home_activities limit:3 %}
 - **{{ activity.date_display | default: activity.date }}** — {{ activity.title }}{% if activity.url %} · [Details]({{ activity.url }}){% endif %}
 {% endfor %}
 

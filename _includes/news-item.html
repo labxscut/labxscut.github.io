@@ -74,6 +74,13 @@
     {%- endif -%}
   {%- endif -%}
 {%- endunless -%}
+{%- comment -%}
+  A publication kept in the data file with published_on_site: false has no
+  anchor on /publications/. Keep the news card; drop the paper-derived links.
+{%- endcomment -%}
+{%- if paper.published_on_site == false -%}
+  {%- assign paper = false -%}
+{%- endif -%}
 <article class="labx-news-item"{% if paper %} id="news-{{ paper.slug | slugify }}"{% endif %}>
   <div class="labx-news-stamp">
     <span class="labx-news-year">{{ y }}</span>
@@ -106,7 +113,7 @@
       {%- for author in paper.authors -%}
         {%- if author.nick != "" -%}
           {%- assign person = site.data.people | where: "nick", author.nick | first -%}
-          {%- if person and person.has_page -%}
+          {%- if person and person.has_page and person.published_on_site != false -%}
       <a class="labx-chip labx-chip-person" href="/team/{{ person.nick }}/">{{ person.name_en }}</a>
           {%- elsif person -%}
       <span class="labx-chip labx-chip-person">{{ person.name_en }}</span>
@@ -115,7 +122,7 @@
       {%- endfor -%}
       {%- for key in paper.tools -%}
         {%- assign tool = site.data.tools | where: "key", key | first -%}
-        {%- if tool -%}
+        {%- if tool and tool.published_on_site != false -%}
       <a class="labx-chip labx-chip-tool" href="/tools/#{{ tool.key | slugify }}">{{ tool.name }}</a>
         {%- endif -%}
       {%- endfor -%}

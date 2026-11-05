@@ -33,7 +33,7 @@ nav:
 
 {% for selected in theme.selected_papers %}
 {% assign paper = site.data.publications | where: "slug", selected.slug | first %}
-{% if paper %}
+{% if paper and paper.published_on_site != false %}
 - {% if paper.url != "" %}[{{ paper.title }}]({{ paper.url }}){% else %}{{ paper.title }}{% endif %} ({{ paper.year }}). {{ selected.narrative }}
 {% endif %}
 {% endfor %}
